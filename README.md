@@ -5,5 +5,9 @@ hi
 # Description
 
 # Authors
-@ kathryn Campo
+@ Kathryn Campo
 @ Jana Grunewald
+@ Odalys Martinez
+@ Kevin Mak
+@ Nick Wright
+@ Owen Rose
