@@ -1,9 +1,27 @@
-# MetalPandas
-Car App
+# Metal Pandas Car Application
 
-# Description
+This is a production tracker program intended for use by a factory that produces media players. At the time of writing, I am a Junior in college at Florida Gulf Coast University. This program is specifically for an Object Oriented Programming assignment, and is a semester long project that will continue to receive updates as time goes on.
 
-# Authors
-@ kathryn Campo
-@ Jana Grunewald
-@ Owen Rose
+## Documentation
+JavaDocs in IDE.
+
+
+## Getting Started
+To get this program started on your computer, follow the steps below:
+Download the IDE of your choice capable of creating and running a JavaFX project. This IDE must be able to use databases. Clone this repository, then open the project in your IDE. Establish the database on your computer and direct it with the file path to the res folder you initially cloned. After this the program should run.
+
+## Built With
+IntelliJ Idea Ultimate, 
+Scene Builder, 
+Discord group discussions
+
+## Author
+Nicholis Wright, Jana Grunewald, Owen Rose, Kathryn Campo, Odalys Martinez-Villa, Kevin Mak
+
+
+## Acknowledgments
+Stack Overflow, Scenebuilder, IntelliJ
+
+
+## History
+10/7/2019 This project started out as a GUI with no data base attached. 
