@@ -18,15 +18,19 @@
       <RowConstraints />
    </rowConstraints>
    <children>
-      <Pane prefHeight="400.0" prefWidth="600.0" stylesheets="@loginpageCSS.css">
-         <children>
-            <Text fx:id="WelcomeText" fill="RED" layoutX="275.0" layoutY="105.0" scaleX="3.0" scaleY="3.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Metal Pandas" />
-            <Text fx:id="UsernameText" layoutX="220.0" layoutY="192.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User Name:" />
-            <TextField fx:id="UsernameTextField" layoutX="300.0" layoutY="175.0" prefHeight="25.0" prefWidth="120.0" promptText="Jsmith" />
-            <Text fx:id="PasswordText" layoutX="225.0" layoutY="237.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password:" />
-            <Button fx:id="loginButton" layoutX="374.0" layoutY="264.0" mnemonicParsing="false" text="Login" />
-            <PasswordField fx:id="PasswordTextField" layoutX="300.0" layoutY="220.0" prefHeight="25.0" prefWidth="120.0" promptText="Password" />
-         </children>
+      <Pane prefHeight="400.0" prefWidth="600.0" stylesheets="@loginstyles.css">
+         <Text fx:id="WelcomeText" fill="Black" layoutX="275.0" layoutY="105.0" scaleX="3.0"
+           scaleY="3.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Metal Pandas"/>
+         <Text fx:id="UsernameText" layoutX="220.0" layoutY="192.0" strokeType="OUTSIDE"
+           strokeWidth="0.0" text="User Name:"/>
+         <TextField fx:id="UsernameTextField" layoutX="300.0" layoutY="175.0" prefHeight="25.0"
+           prefWidth="120.0" promptText="Jsmith"/>
+         <Text fx:id="PasswordText" layoutX="225.0" layoutY="237.0" strokeType="OUTSIDE"
+           strokeWidth="0.0" text="Password:"/>
+         <Button fx:id="loginButton" layoutX="374.0" layoutY="264.0" mnemonicParsing="false"
+           text="Login"/>
+         <PasswordField fx:id="PasswordTextField" layoutX="300.0" layoutY="220.0" prefHeight="25.0"
+           prefWidth="120.0" promptText="Password"/>
       </Pane>
    </children>
 </GridPane>
