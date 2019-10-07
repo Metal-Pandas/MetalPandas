@@ -1,4 +1,4 @@
-# ProductLineTrackerOOPFXDB
+# Metal Pandas Car Application
 
 This is a production tracker program intended for use by a factory that produces media players. At the time of writing, I am a Junior in college at Florida Gulf Coast University. This program is specifically for an Object Oriented Programming assignment, and is a semester long project that will continue to receive updates as time goes on.
 
@@ -16,17 +16,12 @@ Scene Builder,
 Discord group discussions
 
 ## Author
-Nicholis Wright, Jana Grunewald, Owen Rose, Katy Campo, Odalys Martinez, Kevin Mak
+Nicholis Wright, Jana Grunewald, Owen Rose, Kathryn Campo, Odalys Martinez-Villa, Kevin Mak
 
 
 ## Acknowledgments
-Stack Overflow, 
+Stack Overflow, Scenebuilder, IntelliJ
 
 
 ## History
-9/10/2019 This project started out as a GUI with no data base attached or CSS. 
-9/28/2019 The project now has a CSS file to style the GUI 
-
-
-## Key Programming Concepts Utilized
-Key concepts I used in this project are establishing data bases with H2, creating a file path for said data base, inserting items into the data base using SQL and CSS to create a design for the GUI.
+10/7/2019 This project started out as a GUI with no data base attached. 
