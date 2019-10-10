@@ -1,0 +1,12 @@
+everyone make sure you fork the group project, that will allow you to edit everything that you are working on for the project.
+Once you do that and you want to merge your fork with the main project, you have to do "pull requests" and then "new pull request".
+you will get this window.
+https://cdn.discordapp.com/attachments/616699382951313431/630848908712607785/unknown.png
+
+you will want to click the "compare across forks" which will open up more selections as shown
+https://cdn.discordapp.com/attachments/616699382951313431/630849205279391745/unknown.png
+
+you will then want to set the base repository to the one shown, and the head repository to your forked one "yourUserName/MetalPandas"
+click "create pull request" and you will be given a couple other windows about if you can merge them or not and if you want to add comments to it.
+click create pull request again on the bottom of the comment section. it will commit the pull request. 
+Scroll down and there will be a commit merge, confirm it and everyone should have access to it now.
