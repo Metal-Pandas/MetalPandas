@@ -3,6 +3,14 @@
 Metal Pandas Order a Car will allow users to sign up to get or provide transportation to others. Users will enter data for their 
 profile, payment, and area they are providing or using the service. The user will then arrange transportation by adding dates and times, location using google maps, and will provide feedback on how the application could be better.
 
+# Authors
+@ Kathryn Campo
+@ Jana Grunewald
+@ Odalys Martinez
+@ Kevin Mak
+@ Nick Wright
+@ Owen Rose
+
 ## Documentation
 JavaDocs in IDE.
 
