@@ -9,9 +9,13 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Tab;
+import javafx.scene.control.TabPane;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
@@ -38,7 +42,28 @@ public class Controller {
   public Button loginButton;
 
   @FXML
-  private BorderPane mainBorderPane;
+  public GridPane homePageBack;
+
+  @FXML
+  public BorderPane homePageBorderPane;
+
+  @FXML
+  public TabPane homeTab;
+
+  @FXML
+  public Tab MenuTab;
+
+  @FXML
+  public VBox homeVbox;
+
+  @FXML
+  public Button profileButton;
+
+  @FXML
+  public Button favouritesButton;
+
+  @FXML
+  public Button logoutButton;
 
   @FXML
   private void handleLoginAction(ActionEvent event) throws IOException {
@@ -67,7 +92,7 @@ public class Controller {
   private void loadFXML(URL url) {
     try {
       FXMLLoader loader = new FXMLLoader(url);
-      mainBorderPane.setCenter(loader.load());
+      homePageBorderPane.setCenter(loader.load());
     }
     catch (IOException e) {
       e.printStackTrace();
