@@ -14,16 +14,22 @@ import javafx.scene.text.Text;
 public class Controller {
   @FXML
   public Pane Backdrop;
+
   @FXML
   public Text Title;
+
   @FXML
   public Text Username;
+
   @FXML
   public TextField UsernameField;
+
   @FXML
   public Text Password;
+
   @FXML
   public TextField PasswordField;
+
   @FXML
   public Button loginButton;
 
