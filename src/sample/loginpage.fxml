@@ -21,6 +21,7 @@
       <URL value="@loginstyles.css" />
    </stylesheets>
    <Pane prefHeight="400.0" prefWidth="600.0" stylesheets="@loginstyles.css">
+      <Pane fx:id="Backdrop" layoutX="182.0" layoutY="164.0" prefHeight="90.0" prefWidth="260.0" />
      <Text fx:id="Title" layoutX="275.0" layoutY="105.0" scaleX="3.0" scaleY="3.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Metal Pandas" />
      <Text fx:id="Username" layoutX="186.0" layoutY="192.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username/Email:" />
      <TextField fx:id="UsernameField" layoutX="300.0" layoutY="175.0" prefHeight="25.0" prefWidth="120.0" promptText="Jsmith" />
