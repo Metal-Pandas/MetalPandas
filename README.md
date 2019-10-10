@@ -1,6 +1,7 @@
-# Metal Pandas Car Application
+# Metal Pandas Order a Car
 
-This is a production tracker program intended for use by a factory that produces media players. At the time of writing, I am a Junior in college at Florida Gulf Coast University. This program is specifically for an Object Oriented Programming assignment, and is a semester long project that will continue to receive updates as time goes on.
+Metal Pandas Order a Car will allow users to sign up to get or provide transportation to others. Users will enter data for their 
+profile, payment, and area they are providing or using the service. The user will then arrange transportation by adding dates and times, location using google maps, and will provide feedback on how the application could be better.
 
 ## Documentation
 JavaDocs in IDE.
