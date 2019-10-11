@@ -1,22 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.net.URL?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Tab?>
-<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.ToolBar?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane fx:id="mainBorderPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1" fx:controller="sample.Controller">
-   <left>
-     <TabPane prefHeight="400.0" prefWidth="93.0" tabClosingPolicy="UNAVAILABLE"
-       BorderPane.alignment="CENTER">
-       <Tab text="Menu">
-         <VBox prefHeight="199.0" prefWidth="93.0" spacing="5">
-           <Button onAction="#handleShowView1" text="btn 1"/>
-           <Button onAction="#handleShowView2" text="btn 2"/>
-           <Button onAction="#handleShowView3" text="btn 3"/>
-         </VBox>
-       </Tab>
-     </TabPane>
-   </left>
-</BorderPane>
+<GridPane fx:id="homePageBack" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+  <columnConstraints>
+    <ColumnConstraints />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+  <stylesheets>
+    <URL value="@homepagestyles.css" />
+  </stylesheets>
+   <SplitPane fx:id="homePageSplitPane" prefHeight="400.0" prefWidth="600.0" GridPane.columnIndex="1">
+      <items>
+        <VBox prefHeight="200.0" prefWidth="100.0">
+          <ToolBar prefHeight="40.0" prefWidth="200.0">
+            <Button fx:id="menuButton" mnemonicParsing="false" onAction="#handleMenuAction" text="Menu" />
+          </ToolBar>
+          <StackPane alignment="CENTER_LEFT" prefHeight="360.0" prefWidth="598.0">
+            <HBox prefHeight="353.0" prefWidth="201.0">
+              <VBox fx:id="drawer" prefHeight="400.0" prefWidth="198.0">
+                     <children>
+                        <BorderPane prefHeight="291.0" prefWidth="198.0">
+                           <top>
+                              <Button mnemonicParsing="false" text="Button" BorderPane.alignment="CENTER" />
+                           </top>
+                           <center>
+                              <Button mnemonicParsing="false" text="Button" BorderPane.alignment="CENTER" />
+                           </center>
+                           <bottom>
+                              <Button mnemonicParsing="false" text="Button" BorderPane.alignment="CENTER" />
+                           </bottom>
+                        </BorderPane>
+                     </children></VBox>
+            </HBox>
+          </StackPane>
+        </VBox>
+      </items>
+   </SplitPane>
+</GridPane>
