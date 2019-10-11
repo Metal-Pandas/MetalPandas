@@ -101,4 +101,32 @@ public class Controller {
       }
     });
   }
+
+  public void handleEditProfilePicAction(ActionEvent event) {
+
+  }
+
+  public void handleProfileAction(ActionEvent event) throws IOException {
+    Parent homePageParent = FXMLLoader.load(getClass().getResource("profile.fxml"));
+    Scene homePageScene = new Scene(homePageParent);
+    Stage homeStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+    homeStage.setScene(homePageScene);
+    homeStage.show();
+  }
+
+  public void handleFavAction(ActionEvent event) throws IOException {
+    Parent homePageParent = FXMLLoader.load(getClass().getResource("favourites.fxml"));
+    Scene homePageScene = new Scene(homePageParent);
+    Stage homeStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+    homeStage.setScene(homePageScene);
+    homeStage.show();
+  }
+
+  public void handleLogoutAction(ActionEvent event) throws IOException {
+    Parent homePageParent = FXMLLoader.load(getClass().getResource("loginpage.fxml"));
+    Scene homePageScene = new Scene(homePageParent);
+    Stage homeStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+    homeStage.setScene(homePageScene);
+    homeStage.show();
+  }
 }

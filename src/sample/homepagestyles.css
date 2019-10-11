@@ -2,7 +2,7 @@
   -fx-background-image: url("back.jpg");
 }
 #drawer{
-  -fx-background-color: red;
+  -fx-background-color: #468a46;
 }
 #profileImage{
   -fx-background-image: url("profile image.jpg");
