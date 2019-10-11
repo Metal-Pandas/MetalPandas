@@ -1,11 +1,9 @@
 #homePageSplitPane {
   -fx-background-image: url("homepageback.jpg");
 }
-
 #drawer{
   -fx-background-image: url("back.jpg");
 }
-
 #profileImage{
   -fx-background-image: url("profile image.jpg");
 }
