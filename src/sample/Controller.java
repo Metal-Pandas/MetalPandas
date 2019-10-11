@@ -68,14 +68,18 @@ public class Controller {
 
   @FXML
   private void handleLoginAction(ActionEvent event) throws IOException {
-    Parent homePageParent = FXMLLoader.load(getClass().getResource("homepage.fxml"));
-    Scene homePageScene = new Scene(homePageParent);
-    Stage homeStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-    homeStage.setScene(homePageScene);
-    homeStage.show();
+    if (UsernameField.getText().equals("Username") && PasswordField.getText().equals("Password")) {
+      Parent homePageParent = FXMLLoader.load(getClass().getResource("homepage.fxml"));
+      Scene homePageScene = new Scene(homePageParent);
+      Stage homeStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+      homeStage.setScene(homePageScene);
+      homeStage.show();
+    } else {
+      Statustxt.setText("Incorrect, Try Again.");
+    }
   }
 
-  @FXML
+    @FXML
   private void handleSignUpAction(ActionEvent event) throws IOException {
     Parent homePageParent = FXMLLoader.load(getClass().getResource("signupPage.fxml"));
     Scene homePageScene = new Scene(homePageParent);
