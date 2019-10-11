@@ -4,6 +4,8 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
@@ -31,17 +33,51 @@
           </ToolBar>
           <StackPane alignment="CENTER_LEFT" prefHeight="360.0" prefWidth="598.0">
             <HBox prefHeight="353.0" prefWidth="201.0">
-              <VBox fx:id="drawer" prefHeight="400.0" prefWidth="198.0">
+              <VBox fx:id="drawer" prefHeight="353.0" prefWidth="200.0">
                      <children>
-                        <BorderPane prefHeight="291.0" prefWidth="198.0">
+                        <GridPane>
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <ImageView fx:id="profileImage" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@profile image.jpg" />
+                                 </image>
+                              </ImageView>
+                              <GridPane>
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <Button fx:id="editProfilePic" minWidth="44.0" mnemonicParsing="false" onAction="#handleEditProfilePicAction" prefHeight="32.0" prefWidth="44.0" text="Edit" GridPane.columnIndex="1" GridPane.halignment="RIGHT" />
+                                 </children>
+                              </GridPane>
+                           </children>
+                        </GridPane>
+                        <BorderPane prefHeight="206.0" prefWidth="200.0">
                            <top>
-                              <Button mnemonicParsing="false" text="Button" BorderPane.alignment="CENTER" />
+                              <Button fx:id="profileButton" mnemonicParsing="false" onAction="#handleProfileAction" text="Profile" BorderPane.alignment="CENTER" />
                            </top>
                            <center>
-                              <Button mnemonicParsing="false" text="Button" BorderPane.alignment="CENTER" />
+                              <Button fx:id="favouritesButton" mnemonicParsing="false" onAction="#handleFavAction" text="Favourites" BorderPane.alignment="CENTER" />
                            </center>
                            <bottom>
-                              <Button mnemonicParsing="false" text="Button" BorderPane.alignment="CENTER" />
+                              <BorderPane prefHeight="38.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                 <top>
+                                    <Button fx:id="logoutButton" mnemonicParsing="false" onAction="#handleLogoutAction" text="Log out" BorderPane.alignment="CENTER" />
+                                 </top>
+                              </BorderPane>
                            </bottom>
                         </BorderPane>
                      </children></VBox>

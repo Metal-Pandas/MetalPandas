@@ -10,6 +10,8 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.SplitPane;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
 import javafx.scene.control.TextField;
@@ -47,14 +49,10 @@ public class Controller {
   public GridPane homePageBack;
 
   @FXML
-  public BorderPane homePageBorderPane;
-
-
-  @FXML
-  public TabPane homeTab;
+  public SplitPane homePageSplitPane;
 
   @FXML
-  public Tab MenuTab;
+  public Label Statustxt;
 
   @FXML
   public VBox drawer;
@@ -70,14 +68,18 @@ public class Controller {
 
   @FXML
   private void handleLoginAction(ActionEvent event) throws IOException {
-    Parent homePageParent = FXMLLoader.load(getClass().getResource("homepage.fxml"));
-    Scene homePageScene = new Scene(homePageParent);
-    Stage homeStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-    homeStage.setScene(homePageScene);
-    homeStage.show();
+    if (UsernameField.getText().equals("Username") && PasswordField.getText().equals("Password")) {
+      Parent homePageParent = FXMLLoader.load(getClass().getResource("homepage.fxml"));
+      Scene homePageScene = new Scene(homePageParent);
+      Stage homeStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+      homeStage.setScene(homePageScene);
+      homeStage.show();
+    } else {
+      Statustxt.setText("Incorrect, Try Again.");
+    }
   }
 
-  @FXML
+    @FXML
   private void handleSignUpAction(ActionEvent event) throws IOException {
     Parent homePageParent = FXMLLoader.load(getClass().getResource("signupPage.fxml"));
     Scene homePageScene = new Scene(homePageParent);
@@ -101,28 +103,31 @@ public class Controller {
     });
   }
 
-  @FXML
-  private void handleShowView1(ActionEvent e) {
-    loadFXML(getClass().getResource("/sample/view_1.fxml"));
+  public void handleEditProfilePicAction(ActionEvent event) {
+
   }
 
-  @FXML
-  private void handleShowView2(ActionEvent e) {
-    loadFXML(getClass().getResource("/sample/view_2.fxml"));
+  public void handleProfileAction(ActionEvent event) throws IOException {
+    Parent homePageParent = FXMLLoader.load(getClass().getResource("profile.fxml"));
+    Scene homePageScene = new Scene(homePageParent);
+    Stage homeStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+    homeStage.setScene(homePageScene);
+    homeStage.show();
   }
 
-  @FXML
-  private void handleShowView3(ActionEvent e) {
-    loadFXML(getClass().getResource("/sample/view_3.fxml"));
+  public void handleFavAction(ActionEvent event) throws IOException {
+    Parent homePageParent = FXMLLoader.load(getClass().getResource("favourites.fxml"));
+    Scene homePageScene = new Scene(homePageParent);
+    Stage homeStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+    homeStage.setScene(homePageScene);
+    homeStage.show();
   }
 
-  private void loadFXML(URL url) {
-    try {
-      FXMLLoader loader = new FXMLLoader(url);
-      homePageBorderPane.setCenter(loader.load());
-    }
-    catch (IOException e) {
-      e.printStackTrace();
-    }
+  public void handleLogoutAction(ActionEvent event) throws IOException {
+    Parent homePageParent = FXMLLoader.load(getClass().getResource("loginpage.fxml"));
+    Scene homePageScene = new Scene(homePageParent);
+    Stage homeStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+    homeStage.setScene(homePageScene);
+    homeStage.show();
   }
 }
