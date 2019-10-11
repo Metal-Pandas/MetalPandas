@@ -10,6 +10,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.SplitPane;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
@@ -50,12 +51,8 @@ public class Controller {
   @FXML
   public SplitPane homePageSplitPane;
 
-
   @FXML
-  public TabPane homeTab;
-
-  @FXML
-  public Tab MenuTab;
+  public Label Statustxt;
 
   @FXML
   public VBox drawer;
