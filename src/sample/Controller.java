@@ -52,7 +52,7 @@ public class Controller {
   public SplitPane homePageSplitPane;
 
   @FXML
-  private Label Statustxt;
+  public Label Statustxt;
 
   @FXML
   public VBox drawer;
