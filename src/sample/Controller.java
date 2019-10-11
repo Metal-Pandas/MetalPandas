@@ -2,6 +2,7 @@ package sample;
 
 import java.io.IOException;
 import java.net.URL;
+import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -18,6 +19,7 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 public class Controller {
   @FXML
@@ -47,6 +49,7 @@ public class Controller {
   @FXML
   public BorderPane homePageBorderPane;
 
+
   @FXML
   public TabPane homeTab;
 
@@ -54,10 +57,10 @@ public class Controller {
   public Tab MenuTab;
 
   @FXML
-  public VBox homeVbox;
+  public VBox drawer;
 
   @FXML
-  public Button profileButton;
+  public Button menuButton;
 
   @FXML
   public Button favouritesButton;
@@ -72,6 +75,21 @@ public class Controller {
     Stage homeStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);
     homeStage.show();
+  }
+
+  @FXML
+  private void handleMenuAction(ActionEvent event) {
+    TranslateTransition openNav = new TranslateTransition(new Duration(350), drawer);
+    openNav.setToX(0);
+    TranslateTransition closeNav = new TranslateTransition(new Duration(350), drawer);
+    menuButton.setOnAction((ActionEvent evt) -> {
+      if (drawer.getTranslateX() != 0) {
+        openNav.play();
+      } else {
+        closeNav.setToX(-(drawer.getWidth()));
+        closeNav.play();
+      }
+    });
   }
 
   @FXML
