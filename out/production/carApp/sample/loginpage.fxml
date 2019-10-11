@@ -28,5 +28,6 @@
      <Text fx:id="Password" layoutX="225.0" layoutY="237.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password:" />
      <Button fx:id="loginButton" layoutX="374.0" layoutY="264.0" mnemonicParsing="false" onAction="#handleLoginAction" text="Login" />
      <PasswordField fx:id="PasswordField" layoutX="300.0" layoutY="220.0" prefHeight="25.0" prefWidth="120.0" promptText="Password" />
+      <Button fx:id="signup" layoutX="277.0" layoutY="361.0" mnemonicParsing="false" onAction="#handleSignUpAction" text="Sign up" />
    </Pane>
 </GridPane>
