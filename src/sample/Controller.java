@@ -79,7 +79,7 @@ public class Controller {
 
   @FXML
   private void handleSignUpAction(ActionEvent event) throws IOException {
-    Parent homePageParent = FXMLLoader.load(getClass().getResource("homepage.fxml"));
+    Parent homePageParent = FXMLLoader.load(getClass().getResource("signupPage.fxml"));
     Scene homePageScene = new Scene(homePageParent);
     Stage homeStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);
