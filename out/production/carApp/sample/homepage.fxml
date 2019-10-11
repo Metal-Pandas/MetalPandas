@@ -23,23 +23,17 @@
   </stylesheets>
   <BorderPane fx:id="homePageBorderPane" prefHeight="400.0" prefWidth="600.0">
       <top>
-         <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
-            <children>
-               <ToolBar prefHeight="40.0" prefWidth="200.0">
-                 <items>
-                   <Button fx:id="menuButton" mnemonicParsing="false" onAction="#handleMenuAction" text="Menu" />
-                 </items>
-               </ToolBar>
-               <StackPane alignment="CENTER_LEFT" prefHeight="150.0" prefWidth="200.0">
-                  <children>
-                     <HBox prefHeight="100.0" prefWidth="200.0">
-                        <children>
-                           <VBox fx:id="drawer" prefHeight="200.0" prefWidth="100.0" />
-                        </children>
-                     </HBox>
-                  </children>
-               </StackPane>
-            </children></VBox>
+        <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+          <ToolBar prefHeight="40.0" prefWidth="200.0">
+            <Button fx:id="menuButton" mnemonicParsing="false" onAction="#handleMenuAction"
+              text="Menu"/>
+          </ToolBar>
+          <StackPane alignment="CENTER_LEFT" prefHeight="150.0" prefWidth="200.0">
+            <HBox prefHeight="100.0" prefWidth="200.0">
+              <VBox fx:id="drawer" prefHeight="200.0" prefWidth="100.0"/>
+            </HBox>
+          </StackPane>
+        </VBox>
       </top>
   </BorderPane>
 </GridPane>
