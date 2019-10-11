@@ -52,7 +52,7 @@ public class Controller {
   public SplitPane homePageSplitPane;
 
   @FXML
-  public Label Statustxt;
+  private Label Statustxt;
 
   @FXML
   public VBox drawer;
@@ -69,13 +69,17 @@ public class Controller {
   @FXML
   private void handleLoginAction(ActionEvent event) throws IOException {
     if (UsernameField.getText().equals("Username") && PasswordField.getText().equals("Password")) {
+
       Parent homePageParent = FXMLLoader.load(getClass().getResource("homepage.fxml"));
       Scene homePageScene = new Scene(homePageParent);
       Stage homeStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
       homeStage.setScene(homePageScene);
       homeStage.show();
+
     } else {
+
       Statustxt.setText("Incorrect, Try Again.");
+
     }
   }
 
