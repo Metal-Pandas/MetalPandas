@@ -10,6 +10,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
 import javafx.scene.control.TextField;
@@ -69,12 +70,23 @@ public class Controller {
   public Button logoutButton;
 
   @FXML
+  public Label Statustxt;
+
+  @FXML
+  public Pane StatusPane;
+
+
+  @FXML
   private void handleLoginAction(ActionEvent event) throws IOException {
+    if(UsernameField.getText().equals("Username") && PasswordField.getText().equals("Password")){
     Parent homePageParent = FXMLLoader.load(getClass().getResource("homepage.fxml"));
     Scene homePageScene = new Scene(homePageParent);
     Stage homeStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);
     homeStage.show();
+    } else{
+      Statustxt.setText("Incorrect, Try Again.");
+    }
   }
 
   @FXML

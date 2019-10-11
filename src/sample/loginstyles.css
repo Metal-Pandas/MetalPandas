@@ -62,3 +62,12 @@ root {
   -fx-background-color: #89D0F3;
   -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.7), 6, 0.0, 0, 1);
 }
+
+#Statustxt {
+  -fx-font-size: 12px;
+  -fx-font-weight: bold;
+  -fx-text-fill: #66DCE1;
+  -fx-stroke: #FFFFFF;
+  -fx-stroke-width: .5px;
+
+}
