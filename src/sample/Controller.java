@@ -10,6 +10,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.SplitPane;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
 import javafx.scene.control.TextField;
@@ -47,7 +48,7 @@ public class Controller {
   public GridPane homePageBack;
 
   @FXML
-  public BorderPane homePageBorderPane;
+  public SplitPane homePageSplitPane;
 
 
   @FXML
@@ -99,30 +100,5 @@ public class Controller {
         closeNav.play();
       }
     });
-  }
-
-  @FXML
-  private void handleShowView1(ActionEvent e) {
-    loadFXML(getClass().getResource("/sample/view_1.fxml"));
-  }
-
-  @FXML
-  private void handleShowView2(ActionEvent e) {
-    loadFXML(getClass().getResource("/sample/view_2.fxml"));
-  }
-
-  @FXML
-  private void handleShowView3(ActionEvent e) {
-    loadFXML(getClass().getResource("/sample/view_3.fxml"));
-  }
-
-  private void loadFXML(URL url) {
-    try {
-      FXMLLoader loader = new FXMLLoader(url);
-      homePageBorderPane.setCenter(loader.load());
-    }
-    catch (IOException e) {
-      e.printStackTrace();
-    }
   }
 }
