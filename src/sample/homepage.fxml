@@ -1,37 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.CheckMenuItem?>
-<?import javafx.scene.control.Menu?>
-<?import javafx.scene.control.MenuBar?>
-<?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.RadioMenuItem?>
-<?import javafx.scene.control.SeparatorMenuItem?>
-<?import javafx.scene.control.ToggleGroup?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ToolBar?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-  prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1"
-  xmlns:fx="http://javafx.com/fxml/1">
-  <top>
-    <MenuBar BorderPane.alignment="CENTER">
-      <Menu mnemonicParsing="false" text="File">
-        <MenuItem mnemonicParsing="false" text="New"/>
-        <SeparatorMenuItem mnemonicParsing="false"/>
-        <MenuItem mnemonicParsing="false" text="Save"/>
-        <CheckMenuItem mnemonicParsing="false" text="Show"/>
-        <RadioMenuItem mnemonicParsing="false" text="Item1">
-          <toggleGroup>
-            <ToggleGroup fx:id="tg"/>
-          </toggleGroup>
-        </RadioMenuItem>
-        <RadioMenuItem mnemonicParsing="false" text="Item2" toggleGroup="$tg"/>
-      </Menu>
-      <Menu mnemonicParsing="false" text="Edit">
-        <MenuItem mnemonicParsing="false" text="Delete"/>
-      </Menu>
-      <Menu mnemonicParsing="false" text="Help">
-        <MenuItem mnemonicParsing="false" text="About"/>
-      </Menu>
-    </MenuBar>
-  </top>
-</BorderPane>
+<GridPane fx:id="homePageBack" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+  <stylesheets>
+    <URL value="@homepagestyles.css" />
+  </stylesheets>
+  <BorderPane fx:id="homePageBorderPane" prefHeight="400.0" prefWidth="600.0">
+      <top>
+        <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+          <ToolBar prefHeight="40.0" prefWidth="200.0">
+            <Button fx:id="menuButton" mnemonicParsing="false" onAction="#handleMenuAction"
+              text="Menu"/>
+          </ToolBar>
+          <StackPane alignment="CENTER_LEFT" prefHeight="150.0" prefWidth="200.0">
+            <HBox prefHeight="100.0" prefWidth="200.0">
+              <VBox fx:id="drawer" prefHeight="200.0" prefWidth="100.0"/>
+            </HBox>
+          </StackPane>
+        </VBox>
+      </top>
+  </BorderPane>
+</GridPane>

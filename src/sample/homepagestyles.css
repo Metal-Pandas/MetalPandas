@@ -1,0 +1,6 @@
+#homePageBorderPane {
+  -fx-background-image: url("back.jpg");
+}
+#drawer{
+  -fx-background-color: red;
+}
