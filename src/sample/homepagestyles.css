@@ -9,3 +9,8 @@
 #profileImage {
   -fx-background-image: url("profile image.jpg");
 }
+
+#homeBackDrop{
+  -fx-opacity: .5;
+  -fx-background-color: #89D0F3;
+}

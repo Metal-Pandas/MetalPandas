@@ -32,7 +32,7 @@ import javafx.util.Duration;
 
 public class Controller {
   /*----------------------------------------------------------*/
-                    /* LOGIN PAGE ITEMS */
+  /* LOGIN PAGE ITEMS */
   /*----------------------------------------------------------*/
   @FXML public Pane Backdrop;
 
@@ -53,7 +53,7 @@ public class Controller {
   @FXML public Label Statustxt;
 
   /*----------------------------------------------------------*/
-                    /* HOME PAGE ITEMS */
+  /* HOME PAGE ITEMS */
   /*----------------------------------------------------------*/
   @FXML public GridPane homePageBack;
 
@@ -61,7 +61,7 @@ public class Controller {
 
   @FXML public VBox setUp;
 
-  @FXML public ToolBar toolBar;
+  @FXML public ToolBar topToolBar;
 
   @FXML public Button menuButton;
 
@@ -85,13 +85,15 @@ public class Controller {
 
   @FXML public Button logoutButton;
   /*----------------------------------------------------------*/
-                    /* SIGN UP PAGE */
+  /* SIGN UP PAGE */
   /*----------------------------------------------------------*/
   @FXML public Pane signUpPane;
 
   @FXML public Pane seeGender;
 
   @FXML public ImageView signProfilePic;
+
+  @FXML public Button picEdit;
 
   @FXML public TextField firstName;
 
@@ -113,15 +115,21 @@ public class Controller {
 
   @FXML public Button upSign;
   /*----------------------------------------------------------*/
-                    /* PROFILE PAGE */
+  /* PROFILE PAGE */
   /*----------------------------------------------------------*/
+  @FXML public SplitPane profileSplit;
 
+  @FXML public Button editButton;
   /*----------------------------------------------------------*/
-                    /* FAVOURITES PAGE */
+  /* FAVOURITES PAGE */
   /*----------------------------------------------------------*/
-
+  @FXML public SplitPane favSplit;
   /*----------------------------------------------------------*/
-                   /* LOGIN PAGE */
+  /* EDIT PROFILE PAGE */
+  /*----------------------------------------------------------*/
+  @FXML public Button done;
+  /*----------------------------------------------------------*/
+  /* LOGIN PAGE */
   @FXML
   private void handleLoginAction(ActionEvent event) throws IOException {
     if (UsernameField.getText().equals("Username") && PasswordField.getText().equals("Password")) {
@@ -148,7 +156,7 @@ public class Controller {
   }
 
   /*----------------------------------------------------------*/
-                    /* HOME PAGE */
+  /* HOME PAGE */
   @FXML
   private void handleMenuAction(ActionEvent event) {
     TranslateTransition openNav = new TranslateTransition(new Duration(350), drawer);
@@ -190,15 +198,40 @@ public class Controller {
   }
 
   /*----------------------------------------------------------*/
-                      /* PROFILE PAGE */
+  /* PROFILE PAGE */
+  public void handleEditAction(ActionEvent event) throws IOException {
+    Parent homePageParent = FXMLLoader.load(getClass().getResource("editPage.fxml"));
+    Scene homePageScene = new Scene(homePageParent);
+    Stage homeStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+    homeStage.setScene(homePageScene);
+    homeStage.show();
+  }
+  /*----------------------------------------------------------*/
+  /* FAVOURITES PAGE */
+  public void handleHomeAction(ActionEvent event) throws IOException {
+    Parent homePageParent = FXMLLoader.load(getClass().getResource("homepage.fxml"));
+    Scene homePageScene = new Scene(homePageParent);
+    Stage homeStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+    homeStage.setScene(homePageScene);
+    homeStage.show();
+  }
 
   /*----------------------------------------------------------*/
-                    /* FAVOURITES PAGE */
-
-  /*----------------------------------------------------------*/
-                    /* SIGN UP PAGE */
+  /* SIGN UP PAGE */
   public void handleUpSignAction(ActionEvent event) throws IOException {
     Parent homePageParent = FXMLLoader.load(getClass().getResource("homepage.fxml"));
+    Scene homePageScene = new Scene(homePageParent);
+    Stage homeStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+    homeStage.setScene(homePageScene);
+    homeStage.show();
+  }
+
+  public void handlePicEdit(ActionEvent event) {}
+
+  /*----------------------------------------------------------*/
+  /* EDIT PROFILE PAGE */
+  public void handleDoneAction(ActionEvent event) throws IOException {
+    Parent homePageParent = FXMLLoader.load(getClass().getResource("profile.fxml"));
     Scene homePageScene = new Scene(homePageParent);
     Stage homeStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);

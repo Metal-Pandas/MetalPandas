@@ -10,24 +10,32 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Text?>
 
-<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
-   <columnConstraints>
-      <ColumnConstraints />
-   </columnConstraints>
-   <rowConstraints>
-      <RowConstraints />
-   </rowConstraints>
-   <stylesheets>
-      <URL value="@loginstyles.css" />
-   </stylesheets>
-   <Pane prefHeight="400.0" prefWidth="600.0" stylesheets="@loginstyles.css">
-      <Pane fx:id="Backdrop" layoutX="182.0" layoutY="164.0" prefHeight="90.0" prefWidth="260.0" />
-     <Text fx:id="Title" layoutX="275.0" layoutY="105.0" scaleX="3.0" scaleY="3.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Metal Pandas" />
-     <Text fx:id="Username" layoutX="186.0" layoutY="192.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username/Email:" />
-     <TextField fx:id="UsernameField" layoutX="300.0" layoutY="175.0" prefHeight="25.0" prefWidth="120.0" promptText="Jsmith" />
-     <Text fx:id="Password" layoutX="225.0" layoutY="237.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password:" />
-     <Button fx:id="loginButton" layoutX="374.0" layoutY="264.0" mnemonicParsing="false" onAction="#handleLoginAction" text="Login" />
-     <PasswordField fx:id="PasswordField" layoutX="300.0" layoutY="220.0" prefHeight="25.0" prefWidth="120.0" promptText="Password" />
-      <Button fx:id="signup" layoutX="277.0" layoutY="361.0" mnemonicParsing="false" onAction="#handleSignUpAction" text="Sign up" />
-   </Pane>
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/11.0.1"
+  xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+  <columnConstraints>
+    <ColumnConstraints/>
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints/>
+  </rowConstraints>
+  <Pane prefHeight="400.0" prefWidth="600.0" stylesheets="@loginstyles.css">
+    <Pane fx:id="Backdrop" layoutX="182.0" layoutY="164.0" prefHeight="90.0" prefWidth="260.0"/>
+    <Text fx:id="Title" layoutX="275.0" layoutY="105.0" scaleX="3.0" scaleY="3.0"
+      strokeType="OUTSIDE" strokeWidth="0.0" text="Metal Pandas"/>
+    <Text fx:id="Username" layoutX="186.0" layoutY="192.0" strokeType="OUTSIDE" strokeWidth="0.0"
+      text="Username/Email:"/>
+    <TextField fx:id="UsernameField" layoutX="300.0" layoutY="175.0" prefHeight="25.0"
+      prefWidth="120.0" promptText="Jsmith"/>
+    <Text fx:id="Password" layoutX="225.0" layoutY="237.0" strokeType="OUTSIDE" strokeWidth="0.0"
+      text="Password:"/>
+    <PasswordField fx:id="PasswordField" layoutX="300.0" layoutY="220.0" prefHeight="25.0"
+      prefWidth="120.0" promptText="Password"/>
+    <Button fx:id="loginButton" layoutX="374.0" layoutY="264.0" mnemonicParsing="false"
+      onAction="#handleLoginAction" text="Login"/>
+    <Button fx:id="signUp" layoutX="277.0" layoutY="361.0" mnemonicParsing="false"
+      onAction="#handleSignUpAction" text="Sign up"/>
+  </Pane>
+  <stylesheets>
+    <URL value="@loginstyles.css"/>
+  </stylesheets>
 </GridPane>
