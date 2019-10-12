@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.TextField?>
@@ -8,22 +10,27 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Text?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<Pane fx:id="signUpPane" fx:controller="sample.Controller" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" >
    <children>
-      <TextField layoutX="127.0" layoutY="208.0" promptText="First Name" />
-      <TextField layoutX="283.0" layoutY="208.0" prefHeight="26.0" prefWidth="180.0" promptText="Last Name" />
-      <TextField layoutX="127.0" layoutY="234.0" prefHeight="26.0" prefWidth="336.0" promptText="Email Address" />
-      <TextField layoutX="127.0" layoutY="268.0" promptText="Phone Number" />
-      <DatePicker layoutX="283.0" layoutY="268.0" promptText="Birthday" />
+      <Pane fx:id="seeGender" layoutX="185.0" layoutY="305.0" prefHeight="74.0" prefWidth="230.0" />
+      <TextField fx:id="firstName" layoutX="127.0" layoutY="208.0" promptText="First Name" />
+      <TextField fx:id="lastName" layoutX="283.0" layoutY="208.0" prefHeight="26.0" prefWidth="180.0" promptText="Last Name" />
+      <TextField fx:id="email" layoutX="127.0" layoutY="234.0" prefHeight="26.0" prefWidth="336.0" promptText="Email Address" />
+      <TextField fx:id="phoneNumber" layoutX="127.0" layoutY="268.0" promptText="Phone Number" />
+      <DatePicker fx:id="birthday" layoutX="283.0" layoutY="268.0" promptText="Birthday" />
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="200.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@profile%20image.jpg" />
+            <Image url="@profile image.jpg" />
          </image>
       </ImageView>
-      <Text layoutX="127.0" layoutY="327.0" strokeType="OUTSIDE" strokeWidth="0.0" text="I am a:" wrappingWidth="58.87198829650879" />
-      <ChoiceBox layoutX="191.0" layoutY="309.0" prefWidth="150.0" />
-      <ChoiceBox layoutX="191.0" layoutY="346.0" prefWidth="150.0" />
-      <Text layoutX="127.0" layoutY="364.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gender" wrappingWidth="42.87198829650879" />
+      <Text fx:id="iama" layoutX="191.0" layoutY="328.0" strokeType="OUTSIDE" strokeWidth="0.0" text="I am a:" wrappingWidth="58.87198829650879" />
+      <ChoiceBox fx:id="driverPass" layoutX="255.0" layoutY="310.0" prefWidth="150.0" />
+      <ChoiceBox fx:id="gender" layoutX="255.0" layoutY="347.0" prefWidth="150.0" />
+      <Text fx:id="genderLabel" layoutX="191.0" layoutY="365.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gender" wrappingWidth="42.87198829650879" />
+      <Button fx:id="upSign" layoutX="467.0" layoutY="348.0" mnemonicParsing="false" onAction="#handleUpSignAction" text="Sign up!" />
 
    </children>
+   <stylesheets>
+      <URL value="@signupstyles.css" />
+   </stylesheets>
 </Pane>

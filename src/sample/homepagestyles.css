@@ -2,10 +2,10 @@
   -fx-background-image: url("homepageback.jpg");
 }
 
-#drawer{
+#drawer {
   -fx-background-image: url("back.jpg");
 }
 
-#profileImage{
+#profileImage {
   -fx-background-image: url("profile image.jpg");
 }
