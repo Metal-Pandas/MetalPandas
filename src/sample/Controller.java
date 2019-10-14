@@ -50,7 +50,7 @@ public class Controller {
 
   @FXML public Button signUp;
 
-  @FXML public Label Statustxt;
+  @FXML public Text Statustxt;
 
   /*----------------------------------------------------------*/
   /* HOME PAGE ITEMS */
@@ -140,10 +140,12 @@ public class Controller {
       homeStage.setScene(homePageScene);
       homeStage.show();
 
-    } else {
-
-      Statustxt.setText("Incorrect, Try Again.");
+    }  if (!UsernameField.getText().equals("Username") || !PasswordField.getText()
+        .equals("Password")) {
+      Statustxt.setText(
+          "Username/Password does not match." + " \n New to Metal Pandas?" + " \n Sign up now!");
     }
+
   }
 
   @FXML
