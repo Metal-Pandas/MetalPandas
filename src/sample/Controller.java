@@ -127,7 +127,7 @@ public class Controller {
   /* LOGIN PAGE */
   @FXML
   private void handleLoginAction(ActionEvent event) throws IOException {
-    if (UsernameField.getText().equals("Username") && PasswordField.getText().equals("Password")) {
+    if (UsernameField.getText().equals("username") && PasswordField.getText().equals("password")) {
 
       Parent homePageParent = FXMLLoader.load(getClass().getResource("homepage.fxml"));
       Scene homePageScene = new Scene(homePageParent);
