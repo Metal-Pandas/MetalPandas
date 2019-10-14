@@ -15,7 +15,7 @@ root {
   -fx-stroke-width: .5px;
 }
 
-#Backdrop {
+#Backdrop{
   -fx-opacity: .5;
   -fx-background-color: #89D0F3;
 }
@@ -56,7 +56,7 @@ root {
   -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.7), 6, 0.0, 0, 1);
 }
 
-#signUp {
+#signup {
   -fx-font-family: "Arial Narrow";
   -fx-font-weight: bold;
   -fx-text-fill: #0c590f;
