@@ -143,7 +143,7 @@ public class Controller {
     }  if (!UsernameField.getText().equals("Username") || !PasswordField.getText()
         .equals("Password")) {
       Statustxt.setText(
-          "Username/Password does not match." + " \n New to Metal Pandas?" + " \n Sign up now!");
+          "Username/Password does not match, Try Again." + " \n New to Metal Pandas?" + " \n Sign up now!");
     }
 
   }
