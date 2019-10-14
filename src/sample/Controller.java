@@ -1,7 +1,6 @@
 package sample;
 
 import java.io.IOException;
-import java.net.URL;
 import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -12,14 +11,10 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.DatePicker;
-import javafx.scene.control.Label;
 import javafx.scene.control.SplitPane;
-import javafx.scene.control.Tab;
-import javafx.scene.control.TabPane;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToolBar;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.Border;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
@@ -36,7 +31,7 @@ public class Controller {
   /*----------------------------------------------------------*/
   @FXML public Pane Backdrop;
 
-  @FXML public Text Title;
+  @FXML public ImageView Title;
 
   @FXML public Text Username;
 
@@ -142,8 +137,7 @@ public class Controller {
 
     }  if (!UsernameField.getText().equals("Username") || !PasswordField.getText()
         .equals("Password")) {
-      Statustxt.setText(
-          "Username/Password does not match." + " \n New to Metal Pandas?" + " \n Sign up now!");
+      Statustxt.setText("Username/Password incorrect. Don't have an account? Sign up now.");
     }
 
   }
@@ -159,6 +153,9 @@ public class Controller {
 
   /*----------------------------------------------------------*/
   /* HOME PAGE */
+
+
+
   @FXML
   private void handleMenuAction(ActionEvent event) {
     TranslateTransition openNav = new TranslateTransition(new Duration(350), drawer);
