@@ -67,8 +67,4 @@ root {
 #Statustxt {
   -fx-font-size: 12px;
   -fx-font-weight: bold;
-  -fx-text-fill: #66DCE1;
-  -fx-stroke: #FFFFFF;
-  -fx-stroke-width: .5px;
-
 }

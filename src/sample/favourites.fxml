@@ -14,52 +14,45 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 
-<GridPane fx:id="homePageBack" xmlns="http://javafx.com/javafx/11.0.1"
-  xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<GridPane fx:id="homePageBack" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
   <columnConstraints>
-    <ColumnConstraints/>
-    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0"/>
+    <ColumnConstraints />
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
   </columnConstraints>
   <rowConstraints>
-    <RowConstraints minHeight="10.0" vgrow="SOMETIMES"/>
+    <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
   </rowConstraints>
   <SplitPane fx:id="favSplit" prefHeight="400.0" prefWidth="600.0" GridPane.columnIndex="1">
     <VBox fx:id="setUp" prefHeight="406.0" prefWidth="598.0">
       <ToolBar fx:id="topToolBar" prefHeight="40.0" prefWidth="200.0">
-        <Button fx:id="menuButton" mnemonicParsing="false" onAction="#handleMenuAction"
-          text="Menu"/>
+        <Button fx:id="menuButton" mnemonicParsing="false" onAction="#handleMenuAction" text="Menu" />
       </ToolBar>
       <StackPane fx:id="stackPane" alignment="CENTER_LEFT" prefHeight="376.0" prefWidth="598.0">
         <HBox fx:id="part1Menu" prefHeight="353.0" prefWidth="201.0">
           <VBox fx:id="drawer" prefHeight="353.0" prefWidth="200.0">
             <GridPane fx:id="imageGrid">
               <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
               </columnConstraints>
               <rowConstraints>
-                <RowConstraints/>
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                <RowConstraints />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
-              <ImageView fx:id="profileImage" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true"
-                preserveRatio="true">
-                <Image url="@profile image.jpg"/>
+              <ImageView fx:id="profileImage" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                <Image url="@profile image.jpg" />
               </ImageView>
             </GridPane>
             <BorderPane fx:id="buttonMenu" prefHeight="206.0" prefWidth="200.0">
               <top>
-                <Button fx:id="profileButton" mnemonicParsing="false"
-                  onAction="#handleProfileAction" text="Profile" BorderPane.alignment="CENTER"/>
+                <Button fx:id="profileButton" mnemonicParsing="false" onAction="#handleProfileAction" text="Profile" BorderPane.alignment="CENTER" />
               </top>
               <center>
-                <Button fx:id="favouritesButton" mnemonicParsing="false"
-                  onAction="#handleHomeAction" text="Home" BorderPane.alignment="CENTER"/>
+                <Button fx:id="favouritesButton" mnemonicParsing="false" onAction="#handleHomeAction" text="Home" BorderPane.alignment="CENTER" />
               </center>
               <bottom>
-                <BorderPane fx:id="logOutBorderPane" prefHeight="38.0" prefWidth="200.0"
-                  BorderPane.alignment="CENTER">
+                <BorderPane fx:id="logOutBorderPane" prefHeight="38.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                   <top>
-                    <Button fx:id="logoutButton" mnemonicParsing="false"
-                      onAction="#handleLogoutAction" text="Log out" BorderPane.alignment="CENTER"/>
+                    <Button fx:id="logoutButton" mnemonicParsing="false" onAction="#handleLogoutAction" text="Log out" BorderPane.alignment="CENTER" />
                   </top>
                 </BorderPane>
               </bottom>
@@ -70,6 +63,6 @@
     </VBox>
   </SplitPane>
   <stylesheets>
-    <URL value="@favouritestyles.css"/>
+    <URL value="@favouritestyles.css" />
   </stylesheets>
 </GridPane>
