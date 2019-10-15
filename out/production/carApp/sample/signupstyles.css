@@ -37,6 +37,14 @@
   -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.7), 6, 0.0, 0, 1);
 }
 
+#enterPassword{
+
+}
+
+#reenterPassword{
+
+}
+
 #driverPass {
   -fx-font-size: 12px;
   -fx-font-weight: bold;
