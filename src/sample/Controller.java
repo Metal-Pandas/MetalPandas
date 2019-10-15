@@ -1,7 +1,11 @@
 package sample;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 import javafx.animation.TranslateTransition;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -135,10 +139,11 @@ public class Controller {
       homeStage.setScene(homePageScene);
       homeStage.show();
 
-    }  if (!UsernameField.getText().equals("Username") || !PasswordField.getText()
-        .equals("Password")) {
+    }  if (!UsernameField.getText().equals("username") || !PasswordField.getText()
+        .equals("password")) {
       Statustxt.setText("Username/Password incorrect. Don't have an account? Sign up now.");
     }
+
   }
 
   @FXML
@@ -152,8 +157,6 @@ public class Controller {
 
   /*----------------------------------------------------------*/
   /* HOME PAGE */
-
-
 
   @FXML
   private void handleMenuAction(ActionEvent event) {
@@ -225,7 +228,6 @@ public class Controller {
   }
 
   public void handlePicEdit(ActionEvent event) {}
-
   /*----------------------------------------------------------*/
   /* EDIT PROFILE PAGE */
   public void handleDoneAction(ActionEvent event) throws IOException {
@@ -235,4 +237,7 @@ public class Controller {
     homeStage.setScene(homePageScene);
     homeStage.show();
   }
+
+  // Kevinnnnnnnnnnnnnnnnnnnnnnnnnnnnn
+
 }
