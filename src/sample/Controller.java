@@ -127,7 +127,7 @@ public class Controller {
   /* LOGIN PAGE */
   @FXML
   private void handleLoginAction(ActionEvent event) throws IOException {
-    if (UsernameField.getText().equals("Username") && PasswordField.getText().equals("Password")) {
+    if (UsernameField.getText().equals("jsmith@abc.com") && PasswordField.getText().equals("password")) {
 
       Parent homePageParent = FXMLLoader.load(getClass().getResource("homepage.fxml"));
       Scene homePageScene = new Scene(homePageParent);
@@ -135,9 +135,9 @@ public class Controller {
       homeStage.setScene(homePageScene);
       homeStage.show();
 
-    }  if (!UsernameField.getText().equals("Username") || !PasswordField.getText()
-        .equals("Password")) {
-      Statustxt.setText("Username/Password incorrect. Don't have an account? Sign up now.");
+    }  if (!UsernameField.getText().equals("jsmith@abc.com") || !PasswordField.getText()
+        .equals("password")) {
+      Statustxt.setText("Email/Password incorrect. Don't have an account? Sign up now.");
     }
 
   }
