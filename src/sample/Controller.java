@@ -12,12 +12,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.SplitPane;
-import javafx.scene.control.TextField;
-import javafx.scene.control.ToolBar;
+import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
@@ -103,6 +98,10 @@ public class Controller {
   @FXML public TextField phoneNumber;
 
   @FXML public DatePicker birthday;
+
+  @FXML public PasswordField enterPassword;
+
+  @FXML public PasswordField reenterPassword;
 
   @FXML public Text iama;
 
