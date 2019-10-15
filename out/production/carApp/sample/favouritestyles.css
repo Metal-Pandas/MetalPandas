@@ -9,3 +9,22 @@
 #profileImage {
   -fx-background-image: url("profile image.jpg");
 }
+#driversListView {
+  -fx-background-color: lightgreen;
+}
+#locationsListView {
+  -fx-background-color: lightgreen;
+}
+#locationsTab {
+  -fx-background-color: forestgreen;
+  -fx-font-size: 12px;
+  -fx-font-weight: bold;
+
+}
+#driversTab {
+  -fx-background-color: forestgreen;
+  -fx-font-size: 12px;
+  -fx-font-weight: bold;
+
+}
+
