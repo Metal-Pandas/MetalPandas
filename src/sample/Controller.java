@@ -1,7 +1,11 @@
 package sample;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 import javafx.animation.TranslateTransition;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -154,8 +158,6 @@ public class Controller {
   /*----------------------------------------------------------*/
   /* HOME PAGE */
 
-
-
   @FXML
   private void handleMenuAction(ActionEvent event) {
     TranslateTransition openNav = new TranslateTransition(new Duration(350), drawer);
@@ -226,7 +228,6 @@ public class Controller {
   }
 
   public void handlePicEdit(ActionEvent event) {}
-
   /*----------------------------------------------------------*/
   /* EDIT PROFILE PAGE */
   public void handleDoneAction(ActionEvent event) throws IOException {
@@ -236,4 +237,7 @@ public class Controller {
     homeStage.setScene(homePageScene);
     homeStage.show();
   }
+
+  // Kevinnnnnnnnnnnnnnnnnnnnnnnnnnnnn
+
 }
