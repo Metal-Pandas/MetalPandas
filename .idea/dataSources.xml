@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="MetalPandas" uuid="59b12f9d-f058-4147-8d89-8a2e71402a8c">
+    <data-source source="LOCAL" name="MetalPandasDB" uuid="5640bcb5-662b-421c-8a6e-4b5ff7268e12">
       <driver-ref>h2.unified</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.h2.Driver</jdbc-driver>
-      <jdbc-url>jdbc:h2:$PROJECT_DIR$</jdbc-url>
+      <jdbc-url>jdbc:h2:$PROJECT_DIR$/Lib</jdbc-url>
     </data-source>
   </component>
 </project>
