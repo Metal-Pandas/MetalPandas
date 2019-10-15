@@ -33,10 +33,10 @@
       <StackPane fx:id="stackPane" alignment="CENTER_LEFT" prefHeight="376.0" prefWidth="598.0">
         <TabPane id="tabPane" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE">
           <Tab id="driversTab" text="Drivers">
-            <ListView id="driversListView" opacity="0.67" prefHeight="200.0" prefWidth="200.0"/>
+            <ListView id="driversListView" opacity="0.67" prefHeight="200.0" prefWidth="200.0" />
           </Tab>
           <Tab id="locationsTab" text="Locations">
-            <ListView id="locationsListView" opacity="0.67" prefHeight="318.0" prefWidth="390.0"/>
+            <ListView id="locationsListView" opacity="0.67" prefHeight="318.0" prefWidth="390.0" />
           </Tab>
         </TabPane>
         <HBox fx:id="part1Menu" prefHeight="353.0" prefWidth="201.0">
