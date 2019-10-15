@@ -236,7 +236,4 @@ public class Controller {
     homeStage.setScene(homePageScene);
     homeStage.show();
   }
-
-  // Kevinnnnnnnnnnnnnnnnnnnnnnnnnnnnn
-
 }
