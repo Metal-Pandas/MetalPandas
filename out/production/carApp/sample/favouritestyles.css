@@ -1,0 +1,11 @@
+#favSplit {
+  -fx-background-image: url("favback.jpg");
+}
+
+#drawer {
+  -fx-background-image: url("back.jpg");
+}
+
+#profileImage {
+  -fx-background-image: url("profile image.jpg");
+}
