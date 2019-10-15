@@ -139,8 +139,8 @@ public class Controller {
       homeStage.setScene(homePageScene);
       homeStage.show();
 
-    }  if (!UsernameField.getText().equals("Username") || !PasswordField.getText()
-        .equals("Password")) {
+    }  if (!UsernameField.getText().equals("username") || !PasswordField.getText()
+        .equals("password")) {
       Statustxt.setText("Username/Password incorrect. Don't have an account? Sign up now.");
     }
 
