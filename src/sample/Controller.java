@@ -118,26 +118,6 @@ public class Controller {
   @FXML public SplitPane profileSplit;
 
   @FXML public Button editButton;
-
-  @FXML public TextField profileNName ;
-  @FXML public TextField profileLName ;
-  @FXML public TextField proEmail ;
-  @FXML public TextField profNumber ;
-  @FXML public TextField profBirthday ;
-  @FXML public TextField profAddress ;
-  @FXML public ComboBox  countryCombo ;
-  @FXML public ChoiceBox modeBox  ;
-
-  @FXML public Button editFName ;
-  @FXML public Button editLName ;
-  @FXML public Button editEmail ;
-  @FXML public Button editNumber ;
-  @FXML public Button editBirthday ;
-  @FXML public Button editAddress ;
-  @FXML public Button  editCountry ;
-  @FXML public Button editMode  ;
-
-
   /*----------------------------------------------------------*/
   /* FAVOURITES PAGE */
   /*----------------------------------------------------------*/
@@ -226,31 +206,6 @@ public class Controller {
     homeStage.setScene(homePageScene);
     homeStage.show();
   }
-  @FXML
-  private void handleEditFName(ActionEvent event) {
-
-  }
-  public void handleEditEmail(ActionEvent actionEvent) {
-  }
-
-  public void handleEditBirthday(ActionEvent actionEvent) {
-  }
-
-  public void handleUpdateMode(ActionEvent actionEvent) {
-  }
-
-  public void handleEditAddress(ActionEvent actionEvent) {
-  }
-
-  public void handleEditNumber(ActionEvent actionEvent) {
-  }
-
-  public void handleEditCountry(ActionEvent actionEvent) {
-  }
-
-  public void handleEditLName(ActionEvent actionEvent) {
-  }
-
   /*----------------------------------------------------------*/
   /* FAVOURITES PAGE */
   public void handleHomeAction(ActionEvent event) throws IOException {
@@ -281,9 +236,4 @@ public class Controller {
     homeStage.setScene(homePageScene);
     homeStage.show();
   }
-
-
-
-  // Kevinnnnnnnnnnnnnnnnnnnnnnnnnnnnn
-
 }

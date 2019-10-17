@@ -17,7 +17,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 
-<GridPane fx:id="homePageBack" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<GridPane fx:id="homePageBack" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
   <columnConstraints>
     <ColumnConstraints />
     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
@@ -31,6 +31,14 @@
         <Button fx:id="menuButton" mnemonicParsing="false" onAction="#handleMenuAction" text="Menu" />
       </ToolBar>
       <StackPane fx:id="stackPane" alignment="CENTER_LEFT" prefHeight="376.0" prefWidth="598.0">
+        <TabPane id="tabPane" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE">
+          <Tab id="driversTab" text="Drivers">
+            <ListView id="driversListView" opacity="0.67" prefHeight="200.0" prefWidth="200.0" />
+          </Tab>
+          <Tab id="locationsTab" text="Locations">
+            <ListView id="locationsListView" opacity="0.67" prefHeight="318.0" prefWidth="390.0" />
+          </Tab>
+        </TabPane>
         <HBox fx:id="part1Menu" prefHeight="353.0" prefWidth="201.0">
           <VBox fx:id="drawer" prefHeight="353.0" prefWidth="200.0">
             <GridPane fx:id="imageGrid">
@@ -61,20 +69,6 @@
               </bottom>
             </BorderPane>
           </VBox>
-               <TabPane id="tabPane" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE">
-                 <tabs>
-                   <Tab id="driversTab" text="Drivers">
-                        <content>
-                           <ListView id="driversListView" opacity="0.67" prefHeight="200.0" prefWidth="200.0" />
-                        </content>
-                     </Tab>
-                   <Tab id="locationsTab" text="Locations">
-                        <content>
-                           <ListView id="locationsListView" opacity="0.67" prefHeight="318.0" prefWidth="390.0" />
-                        </content>
-                     </Tab>
-                 </tabs>
-               </TabPane>
         </HBox>
       </StackPane>
     </VBox>
