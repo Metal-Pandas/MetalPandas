@@ -1,11 +1,8 @@
-package sample;
+package io.github.MetalPandas;
 
 import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
+
 import javafx.animation.TranslateTransition;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -144,6 +141,7 @@ public class Controller {
       Statustxt.setText("Email/Password incorrect. Don't have an account? Sign up now.");
     }
 
+
   }
 
   @FXML
@@ -238,6 +236,5 @@ public class Controller {
     homeStage.show();
   }
 
-  // Kevinnnnnnnnnnnnnnnnnnnnnnnnnnnnn
 
 }

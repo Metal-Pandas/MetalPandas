@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Text?>
 
-<Pane fx:id="signUpPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<Pane fx:id="signUpPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="io.github.MetalPandas.Controller">
   <Pane fx:id="seeGender" layoutX="185.0" layoutY="305.0" prefHeight="74.0" prefWidth="230.0" />
   <TextField fx:id="firstName" layoutX="127.0" layoutY="208.0" promptText="First Name" />
   <TextField fx:id="lastName" layoutX="283.0" layoutY="208.0" prefHeight="26.0" prefWidth="180.0" promptText="Last Name" />
