@@ -23,7 +23,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.util.Duration;
-//this is a test
+// this is a test
 public class Controller {
   /*----------------------------------------------------------*/
   /* LOGIN PAGE ITEMS */
@@ -117,26 +117,40 @@ public class Controller {
   /*----------------------------------------------------------*/
   @FXML public SplitPane profileSplit;
 
-  @FXML public Button editButton;
+  @FXML public Pane profileBackdrop;
 
-  @FXML public TextField profileNName ;
-  @FXML public TextField profileLName ;
-  @FXML public TextField proEmail ;
-  @FXML public TextField profNumber ;
-  @FXML public TextField profBirthday ;
-  @FXML public TextField profAddress ;
-  @FXML public ComboBox  countryCombo ;
-  @FXML public ChoiceBox modeBox  ;
+  @FXML public Text profileFirst;
 
-  @FXML public Button editFName ;
-  @FXML public Button editLName ;
-  @FXML public Button editEmail ;
-  @FXML public Button editNumber ;
-  @FXML public Button editBirthday ;
-  @FXML public Button editAddress ;
-  @FXML public Button  editCountry ;
-  @FXML public Button editMode  ;
+  @FXML public Text profileLast;
+  @FXML public Text profileEmail;
 
+  @FXML public Text profileNumber;
+
+  @FXML public Text profileBirthday;
+
+  @FXML public Text profileAddress;
+
+  @FXML public Text profileCountry;
+
+  @FXML public Text profileMode;
+
+  @FXML public TextField profileFName;
+
+  @FXML public TextField profileLName;
+
+  @FXML public TextField proEmail;
+
+  @FXML public TextField profNumber;
+
+  @FXML public DatePicker profBirthday;
+
+  @FXML public TextField profAddress;
+
+  @FXML public ComboBox countryCombo;
+
+  @FXML public ChoiceBox modeBox;
+
+  @FXML public Button update;
   /*----------------------------------------------------------*/
   /* FAVOURITES PAGE */
   /*----------------------------------------------------------*/
@@ -149,19 +163,19 @@ public class Controller {
   /* LOGIN PAGE */
   @FXML
   private void handleLoginAction(ActionEvent event) throws IOException {
-    if (UsernameField.getText().equals("jsmith@abc.com") && PasswordField.getText().equals("password")) {
+    if (UsernameField.getText().equals("jsmith@abc.com")
+        && PasswordField.getText().equals("password")) {
 
       Parent homePageParent = FXMLLoader.load(getClass().getResource("homepage.fxml"));
       Scene homePageScene = new Scene(homePageParent);
       Stage homeStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
       homeStage.setScene(homePageScene);
       homeStage.show();
-
-    }  if (!UsernameField.getText().equals("jsmith@abc.com") || !PasswordField.getText()
-        .equals("password")) {
+    }
+    if (!UsernameField.getText().equals("jsmith@abc.com")
+        || !PasswordField.getText().equals("password")) {
       Statustxt.setText("Email/Password incorrect. Don't have an account? Sign up now.");
     }
-
   }
 
   @FXML
@@ -218,38 +232,13 @@ public class Controller {
 
   /*----------------------------------------------------------*/
   /* PROFILE PAGE */
-  public void handleEditAction(ActionEvent event) throws IOException {
+  public void handleUpdateAction(ActionEvent event) throws IOException {
     Parent homePageParent = FXMLLoader.load(getClass().getResource("editPage.fxml"));
     Scene homePageScene = new Scene(homePageParent);
     Stage homeStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);
     homeStage.show();
   }
-  @FXML
-  private void handleEditFName(ActionEvent event) {
-
-  }
-  public void handleEditEmail(ActionEvent actionEvent) {
-  }
-
-  public void handleEditBirthday(ActionEvent actionEvent) {
-  }
-
-  public void handleUpdateMode(ActionEvent actionEvent) {
-  }
-
-  public void handleEditAddress(ActionEvent actionEvent) {
-  }
-
-  public void handleEditNumber(ActionEvent actionEvent) {
-  }
-
-  public void handleEditCountry(ActionEvent actionEvent) {
-  }
-
-  public void handleEditLName(ActionEvent actionEvent) {
-  }
-
   /*----------------------------------------------------------*/
   /* FAVOURITES PAGE */
   public void handleHomeAction(ActionEvent event) throws IOException {
@@ -280,4 +269,5 @@ public class Controller {
     homeStage.setScene(homePageScene);
     homeStage.show();
   }
+
 }
