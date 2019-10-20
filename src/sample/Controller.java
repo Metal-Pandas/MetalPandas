@@ -95,13 +95,17 @@ public class Controller {
 
   @FXML public TextField email;
 
-  @FXML public TextField phoneNumber;
+  @FXML public TextField address;
 
-  @FXML public DatePicker birthday;
+  @FXML public ComboBox pickCountry;
 
   @FXML public PasswordField enterPassword;
 
   @FXML public PasswordField reenterPassword;
+
+  @FXML public TextField phoneNumber;
+
+  @FXML public DatePicker birthday;
 
   @FXML public Text iama;
 
@@ -159,7 +163,7 @@ public class Controller {
   /*----------------------------------------------------------*/
   /* EDIT PROFILE PAGE */
   /*----------------------------------------------------------*/
-  @FXML public Button done;
+  @FXML public Button updateProfile;
   /*----------------------------------------------------------*/
   /* LOGIN PAGE */
   @FXML
