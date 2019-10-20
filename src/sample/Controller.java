@@ -122,6 +122,7 @@ public class Controller {
   @FXML public Text profileFirst;
 
   @FXML public Text profileLast;
+
   @FXML public Text profileEmail;
 
   @FXML public Text profileNumber;
