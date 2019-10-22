@@ -2,6 +2,14 @@
   -fx-background-image: url("Background/test2.jpg");
 }
 
+#picEdit{
+  -fx-font-family: "Arial Narrow";
+  -fx-font-weight: bold;
+  -fx-text-fill: #0c590f;
+  -fx-background-color: #89D0F3;
+  -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.7), 6, 0.0, 0, 1);
+}
+
 #firstName {
   -fx-font-size: 12px;
   -fx-font-weight: bold;
