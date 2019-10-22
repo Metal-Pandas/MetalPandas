@@ -30,42 +30,45 @@
   <SplitPane fx:id="profileSplit" prefHeight="400.0" prefWidth="600.0" GridPane.columnIndex="1">
     <VBox fx:id="setUp" prefHeight="200.0" prefWidth="100.0">
       <ToolBar fx:id="topToolBar" prefHeight="40.0" prefWidth="200.0">
-        <Button fx:id="menuButton" mnemonicParsing="false" onAction="#handleMenuAction" text="Menu" />
+        <Button fx:id="menuButton" mnemonicParsing="false" onAction="#handleMenuAction" text="Menu">
+               <font>
+                  <Font name="Agency FB" size="15.0" />
+               </font></Button>
       </ToolBar>
       <StackPane fx:id="stackPane" alignment="CENTER_LEFT" prefHeight="388.0" prefWidth="598.0">
         <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
           <Pane fx:id="profileBackdrop" layoutX="9.0" layoutY="10.0" prefHeight="324.0" prefWidth="201.0">
             <Text fx:id="profileFirst" layoutX="58.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="First Name:">
                      <font>
-                        <Font name="Agency FB" size="14.0" />
+                        <Font name="Agency FB" size="15.0" />
                      </font></Text>
             <Text fx:id="profileLast" layoutX="61.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last Name:">
                      <font>
-                        <Font name="Agency FB" size="14.0" />
+                        <Font name="Agency FB" size="15.0" />
                      </font></Text>
             <Text fx:id="profileEmail" layoutX="75.0" layoutY="105.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email:">
                      <font>
-                        <Font name="Agency FB" size="14.0" />
+                        <Font name="Agency FB" size="15.0" />
                      </font></Text>
-            <Text fx:id="profileNumber" layoutX="49.0" layoutY="143.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone number::">
+            <Text fx:id="profileNumber" layoutX="49.0" layoutY="143.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone number:">
                      <font>
-                        <Font name="Agency FB" size="14.0" />
+                        <Font name="Agency FB" size="15.0" />
                      </font></Text>
             <Text fx:id="profileBirthday" layoutX="67.0" layoutY="175.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Birthday:">
                      <font>
-                        <Font name="Agency FB" size="14.0" />
+                        <Font name="Agency FB" size="15.0" />
                      </font></Text>
             <Text fx:id="profileAddress" layoutX="68.0" layoutY="217.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address:">
                      <font>
-                        <Font name="Agency FBHeavy Metal Rocking" size="14.0" />
+                        <Font size="15.0" />
                      </font></Text>
             <Text fx:id="profileCountry" layoutX="69.0" layoutY="255.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Country:">
                      <font>
-                        <Font name="Agency FB" size="14.0" />
+                        <Font name="Agency FB" size="15.0" />
                      </font></Text>
             <Text fx:id="profileMode" layoutX="74.0" layoutY="306.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mode:">
                      <font>
-                        <Font name="Agency FB" size="14.0" />
+                        <Font name="Agency FB" size="15.0" />
                      </font></Text>
           </Pane>
           <TextField fx:id="profileFName" layoutX="424.0" layoutY="14.0" prefHeight="28.0" prefWidth="149.0">
@@ -109,15 +112,24 @@
             </GridPane>
             <BorderPane fx:id="buttonMenu" prefHeight="206.0" prefWidth="200.0">
               <top>
-                <Button fx:id="profileButton" mnemonicParsing="false" onAction="#handleHomeAction" text="Home" BorderPane.alignment="CENTER" />
+                <Button fx:id="profileButton" mnemonicParsing="false" onAction="#handleHomeAction" prefHeight="28.0" prefWidth="71.0" text="Home" BorderPane.alignment="CENTER">
+                           <font>
+                              <Font name="Agency FB" size="15.0" />
+                           </font></Button>
               </top>
               <center>
-                <Button fx:id="favouritesButton" mnemonicParsing="false" onAction="#handleFavAction" text="Favourites" BorderPane.alignment="CENTER" />
+                <Button fx:id="favouritesButton" mnemonicParsing="false" onAction="#handleFavAction" prefHeight="28.0" prefWidth="72.0" text="Favourites" BorderPane.alignment="CENTER">
+                           <font>
+                              <Font name="Agency FB" size="15.0" />
+                           </font></Button>
               </center>
               <bottom>
                 <BorderPane fx:id="logOutBorderPane" prefHeight="38.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                   <top>
-                    <Button fx:id="logoutButton" mnemonicParsing="false" onAction="#handleLogoutAction" text="Log out" BorderPane.alignment="CENTER" />
+                    <Button fx:id="logoutButton" mnemonicParsing="false" onAction="#handleLogoutAction" prefHeight="28.0" prefWidth="74.0" text="Log out" BorderPane.alignment="CENTER">
+                                 <font>
+                                    <Font name="Agency FB" size="15.0" />
+                                 </font></Button>
                   </top>
                 </BorderPane>
               </bottom>
@@ -135,7 +147,10 @@
                      <RowConstraints maxHeight="171.0" minHeight="10.0" prefHeight="171.0" vgrow="SOMETIMES" />
               <RowConstraints maxHeight="99.0" minHeight="10.0" prefHeight="27.0" vgrow="SOMETIMES" />
             </rowConstraints>
-            <Button fx:id="update" mnemonicParsing="false" onAction="#handleUpdateAction" text="Update?" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
+            <Button fx:id="update" mnemonicParsing="false" onAction="#handleUpdateAction" prefHeight="19.0" prefWidth="72.0" text="Update?" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+                     <font>
+                        <Font name="Agency FB Bold" size="15.0" />
+                     </font></Button>
           </GridPane>
         </HBox>
 
