@@ -184,7 +184,9 @@ public class Controller {
   /* FORGOT EMAIL AND PASSWORD PAGE ITEMS */
   @FXML public Text phoneNumberInvalid;
 
-  @FXML public Text forgotPasswordTxt;
+  @FXML private Text forgotPasswordTxt;
+
+  @FXML public Button confirmButton;
   /*----------------------------------------------------------*/
   /*----------------------------------------------------------*/
   /* LOGIN PAGE */
