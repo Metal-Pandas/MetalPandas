@@ -3,5 +3,6 @@
   <component name="CssDialectMappings">
     <file url="file://$PROJECT_DIR$/src/sample/homepagestyles.css" dialect="JavaFX" />
     <file url="file://$PROJECT_DIR$/src/sample/loginstyles.css" dialect="JavaFX" />
+    <file url="file://$PROJECT_DIR$/src/sample/profilestyles.css" dialect="CLASSIC" />
   </component>
 </project>
