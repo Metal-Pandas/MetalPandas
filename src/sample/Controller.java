@@ -278,13 +278,13 @@ public class Controller {
 
   public void initialize(){
     try{
-      driverPass.setItems(FXCollections.observableArrayList("","Driver","Passenger"));
+      driverPass.setItems(FXCollections.observableArrayList("Driver","Passenger"));
     }
     catch(java.lang.NullPointerException exception){
       exception.printStackTrace();
     }
     try{
-      gender.setItems(FXCollections.observableArrayList("","Female","Male", "Non-binary", "Metal Panda"));
+      gender.setItems(FXCollections.observableArrayList("Female","Male", "Non-binary", "Metal Panda"));
     }
     catch(java.lang.NullPointerException exception){
       exception.printStackTrace();
