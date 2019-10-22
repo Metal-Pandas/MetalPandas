@@ -34,6 +34,13 @@ root {
   -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.7), 6, 0.0, 0, 1);
 }
 
+#forgotEmail{
+  -fx-font-size: 12px;
+  -fx-font-weight: bold;
+  -fx-text-fill: #0c590f;
+  -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.7), 6, 0.0, 0, 1);
+}
+
 #PasswordField {
   -fx-font-size: 12px;
   -fx-font-weight: bold;
@@ -45,6 +52,13 @@ root {
   -fx-font-size: 12px;
   -fx-font-weight: bold;
   -fx-text-fill: #66DCE1;
+  -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.7), 6, 0.0, 0, 1);
+}
+
+#forgotPassword{
+  -fx-font-size: 12px;
+  -fx-font-weight: bold;
+  -fx-text-fill: #0c590f;
   -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.7), 6, 0.0, 0, 1);
 }
 
