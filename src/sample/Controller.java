@@ -1,8 +1,14 @@
-package io.github.MetalPandas;
+package sample;
 
 import java.io.IOException;
-
+import java.net.URL;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.ResourceBundle;
 import javafx.animation.TranslateTransition;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -126,22 +132,25 @@ public class Controller {
   @FXML public Button done;
   /*----------------------------------------------------------*/
   /* LOGIN PAGE */
+  private String query;
+  private PreparedStatement pstmt;
+  private Connection conn;
+
   @FXML
-  private void handleLoginAction(ActionEvent event) throws IOException {
-    if (UsernameField.getText().equals("jsmith@abc.com") && PasswordField.getText().equals("password")) {
+  private void handleLoginAction(ActionEvent event) throws IOException{
+    if (UsernameField.getText().equals("Blah34@gmail.com")
+        && PasswordField.getText().equals("Football02")) {
 
       Parent homePageParent = FXMLLoader.load(getClass().getResource("homepage.fxml"));
       Scene homePageScene = new Scene(homePageParent);
       Stage homeStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
       homeStage.setScene(homePageScene);
       homeStage.show();
-
-    }  if (!UsernameField.getText().equals("jsmith@abc.com") || !PasswordField.getText()
-        .equals("password")) {
+    }
+    if (!UsernameField.getText().equals("Blah34@gmail.com")
+        || !PasswordField.getText().equals("Football02")) {
       Statustxt.setText("Email/Password incorrect. Don't have an account? Sign up now.");
     }
-
-
   }
 
   @FXML
@@ -235,6 +244,5 @@ public class Controller {
     homeStage.setScene(homePageScene);
     homeStage.show();
   }
-
 
 }
