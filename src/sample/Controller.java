@@ -223,10 +223,8 @@ public class Controller {
     homeStage.setScene(homePageScene);
     homeStage.show();
   }
-
   /*----------------------------------------------------------*/
   /* HOME PAGE */
-
   @FXML
   private void handleMenuAction(ActionEvent event) {
     TranslateTransition openNav = new TranslateTransition(new Duration(350), drawer);
@@ -266,7 +264,6 @@ public class Controller {
     homeStage.setScene(homePageScene);
     homeStage.show();
   }
-
   /*----------------------------------------------------------*/
   /* PROFILE PAGE */
   public void handleUpdateAction(ActionEvent event) throws IOException {
@@ -285,7 +282,6 @@ public class Controller {
     homeStage.setScene(homePageScene);
     homeStage.show();
   }
-
   /*----------------------------------------------------------*/
   /* SIGN UP PAGE */
   public void handleUpSignAction(ActionEvent event) throws IOException {
