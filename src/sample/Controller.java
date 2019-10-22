@@ -1,11 +1,14 @@
 package sample;
 
+import java.awt.image.BufferedImage;
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.animation.TranslateTransition;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -13,7 +16,10 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
@@ -21,9 +27,13 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
+import javafx.stage.DirectoryChooser;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.util.Duration;
-//this is a test
+import javax.imageio.ImageIO;
+
+// this is a test
 public class Controller {
   /*----------------------------------------------------------*/
   /* LOGIN PAGE ITEMS */
@@ -36,247 +46,58 @@ public class Controller {
 
   @FXML public TextField UsernameField;
 
+  @FXML public Text forgotEmail;
+
   @FXML public Text Password;
 
   @FXML public TextField PasswordField;
+
+  @FXML public Text forgotPassword;
 
   @FXML public Button loginButton;
 
   @FXML public Button signUp;
 
   @FXML public Text Statustxt;
-
-  /*----------------------------------------------------------*/
-  /* HOME PAGE ITEMS */
-  /*----------------------------------------------------------*/
-  @FXML public GridPane homePageBack;
-
-  @FXML public SplitPane homePageSplitPane;
-
-  @FXML public VBox setUp;
-
-  @FXML public ToolBar topToolBar;
-
-  @FXML public Button menuButton;
-
-  @FXML public StackPane stackPane;
-
-  @FXML public HBox part1Menu;
-
-  @FXML public VBox drawer;
-
-  @FXML public GridPane imageGrid;
-
-  @FXML public ImageView profileImage;
-
-  @FXML public BorderPane buttonMenu;
-
-  @FXML public Button profileButton;
-
-  @FXML public Button favouritesButton;
-
-  @FXML public BorderPane logOutBorderPane;
-
-  @FXML public Button logoutButton;
-  /*----------------------------------------------------------*/
-  /* SIGN UP PAGE */
-  /*----------------------------------------------------------*/
-  @FXML public Pane signUpPane;
-
-  @FXML public Pane seeGender;
-
-  @FXML public ImageView signProfilePic;
-
-  @FXML public Button picEdit;
-
-  @FXML public TextField firstName;
-
-  @FXML public TextField lastName;
-
-  @FXML public TextField email;
-
-  @FXML public TextField phoneNumber;
-
-  @FXML public DatePicker birthday;
-
-  @FXML public PasswordField enterPassword;
-
-  @FXML public PasswordField reenterPassword;
-
-  @FXML public Text iama;
-
-  @FXML public ChoiceBox driverPass;
-
-  @FXML public Text genderLabel;
-
-  @FXML public ChoiceBox gender;
-
-  @FXML public Button upSign;
-  /*----------------------------------------------------------*/
-  /* PROFILE PAGE */
-  /*----------------------------------------------------------*/
-  @FXML public SplitPane profileSplit;
-
-  @FXML public Button editButton;
-
-  @FXML public TextField profileNName ;
-  @FXML public TextField profileLName ;
-  @FXML public TextField proEmail ;
-  @FXML public TextField profNumber ;
-  @FXML public TextField profBirthday ;
-  @FXML public TextField profAddress ;
-  @FXML public ComboBox  countryCombo ;
-  @FXML public ChoiceBox modeBox  ;
-
-  @FXML public Button editFName ;
-  @FXML public Button editLName ;
-  @FXML public Button editEmail ;
-  @FXML public Button editNumber ;
-  @FXML public Button editBirthday ;
-  @FXML public Button editAddress ;
-  @FXML public Button  editCountry ;
-  @FXML public Button editMode  ;
-
-  /*----------------------------------------------------------*/
-  /* FAVOURITES PAGE */
-  /*----------------------------------------------------------*/
-  @FXML public SplitPane favSplit;
-  /*----------------------------------------------------------*/
-  /* EDIT PROFILE PAGE */
-  /*----------------------------------------------------------*/
-  @FXML public Button done;
   /*----------------------------------------------------------*/
   /* LOGIN PAGE */
-  @FXML
-  private void handleLoginAction(ActionEvent event) throws IOException {
-    if (UsernameField.getText().equals("jsmith@abc.com") && PasswordField.getText().equals("password")) {
+  /*----------------------------------------------------------*/
+  public void handleLoginAction(MouseEvent mouseEvent) throws IOException {
+    if (UsernameField.getText().equals("jsmith@abc.com")
+        && PasswordField.getText().equals("password")) {
 
       Parent homePageParent = FXMLLoader.load(getClass().getResource("homepage.fxml"));
       Scene homePageScene = new Scene(homePageParent);
-      Stage homeStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+      Stage homeStage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
       homeStage.setScene(homePageScene);
       homeStage.show();
-
-    }  if (!UsernameField.getText().equals("jsmith@abc.com") || !PasswordField.getText()
-        .equals("password")) {
+    }
+    if (!UsernameField.getText().equals("jsmith@abc.com")
+        || !PasswordField.getText().equals("password")) {
       Statustxt.setText("Email/Password incorrect. Don't have an account? Sign up now.");
     }
-
   }
 
-  @FXML
-  private void handleSignUpAction(ActionEvent event) throws IOException {
+  public void handleSignUpAction(MouseEvent mouseEvent) throws IOException {
     Parent homePageParent = FXMLLoader.load(getClass().getResource("signupPage.fxml"));
     Scene homePageScene = new Scene(homePageParent);
-    Stage homeStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+    Stage homeStage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);
     homeStage.show();
   }
 
-  /*----------------------------------------------------------*/
-  /* HOME PAGE */
-
-  @FXML
-  private void handleMenuAction(ActionEvent event) {
-    TranslateTransition openNav = new TranslateTransition(new Duration(350), drawer);
-    openNav.setToX(0);
-    TranslateTransition closeNav = new TranslateTransition(new Duration(350), drawer);
-    menuButton.setOnAction(
-        (ActionEvent evt) -> {
-          if (drawer.getTranslateX() != 0) {
-            openNav.play();
-          } else {
-            closeNav.setToX(-(drawer.getWidth()));
-            closeNav.play();
-          }
-        });
-  }
-
-  public void handleProfileAction(ActionEvent event) throws IOException {
-    Parent homePageParent = FXMLLoader.load(getClass().getResource("profile.fxml"));
+  public void handleForgotPasswordAction(MouseEvent mouseEvent) throws IOException {
+    Parent homePageParent = FXMLLoader.load(getClass().getResource("forgotPasswordPage.fxml"));
     Scene homePageScene = new Scene(homePageParent);
-    Stage homeStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+    Stage homeStage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);
     homeStage.show();
   }
 
-  public void handleFavAction(ActionEvent event) throws IOException {
-    Parent homePageParent = FXMLLoader.load(getClass().getResource("favourites.fxml"));
+  public void handleForgotEmailAction(MouseEvent mouseEvent) throws IOException {
+    Parent homePageParent = FXMLLoader.load(getClass().getResource("forgotEmailPage.fxml"));
     Scene homePageScene = new Scene(homePageParent);
-    Stage homeStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-    homeStage.setScene(homePageScene);
-    homeStage.show();
-  }
-
-  public void handleLogoutAction(ActionEvent event) throws IOException {
-    Parent homePageParent = FXMLLoader.load(getClass().getResource("loginpage.fxml"));
-    Scene homePageScene = new Scene(homePageParent);
-    Stage homeStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-    homeStage.setScene(homePageScene);
-    homeStage.show();
-  }
-
-  /*----------------------------------------------------------*/
-  /* PROFILE PAGE */
-  public void handleEditAction(ActionEvent event) throws IOException {
-    Parent homePageParent = FXMLLoader.load(getClass().getResource("editPage.fxml"));
-    Scene homePageScene = new Scene(homePageParent);
-    Stage homeStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-    homeStage.setScene(homePageScene);
-    homeStage.show();
-  }
-  @FXML
-  private void handleEditFName(ActionEvent event) {
-
-  }
-  public void handleEditEmail(ActionEvent actionEvent) {
-  }
-
-  public void handleEditBirthday(ActionEvent actionEvent) {
-  }
-
-  public void handleUpdateMode(ActionEvent actionEvent) {
-  }
-
-  public void handleEditAddress(ActionEvent actionEvent) {
-  }
-
-  public void handleEditNumber(ActionEvent actionEvent) {
-  }
-
-  public void handleEditCountry(ActionEvent actionEvent) {
-  }
-
-  public void handleEditLName(ActionEvent actionEvent) {
-  }
-
-  /*----------------------------------------------------------*/
-  /* FAVOURITES PAGE */
-  public void handleHomeAction(ActionEvent event) throws IOException {
-    Parent homePageParent = FXMLLoader.load(getClass().getResource("homepage.fxml"));
-    Scene homePageScene = new Scene(homePageParent);
-    Stage homeStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-    homeStage.setScene(homePageScene);
-    homeStage.show();
-  }
-
-  /*----------------------------------------------------------*/
-  /* SIGN UP PAGE */
-  public void handleUpSignAction(ActionEvent event) throws IOException {
-    Parent homePageParent = FXMLLoader.load(getClass().getResource("homepage.fxml"));
-    Scene homePageScene = new Scene(homePageParent);
-    Stage homeStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-    homeStage.setScene(homePageScene);
-    homeStage.show();
-  }
-
-  public void handlePicEdit(ActionEvent event) {}
-  /*----------------------------------------------------------*/
-  /* EDIT PROFILE PAGE */
-  public void handleDoneAction(ActionEvent event) throws IOException {
-    Parent homePageParent = FXMLLoader.load(getClass().getResource("profile.fxml"));
-    Scene homePageScene = new Scene(homePageParent);
-    Stage homeStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+    Stage homeStage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);
     homeStage.show();
   }
