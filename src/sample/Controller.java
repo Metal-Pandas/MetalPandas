@@ -91,7 +91,7 @@ public class Controller {
 
   @FXML public Button logoutButton;
   /*----------------------------------------------------------*/
-  /* SIGN UP PAGE */
+  /* SIGN UP PAGE ITEMS */
   /*----------------------------------------------------------*/
   @FXML public Pane signUpPane;
 
@@ -133,7 +133,7 @@ public class Controller {
 
   @FXML public Button upSign;
   /*----------------------------------------------------------*/
-  /* PROFILE PAGE */
+  /* PROFILE PAGE ITEMS */
   /*----------------------------------------------------------*/
   @FXML public SplitPane profileSplit;
 
@@ -173,17 +173,22 @@ public class Controller {
 
   @FXML public Button update;
   /*----------------------------------------------------------*/
-  /* FAVOURITES PAGE */
+  /* FAVOURITES PAGE ITEMS */
   /*----------------------------------------------------------*/
   @FXML public SplitPane favSplit;
   /*----------------------------------------------------------*/
-  /* EDIT PROFILE PAGE */
+  /* EDIT PROFILE PAGE ITEMS */
   /*----------------------------------------------------------*/
   @FXML public Button updateProfile;
   /*----------------------------------------------------------*/
+  /* FORGOT EMAIL AND PASSWORD PAGE ITEMS */
+  @FXML public Text phoneNumberInvalid;
+
+  @FXML public Text forgotPasswordTxt;
+  /*----------------------------------------------------------*/
+  /*----------------------------------------------------------*/
   /* LOGIN PAGE */
-  @FXML
-  private void handleLoginAction(ActionEvent event) throws IOException {
+  public void handleLoginAction(ActionEvent event) throws IOException {
     if (UsernameField.getText().equals("jsmith@abc.com")
         && PasswordField.getText().equals("password")) {
 
@@ -199,8 +204,7 @@ public class Controller {
     }
   }
 
-  @FXML
-  private void handleSignUpAction(ActionEvent event) throws IOException {
+  public void handleSignUpAction(ActionEvent event) throws IOException {
     Parent homePageParent = FXMLLoader.load(getClass().getResource("signupPage.fxml"));
     Scene homePageScene = new Scene(homePageParent);
     Stage homeStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -225,8 +229,7 @@ public class Controller {
   }
   /*----------------------------------------------------------*/
   /* HOME PAGE */
-  @FXML
-  private void handleMenuAction(ActionEvent event) {
+  public void handleMenuAction(ActionEvent event) {
     TranslateTransition openNav = new TranslateTransition(new Duration(350), drawer);
     openNav.setToX(0);
     TranslateTransition closeNav = new TranslateTransition(new Duration(350), drawer);
@@ -336,6 +339,12 @@ public class Controller {
     homeStage.setScene(homePageScene);
     homeStage.show();
   }
+  /*----------------------------------------------------------*/
+  /* FORGOT EMAIL AND PASSWORD PAGE */
+  public void handleConfirmButton(ActionEvent event) {
+    forgotPasswordTxt.setText("Email/Phone number is invalid.");
+    phoneNumberInvalid.setText("Phone number is invalid.");
+  }
 
   public void initialize(){
     try{
@@ -351,5 +360,6 @@ public class Controller {
       exception.printStackTrace();
     }
   }
+
 
 }
