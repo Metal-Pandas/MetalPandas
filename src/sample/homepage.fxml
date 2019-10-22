@@ -39,7 +39,7 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
               <ImageView fx:id="signProfilePic" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                <Image url="@profile image.jpg" />
+                <Image url="@profile_image.jpg" />
               </ImageView>
             </GridPane>
             <BorderPane fx:id="buttonMenu" prefHeight="206.0" prefWidth="200.0">

@@ -19,6 +19,7 @@ import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
@@ -182,12 +183,20 @@ public class Controller {
   @FXML public Button updateProfile;
   /*----------------------------------------------------------*/
   /* FORGOT EMAIL AND PASSWORD PAGE ITEMS */
+  /*----------------------------------------------------------*/
+  @FXML  public AnchorPane forgotEmailPane;
+
+  @FXML public TextField enterPhoneNumber;
+
   @FXML public Text phoneNumberInvalid;
+
+  @FXML public AnchorPane forgotPasswordPane;
+
+  @FXML public TextField phoneNumberEnter;
 
   @FXML private Text forgotPasswordTxt;
 
   @FXML public Button confirmButton;
-  /*----------------------------------------------------------*/
   /*----------------------------------------------------------*/
   /* LOGIN PAGE */
   public void handleLoginAction(ActionEvent event) throws IOException {
