@@ -3,7 +3,7 @@ root {
 }
 
 .root {
-  -fx-background-image: url("back.jpg");
+  -fx-background-image: url("Background/back.jpg");
 }
 
 #Title {

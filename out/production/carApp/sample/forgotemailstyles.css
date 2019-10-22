@@ -1,8 +1,4 @@
-#forgotPasswordPane{
-  -fx-background-image: url("Background/forgotPageBack.jpg");
-}
-
-#phoneNumberEnter{
+#enterPhoneNumber {
   -fx-font-size: 12px;
   -fx-font-weight: bold;
   -fx-text-fill: #0c590f;

@@ -1,13 +1,13 @@
 #profileSplit {
-  -fx-background-image: url("backgroundSignup.jpg");
+  -fx-background-image: url("Background/backgroundSignup.jpg");
 }
 
 #drawer {
-  -fx-background-image: url("back.jpg");
+  -fx-background-image: url("Background/back.jpg");
 }
 
 #profileImage {
-  -fx-background-image: url("profile image.jpg");
+  -fx-background-image: url("profile_image.jpg");
 }
 
 #profileBackdrop{
