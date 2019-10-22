@@ -1,5 +1,5 @@
 #signUpPane {
-  -fx-background-image: url("test2.jpg");
+  -fx-background-image: url("Background/test2.jpg");
 }
 
 #firstName {
@@ -23,7 +23,35 @@
   -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.7), 6, 0.0, 0, 1);
 }
 
+#address{
+  -fx-font-size: 12px;
+  -fx-font-weight: bold;
+  -fx-text-fill: #0c590f;
+  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.7), 6, 0.0, 0, 1);
+}
+
+#pickCountry{
+  -fx-font-size: 12px;
+  -fx-font-weight: bold;
+  -fx-text-fill: #0c590f;
+  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.7), 6, 0.0, 0, 1);
+}
+
 #phoneNumber {
+  -fx-font-size: 12px;
+  -fx-font-weight: bold;
+  -fx-text-fill: #0c590f;
+  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.7), 6, 0.0, 0, 1);
+}
+
+#enterPassword{
+  -fx-font-size: 12px;
+  -fx-font-weight: bold;
+  -fx-text-fill: #0c590f;
+  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.7), 6, 0.0, 0, 1);
+}
+
+#reenterPassword{
   -fx-font-size: 12px;
   -fx-font-weight: bold;
   -fx-text-fill: #0c590f;
@@ -35,14 +63,6 @@
   -fx-font-weight: bold;
   -fx-text-fill: #0c590f;
   -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.7), 6, 0.0, 0, 1);
-}
-
-#enterPassword{
-
-}
-
-#reenterPassword{
-
 }
 
 #driverPass {
