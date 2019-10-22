@@ -1,4 +1,4 @@
-package sample.Controllers;
+package sample;
 
 import java.awt.image.BufferedImage;
 import java.io.File;
@@ -62,13 +62,13 @@ public class Controller {
   /*----------------------------------------------------------*/
   /* LOGIN PAGE */
   /*----------------------------------------------------------*/
-  public void handleLoginAction(ActionEvent event) throws IOException {
+  public void handleLoginAction(MouseEvent mouseEvent) throws IOException {
     if (UsernameField.getText().equals("jsmith@abc.com")
         && PasswordField.getText().equals("password")) {
 
       Parent homePageParent = FXMLLoader.load(getClass().getResource("homepage.fxml"));
       Scene homePageScene = new Scene(homePageParent);
-      Stage homeStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+      Stage homeStage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
       homeStage.setScene(homePageScene);
       homeStage.show();
     }
@@ -78,10 +78,10 @@ public class Controller {
     }
   }
 
-  public void handleSignUpAction(ActionEvent event) throws IOException {
+  public void handleSignUpAction(MouseEvent mouseEvent) throws IOException {
     Parent homePageParent = FXMLLoader.load(getClass().getResource("signupPage.fxml"));
     Scene homePageScene = new Scene(homePageParent);
-    Stage homeStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+    Stage homeStage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);
     homeStage.show();
   }
