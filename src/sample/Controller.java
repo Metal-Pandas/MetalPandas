@@ -346,14 +346,13 @@ public class Controller {
       driverPass.setItems(FXCollections.observableArrayList("Driver","Passenger"));
     }
     catch(java.lang.NullPointerException exception){
-      exception.printStackTrace();
+      //exception.printStackTrace();
     }
     try{
       gender.setItems(FXCollections.observableArrayList("Female","Male", "Non-binary", "Metal Panda"));
     }
     catch(java.lang.NullPointerException exception){
-      exception.printStackTrace();
+      //exception.printStackTrace();
     }
   }
-
 }
