@@ -45,16 +45,19 @@ public class Controller {
 
   @FXML public TextField UsernameField;
 
+  @FXML public Text forgotEmail;
+
   @FXML public Text Password;
 
   @FXML public TextField PasswordField;
+
+  @FXML public Text forgotPassword;
 
   @FXML public Button loginButton;
 
   @FXML public Button signUp;
 
   @FXML public Text Statustxt;
-
   /*----------------------------------------------------------*/
   /* HOME PAGE ITEMS */
   /*----------------------------------------------------------*/
@@ -98,11 +101,9 @@ public class Controller {
 
   @FXML public Button picEdit;
 
-  @FXML
-  private FileChooser chooseImage;
+  @FXML private FileChooser chooseImage;
 
-  @FXML
-  private File filePath;
+  @FXML private File filePath;
 
   @FXML public TextField firstName;
 
@@ -207,6 +208,22 @@ public class Controller {
     homeStage.show();
   }
 
+  public void handleForgotPasswordAction(MouseEvent mouseEvent) throws IOException {
+    Parent homePageParent = FXMLLoader.load(getClass().getResource("editPage.fxml"));
+    Scene homePageScene = new Scene(homePageParent);
+    Stage homeStage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
+    homeStage.setScene(homePageScene);
+    homeStage.show();
+  }
+
+  public void handleForgotEmailAction(MouseEvent mouseEvent) throws IOException {
+    Parent homePageParent = FXMLLoader.load(getClass().getResource("editPage.fxml"));
+    Scene homePageScene = new Scene(homePageParent);
+    Stage homeStage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
+    homeStage.setScene(homePageScene);
+    homeStage.show();
+  }
+
   /*----------------------------------------------------------*/
   /* HOME PAGE */
 
@@ -280,17 +297,6 @@ public class Controller {
   }
 
   public void handlePicEdit(ActionEvent event) {
-
-    /*final DirectoryChooser profilePictureChooser = new DirectoryChooser();
-
-    Stage stage = (Stage) signUpPane.getScene().getWindow();
-
-    File file = profilePictureChooser.showDialog(stage);
-
-    if (file != null){
-      System.out.println("Path : " + file.getAbsolutePath());
-
-    }*/
 
     Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
 
