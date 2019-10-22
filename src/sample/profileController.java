@@ -1,4 +1,4 @@
-package sample.Controllers;
+package sample;
 
 import java.io.IOException;
 import javafx.animation.TranslateTransition;
@@ -10,21 +10,60 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.SplitPane;
+import javafx.scene.control.TextField;
 import javafx.scene.control.ToolBar;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
-public class favouritesController {
+public class profileController {
   /*----------------------------------------------------------*/
-  /* FAVOURITES PAGE ITEMS */
+  /* PROFILE PAGE ITEMS */
   /*----------------------------------------------------------*/
-  @FXML public SplitPane favSplit;
+  @FXML public SplitPane profileSplit;
+
+  @FXML public Pane profileBackdrop;
+
+  @FXML public Text profileFirst;
+
+  @FXML public Text profileLast;
+
+  @FXML public Text profileEmail;
+
+  @FXML public Text profileNumber;
+
+  @FXML public Text profileBirthday;
+
+  @FXML public Text profileAddress;
+
+  @FXML public Text profileCountry;
+
+  @FXML public Text profileMode;
+
+  @FXML public TextField profileFName;
+
+  @FXML public TextField profileLName;
+
+  @FXML public TextField proEmail;
+
+  @FXML public TextField profNumber;
+
+  @FXML public TextField profBirthday;
+
+  @FXML public TextField profAddress;
+
+  @FXML public TextField countryCombo;
+
+  @FXML public TextField modeBox;
+
+  @FXML public Button update;
 
   @FXML public GridPane homePageBack;
 
@@ -53,9 +92,8 @@ public class favouritesController {
   @FXML public BorderPane logOutBorderPane;
 
   @FXML public Button logoutButton;
-
   /*----------------------------------------------------------*/
-  /* FAVOURITES PAGE */
+  /* PROFILE PAGE */
   /*----------------------------------------------------------*/
   public void handleMenuAction(ActionEvent event) {
     TranslateTransition openNav = new TranslateTransition(new Duration(350), drawer);
@@ -72,16 +110,24 @@ public class favouritesController {
         });
   }
 
-  public void handleHomeAction(ActionEvent event) throws IOException {
-    Parent homePageParent = FXMLLoader.load(getClass().getResource("homepage.fxml"));
+  public void handleUpdateAction(ActionEvent event) throws IOException {
+    Parent homePageParent = FXMLLoader.load(getClass().getResource("editPage.fxml"));
     Scene homePageScene = new Scene(homePageParent);
     Stage homeStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);
     homeStage.show();
   }
 
-  public void handleProfileAction(ActionEvent event) throws IOException {
+  public void handleHomeAction(ActionEvent event) throws IOException {
     Parent homePageParent = FXMLLoader.load(getClass().getResource("profile.fxml"));
+    Scene homePageScene = new Scene(homePageParent);
+    Stage homeStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+    homeStage.setScene(homePageScene);
+    homeStage.show();
+  }
+
+  public void handleFavAction(ActionEvent event) throws IOException {
+    Parent homePageParent = FXMLLoader.load(getClass().getResource("favourites.fxml"));
     Scene homePageScene = new Scene(homePageParent);
     Stage homeStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);
@@ -95,6 +141,5 @@ public class favouritesController {
     homeStage.setScene(homePageScene);
     homeStage.show();
   }
-
 
 }

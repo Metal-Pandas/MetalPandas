@@ -1,4 +1,4 @@
-package sample.Controllers;
+package sample;
 
 import java.awt.image.BufferedImage;
 import java.io.File;
