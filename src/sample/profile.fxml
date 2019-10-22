@@ -40,35 +40,35 @@
           <Pane fx:id="profileBackdrop" layoutX="9.0" layoutY="16.0" prefHeight="324.0" prefWidth="201.0">
             <Text fx:id="profileFirst" layoutX="58.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="First Name:">
                      <font>
-                        <Font name="Heavy Metal Rocking" size="14.0" />
+                        <Font name="Agency FB" size="14.0" />
                      </font></Text>
             <Text fx:id="profileLast" layoutX="61.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last Name:">
                      <font>
-                        <Font name="Heavy Metal Rocking" size="14.0" />
+                        <Font name="Agency FB" size="14.0" />
                      </font></Text>
             <Text fx:id="profileEmail" layoutX="75.0" layoutY="105.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email:">
                      <font>
-                        <Font name="Heavy Metal Rocking" size="14.0" />
+                        <Font name="Agency FB" size="14.0" />
                      </font></Text>
             <Text fx:id="profileNumber" layoutX="49.0" layoutY="143.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone number::">
                      <font>
-                        <Font name="Heavy Metal Rocking" size="14.0" />
+                        <Font name="Agency FB" size="14.0" />
                      </font></Text>
             <Text fx:id="profileBirthday" layoutX="67.0" layoutY="175.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Birthday:">
                      <font>
-                        <Font name="Heavy Metal Rocking" size="14.0" />
+                        <Font name="Agency FB" size="14.0" />
                      </font></Text>
             <Text fx:id="profileAddress" layoutX="68.0" layoutY="217.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address:">
                      <font>
-                        <Font name="Heavy Metal Rocking" size="14.0" />
+                        <Font name="Agency FBHeavy Metal Rocking" size="14.0" />
                      </font></Text>
             <Text fx:id="profileCountry" layoutX="69.0" layoutY="255.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Country:">
                      <font>
-                        <Font name="Heavy Metal Rocking" size="14.0" />
+                        <Font name="Agency FB" size="14.0" />
                      </font></Text>
             <Text fx:id="profileMode" layoutX="74.0" layoutY="306.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mode:">
                      <font>
-                        <Font name="Heavy Metal Rocking" size="14.0" />
+                        <Font name="Agency FB" size="14.0" />
                      </font></Text>
           </Pane>
           <TextField fx:id="profileFName" layoutX="265.0" layoutY="20.0" prefHeight="28.0" prefWidth="149.0">

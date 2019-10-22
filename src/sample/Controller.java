@@ -98,7 +98,7 @@ public class Controller {
 
   @FXML public TextField address;
 
-  @FXML public ComboBox pickCountry;
+  @FXML public TextField pickCountry;
 
   @FXML public PasswordField enterPassword;
 
@@ -268,7 +268,7 @@ public class Controller {
   public void handlePicEdit(ActionEvent event) {}
   /*----------------------------------------------------------*/
   /* EDIT PROFILE PAGE */
-  public void handleDoneAction(ActionEvent event) throws IOException {
+  public void handleEditProfileAction(ActionEvent event) throws IOException {
     Parent homePageParent = FXMLLoader.load(getClass().getResource("profile.fxml"));
     Scene homePageScene = new Scene(homePageParent);
     Stage homeStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
