@@ -11,6 +11,9 @@ profile, payment, and area they are providing or using the service. The user wil
 - Nick Wright
 - Owen Rose
 
+## Demonstration
+https://youtu.be/nQOjyDzGnyU
+
 ## Documentation
 JavaDocs in IDE.
 
@@ -34,3 +37,5 @@ Stack Overflow, Scenebuilder, IntelliJ
 
 ## History
 10/7/2019 This project started out as a GUI with no data base attached. 
+10/15/2019 The project is linked to a database with tables. The project also now has a layout for future screens.
+10/20/2019 The first prototype is complete with full CSS styling, complete with logic to move between pages and a working login method.

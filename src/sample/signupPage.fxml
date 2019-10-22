@@ -14,22 +14,12 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Text?>
 
-<Pane fx:id="signUpPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
-  <Pane fx:id="seeGender" layoutX="185.0" layoutY="305.0" prefHeight="74.0" prefWidth="230.0" />
-  <TextField fx:id="firstName" layoutX="129.0" layoutY="177.0" prefHeight="25.0" prefWidth="150.0" promptText="First Name" />
-  <TextField fx:id="lastName" layoutX="290.0" layoutY="176.0" prefHeight="26.0" prefWidth="173.0" promptText="Last Name" />
-  <TextField fx:id="email" layoutX="129.0" layoutY="241.0" prefHeight="26.0" prefWidth="336.0" promptText="Email Address" />
-  <TextField fx:id="phoneNumber" layoutX="129.0" layoutY="210.0" prefHeight="25.0" prefWidth="150.0" promptText="Phone Number" />
-  <DatePicker fx:id="birthday" layoutX="290.0" layoutY="210.0" prefHeight="25.0" prefWidth="173.0" promptText="Birthday" />
-  <ImageView fx:id="signProfilePic" fitHeight="150.0" fitWidth="200.0" layoutX="200.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+<Pane fx:id="signUpPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+  <Pane fx:id="seeGender" layoutX="183.0" layoutY="327.0" prefHeight="70.0" prefWidth="230.0" />
+  <ImageView fx:id="signProfilePic" fitHeight="150.0" fitWidth="200.0" layoutX="194.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
     <Image url="@profile image.jpg" />
   </ImageView>
-  <Text fx:id="iama" layoutX="191.0" layoutY="328.0" strokeType="OUTSIDE" strokeWidth="0.0" text="I am a:" wrappingWidth="58.87198829650879" />
-  <ChoiceBox fx:id="driverPass" layoutX="255.0" layoutY="310.0" prefWidth="150.0" />
-  <ChoiceBox fx:id="gender" layoutX="255.0" layoutY="347.0" prefWidth="150.0" />
-  <Text fx:id="genderLabel" layoutX="191.0" layoutY="365.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gender" wrappingWidth="42.87198829650879" />
-  <Button fx:id="upSign" layoutX="467.0" layoutY="348.0" mnemonicParsing="false" onAction="#handleUpSignAction" text="Sign up!" />
-  <GridPane layoutX="200.0" layoutY="15.0" prefHeight="150.0" prefWidth="194.0">
+  <GridPane layoutX="194.0" layoutY="3.0" prefHeight="150.0" prefWidth="194.0">
     <columnConstraints>
       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -41,8 +31,20 @@
     </rowConstraints>
     <Button fx:id="picEdit" mnemonicParsing="false" onAction="#handlePicEdit" text="Edit" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.valignment="CENTER" />
   </GridPane>
-   <PasswordField fx:id="enterPassword" layoutX="130.0" layoutY="273.0" prefHeight="26.0" prefWidth="150.0" promptText="Enter Password" />
-   <PasswordField fx:id="reenterPassword" layoutX="291.0" layoutY="273.0" prefHeight="26.0" prefWidth="173.0" promptText="Reenter Password" />
+  <TextField fx:id="firstName" layoutX="109.0" layoutY="155.0" prefHeight="25.0" prefWidth="173.0" promptText="First Name" />
+  <TextField fx:id="lastName" layoutX="288.0" layoutY="154.0" prefHeight="26.0" prefWidth="173.0" promptText="Last Name" />
+  <TextField fx:id="email" layoutX="109.0" layoutY="183.0" prefHeight="26.0" prefWidth="352.0" promptText="Email Address" />
+  <TextField fx:id="address" layoutX="110.0" layoutY="212.0" prefHeight="25.0" prefWidth="352.0" promptText="Address" />
+  <TextField fx:id="phoneNumber" layoutX="290.0" layoutY="240.0" prefHeight="25.0" prefWidth="173.0" promptText="Phone Number" />
+   <TextField fx:id="pickCountry" layoutX="110.0" layoutY="240.0" prefHeight="25.0" prefWidth="173.0" promptText="Country" />
+  <PasswordField fx:id="enterPassword" layoutX="110.0" layoutY="269.0" prefHeight="26.0" prefWidth="173.0" promptText="Enter Password" />
+  <PasswordField fx:id="reenterPassword" layoutX="291.0" layoutY="269.0" prefHeight="26.0" prefWidth="173.0" promptText="Reenter Password" />
+   <DatePicker fx:id="birthday" layoutX="204.0" layoutY="298.0" />
+  <Text fx:id="iama" layoutX="189.0" layoutY="350.0" strokeType="OUTSIDE" strokeWidth="0.0" text="I am a:" wrappingWidth="58.87198829650879" />
+  <ChoiceBox fx:id="driverPass" layoutX="253.0" layoutY="332.0" prefHeight="25.0" prefWidth="150.0" />
+  <Text fx:id="genderLabel" layoutX="189.0" layoutY="383.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gender" wrappingWidth="42.87198829650879" />
+  <ChoiceBox fx:id="gender" layoutX="253.0" layoutY="365.0" prefHeight="25.0" prefWidth="150.0" />
+  <Button fx:id="upSign" layoutX="467.0" layoutY="366.0" mnemonicParsing="false" onAction="#handleUpSignAction" text="Sign Up!" />
   <stylesheets>
     <URL value="@signupstyles.css" />
   </stylesheets>
