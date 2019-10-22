@@ -197,6 +197,8 @@ public class Controller {
   @FXML private Text forgotPasswordTxt;
 
   @FXML public Button confirmButton;
+
+  @FXML public Button backButton;
   /*----------------------------------------------------------*/
   /* LOGIN PAGE */
   public void handleLoginAction(ActionEvent event) throws IOException {
@@ -224,7 +226,7 @@ public class Controller {
   }
 
   public void handleForgotPasswordAction(MouseEvent mouseEvent) throws IOException {
-    Parent homePageParent = FXMLLoader.load(getClass().getResource("editPage.fxml"));
+    Parent homePageParent = FXMLLoader.load(getClass().getResource("forgotPasswordPage.fxml"));
     Scene homePageScene = new Scene(homePageParent);
     Stage homeStage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);
@@ -232,7 +234,7 @@ public class Controller {
   }
 
   public void handleForgotEmailAction(MouseEvent mouseEvent) throws IOException {
-    Parent homePageParent = FXMLLoader.load(getClass().getResource("editPage.fxml"));
+    Parent homePageParent = FXMLLoader.load(getClass().getResource("forgotEmailPage.fxml"));
     Scene homePageScene = new Scene(homePageParent);
     Stage homeStage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);
@@ -337,7 +339,6 @@ public class Controller {
     catch (IOException e){
 
       System.out.println(e.getMessage());
-
     }
 
   }
@@ -357,6 +358,14 @@ public class Controller {
     phoneNumberInvalid.setText("Phone number is invalid.");
   }
 
+  public void handleBackAction(ActionEvent event) throws IOException {
+    Parent homePageParent = FXMLLoader.load(getClass().getResource("loginpage.fxml"));
+    Scene homePageScene = new Scene(homePageParent);
+    Stage homeStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+    homeStage.setScene(homePageScene);
+    homeStage.show();
+  }
+  /*----------------------------------------------------------*/
   public void initialize(){
     try{
       driverPass.setItems(FXCollections.observableArrayList("Driver","Passenger"));

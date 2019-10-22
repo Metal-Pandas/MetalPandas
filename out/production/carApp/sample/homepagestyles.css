@@ -7,7 +7,7 @@
 }
 
 #profileImage {
-  -fx-background-image: url("Profile picture and Logo/profile image.jpg");
+  -fx-background-image: url("profile_image.jpg");
 }
 
 #homeBackDrop{
