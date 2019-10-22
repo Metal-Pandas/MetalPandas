@@ -14,6 +14,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
@@ -109,11 +110,11 @@ public class Controller {
 
   @FXML public Text iama;
 
-  @FXML public ChoiceBox driverPass;
+  @FXML public ChoiceBox<String> driverPass;
 
   @FXML public Text genderLabel;
 
-  @FXML public ChoiceBox gender;
+  @FXML public ChoiceBox<String> gender;
 
   @FXML public Button upSign;
   /*----------------------------------------------------------*/
@@ -275,4 +276,18 @@ public class Controller {
     homeStage.show();
   }
 
+  public void initialize(){
+    try{
+      driverPass.setItems(FXCollections.observableArrayList("","Driver","Passenger"));
+    }
+    catch(java.lang.NullPointerException exception){
+      exception.printStackTrace();
+    }
+    try{
+      gender.setItems(FXCollections.observableArrayList("","Female","Male", "Non-binary", "Metal Panda"));
+    }
+    catch(java.lang.NullPointerException exception){
+      exception.printStackTrace();
+    }
+  }
 }
