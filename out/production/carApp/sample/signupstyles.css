@@ -3,7 +3,7 @@
 }
 
 #picEdit{
-  -fx-font-family: "Arial Narrow";
+  -fx-font-family: "Agency FB";
   -fx-font-weight: bold;
   -fx-text-fill: #0c590f;
   -fx-background-color: #89D0F3;
@@ -11,6 +11,7 @@
 }
 
 #firstName {
+  -fx-font-family: "Agency FB";
   -fx-font-size: 12px;
   -fx-font-weight: bold;
   -fx-text-fill: #0c590f;
@@ -18,6 +19,7 @@
 }
 
 #lastName {
+  -fx-font-family: "Agency FB";
   -fx-font-size: 12px;
   -fx-font-weight: bold;
   -fx-text-fill: #0c590f;
@@ -25,6 +27,7 @@
 }
 
 #email {
+  -fx-font-family: "Agency FB";
   -fx-font-size: 12px;
   -fx-font-weight: bold;
   -fx-text-fill: #0c590f;
@@ -32,6 +35,7 @@
 }
 
 #address{
+  -fx-font-family: "Agency FB";
   -fx-font-size: 12px;
   -fx-font-weight: bold;
   -fx-text-fill: #0c590f;
@@ -39,6 +43,7 @@
 }
 
 #pickCountry{
+  -fx-font-family: "Agency FB";
   -fx-font-size: 12px;
   -fx-font-weight: bold;
   -fx-text-fill: #0c590f;
@@ -46,6 +51,7 @@
 }
 
 #phoneNumber {
+  -fx-font-family: "Agency FB";
   -fx-font-size: 12px;
   -fx-font-weight: bold;
   -fx-text-fill: #0c590f;
@@ -53,6 +59,7 @@
 }
 
 #enterPassword{
+  -fx-font-family: "Agency FB";
   -fx-font-size: 12px;
   -fx-font-weight: bold;
   -fx-text-fill: #0c590f;
@@ -60,6 +67,7 @@
 }
 
 #reenterPassword{
+  -fx-font-family: "Agency FB";
   -fx-font-size: 12px;
   -fx-font-weight: bold;
   -fx-text-fill: #0c590f;
@@ -67,6 +75,7 @@
 }
 
 #birthday {
+  -fx-font-family: "Agency FB";
   -fx-font-size: 12px;
   -fx-font-weight: bold;
   -fx-text-fill: #0c590f;
@@ -81,6 +90,7 @@
 }
 
 #gender {
+  -fx-font-family: "Agency FB";
   -fx-font-size: 12px;
   -fx-font-weight: bold;
   -fx-text-fill: #0c590f;
@@ -93,6 +103,7 @@
 }
 
 #iama {
+  -fx-font-family: "Agency FB";
   -fx-font-size: 12px;
   -fx-font-weight: bold;
   -fx-text-fill: #66DCE1;
@@ -100,6 +111,7 @@
 }
 
 #genderLabel {
+  -fx-font-family: "Agency FB";
   -fx-font-size: 12px;
   -fx-font-weight: bold;
   -fx-text-fill: #66DCE1;
@@ -107,7 +119,7 @@
 }
 
 #upSign {
-  -fx-font-family: "Arial Narrow";
+  -fx-font-family: "Agency FB";
   -fx-font-weight: bold;
   -fx-text-fill: #0c590f;
   -fx-background-color: #89D0F3;
