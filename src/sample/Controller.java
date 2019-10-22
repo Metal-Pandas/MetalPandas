@@ -35,7 +35,7 @@ import javax.imageio.ImageIO;
 // this is a test
 public class Controller {
   /*----------------------------------------------------------*/
-  /* LOGIN PAGE */
+  /* LOGIN PAGE ITEMS */
   /*----------------------------------------------------------*/
   @FXML public Pane Backdrop;
 
@@ -59,7 +59,7 @@ public class Controller {
 
   @FXML public Text Statustxt;
   /*----------------------------------------------------------*/
-  /* HOME PAGE */
+  /* HOME PAGE ITEMS */
   /*----------------------------------------------------------*/
   @FXML public GridPane homePageBack;
 
@@ -91,7 +91,7 @@ public class Controller {
 
   @FXML public Button logoutButton;
   /*----------------------------------------------------------*/
-  /* SIGN UP PAGE */
+  /* SIGN UP PAGE ITEMS */
   /*----------------------------------------------------------*/
   @FXML public Pane signUpPane;
 
@@ -133,7 +133,7 @@ public class Controller {
 
   @FXML public Button upSign;
   /*----------------------------------------------------------*/
-  /* PROFILE PAGE */
+  /* PROFILE PAGE ITEMS */
   /*----------------------------------------------------------*/
   @FXML public SplitPane profileSplit;
 
@@ -173,15 +173,15 @@ public class Controller {
 
   @FXML public Button update;
   /*----------------------------------------------------------*/
-  /* FAVOURITES PAGE */
+  /* FAVOURITES PAGE ITEMS */
   /*----------------------------------------------------------*/
   @FXML public SplitPane favSplit;
   /*----------------------------------------------------------*/
-  /* EDIT PROFILE PAGE */
+  /* EDIT PROFILE PAGE ITEMS */
   /*----------------------------------------------------------*/
   @FXML public Button updateProfile;
   /*----------------------------------------------------------*/
-  /* FORGOT EMAIL AND PASSWORD PAGE */
+  /* FORGOT EMAIL AND PASSWORD PAGE ITEMS */
   @FXML public Text phoneNumberInvalid;
 
   @FXML private Text forgotPasswordTxt;
