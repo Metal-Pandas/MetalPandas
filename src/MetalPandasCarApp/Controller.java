@@ -37,8 +37,6 @@ import javax.imageio.ImageIO;
 
 // this is a test
 public class Controller {
-
-
   /*----------------------------------------------------------*/
   /* Database */
   /*----------------------------------------------------------*/
