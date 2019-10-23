@@ -30,7 +30,12 @@ public class forgotEmailController {
   /* FORGOT EMAIL PAGE */
   /*----------------------------------------------------------*/
   public void handleConfirmButton(ActionEvent event) {
-    phoneNumberInvalid.setText("Phone number is invalid.");
+    if(enterPhoneNumber.getText().equals("2392345555")){
+      phoneNumberInvalid.setText("A message was sent to the phone number.");
+    }
+    if(!enterPhoneNumber.getText().equals("2392345555")){
+      phoneNumberInvalid.setText("Phone number is invalid.");
+    }
   }
 
   public void handleBackAction(ActionEvent event) throws IOException {
