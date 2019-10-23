@@ -37,77 +37,13 @@ import javax.imageio.ImageIO;
 
 // this is a test
 public class Controller {
-  /*----------------------------------------------------------*/
-  /* LOGIN PAGE ITEMS */
-  /*----------------------------------------------------------*/
-  @FXML public Pane Backdrop;
 
-  @FXML public ImageView Title;
-
-  @FXML public Text Username;
-
-  @FXML public TextField UsernameField;
-
-  @FXML public Text forgotEmail;
-
-  @FXML public Text Password;
-
-  @FXML public TextField PasswordField;
-
-  @FXML public Text forgotPassword;
-
-  @FXML public Button loginButton;
-
-  @FXML public Button signUp;
-
-  @FXML public Text Statustxt;
 
   /*----------------------------------------------------------*/
   /* Database */
   /*----------------------------------------------------------*/
     private Connection conn;
-  /*----------------------------------------------------------*/
-  /* LOGIN PAGE */
-  /*----------------------------------------------------------*/
-  public void handleLoginAction(MouseEvent mouseEvent) throws IOException {
-    if (UsernameField.getText().equals("jsmith@abc.com")
-        && PasswordField.getText().equals("password")) {
 
-      Parent homePageParent = FXMLLoader.load(getClass().getResource("homepage.fxml"));
-      Scene homePageScene = new Scene(homePageParent);
-      Stage homeStage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
-      homeStage.setScene(homePageScene);
-      homeStage.show();
-    }
-    if (!UsernameField.getText().equals("jsmith@abc.com")
-        || !PasswordField.getText().equals("password")) {
-      Statustxt.setText("Email/Password incorrect. Don't have an account? Sign up now.");
-    }
-  }
-
-  public void handleSignUpAction(MouseEvent mouseEvent) throws IOException {
-    Parent homePageParent = FXMLLoader.load(getClass().getResource("signupPage.fxml"));
-    Scene homePageScene = new Scene(homePageParent);
-    Stage homeStage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
-    homeStage.setScene(homePageScene);
-    homeStage.show();
-  }
-
-  public void handleForgotPasswordAction(MouseEvent mouseEvent) throws IOException {
-    Parent homePageParent = FXMLLoader.load(getClass().getResource("forgotPasswordPage.fxml"));
-    Scene homePageScene = new Scene(homePageParent);
-    Stage homeStage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
-    homeStage.setScene(homePageScene);
-    homeStage.show();
-  }
-
-  public void handleForgotEmailAction(MouseEvent mouseEvent) throws IOException {
-    Parent homePageParent = FXMLLoader.load(getClass().getResource("forgotEmailPage.fxml"));
-    Scene homePageScene = new Scene(homePageParent);
-    Stage homeStage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
-    homeStage.setScene(homePageScene);
-    homeStage.show();
-  }
   public void initialize(){
     DatabaseDriver.initializeDB();
   }
