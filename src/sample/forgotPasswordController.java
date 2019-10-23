@@ -30,7 +30,15 @@ public class forgotPasswordController {
   /* FORGOT PASSWORD PAGE */
   /*----------------------------------------------------------*/
   public void handleConfirmButton(ActionEvent event) {
-    forgotPasswordTxt.setText("Email/Phone number is invalid.");
+    if(phoneNumberEnter.getText().equals("2392345555")){
+      forgotPasswordTxt.setText("A message was sent to the phone number.");
+    }
+    if(phoneNumberEnter.getText().equals("jsmith@abc.com")){
+      forgotPasswordTxt.setText("A message was sent to the Email.");
+    }
+    if(!phoneNumberEnter.getText().equals("2392345555") && !phoneNumberEnter.getText().equals("jsmith@abc.com")){
+      forgotPasswordTxt.setText("Email/Phone number is invalid.");
+    }
   }
 
   public void handleBackAction(ActionEvent event) throws IOException {
