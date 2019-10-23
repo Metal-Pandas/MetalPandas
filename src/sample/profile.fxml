@@ -31,70 +31,82 @@
     <VBox fx:id="setUp" prefHeight="200.0" prefWidth="100.0">
       <ToolBar fx:id="topToolBar" prefHeight="40.0" prefWidth="200.0">
         <Button fx:id="menuButton" mnemonicParsing="false" onAction="#handleMenuAction" text="Menu">
-               <font>
-                  <Font name="Agency FB" size="15.0" />
-               </font></Button>
+          <font>
+            <Font name="Monospaced Bold" size="13.0" />
+          </font></Button>
       </ToolBar>
       <StackPane fx:id="stackPane" alignment="CENTER_LEFT" prefHeight="388.0" prefWidth="598.0">
         <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
           <Pane fx:id="profileBackdrop" layoutX="9.0" layoutY="10.0" prefHeight="324.0" prefWidth="201.0">
             <Text fx:id="profileFirst" layoutX="58.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="First Name:">
                      <font>
-                        <Font name="Agency FB" size="15.0" />
+                        <Font name="Monospaced Bold" size="13.0" />
                      </font></Text>
             <Text fx:id="profileLast" layoutX="61.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last Name:">
                      <font>
-                        <Font name="Agency FB" size="15.0" />
+                        <Font name="Monospaced Bold" size="13.0" />
                      </font></Text>
             <Text fx:id="profileEmail" layoutX="75.0" layoutY="105.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email:">
                      <font>
-                        <Font name="Agency FB" size="15.0" />
+                        <Font name="Monospaced Bold" size="13.0" />
                      </font></Text>
             <Text fx:id="profileNumber" layoutX="49.0" layoutY="143.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone number:">
                      <font>
-                        <Font name="Agency FB" size="15.0" />
+                        <Font name="Monospaced Bold" size="13.0" />
                      </font></Text>
             <Text fx:id="profileBirthday" layoutX="67.0" layoutY="175.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Birthday:">
                      <font>
-                        <Font name="Agency FB" size="15.0" />
+                        <Font name="Monospaced Bold" size="13.0" />
                      </font></Text>
             <Text fx:id="profileAddress" layoutX="68.0" layoutY="217.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address:">
                      <font>
-                        <Font size="15.0" />
+                        <Font name="Monospaced Bold" size="13.0" />
                      </font></Text>
             <Text fx:id="profileCountry" layoutX="69.0" layoutY="255.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Country:">
                      <font>
-                        <Font name="Agency FB" size="15.0" />
+                        <Font name="Monospaced Bold" size="13.0" />
                      </font></Text>
-            <Text fx:id="profileMode" layoutX="74.0" layoutY="306.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mode:">
+            <Text fx:id="profileMode" layoutX="74.0" layoutY="303.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mode:">
                      <font>
-                        <Font name="Agency FB" size="15.0" />
+                        <Font name="Monospaced Bold" size="13.0" />
                      </font></Text>
           </Pane>
           <TextField fx:id="profileFName" layoutX="424.0" layoutY="14.0" prefHeight="28.0" prefWidth="149.0">
             <font>
-              <Font name="Agency FB" size="15.0" />
+              <Font name="Monospaced Bold" size="13.0" />
             </font>
           </TextField>
-          <TextField fx:id="profileLName" layoutX="424.0" layoutY="49.0" prefHeight="28.0" prefWidth="149.0" />
+          <TextField fx:id="profileLName" layoutX="424.0" layoutY="49.0" prefHeight="28.0" prefWidth="149.0">
+                  <font>
+                     <Font name="Monospaced Bold" size="13.0" />
+                  </font></TextField>
           <TextField fx:id="proEmail" layoutX="424.0" layoutY="96.0" prefHeight="28.0" prefWidth="149.0">
             <font>
-              <Font name="Agency FB" size="15.0" />
+              <Font name="Monospaced Bold" size="13.0" />
             </font>
           </TextField>
           <TextField fx:id="profNumber" layoutX="424.0" layoutY="131.0" prefHeight="28.0" prefWidth="149.0">
             <font>
-              <Font name="Agency FB" size="15.0" />
+              <Font name="Monospaced Bold" size="13.0" />
             </font>
           </TextField>
-               <TextField fx:id="profBirthday" layoutX="425.0" layoutY="169.0" prefHeight="28.0" prefWidth="149.0" />
+               <TextField fx:id="profBirthday" layoutX="425.0" layoutY="169.0" prefHeight="28.0" prefWidth="149.0">
+                  <font>
+                     <Font name="Monospaced Bold" size="13.0" />
+                  </font></TextField>
           <TextField fx:id="profAddress" layoutX="424.0" layoutY="210.0" prefHeight="28.0" prefWidth="149.0">
             <font>
-              <Font name="Agency FB" size="15.0" />
+              <Font name="Monospaced Bold" size="13.0" />
             </font>
           </TextField>
-               <TextField fx:id="countryCombo" layoutX="424.0" layoutY="249.0" prefHeight="28.0" prefWidth="149.0" />
-               <TextField fx:id="modeBox" layoutX="424.0" layoutY="299.0" prefHeight="28.0" prefWidth="149.0" />
+               <TextField fx:id="countryCombo" layoutX="424.0" layoutY="249.0" prefHeight="28.0" prefWidth="149.0">
+                  <font>
+                     <Font name="Monospaced Bold" size="13.0" />
+                  </font></TextField>
+               <TextField fx:id="modeBox" layoutX="424.0" layoutY="296.0" prefHeight="28.0" prefWidth="149.0">
+                  <font>
+                     <Font name="Monospaced Bold" size="13.0" />
+                  </font></TextField>
         </AnchorPane>
         <HBox fx:id="part1Menu" prefHeight="353.0" prefWidth="201.0">
           <VBox fx:id="drawer" prefHeight="353.0" prefWidth="200.0">
@@ -112,24 +124,24 @@
             </GridPane>
             <BorderPane fx:id="buttonMenu" prefHeight="206.0" prefWidth="200.0">
               <top>
-                <Button fx:id="profileButton" mnemonicParsing="false" onAction="#handleHomeAction" prefHeight="28.0" prefWidth="71.0" text="Home" BorderPane.alignment="CENTER">
-                           <font>
-                              <Font name="Agency FB" size="15.0" />
-                           </font></Button>
+                <Button fx:id="profileButton" mnemonicParsing="false" onAction="#handleHomeAction" prefHeight="28.0" prefWidth="54.0" text="Home" BorderPane.alignment="CENTER">
+                  <font>
+                    <Font name="Monospaced Bold" size="13.0" />
+                  </font></Button>
               </top>
               <center>
-                <Button fx:id="favouritesButton" mnemonicParsing="false" onAction="#handleFavAction" prefHeight="28.0" prefWidth="72.0" text="Favourites" BorderPane.alignment="CENTER">
-                           <font>
-                              <Font name="Agency FB" size="15.0" />
-                           </font></Button>
+                <Button fx:id="favouritesButton" mnemonicParsing="false" onAction="#handleFavAction" prefHeight="28.0" prefWidth="98.0" text="Favourites" BorderPane.alignment="CENTER">
+                  <font>
+                    <Font name="Monospaced Bold" size="13.0" />
+                  </font></Button>
               </center>
               <bottom>
                 <BorderPane fx:id="logOutBorderPane" prefHeight="38.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                   <top>
-                    <Button fx:id="logoutButton" mnemonicParsing="false" onAction="#handleLogoutAction" prefHeight="28.0" prefWidth="74.0" text="Log out" BorderPane.alignment="CENTER">
-                                 <font>
-                                    <Font name="Agency FB" size="15.0" />
-                                 </font></Button>
+                    <Button fx:id="logoutButton" mnemonicParsing="false" onAction="#handleLogoutAction" prefHeight="28.0" prefWidth="73.0" text="Log out" BorderPane.alignment="CENTER">
+                      <font>
+                        <Font name="Monospaced Bold" size="13.0" />
+                      </font></Button>
                   </top>
                 </BorderPane>
               </bottom>
@@ -143,14 +155,14 @@
             <rowConstraints>
               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-              <RowConstraints maxHeight="87.0" minHeight="10.0" prefHeight="87.0" vgrow="SOMETIMES" />
-                     <RowConstraints maxHeight="171.0" minHeight="10.0" prefHeight="171.0" vgrow="SOMETIMES" />
-              <RowConstraints maxHeight="99.0" minHeight="10.0" prefHeight="27.0" vgrow="SOMETIMES" />
+              <RowConstraints maxHeight="97.0" minHeight="10.0" prefHeight="65.0" vgrow="SOMETIMES" />
+              <RowConstraints maxHeight="201.0" minHeight="10.0" prefHeight="197.0" vgrow="SOMETIMES" />
+              <RowConstraints maxHeight="99.0" minHeight="10.0" prefHeight="31.0" vgrow="SOMETIMES" />
             </rowConstraints>
-            <Button fx:id="update" mnemonicParsing="false" onAction="#handleUpdateAction" prefHeight="19.0" prefWidth="72.0" text="Update?" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
-                     <font>
-                        <Font name="Agency FB Bold" size="15.0" />
-                     </font></Button>
+            <Button fx:id="update" mnemonicParsing="false" onAction="#handleUpdateAction" prefHeight="11.0" prefWidth="80.0" text="Update?" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+              <font>
+                <Font name="Monospaced Bold" size="13.0" />
+              </font></Button>
           </GridPane>
         </HBox>
 
