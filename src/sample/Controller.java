@@ -4,6 +4,7 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
 import java.util.ResourceBundle;
 import javafx.animation.TranslateTransition;
 import javafx.collections.FXCollections;
@@ -59,6 +60,11 @@ public class Controller {
   @FXML public Button signUp;
 
   @FXML public Text Statustxt;
+
+  /*----------------------------------------------------------*/
+  /* Database */
+  /*----------------------------------------------------------*/
+    private Connection conn;
   /*----------------------------------------------------------*/
   /* LOGIN PAGE */
   /*----------------------------------------------------------*/
@@ -101,4 +107,8 @@ public class Controller {
     homeStage.setScene(homePageScene);
     homeStage.show();
   }
+  public void initialize(){
+    DatabaseDriver.initializeDB();
+  }
+
 }
