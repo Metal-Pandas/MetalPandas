@@ -10,6 +10,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
 <GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
@@ -21,18 +22,45 @@
   </rowConstraints>
   <Pane prefHeight="400.0" prefWidth="600.0" stylesheets="@loginstyles.css">
     <Pane fx:id="Backdrop" layoutX="156.0" layoutY="211.0" prefHeight="145.0" prefWidth="288.0" />
-      <Text fx:id="forgotPassword" accessibleRole="BUTTON" fill="#0047fb" layoutX="315.0" layoutY="308.0" onMouseClicked="#handleForgotPasswordAction" strokeType="OUTSIDE" strokeWidth="0.0" text="Forgot Password?" underline="true" />
-    <Text fx:id="Username" layoutX="228.0" layoutY="239.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email:" />
-    <TextField fx:id="UsernameField" layoutX="297.0" layoutY="222.0" prefHeight="25.0" prefWidth="120.0" promptText="jsmith@abc.com" />
-    <Text fx:id="Password" layoutX="218.0" layoutY="284.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password:" />
-    <PasswordField fx:id="PasswordField" layoutX="297.0" layoutY="267.0" prefHeight="25.0" prefWidth="120.0" promptText="password" />
-    <Button fx:id="loginButton" layoutX="376.0" layoutY="321.0" mnemonicParsing="false" onAction="#handleLoginAction" text="Login" />
-    <Button fx:id="signUp" layoutX="277.0" layoutY="366.0" mnemonicParsing="false" onAction="#handleSignUpAction" text="Sign up" />
-      <Text fx:id="Statustxt" fill="#c90e0e" layoutX="161.0" layoutY="328.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="207.0" />
+      <Text fx:id="forgotPassword" accessibleRole="BUTTON" fill="#0047fb" layoutX="310.0" layoutY="305.0" onMouseClicked="#handleForgotPasswordAction" strokeType="OUTSIDE" strokeWidth="0.0" text="Forgot Password?" underline="true">
+         <font>
+            <Font name="Monospaced Bold" size="11.0" />
+         </font></Text>
+    <Text fx:id="Username" layoutX="188.0" layoutY="239.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email:">
+         <font>
+            <Font name="Monospaced Bold" size="13.0" />
+         </font></Text>
+    <TextField fx:id="UsernameField" layoutX="257.0" layoutY="222.0" prefHeight="26.0" prefWidth="169.0" promptText="jsmith@abc.com">
+         <font>
+            <Font name="Monospaced Bold" size="13.0" />
+         </font></TextField>
+    <Text fx:id="Password" layoutX="178.0" layoutY="284.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password:">
+         <font>
+            <Font name="Monospaced Bold" size="13.0" />
+         </font></Text>
+    <PasswordField fx:id="PasswordField" layoutX="257.0" layoutY="267.0" prefHeight="26.0" prefWidth="169.0" promptText="password">
+         <font>
+            <Font name="Monospaced Bold" size="13.0" />
+         </font></PasswordField>
+    <Button fx:id="loginButton" layoutX="376.0" layoutY="321.0" mnemonicParsing="false" onMouseClicked="#handleLoginAction" text="Login">
+         <font>
+            <Font name="Monospaced Bold" size="13.0" />
+         </font></Button>
+    <Button fx:id="signUp" layoutX="277.0" layoutY="366.0" mnemonicParsing="false" onMouseClicked="#handleSignUpAction" text="Sign up">
+         <font>
+            <Font name="Monospaced Bold" size="13.0" />
+         </font></Button>
+      <Text fx:id="Statustxt" fill="#c90e0e" layoutX="161.0" layoutY="328.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="207.0">
+         <font>
+            <Font name="Monospaced Bold" size="11.0" />
+         </font></Text>
     <ImageView fx:id="Title" fitHeight="242.0" fitWidth="207.0" layoutX="217.0" layoutY="-16.0" pickOnBounds="true" preserveRatio="true">
       <Image url="@mjpng.png" />
     </ImageView>
-      <Text fx:id="forgotEmail" accessibleRole="BUTTON" fill="#0047fb" layoutX="340.0" layoutY="260.0" onMouseClicked="#handleForgotEmailAction" strokeType="OUTSIDE" strokeWidth="0.0" text="Forgot Email?" underline="true" />
+      <Text fx:id="forgotEmail" accessibleRole="BUTTON" fill="#0047fb" layoutX="330.0" layoutY="260.0" onMouseClicked="#handleForgotEmailAction" strokeType="OUTSIDE" strokeWidth="0.0" text="Forgot Email?" underline="true">
+         <font>
+            <Font name="Monospaced Bold" size="11.0" />
+         </font></Text>
   </Pane>
   <stylesheets>
     <URL value="@loginstyles.css" />

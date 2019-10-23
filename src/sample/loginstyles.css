@@ -7,8 +7,6 @@ root {
 }
 
 #Title {
-  -fx-font-size: 12px;
-  -fx-font-weight: bold;
   -fx-text-fill: #66DCE1;
   -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.7), 6, 0.0, 0, 1);
   -fx-stroke: #FFFFFF;
@@ -16,69 +14,52 @@ root {
 }
 
 #Backdrop {
-  -fx-opacity: .5;
-  -fx-background-color: #89D0F3;
+  -fx-opacity: .8;
+  -fx-background-color: #bdc3c6;
 }
 
 #Username {
-  -fx-font-size: 12px;
-  -fx-font-weight: bold;
   -fx-text-fill: #66DCE1;
   -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.7), 6, 0.0, 0, 1);
 }
 
 #UsernameField {
-  -fx-font-size: 12px;
-  -fx-font-weight: bold;
   -fx-text-fill: #0c590f;
   -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.7), 6, 0.0, 0, 1);
 }
 
 #forgotEmail{
-  -fx-font-size: 12px;
-  -fx-font-weight: bold;
   -fx-text-fill: #0c590f;
   -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.7), 6, 0.0, 0, 1);
 }
 
 #PasswordField {
-  -fx-font-size: 12px;
-  -fx-font-weight: bold;
   -fx-text-fill: #0c590f;
   -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.7), 6, 0.0, 0, 1);
 }
 
 #Password {
-  -fx-font-size: 12px;
-  -fx-font-weight: bold;
   -fx-text-fill: #66DCE1;
   -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.7), 6, 0.0, 0, 1);
 }
 
 #forgotPassword{
-  -fx-font-size: 12px;
-  -fx-font-weight: bold;
   -fx-text-fill: #0c590f;
   -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.7), 6, 0.0, 0, 1);
 }
 
 #loginButton {
-  -fx-font-family: "Arial Narrow";
-  -fx-font-weight: bold;
-  -fx-text-fill: #0c590f;
-  -fx-background-color: #89D0F3;
+  -fx-text-fill: #82c343;
+  -fx-background-color: #363636;
   -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.7), 6, 0.0, 0, 1);
 }
 
 #signUp {
-  -fx-font-family: "Arial Narrow";
-  -fx-font-weight: bold;
-  -fx-text-fill: #0c590f;
-  -fx-background-color: #89D0F3;
+  -fx-text-fill: #82c343;
+  -fx-background-color: #363636;
   -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.7), 6, 0.0, 0, 1);
 }
 
 #Statustxt {
-  -fx-font-size: 12px;
   -fx-font-weight: bold;
 }
