@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CssDialectMappings">
-    <file url="file://$PROJECT_DIR$/src/sample/homepagestyles.css" dialect="JavaFX" />
-    <file url="file://$PROJECT_DIR$/src/sample/loginstyles.css" dialect="JavaFX" />
-    <file url="file://$PROJECT_DIR$/src/sample/profilestyles.css" dialect="CLASSIC" />
+    <file url="file://$PROJECT_DIR$/src/MetalPandasCarApp/homepagestyles.css" dialect="JavaFX" />
+    <file url="file://$PROJECT_DIR$/src/MetalPandasCarApp/loginstyles.css" dialect="JavaFX" />
+    <file url="file://$PROJECT_DIR$/src/MetalPandasCarApp/profilestyles.css" dialect="CLASSIC" />
   </component>
 </project>
