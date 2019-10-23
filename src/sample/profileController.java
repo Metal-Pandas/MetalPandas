@@ -119,7 +119,7 @@ public class profileController {
   }
 
   public void handleHomeAction(ActionEvent event) throws IOException {
-    Parent homePageParent = FXMLLoader.load(getClass().getResource("profile.fxml"));
+    Parent homePageParent = FXMLLoader.load(getClass().getResource("homepage.fxml"));
     Scene homePageScene = new Scene(homePageParent);
     Stage homeStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);

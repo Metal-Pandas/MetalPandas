@@ -12,7 +12,7 @@
 
 #profileBackdrop{
   -fx-opacity: .8;
-  -fx-background-color: #89D0F3;
+  -fx-background-color: #bdc3c6;
 }
 
 #profileFirst{
@@ -48,7 +48,35 @@
 }
 
 #update{
-  -fx-text-fill: #0c590f;
-  -fx-background-color: #89D0F3;
+  -fx-text-fill: #82c343;
+  -fx-background-color: #363636;
+  -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.7), 6, 0.0, 0, 1);
+}
+
+#topToolBar{
+  -fx-background-color: #363636;
+}
+
+#menuButton{
+  -fx-text-fill: #82c343;
+  -fx-background-color: #363636;
+  -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.7), 6, 0.0, 0, 1);
+}
+
+#profileButton{
+  -fx-text-fill: #82c343;
+  -fx-background-color: #363636;
+  -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.7), 6, 0.0, 0, 1);
+}
+
+#favouritesButton{
+  -fx-text-fill: #82c343;
+  -fx-background-color: #363636;
+  -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.7), 6, 0.0, 0, 1);
+}
+
+#logoutButton{
+  -fx-text-fill: #82c343;
+  -fx-background-color: #363636;
   -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.7), 6, 0.0, 0, 1);
 }

@@ -10,6 +10,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.SplitPane;
+import javafx.scene.control.TabPane;
 import javafx.scene.control.ToolBar;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
@@ -53,6 +54,8 @@ public class favouritesController {
   @FXML public BorderPane logOutBorderPane;
 
   @FXML public Button logoutButton;
+
+  public TabPane favouritesTabPane;
 
   /*----------------------------------------------------------*/
   /* FAVOURITES PAGE */
