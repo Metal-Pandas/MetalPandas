@@ -1,6 +1,11 @@
 package MetalPandasCarApp;
 
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -18,8 +23,7 @@ public class loginController {
   /*----------------------------------------------------------*/
   /* LOGIN PAGE ITEMS */
   /*----------------------------------------------------------*/
-  @FXML
-  public Pane Backdrop;
+  @FXML public Pane Backdrop;
 
   @FXML public ImageView Title;
 
@@ -42,21 +46,45 @@ public class loginController {
   @FXML public Text Statustxt;
 
   /*----------------------------------------------------------*/
+  /* Database */
+  /*----------------------------------------------------------*/
+  private Connection conn;
+  private Statement stmt;
+
+  /*----------------------------------------------------------*/
   /* LOGIN PAGE */
   /*----------------------------------------------------------*/
-  public void handleLoginAction(MouseEvent mouseEvent) throws IOException {
-    if (UsernameField.getText().equals("jsmith@abc.com")
-        && PasswordField.getText().equals("password")) {
-
-      Parent homePageParent = FXMLLoader.load(getClass().getResource("homepage.fxml"));
-      Scene homePageScene = new Scene(homePageParent);
-      Stage homeStage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
-      homeStage.setScene(homePageScene);
-      homeStage.show();
+  public void handleLoginAction(MouseEvent mouseEvent) throws SQLException {
+    conn = DatabaseDriver.initializeDB();
+    stmt = conn.createStatement();
+    String sql = "SELECT * FROM USER";
+    ResultSet rs = stmt.executeQuery(sql);
+    String Email = "";
+    String EnterPass = "";
+    while (rs.next()) {
+      System.out.println(rs.getString("Email"));
+      System.out.println(rs.getString("Password"));
+      Email = rs.getString("Email");
+      EnterPass = rs.getString("Password");
     }
-    if (!UsernameField.getText().equals("jsmith@abc.com")
-        || !PasswordField.getText().equals("password")) {
-      Statustxt.setText("Email/Password incorrect. Don't have an account? Sign up now.");
+    String EnterPass1 = PasswordField.getText();
+    String Email1 = UsernameField.getText();
+
+    // System.out.println(EnterPass1 + "  - " + Email1);
+
+    if ((Email.equals(Email1)) && (EnterPass.equals(EnterPass1))) {
+      try {
+        Parent homePageParent = FXMLLoader.load(getClass().getResource("homepage.fxml"));
+        Scene homePageScene = new Scene(homePageParent);
+        Stage homeStage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
+        homeStage.setScene(homePageScene);
+        homeStage.show();
+      } catch (IOException e) {
+        e.printStackTrace();
+      }
+      System.out.println("Welcome Back!");
+    } else {
+      System.out.println("Incorrect Email or Password!");
     }
   }
 
@@ -83,5 +111,4 @@ public class loginController {
     homeStage.setScene(homePageScene);
     homeStage.show();
   }
-
 }
