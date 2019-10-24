@@ -3,6 +3,8 @@ package MetalPandasCarApp;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.sql.*;
+
 import javafx.collections.FXCollections;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
@@ -70,7 +72,8 @@ public class signUpController {
   /*----------------------------------------------------------*/
   /* SIGN UP PAGE */
   /*----------------------------------------------------------*/
-  public void handleUpSignAction(ActionEvent event) throws IOException {
+  public void handleUpSignAction(ActionEvent event) throws IOException, SQLException {
+    addUser();
     Parent homePageParent = FXMLLoader.load(getClass().getResource("homepage.fxml"));
     Scene homePageScene = new Scene(homePageParent);
     Stage homeStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -80,7 +83,7 @@ public class signUpController {
 
   public void handlePicEdit(ActionEvent event) {
 
-    Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+    Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
     chooseImage = new FileChooser();
     chooseImage.setTitle("Open Image");
@@ -89,41 +92,65 @@ public class signUpController {
     String userDirectoryString = System.getProperty("user.home") + "\\Pictures";
     File userDirectory = new File(userDirectoryString);
 
-    if(!userDirectory.canRead()){
+    if (!userDirectory.canRead()) {
       userDirectory = new File("C:/");
-    }
-    else{
+    } else {
       chooseImage.setInitialDirectory(userDirectory);
     }
 
     this.filePath = chooseImage.showOpenDialog(stage);
 
     // Try to update the image by loading the new image
-    try{
+    try {
       BufferedImage bufferedImage = ImageIO.read(filePath);
 
       Image image = SwingFXUtils.toFXImage(bufferedImage, null);
 
       signProfilePic.setImage(image);
-    }
-    catch (IOException e){
+    } catch (IOException e) {
 
       System.out.println(e.getMessage());
     }
-
   }
-  public void initialize(){
-    try{
-      driverPass.setItems(FXCollections.observableArrayList("Driver","Passenger"));
-    }
-    catch(java.lang.NullPointerException exception){
+
+  public void initialize() {
+    try {
+      driverPass.setItems(FXCollections.observableArrayList("Driver", "Passenger"));
+      gender.setItems(
+          FXCollections.observableArrayList("Female", "Male", "Non-binary", "Metal Panda"));
+    } catch (java.lang.NullPointerException exception) {
       exception.printStackTrace();
     }
-    try{
-      gender.setItems(FXCollections.observableArrayList("Female","Male", "Non-binary", "Metal Panda"));
-    }
-    catch(java.lang.NullPointerException exception){
-      exception.printStackTrace();
-    }
+
+    // Calls the Database
+    DatabaseDriver.initializeDB();
+  }
+
+  public void addUser() throws SQLException {
+    String FirstName = firstName.getText();
+    String LastName = lastName.getText();
+    String Email = email.getText();
+    String Address = address.getText();
+    String PickCountry = pickCountry.getText();
+    String PhoneNum = phoneNumber.getText();
+    String EnterPass = enterPassword.getText();
+//  String Birthday = birthday.toString();
+    String DriverPass = driverPass.getValue();
+    String Gender = gender.getValue();
+
+    String[] signUpUser = {
+      FirstName,
+      LastName,
+      Email,
+      Address,
+      PickCountry,
+      PhoneNum,
+      EnterPass,
+//    Birthday,
+      DriverPass,
+      Gender
+    };
+
+    DatabaseDriver.createUserInDB(signUpUser);
   }
 }
