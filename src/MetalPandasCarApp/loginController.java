@@ -84,7 +84,7 @@ public class loginController {
       }
       System.out.println("Welcome Back!");
     } else {
-      System.out.println("Incorrect Email or Password!");
+      Statustxt.setText("Incorrect Email or Password!");
     }
   }
 

@@ -1,0 +1,85 @@
+#signUpPane {
+  -fx-background-image: url("Background/test2.jpg");
+}
+
+#picEdit{
+  -fx-text-fill: #82c343;
+  -fx-background-color: #363636;
+  -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.7), 6, 0.0, 0, 1);
+}
+
+#firstName {
+  -fx-text-fill: #0c590f;
+  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.7), 6, 0.0, 0, 1);
+}
+
+#lastName {
+  -fx-text-fill: #0c590f;
+  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.7), 6, 0.0, 0, 1);
+}
+
+#email {
+  -fx-text-fill: #0c590f;
+  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.7), 6, 0.0, 0, 1);
+}
+
+#address{
+  -fx-text-fill: #0c590f;
+  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.7), 6, 0.0, 0, 1);
+}
+
+#pickCountry{
+  -fx-text-fill: #0c590f;
+  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.7), 6, 0.0, 0, 1);
+}
+
+#phoneNumber {
+  -fx-text-fill: #0c590f;
+  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.7), 6, 0.0, 0, 1);
+}
+
+#enterPassword{
+  -fx-text-fill: #0c590f;
+  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.7), 6, 0.0, 0, 1);
+}
+
+#reenterPassword{
+  -fx-text-fill: #0c590f;
+  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.7), 6, 0.0, 0, 1);
+}
+
+#birthday {
+  -fx-text-fill: #0c590f;
+  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.7), 6, 0.0, 0, 1);
+}
+
+#driverPass {
+  -fx-text-fill: #0c590f;
+  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.7), 6, 0.0, 0, 1);
+}
+
+#gender {
+  -fx-text-fill: #0c590f;
+  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.7), 6, 0.0, 0, 1);
+}
+
+#seeGender {
+  -fx-opacity: .8;
+  -fx-background-color: #bdc3c6;
+}
+
+#iama {
+  -fx-text-fill: #66DCE1;
+  -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.7), 6, 0.0, 0, 1);
+}
+
+#genderLabel {
+  -fx-text-fill: #66DCE1;
+  -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.7), 6, 0.0, 0, 1);
+}
+
+#updateProfile {
+  -fx-text-fill: #82c343;
+  -fx-background-color: #363636;
+  -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.7), 6, 0.0, 0, 1);
+}
