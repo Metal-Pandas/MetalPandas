@@ -112,6 +112,7 @@ public class signUpController {
     }
 
   }
+
   public void initialize(){
     try{
       driverPass.setItems(FXCollections.observableArrayList("Driver","Passenger"));

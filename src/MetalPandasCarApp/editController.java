@@ -3,6 +3,7 @@ package MetalPandasCarApp;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import javafx.collections.FXCollections;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -107,7 +108,20 @@ public class editController {
 
       System.out.println(e.getMessage());
     }
-
   }
 
+  public void initialize(){
+    try{
+      driverPass.setItems(FXCollections.observableArrayList("Driver","Passenger"));
+    }
+    catch(java.lang.NullPointerException exception){
+      exception.printStackTrace();
+    }
+    try{
+      gender.setItems(FXCollections.observableArrayList("Female","Male", "Non-binary", "Metal Panda"));
+    }
+    catch(java.lang.NullPointerException exception){
+      exception.printStackTrace();
+    }
+  }
 }
