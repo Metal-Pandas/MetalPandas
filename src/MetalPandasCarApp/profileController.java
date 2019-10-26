@@ -3,6 +3,7 @@ package MetalPandasCarApp;
 import java.io.IOException;
 import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -11,8 +12,10 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.SplitPane;
 import javafx.scene.control.TextField;
+import javafx.scene.control.ToggleButton;
 import javafx.scene.control.ToolBar;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
@@ -72,6 +75,12 @@ public class profileController {
   @FXML public ToolBar topToolBar;
 
   @FXML public Button menuButton;
+
+  @FXML public ToggleButton darkMode;
+
+  @FXML public ToggleButton lightMode;
+
+  @FXML public ToggleButton pandaMode;
 
   @FXML public StackPane stackPane;
 
@@ -142,4 +151,27 @@ public class profileController {
     homeStage.show();
   }
 
+  public void handleDarkModeAction(ActionEvent event) throws IOException {
+    Parent homePageParent = FXMLLoader.load(getClass().getResource("darkProfile.fxml"));
+    Scene homePageScene = new Scene(homePageParent);
+    Stage homeStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+    homeStage.setScene(homePageScene);
+    homeStage.show();
+    }
+
+  public void handleLightModeAction(ActionEvent event) throws IOException {
+    Parent homePageParent = FXMLLoader.load(getClass().getResource("lightProfile.fxml"));
+    Scene homePageScene = new Scene(homePageParent);
+    Stage homeStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+    homeStage.setScene(homePageScene);
+    homeStage.show();
+  }
+
+  public void handlePandaModeAction(ActionEvent event) throws IOException {
+    Parent homePageParent = FXMLLoader.load(getClass().getResource("profile.fxml"));
+    Scene homePageScene = new Scene(homePageParent);
+    Stage homeStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+    homeStage.setScene(homePageScene);
+    homeStage.show();
+  }
 }
