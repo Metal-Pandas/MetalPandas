@@ -111,4 +111,15 @@ public class loginController {
     homeStage.setScene(homePageScene);
     homeStage.show();
   }
+
+ /* public void handleDarkThemeAction(MouseEvent mouseEvent) throws IOException {
+    Parent darkParent = FXMLLoader.load(getClass().getResource("loginpage.fxml"));
+    Scene darkScene = new Scene(darkParent);
+    String darkTheme = "darkTheme.css";
+    darkScene.getStylesheets().add(darkTheme);
+    Stage darkStage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
+    darkStage.setScene(darkScene);
+    darkStage.show();
+  }
+  */
 }

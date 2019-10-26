@@ -111,6 +111,6 @@
         </font>
     </Button>
     <stylesheets>
-        <URL value="@signupstyles.css"/>
+        <URL value="@pandaTheme.css"/>
     </stylesheets>
 </Pane>

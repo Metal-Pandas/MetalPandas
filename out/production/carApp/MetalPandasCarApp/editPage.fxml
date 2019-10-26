@@ -83,6 +83,6 @@
       <Font name="Monospaced Bold" size="13.0" />
     </font></Button>
   <stylesheets>
-    <URL value="@editstyles.css" />
+    <URL value="@pandaTheme.css" />
   </stylesheets>
 </Pane>

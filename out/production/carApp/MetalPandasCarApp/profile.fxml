@@ -170,6 +170,6 @@
     </VBox>
   </SplitPane>
   <stylesheets>
-    <URL value="@profilestyles.css" />
+    <URL value="@pandaTheme.css" />
   </stylesheets>
 </GridPane>

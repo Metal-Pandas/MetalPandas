@@ -88,6 +88,6 @@
     </VBox>
   </SplitPane>
   <stylesheets>
-    <URL value="@favouritestyles.css" />
+    <URL value="@pandaTheme.css" />
   </stylesheets>
 </GridPane>
