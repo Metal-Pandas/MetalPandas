@@ -4,7 +4,7 @@ root {
 }
 
 .root {
-  -fx-background-image: url("Background/DarkTheme/login.jpg");
+  -fx-background-image: url("Background/PandaTheme/login.jpg");
 }
 
 #Title {
@@ -66,7 +66,7 @@ root {
 }
 /* SIGN UP STYLES */
 #signUpPane {
-  -fx-background-image: url("Background/DarkTheme/signupEdit.jpg");
+  -fx-background-image: url("Background/PandaTheme/signupEdit.jpg");
 }
 
 #picEdit{
@@ -152,7 +152,7 @@ root {
 }
 /* HOME PAGE STYLES */
 #homePageSplitPane {
-  -fx-background-image: url("Background/DarkTheme/home.png");
+  -fx-background-image: url("Background/PandaTheme/home.png");
 }
 
 #drawer {
@@ -197,7 +197,7 @@ root {
 }
 /* PROFILE STYLES */
 #profileSplit {
-  -fx-background-image: url("Background/DarkTheme/profile.jpg");
+  -fx-background-image: url("Background/LightTheme/profiletest.png");
 }
 
 #drawer {
@@ -280,7 +280,7 @@ root {
 }
 /* FAVOURITES STYLES */
 #favSplit {
-  -fx-background-image: url("Background/DarkTheme/favourites.jpg");
+  -fx-background-image: url("Background/PandaTheme/favourites.jpg");
 }
 
 #drawer {
@@ -336,7 +336,7 @@ root {
 }
 /* FORGOT EMAIL STYLES */
 #forgotEmailPane{
-  -fx-background-image: url("Background/DarkTheme/forgotEmailPassword.jpg");
+  -fx-background-image: url("Background/PandaTheme/forgotEmailPassword.jpg");
 }
 
 #enterPhoneNumber {
@@ -357,7 +357,7 @@ root {
 }
 /* FORGOT PASSWORD STYLES */
 #forgotPasswordPane{
-  -fx-background-image: url("Background/DarkTheme/forgotEmailPassword.jpg");
+  -fx-background-image: url("Background/PandaTheme/forgotEmailPassword.jpg");
 }
 
 #phoneNumberEnter{
@@ -378,7 +378,7 @@ root {
 }
 /* EDIT STYLES */
 #signUpPane {
-  -fx-background-image: url("Background/DarkTheme/signupEdit.jpg");
+  -fx-background-image: url("Background/PandaTheme/signupEdit.jpg");
 }
 
 #picEdit{

@@ -66,7 +66,7 @@
             <ToggleButton fx:id="pandaMode" mnemonicParsing="false" onAction="#handlePandaModeAction" prefHeight="25.0" prefWidth="52.0" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.valignment="CENTER">
               <graphic>
                 <ImageView fitHeight="17.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
-                  <Image url="@lightMode.png" />
+                  <Image url="@test.png" />
                 </ImageView>
               </graphic>
             </ToggleButton>
@@ -208,6 +208,6 @@
     </VBox>
   </SplitPane>
   <stylesheets>
-    <URL value="@pandaTheme.css" />
+    <URL value="@lightTheme.css" />
   </stylesheets>
 </GridPane>
