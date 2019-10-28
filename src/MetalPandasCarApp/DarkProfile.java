@@ -24,7 +24,7 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
-public class DarkProfile extends Main {
+public class DarkProfile {
   /*----------------------------------------------------------*/
   /* PROFILE PAGE ITEMS */
   /*----------------------------------------------------------*/
@@ -101,7 +101,6 @@ public class DarkProfile extends Main {
   /* PROFILE PAGE */
   /*----------------------------------------------------------*/
   public void handleMenuAction(ActionEvent event) {
-    darkTheme = true;
     TranslateTransition openNav = new TranslateTransition(new Duration(350), drawer);
     openNav.setToX(0);
     TranslateTransition closeNav = new TranslateTransition(new Duration(350), drawer);
@@ -117,7 +116,6 @@ public class DarkProfile extends Main {
   }
 
   public void handleUpdateAction(ActionEvent event) throws IOException {
-    darkTheme = true;
     Parent homePageParent = FXMLLoader.load(getClass().getResource("darkEdit.fxml"));
     Scene homePageScene = new Scene(homePageParent);
     Stage homeStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -126,7 +124,6 @@ public class DarkProfile extends Main {
   }
 
   public void handleHomeAction(ActionEvent event) throws IOException {
-    darkTheme = true;
     Parent homePageParent = FXMLLoader.load(getClass().getResource("darkHome.fxml"));
     Scene homePageScene = new Scene(homePageParent);
     Stage homeStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -135,7 +132,6 @@ public class DarkProfile extends Main {
   }
 
   public void handleFavAction(ActionEvent event) throws IOException {
-    darkTheme = true;
     Parent homePageParent = FXMLLoader.load(getClass().getResource("darkFavourites.fxml"));
     Scene homePageScene = new Scene(homePageParent);
     Stage homeStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -144,7 +140,6 @@ public class DarkProfile extends Main {
   }
 
   public void handleLogoutAction(ActionEvent event) throws IOException {
-    darkTheme = true;
     Parent homePageParent = FXMLLoader.load(getClass().getResource("darkLogin.fxml"));
     Scene homePageScene = new Scene(homePageParent);
     Stage homeStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -153,7 +148,6 @@ public class DarkProfile extends Main {
   }
 
   public void handleLightModeAction(ActionEvent event) throws IOException {
-    lightTheme = true;
     Parent homePageParent = FXMLLoader.load(getClass().getResource("lightProfile.fxml"));
     Scene homePageScene = new Scene(homePageParent);
     Stage homeStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -162,7 +156,6 @@ public class DarkProfile extends Main {
   }
 
   public void handlePandaModeAction(ActionEvent event) throws IOException {
-    pandaTheme = true;
     Parent homePageParent = FXMLLoader.load(getClass().getResource("profile.fxml"));
     Scene homePageScene = new Scene(homePageParent);
     Stage homeStage = (Stage) ((Node) event.getSource()).getScene().getWindow();

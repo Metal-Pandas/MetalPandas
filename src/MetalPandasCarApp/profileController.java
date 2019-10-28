@@ -26,7 +26,7 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
-public class profileController extends Main{
+public class profileController {
   /*----------------------------------------------------------*/
   /* PROFILE PAGE ITEMS */
   /*----------------------------------------------------------*/
@@ -142,7 +142,6 @@ public class profileController extends Main{
   }
 
   public void handleLogoutAction(ActionEvent event) throws IOException {
-    pandaTheme = true;
     Parent homePageParent = FXMLLoader.load(getClass().getResource("loginpage.fxml"));
     Scene homePageScene = new Scene(homePageParent);
     Stage homeStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
