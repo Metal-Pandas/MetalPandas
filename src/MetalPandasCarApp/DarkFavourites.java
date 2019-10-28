@@ -21,7 +21,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
-public class DarkFavourites {
+public class DarkFavourites extends Main {
   /*----------------------------------------------------------*/
   /* FAVOURITES PAGE ITEMS */
   /*----------------------------------------------------------*/
