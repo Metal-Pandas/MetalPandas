@@ -1,9 +1,5 @@
 /* LOGIN STYLES */
-root {
-  display: block;
-}
-
-.root {
+#loginBackground {
   -fx-background-image: url("Background/DarkTheme/login.jpg");
 }
 

@@ -19,10 +19,11 @@ import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
-public class loginController {
+public class DarkLogin {
   /*----------------------------------------------------------*/
   /* LOGIN PAGE ITEMS */
   /*----------------------------------------------------------*/
+
   @FXML public Pane loginBackground;
 
   @FXML public Pane Backdrop;
@@ -73,7 +74,7 @@ public class loginController {
 
     if ((Email.equals(Email1)) && (EnterPass.equals(EnterPass1))) {
       try {
-        Parent homePageParent = FXMLLoader.load(getClass().getResource("homepage.fxml"));
+        Parent homePageParent = FXMLLoader.load(getClass().getResource("darkHome.fxml"));
         Scene homePageScene = new Scene(homePageParent);
         Stage homeStage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
         homeStage.setScene(homePageScene);
@@ -88,7 +89,7 @@ public class loginController {
   }
 
   public void handleSignUpAction(MouseEvent mouseEvent) throws IOException {
-    Parent homePageParent = FXMLLoader.load(getClass().getResource("signupPage.fxml"));
+    Parent homePageParent = FXMLLoader.load(getClass().getResource("darkSignUp.fxml"));
     Scene homePageScene = new Scene(homePageParent);
     Stage homeStage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);
@@ -96,7 +97,7 @@ public class loginController {
   }
 
   public void handleForgotPasswordAction(MouseEvent mouseEvent) throws IOException {
-    Parent homePageParent = FXMLLoader.load(getClass().getResource("forgotPasswordPage.fxml"));
+    Parent homePageParent = FXMLLoader.load(getClass().getResource("darkForgotPassword.fxml"));
     Scene homePageScene = new Scene(homePageParent);
     Stage homeStage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);
@@ -104,7 +105,7 @@ public class loginController {
   }
 
   public void handleForgotEmailAction(MouseEvent mouseEvent) throws IOException {
-    Parent homePageParent = FXMLLoader.load(getClass().getResource("forgotEmailPage.fxml"));
+    Parent homePageParent = FXMLLoader.load(getClass().getResource("darkForgotEmail.fxml"));
     Scene homePageScene = new Scene(homePageParent);
     Stage homeStage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);

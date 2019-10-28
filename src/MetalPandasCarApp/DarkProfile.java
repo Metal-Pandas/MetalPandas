@@ -3,7 +3,6 @@ package MetalPandasCarApp;
 import java.io.IOException;
 import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -15,7 +14,6 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.control.ToolBar;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
@@ -26,7 +24,7 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
-public class profileController extends Main{
+public class DarkProfile extends Main {
   /*----------------------------------------------------------*/
   /* PROFILE PAGE ITEMS */
   /*----------------------------------------------------------*/
@@ -76,9 +74,9 @@ public class profileController extends Main{
 
   @FXML public Button menuButton;
 
-  @FXML public ToggleButton darkMode;
-
   @FXML public ToggleButton lightMode;
+
+  @FXML public ToggleButton pandaMode;
 
   @FXML public StackPane stackPane;
 
@@ -103,6 +101,7 @@ public class profileController extends Main{
   /* PROFILE PAGE */
   /*----------------------------------------------------------*/
   public void handleMenuAction(ActionEvent event) {
+    darkTheme = true;
     TranslateTransition openNav = new TranslateTransition(new Duration(350), drawer);
     openNav.setToX(0);
     TranslateTransition closeNav = new TranslateTransition(new Duration(350), drawer);
@@ -118,7 +117,8 @@ public class profileController extends Main{
   }
 
   public void handleUpdateAction(ActionEvent event) throws IOException {
-    Parent homePageParent = FXMLLoader.load(getClass().getResource("editPage.fxml"));
+    darkTheme = true;
+    Parent homePageParent = FXMLLoader.load(getClass().getResource("darkEdit.fxml"));
     Scene homePageScene = new Scene(homePageParent);
     Stage homeStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);
@@ -126,7 +126,8 @@ public class profileController extends Main{
   }
 
   public void handleHomeAction(ActionEvent event) throws IOException {
-    Parent homePageParent = FXMLLoader.load(getClass().getResource("homepage.fxml"));
+    darkTheme = true;
+    Parent homePageParent = FXMLLoader.load(getClass().getResource("darkHome.fxml"));
     Scene homePageScene = new Scene(homePageParent);
     Stage homeStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);
@@ -134,7 +135,8 @@ public class profileController extends Main{
   }
 
   public void handleFavAction(ActionEvent event) throws IOException {
-    Parent homePageParent = FXMLLoader.load(getClass().getResource("favourites.fxml"));
+    darkTheme = true;
+    Parent homePageParent = FXMLLoader.load(getClass().getResource("darkFavourites.fxml"));
     Scene homePageScene = new Scene(homePageParent);
     Stage homeStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);
@@ -142,24 +144,26 @@ public class profileController extends Main{
   }
 
   public void handleLogoutAction(ActionEvent event) throws IOException {
-    pandaTheme = true;
-    Parent homePageParent = FXMLLoader.load(getClass().getResource("loginpage.fxml"));
+    darkTheme = true;
+    Parent homePageParent = FXMLLoader.load(getClass().getResource("darkLogin.fxml"));
     Scene homePageScene = new Scene(homePageParent);
     Stage homeStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);
     homeStage.show();
   }
 
-  public void handleDarkModeAction(ActionEvent event) throws IOException {
-    Parent homePageParent = FXMLLoader.load(getClass().getResource("darkProfile.fxml"));
+  public void handleLightModeAction(ActionEvent event) throws IOException {
+    lightTheme = true;
+    Parent homePageParent = FXMLLoader.load(getClass().getResource("lightProfile.fxml"));
     Scene homePageScene = new Scene(homePageParent);
     Stage homeStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);
     homeStage.show();
-    }
+  }
 
-  public void handleLightModeAction(ActionEvent event) throws IOException {
-    Parent homePageParent = FXMLLoader.load(getClass().getResource("lightProfile.fxml"));
+  public void handlePandaModeAction(ActionEvent event) throws IOException {
+    pandaTheme = true;
+    Parent homePageParent = FXMLLoader.load(getClass().getResource("profile.fxml"));
     Scene homePageScene = new Scene(homePageParent);
     Stage homeStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);

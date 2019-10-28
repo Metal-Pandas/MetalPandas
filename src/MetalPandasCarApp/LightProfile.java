@@ -26,7 +26,7 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
-public class profileController extends Main{
+public class LightProfile extends Main {
   /*----------------------------------------------------------*/
   /* PROFILE PAGE ITEMS */
   /*----------------------------------------------------------*/
@@ -78,7 +78,7 @@ public class profileController extends Main{
 
   @FXML public ToggleButton darkMode;
 
-  @FXML public ToggleButton lightMode;
+  @FXML public ToggleButton pandaMode;
 
   @FXML public StackPane stackPane;
 
@@ -142,7 +142,7 @@ public class profileController extends Main{
   }
 
   public void handleLogoutAction(ActionEvent event) throws IOException {
-    pandaTheme = true;
+    lightTheme = true;
     Parent homePageParent = FXMLLoader.load(getClass().getResource("loginpage.fxml"));
     Scene homePageScene = new Scene(homePageParent);
     Stage homeStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -156,10 +156,10 @@ public class profileController extends Main{
     Stage homeStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);
     homeStage.show();
-    }
+  }
 
-  public void handleLightModeAction(ActionEvent event) throws IOException {
-    Parent homePageParent = FXMLLoader.load(getClass().getResource("lightProfile.fxml"));
+  public void handlePandaModeAction(ActionEvent event) throws IOException {
+    Parent homePageParent = FXMLLoader.load(getClass().getResource("profile.fxml"));
     Scene homePageScene = new Scene(homePageParent);
     Stage homeStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);
