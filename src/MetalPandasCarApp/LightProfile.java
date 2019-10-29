@@ -103,6 +103,7 @@ public class LightProfile {
   /* PROFILE PAGE */
   /*----------------------------------------------------------*/
   public void handleMenuAction(ActionEvent event) {
+    part1Menu.setVisible(true);
     TranslateTransition openNav = new TranslateTransition(new Duration(350), drawer);
     openNav.setToX(0);
     TranslateTransition closeNav = new TranslateTransition(new Duration(350), drawer);
@@ -115,6 +116,7 @@ public class LightProfile {
             closeNav.play();
           }
         });
+
   }
 
   public void handleUpdateAction(ActionEvent event) throws IOException {

@@ -57,9 +57,8 @@
             </rowConstraints>
             <ToggleButton fx:id="lightMode" mnemonicParsing="false" onAction="#handleLightModeAction" prefHeight="25.0" prefWidth="52.0">
               <graphic>
-                <ImageView fitHeight="17.0" fitWidth="35.0" pickOnBounds="true"
-                  preserveRatio="true">
-                  <Image url="@lightMode.png"/>
+                <ImageView fitHeight="17.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                  <Image url="@lightMode.png" />
                 </ImageView>
               </graphic>
             </ToggleButton>
@@ -146,7 +145,7 @@
               <Font name="Monospaced Bold" size="13.0" />
             </font></TextField>
         </AnchorPane>
-        <HBox fx:id="part1Menu" prefHeight="353.0" prefWidth="201.0">
+        <HBox fx:id="part1Menu" prefHeight="353.0" prefWidth="201.0" visible="false">
           <VBox fx:id="drawer" prefHeight="353.0" prefWidth="200.0">
             <GridPane fx:id="imageGrid">
               <columnConstraints>

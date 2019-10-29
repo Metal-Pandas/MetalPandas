@@ -17,6 +17,8 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.web.WebEngine;
+import javafx.scene.web.WebView;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
@@ -33,6 +35,8 @@ public class DarkHome {
   @FXML public ToolBar topToolBar;
 
   @FXML public Button menuButton;
+
+  @FXML public WebView maps;
 
   @FXML public StackPane stackPane;
 
@@ -56,7 +60,13 @@ public class DarkHome {
   /*----------------------------------------------------------*/
   /* HOME PAGE */
   /*----------------------------------------------------------*/
+  public void initialize(){
+    WebEngine engine = maps.getEngine();
+    engine.load("https://www.google.com/maps/");
+  }
+
   public void handleMenuAction(ActionEvent event) {
+    part1Menu.setVisible(true);
     TranslateTransition openNav = new TranslateTransition(new Duration(350), drawer);
     openNav.setToX(0);
     TranslateTransition closeNav = new TranslateTransition(new Duration(350), drawer);
@@ -69,6 +79,7 @@ public class DarkHome {
             closeNav.play();
           }
         });
+
   }
 
   public void handleProfileAction(ActionEvent event) throws IOException {

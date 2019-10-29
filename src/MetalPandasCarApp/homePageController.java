@@ -61,7 +61,6 @@ public class homePageController {
 
   @FXML public Button buttonW;
 
-  @FXML public WebView webView;
   /*----------------------------------------------------------*/
   /* HOME PAGE */
   /*----------------------------------------------------------*/
