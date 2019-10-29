@@ -145,7 +145,7 @@
               <Font name="Monospaced Bold" size="13.0" />
             </font></TextField>
         </AnchorPane>
-        <HBox fx:id="part1Menu" prefHeight="353.0" prefWidth="201.0">
+        <HBox fx:id="part1Menu" prefHeight="353.0" prefWidth="201.0" visible="false">
           <VBox fx:id="drawer" prefHeight="353.0" prefWidth="200.0">
             <GridPane fx:id="imageGrid">
               <columnConstraints>
