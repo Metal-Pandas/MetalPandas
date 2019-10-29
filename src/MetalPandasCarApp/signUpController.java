@@ -136,7 +136,7 @@ public class signUpController {
     String PickCountry = pickCountry.getText();
     String PhoneNum = phoneNumber.getText();
     String EnterPass = enterPassword.getText();
-//    /String Birthday = birthday.getValue().format(DateTimeFormatter.ofPattern("DD/MM/YYYY"));
+//    String Birthday = birthday.getValue().format(DateTimeFormatter.ofPattern("DD/MM/YYYY"));
     String DriverPass = driverPass.getValue();
     String Gender = gender.getValue();
 
