@@ -73,40 +73,66 @@
         </GridPane>
       </ToolBar>
       <StackPane fx:id="stackPane" alignment="CENTER_LEFT" prefHeight="388.0" prefWidth="598.0">
+       <GridPane maxWidth="609.0" prefHeight="358.0" prefWidth="609.0">
+         <columnConstraints>
+           <ColumnConstraints hgrow="SOMETIMES" maxWidth="470.0" minWidth="10.0" prefWidth="470.0" />
+           <ColumnConstraints hgrow="SOMETIMES" maxWidth="276.0" minWidth="10.0" prefWidth="92.0" />
+         </columnConstraints>
+         <rowConstraints>
+           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+           <RowConstraints maxHeight="36.0" minHeight="10.0" prefHeight="36.0" vgrow="SOMETIMES" />
+           <RowConstraints maxHeight="97.0" minHeight="10.0" prefHeight="63.0" vgrow="SOMETIMES" />
+           <RowConstraints maxHeight="201.0" minHeight="10.0" prefHeight="197.0" vgrow="SOMETIMES" />
+           <RowConstraints maxHeight="99.0" minHeight="10.0" prefHeight="31.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <Button fx:id="update" mnemonicParsing="false" onAction="#handleUpdateAction" prefHeight="11.0" prefWidth="80.0" text="Update?" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+           <font>
+             <Font name="Monospaced Bold" size="13.0" />
+           </font>
+               </Button>
+       </GridPane>
         <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
           <Pane fx:id="profileBackdrop" layoutX="9.0" layoutY="10.0" prefHeight="324.0" prefWidth="201.0">
             <Text fx:id="profileFirst" layoutX="58.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="First Name:">
               <font>
                 <Font name="Monospaced Bold" size="13.0" />
-              </font></Text>
+              </font>
+                  </Text>
             <Text fx:id="profileLast" layoutX="61.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last Name:">
               <font>
                 <Font name="Monospaced Bold" size="13.0" />
-              </font></Text>
+              </font>
+                  </Text>
             <Text fx:id="profileEmail" layoutX="75.0" layoutY="105.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email:">
               <font>
                 <Font name="Monospaced Bold" size="13.0" />
-              </font></Text>
+              </font>
+                  </Text>
             <Text fx:id="profileNumber" layoutX="49.0" layoutY="143.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone number:">
               <font>
                 <Font name="Monospaced Bold" size="13.0" />
-              </font></Text>
+              </font>
+                  </Text>
             <Text fx:id="profileBirthday" layoutX="67.0" layoutY="175.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Birthday:">
               <font>
                 <Font name="Monospaced Bold" size="13.0" />
-              </font></Text>
+              </font>
+                  </Text>
             <Text fx:id="profileAddress" layoutX="68.0" layoutY="217.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address:">
               <font>
                 <Font name="Monospaced Bold" size="13.0" />
-              </font></Text>
+              </font>
+                  </Text>
             <Text fx:id="profileCountry" layoutX="69.0" layoutY="255.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Country:">
               <font>
                 <Font name="Monospaced Bold" size="13.0" />
-              </font></Text>
+              </font>
+                  </Text>
             <Text fx:id="profileMode" layoutX="74.0" layoutY="303.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mode:">
               <font>
                 <Font name="Monospaced Bold" size="13.0" />
-              </font></Text>
+              </font>
+                  </Text>
           </Pane>
           <TextField fx:id="profileFName" layoutX="424.0" layoutY="14.0" prefHeight="28.0" prefWidth="149.0">
             <font>
@@ -116,7 +142,8 @@
           <TextField fx:id="profileLName" layoutX="424.0" layoutY="49.0" prefHeight="28.0" prefWidth="149.0">
             <font>
               <Font name="Monospaced Bold" size="13.0" />
-            </font></TextField>
+            </font>
+               </TextField>
           <TextField fx:id="proEmail" layoutX="424.0" layoutY="96.0" prefHeight="28.0" prefWidth="149.0">
             <font>
               <Font name="Monospaced Bold" size="13.0" />
@@ -130,7 +157,8 @@
           <TextField fx:id="profBirthday" layoutX="425.0" layoutY="169.0" prefHeight="28.0" prefWidth="149.0">
             <font>
               <Font name="Monospaced Bold" size="13.0" />
-            </font></TextField>
+            </font>
+               </TextField>
           <TextField fx:id="profAddress" layoutX="424.0" layoutY="210.0" prefHeight="28.0" prefWidth="149.0">
             <font>
               <Font name="Monospaced Bold" size="13.0" />
@@ -139,11 +167,13 @@
           <TextField fx:id="countryCombo" layoutX="424.0" layoutY="249.0" prefHeight="28.0" prefWidth="149.0">
             <font>
               <Font name="Monospaced Bold" size="13.0" />
-            </font></TextField>
+            </font>
+               </TextField>
           <TextField fx:id="modeBox" layoutX="424.0" layoutY="296.0" prefHeight="28.0" prefWidth="149.0">
             <font>
               <Font name="Monospaced Bold" size="13.0" />
-            </font></TextField>
+            </font>
+               </TextField>
         </AnchorPane>
         <HBox fx:id="part1Menu" prefHeight="353.0" prefWidth="201.0" visible="false">
           <VBox fx:id="drawer" prefHeight="353.0" prefWidth="200.0">
@@ -184,23 +214,6 @@
               </bottom>
             </BorderPane>
           </VBox>
-          <GridPane prefHeight="247.0" prefWidth="409.0">
-            <columnConstraints>
-              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            </columnConstraints>
-            <rowConstraints>
-              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-              <RowConstraints maxHeight="97.0" minHeight="10.0" prefHeight="65.0" vgrow="SOMETIMES" />
-              <RowConstraints maxHeight="201.0" minHeight="10.0" prefHeight="197.0" vgrow="SOMETIMES" />
-              <RowConstraints maxHeight="99.0" minHeight="10.0" prefHeight="31.0" vgrow="SOMETIMES" />
-            </rowConstraints>
-            <Button fx:id="update" mnemonicParsing="false" onAction="#handleUpdateAction" prefHeight="11.0" prefWidth="80.0" text="Update?" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
-              <font>
-                <Font name="Monospaced Bold" size="13.0" />
-              </font></Button>
-          </GridPane>
         </HBox>
 
       </StackPane>
