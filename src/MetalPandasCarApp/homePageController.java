@@ -39,6 +39,8 @@ public class homePageController {
 
   @FXML public StackPane stackPane;
 
+  @FXML public WebView maps;
+
   @FXML public HBox part1Menu;
 
   @FXML public VBox drawer;
@@ -63,6 +65,11 @@ public class homePageController {
   /*----------------------------------------------------------*/
   /* HOME PAGE */
   /*----------------------------------------------------------*/
+  public void initialize(){
+    WebEngine engine = maps.getEngine();
+    engine.load("https://www.google.com/%22");
+  }
+
   public void handleMenuAction(ActionEvent event) {
     TranslateTransition openNav = new TranslateTransition(new Duration(350), drawer);
     openNav.setToX(0);
