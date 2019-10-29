@@ -65,24 +65,27 @@ public class homePageController {
   /*----------------------------------------------------------*/
   /* HOME PAGE */
   /*----------------------------------------------------------*/
+
   public void initialize(){
     WebEngine engine = maps.getEngine();
-    engine.load("https://www.google.com/%22");
+    engine.load("https://www.google.com/maps/");
   }
 
   public void handleMenuAction(ActionEvent event) {
-    TranslateTransition openNav = new TranslateTransition(new Duration(350), drawer);
-    openNav.setToX(0);
-    TranslateTransition closeNav = new TranslateTransition(new Duration(350), drawer);
-    menuButton.setOnAction(
-        (ActionEvent evt) -> {
-          if (drawer.getTranslateX() != 0) {
-            openNav.play();
-          } else {
-            closeNav.setToX(-(drawer.getWidth()));
-            closeNav.play();
-          }
-        });
+    part1Menu.setVisible(true);
+        TranslateTransition openNav = new TranslateTransition(new Duration(350), drawer);
+        openNav.setToX(0);
+        TranslateTransition closeNav = new TranslateTransition(new Duration(350), drawer);
+        menuButton.setOnAction(
+            (ActionEvent evt) -> {
+              if (drawer.getTranslateX() != 0) {
+                openNav.play();
+              } else {
+                closeNav.setToX(-(drawer.getWidth()));
+                closeNav.play();
+              }
+            });
+
   }
 
   public void handleProfileAction(ActionEvent event) throws IOException {
