@@ -23,6 +23,8 @@ public class loginController {
   /*----------------------------------------------------------*/
   /* LOGIN PAGE ITEMS */
   /*----------------------------------------------------------*/
+  @FXML public Pane loginBackground;
+
   @FXML public Pane Backdrop;
 
   @FXML public ImageView Title;
@@ -46,17 +48,14 @@ public class loginController {
   @FXML public Text Statustxt;
 
   /*----------------------------------------------------------*/
-  /* Database */
-  /*----------------------------------------------------------*/
-  private Connection conn;
-  private Statement stmt;
-
-  /*----------------------------------------------------------*/
   /* LOGIN PAGE */
   /*----------------------------------------------------------*/
   public void handleLoginAction(MouseEvent mouseEvent) throws SQLException {
-    conn = DatabaseDriver.initializeDB();
-    stmt = conn.createStatement();
+    /*----------------------------------------------------------*/
+    /* Database */
+    /*----------------------------------------------------------*/
+    Connection conn = DatabaseDriver.initializeDB();
+    Statement stmt = conn.createStatement();
     String sql = "SELECT * FROM USER";
     ResultSet rs = stmt.executeQuery(sql);
     String Email = "";
@@ -110,6 +109,10 @@ public class loginController {
     Stage homeStage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);
     homeStage.show();
+  }
+
+  public void initialize() {
+    DatabaseDriver.initializeDB();
   }
 
  /* public void handleDarkThemeAction(MouseEvent mouseEvent) throws IOException {

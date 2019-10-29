@@ -61,6 +61,7 @@ public class favouritesController {
   /* FAVOURITES PAGE */
   /*----------------------------------------------------------*/
   public void handleMenuAction(ActionEvent event) {
+    part1Menu.setVisible(true);
     TranslateTransition openNav = new TranslateTransition(new Duration(350), drawer);
     openNav.setToX(0);
     TranslateTransition closeNav = new TranslateTransition(new Duration(350), drawer);
@@ -73,6 +74,7 @@ public class favouritesController {
             closeNav.play();
           }
         });
+
   }
 
   public void handleHomeAction(ActionEvent event) throws IOException {

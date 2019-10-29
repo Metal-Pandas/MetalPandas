@@ -14,6 +14,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.web.WebView?>
 
 <GridPane fx:id="homePageBack" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MetalPandasCarApp.homePageController">
   <columnConstraints>
@@ -33,7 +34,8 @@
         </Button>
       </ToolBar>
       <StackPane fx:id="stackPane" alignment="CENTER_LEFT" prefHeight="387.0" prefWidth="598.0">
-        <HBox fx:id="part1Menu" prefHeight="353.0" prefWidth="201.0">
+            <WebView fx:id="maps" maxWidth="403.0" prefHeight="362.0" prefWidth="403.0" StackPane.alignment="CENTER_RIGHT" />
+        <HBox fx:id="part1Menu" prefHeight="353.0" prefWidth="201.0" visible="false">
           <VBox fx:id="drawer" prefHeight="353.0" prefWidth="195.0">
             <GridPane fx:id="imageGrid">
               <columnConstraints>

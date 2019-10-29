@@ -3,6 +3,7 @@ package MetalPandasCarApp;
 import java.io.IOException;
 import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -17,6 +18,8 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.web.WebEngine;
+import javafx.scene.web.WebView;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
@@ -36,6 +39,8 @@ public class homePageController {
 
   @FXML public StackPane stackPane;
 
+  @FXML public WebView maps;
+
   @FXML public HBox part1Menu;
 
   @FXML public VBox drawer;
@@ -53,22 +58,33 @@ public class homePageController {
   @FXML public BorderPane logOutBorderPane;
 
   @FXML public Button logoutButton;
+
+  @FXML public Button buttonW;
+
   /*----------------------------------------------------------*/
   /* HOME PAGE */
   /*----------------------------------------------------------*/
+
+  public void initialize(){
+    WebEngine engine = maps.getEngine();
+    engine.load("https://www.google.com/maps/");
+  }
+
   public void handleMenuAction(ActionEvent event) {
-    TranslateTransition openNav = new TranslateTransition(new Duration(350), drawer);
-    openNav.setToX(0);
-    TranslateTransition closeNav = new TranslateTransition(new Duration(350), drawer);
-    menuButton.setOnAction(
-        (ActionEvent evt) -> {
-          if (drawer.getTranslateX() != 0) {
-            openNav.play();
-          } else {
-            closeNav.setToX(-(drawer.getWidth()));
-            closeNav.play();
-          }
-        });
+    part1Menu.setVisible(true);
+        TranslateTransition openNav = new TranslateTransition(new Duration(350), drawer);
+        openNav.setToX(0);
+        TranslateTransition closeNav = new TranslateTransition(new Duration(350), drawer);
+        menuButton.setOnAction(
+            (ActionEvent evt) -> {
+              if (drawer.getTranslateX() != 0) {
+                openNav.play();
+              } else {
+                closeNav.setToX(-(drawer.getWidth()));
+                closeNav.play();
+              }
+            });
+
   }
 
   public void handleProfileAction(ActionEvent event) throws IOException {
@@ -94,5 +110,4 @@ public class homePageController {
     homeStage.setScene(homePageScene);
     homeStage.show();
   }
-
 }

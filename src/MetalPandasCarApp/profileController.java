@@ -80,8 +80,6 @@ public class profileController {
 
   @FXML public ToggleButton lightMode;
 
-  @FXML public ToggleButton pandaMode;
-
   @FXML public StackPane stackPane;
 
   @FXML public HBox part1Menu;
@@ -105,6 +103,7 @@ public class profileController {
   /* PROFILE PAGE */
   /*----------------------------------------------------------*/
   public void handleMenuAction(ActionEvent event) {
+    part1Menu.setVisible(true);
     TranslateTransition openNav = new TranslateTransition(new Duration(350), drawer);
     openNav.setToX(0);
     TranslateTransition closeNav = new TranslateTransition(new Duration(350), drawer);
@@ -117,6 +116,7 @@ public class profileController {
             closeNav.play();
           }
         });
+
   }
 
   public void handleUpdateAction(ActionEvent event) throws IOException {
@@ -161,14 +161,6 @@ public class profileController {
 
   public void handleLightModeAction(ActionEvent event) throws IOException {
     Parent homePageParent = FXMLLoader.load(getClass().getResource("lightProfile.fxml"));
-    Scene homePageScene = new Scene(homePageParent);
-    Stage homeStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-    homeStage.setScene(homePageScene);
-    homeStage.show();
-  }
-
-  public void handlePandaModeAction(ActionEvent event) throws IOException {
-    Parent homePageParent = FXMLLoader.load(getClass().getResource("profile.fxml"));
     Scene homePageScene = new Scene(homePageParent);
     Stage homeStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);
