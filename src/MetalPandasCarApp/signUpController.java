@@ -4,6 +4,7 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.sql.*;
+import java.time.format.DateTimeFormatter;
 
 import javafx.collections.FXCollections;
 import javafx.embed.swing.SwingFXUtils;
@@ -58,7 +59,7 @@ public class signUpController {
 
   @FXML public TextField phoneNumber;
 
-  @FXML public DatePicker birthday;
+  @FXML public DatePicker birthday ;
 
   @FXML public Text iama;
 
@@ -127,6 +128,7 @@ public class signUpController {
   }
 
   public void addUser() throws SQLException {
+
     String FirstName = firstName.getText();
     String LastName = lastName.getText();
     String Email = email.getText();
@@ -134,7 +136,7 @@ public class signUpController {
     String PickCountry = pickCountry.getText();
     String PhoneNum = phoneNumber.getText();
     String EnterPass = enterPassword.getText();
-//  String Birthday = birthday.toString();
+//    String Birthday = birthday.getValue().format(DateTimeFormatter.ofPattern("DD/MM/YYYY"));
     String DriverPass = driverPass.getValue();
     String Gender = gender.getValue();
 
@@ -146,7 +148,7 @@ public class signUpController {
       PickCountry,
       PhoneNum,
       EnterPass,
-//    Birthday,
+//      Birthday,
       DriverPass,
       Gender
     };
