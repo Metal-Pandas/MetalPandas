@@ -3,6 +3,7 @@ package MetalPandasCarApp;
 import java.io.IOException;
 import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -17,6 +18,8 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.web.WebEngine;
+import javafx.scene.web.WebView;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
@@ -53,6 +56,10 @@ public class homePageController {
   @FXML public BorderPane logOutBorderPane;
 
   @FXML public Button logoutButton;
+
+  @FXML public Button buttonW;
+
+  @FXML public WebView webView;
   /*----------------------------------------------------------*/
   /* HOME PAGE */
   /*----------------------------------------------------------*/
@@ -94,5 +101,4 @@ public class homePageController {
     homeStage.setScene(homePageScene);
     homeStage.show();
   }
-
 }
