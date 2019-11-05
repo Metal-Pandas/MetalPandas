@@ -59,7 +59,7 @@ public class signUpController {
 
   @FXML public TextField phoneNumber;
 
-  @FXML public DatePicker birthday ;
+  @FXML public DatePicker birthday;
 
   @FXML public Text iama;
 
@@ -128,7 +128,6 @@ public class signUpController {
   }
 
   public void addUser() throws SQLException {
-
     String FirstName = firstName.getText();
     String LastName = lastName.getText();
     String Email = email.getText();
@@ -136,21 +135,11 @@ public class signUpController {
     String PickCountry = pickCountry.getText();
     String PhoneNum = phoneNumber.getText();
     String EnterPass = enterPassword.getText();
-//    String Birthday = birthday.getValue().format(DateTimeFormatter.ofPattern("DD/MM/YYYY"));
-    String DriverPass = driverPass.getValue();
+    String personType = driverPass.getValue();
     String Gender = gender.getValue();
 
     String[] signUpUser = {
-      FirstName,
-      LastName,
-      Email,
-      Address,
-      PickCountry,
-      PhoneNum,
-      EnterPass,
-//      Birthday,
-      DriverPass,
-      Gender
+      FirstName, LastName, Email, Address, PickCountry, PhoneNum, EnterPass, personType, Gender
     };
 
     DatabaseDriver.createUserInDB(signUpUser);
