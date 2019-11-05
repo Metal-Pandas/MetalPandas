@@ -1,10 +1,7 @@
 package MetalPandasCarApp;
 
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -18,6 +15,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import org.h2.command.Prepared;
 
 public class loginController {
   /*----------------------------------------------------------*/
@@ -56,22 +54,34 @@ public class loginController {
     /*----------------------------------------------------------*/
     Connection conn = DatabaseDriver.initializeDB();
     Statement stmt = conn.createStatement();
-    String sql = "SELECT * FROM USER";
-    ResultSet rs = stmt.executeQuery(sql);
-    String Email = "";
-    String EnterPass = "";
+    //    String sql = "SELECT * FROM USER";
+    String getEmail = UsernameField.getText();
+    String getPassword = PasswordField.getText();
+    String sql = "SELECT * FROM USER WHERE EMAIL = ? AND PASSWORD = ?";
+
+    PreparedStatement pstmt = conn.prepareStatement(sql);
+    pstmt.setString(1, getEmail);
+    pstmt.setString(2, getPassword);
+    ResultSet rs = pstmt.executeQuery();
+
+    String dbEmail = "";
+    String dbPassword = "";
+
     while (rs.next()) {
-      System.out.println(rs.getString("Email"));
-      System.out.println(rs.getString("Password"));
-      Email = rs.getString("Email");
-      EnterPass = rs.getString("Password");
+      dbEmail = rs.getString("Email");
+      dbPassword = rs.getString("Password");
     }
-    String EnterPass1 = PasswordField.getText();
-    String Email1 = UsernameField.getText();
 
-    // System.out.println(EnterPass1 + "  - " + Email1);
-
-    if ((Email.equals(Email1)) && (EnterPass.equals(EnterPass1))) {
+    if ((getEmail.equals(dbEmail)) && (getPassword.equals(dbPassword))) {
+      System.out.println(
+          "GetEmail ="
+              + getEmail
+              + " DB Email  ="
+              + dbEmail
+              + "  getPass ="
+              + getPassword
+              + "  dbPass="
+              + dbPassword);
       try {
         Parent homePageParent = FXMLLoader.load(getClass().getResource("homepage.fxml"));
         Scene homePageScene = new Scene(homePageParent);
@@ -115,7 +125,7 @@ public class loginController {
     DatabaseDriver.initializeDB();
   }
 
- /* public void handleDarkThemeAction(MouseEvent mouseEvent) throws IOException {
+  /* public void handleDarkThemeAction(MouseEvent mouseEvent) throws IOException {
     Parent darkParent = FXMLLoader.load(getClass().getResource("loginpage.fxml"));
     Scene darkScene = new Scene(darkParent);
     String darkTheme = "darkTheme.css";
