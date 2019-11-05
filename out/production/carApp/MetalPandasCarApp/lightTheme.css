@@ -150,7 +150,20 @@
 #homePageSplitPane {
   -fx-background-image: url("Background/DarkTheme/home.png");
 }
+#selectDateTF{
+  -fx-text-fill: #0c590f;
+  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.7), 6, 0.0, 0, 1);
+}
 
+#selectTimeTF{
+  -fx-text-fill: #0c590f;
+  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.7), 6, 0.0, 0, 1);
+}
+#sendMyRideButton {
+  -fx-text-fill: #82c343;
+  -fx-background-color: #363636;
+  -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.7), 6, 0.0, 0, 1);
+}
 #drawer {
   -fx-background-image: url("Background/PandaTheme/login.jpg");
 }
