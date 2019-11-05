@@ -35,8 +35,8 @@ public class DatabaseDriver {
   // Accepts USER inputs from the TexFields, PasswordFields, ChoiceBox and ComboBox.
   // Loops through the values and increments each time, stops after country.
   public static void createUserInDB(String[] signUpUser) throws SQLException {
-    querySQL = "INSERT INTO USER(firstName, lastName, email,  country, phoneNumber,"
-            + "password,  gender) VALUES (?,?,?,?,?,?,?)";
+    querySQL = "INSERT INTO USER(firstName, lastName, email,  address, country, phoneNumber,"
+            + " password, personType,  gender) VALUES (?,?,?,?,?,?,?,?,?)";
 
     PreparedStatement pstmt = conn.prepareStatement(querySQL);
 
