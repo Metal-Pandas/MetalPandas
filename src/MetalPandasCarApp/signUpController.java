@@ -4,6 +4,7 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.sql.*;
+import java.time.format.DateTimeFormatter;
 
 import javafx.collections.FXCollections;
 import javafx.embed.swing.SwingFXUtils;
@@ -134,21 +135,11 @@ public class signUpController {
     String PickCountry = pickCountry.getText();
     String PhoneNum = phoneNumber.getText();
     String EnterPass = enterPassword.getText();
-//  String Birthday = birthday.toString();
-    String DriverPass = driverPass.getValue();
+    String personType = driverPass.getValue();
     String Gender = gender.getValue();
 
     String[] signUpUser = {
-      FirstName,
-      LastName,
-      Email,
-      Address,
-      PickCountry,
-      PhoneNum,
-      EnterPass,
-//    Birthday,
-      DriverPass,
-      Gender
+      FirstName, LastName, Email, Address, PickCountry, PhoneNum, EnterPass, personType, Gender
     };
 
     DatabaseDriver.createUserInDB(signUpUser);
