@@ -49,4 +49,24 @@ public class DatabaseDriver {
 
     System.out.println("User Created!");
   }
+
+  /** START CODE **/
+  public static void updateUserInDB(String[] userUpdate) throws SQLException {
+     // querySQL = "INSERT INTO USER(firstName, lastName, email,  address, country, phoneNumber,"
+             // + " password, personType,  gender) VALUES (?,?,?,?,?,?,?,?,?)";
+      querySQL = "UPDATE USER SET FIRSTNAME, LASTNAME, EMAIL, ADDRESS, COUNTRY, PHONENUMBER,"
+              + "PERSONTYPE";
+
+      PreparedStatement pstmt = conn.prepareStatement(querySQL);
+
+      int i = 1;
+      for (String str : userUpdate) {
+          pstmt.setString(i, str);
+          i++;
+      }
+      pstmt.executeUpdate();
+
+      System.out.println("User Updated!");
+  }
+  /** END CODE **/
 }
