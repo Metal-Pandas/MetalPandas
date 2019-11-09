@@ -1,10 +1,11 @@
 package MetalPandasCarApp;
 
 import java.io.IOException;
+import java.util.ArrayList;
+
 import javafx.animation.TranslateTransition;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -12,15 +13,13 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.StackPane;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.*;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+
+import javax.xml.crypto.Data;
 
 public class homePageController {
   /*----------------------------------------------------------*/
@@ -70,11 +69,9 @@ public class homePageController {
 
   @FXML public Label selectTimeTF;
 
-
   /*----------------------------------------------------------*/
   /* HOME PAGE */
   /*----------------------------------------------------------*/
-
   public void initialize(){
     WebEngine engine = maps.getEngine();
     engine.load("https://www.google.com/maps/");
@@ -87,13 +84,10 @@ public class homePageController {
     } catch (java.lang.NullPointerException exception) {
       exception.printStackTrace();
     }
-
-    // Calls the Database
-    DatabaseDriver.initializeDB();
-
   }
 
   public void handleMenuAction(ActionEvent event) {
+
     part1Menu.setVisible(true);
         TranslateTransition openNav = new TranslateTransition(new Duration(350), drawer);
         openNav.setToX(0);
@@ -111,11 +105,15 @@ public class homePageController {
   }
 
   public void handleProfileAction(ActionEvent event) throws IOException {
+    // Calls the Database
+    DatabaseDriver.initializeDB();
+
     Parent homePageParent = FXMLLoader.load(getClass().getResource("profile.fxml"));
     Scene homePageScene = new Scene(homePageParent);
     Stage homeStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);
     homeStage.show();
+
   }
 
   public void handleFavAction(ActionEvent event) throws IOException {
@@ -133,7 +131,5 @@ public class homePageController {
     homeStage.setScene(homePageScene);
     homeStage.show();
   }
-
-
 }
 
