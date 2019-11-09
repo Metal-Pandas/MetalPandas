@@ -17,6 +17,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import org.h2.engine.User;
 
 public class loginController {
 
@@ -76,14 +77,14 @@ public class loginController {
     if ((getEmail.equals(dbEmail)) && (getPassword.equals(dbPassword))) {
 
       System.out.println(
-          "GetEmail ="
-              + getEmail
-              + " DB Email  ="
-              + dbEmail
-              + "  getPass ="
-              + getPassword
-              + "  dbPass="
-              + dbPassword);
+              "GetEmail ="
+                      + getEmail
+                      + " DB Email  ="
+                      + dbEmail
+                      + "  getPass ="
+                      + getPassword
+                      + "  dbPass="
+                      + dbPassword);
       try {
         Parent homePageParent = FXMLLoader.load(getClass().getResource("homepage.fxml"));
         Scene homePageScene = new Scene(homePageParent);

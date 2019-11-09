@@ -1,22 +1,23 @@
 package MetalPandasCarApp;
 
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+
+import java.net.URL;
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.ResourceBundle;
 
 import javafx.animation.TranslateTransition;
-import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
@@ -26,8 +27,12 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.util.Duration;
-//wfqefe
-public class profileController {
+import org.h2.engine.User;
+
+import javax.xml.crypto.Data;
+
+public class profileController implements Initializable {
+
   /*----------------------------------------------------------*/
   /* PROFILE PAGE ITEMS */
   /*----------------------------------------------------------*/
@@ -101,69 +106,64 @@ public class profileController {
 
   @FXML public Button logoutButton;
 
-  private static String updateSQL;
-  private static Connection conn;
-
+  Connection conn;
+  Statement stmt;
+  private String querySQL;
   /*----------------------------------------------------------*/
   /* PROFILE PAGE */
   /*----------------------------------------------------------*/
+
+  /**
+   * setProfilePage passes an ArrayList of Users called user.
+   * setText from database to text fields of profileController. calls the first index in db.
+   *  userList should only be at ZERO!
+   *
+   * @param user an arrayList that holds Users.
+   */
+  void setProfilePage(ArrayList<Users> user)  {
+    profileFName.setText(user.get(0).getFirstName());
+    profileLName.setText(user.get(0).getLastName());
+    proEmail.setText(user.get(0).getMail());
+    profAddress.setText(user.get(0).getAddress());
+    countryCombo.setText(user.get(0).getCountry());
+    modeBox.setText(user.get(0).getPType());
+    profNumber.setText(user.get(0).getPhoneNumber());
+  }
+
+  /**
+   * First method and code to run when window opens. It initialize userProfileGlobal to setProfilePage.
+   * @param url Database connection
+   * @param resourceBundle Database library.
+   */
+  @Override
+  public void initialize(URL url, ResourceBundle resourceBundle) {
+
+    setProfilePage(profileInfo.userProfilesGlobal);
+  }
+
   public void handleMenuAction(ActionEvent event) {
     part1Menu.setVisible(true);
     TranslateTransition openNav = new TranslateTransition(new Duration(350), drawer);
     openNav.setToX(0);
     TranslateTransition closeNav = new TranslateTransition(new Duration(350), drawer);
     menuButton.setOnAction(
-        (ActionEvent evt) -> {
-          if (drawer.getTranslateX() != 0) {
-            openNav.play();
-          } else {
-            closeNav.setToX(-(drawer.getWidth()));
-            closeNav.play();
-          }
-        });
-
+            (ActionEvent evt) -> {
+              if (drawer.getTranslateX() != 0) {
+                openNav.play();
+              } else {
+                closeNav.setToX(-(drawer.getWidth()));
+                closeNav.play();
+              }
+            });
   }
 
-  public void handleUpdateAction(ActionEvent event) throws IOException, SQLException {
+  public void handleUpdateAction(ActionEvent event) throws IOException {
     Parent homePageParent = FXMLLoader.load(getClass().getResource("editPage.fxml"));
     Scene homePageScene = new Scene(homePageParent);
     Stage homeStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);
     homeStage.show();
-
-    /** ODALYS START CODE **/
-    updateProfile();
-
-    /** ODALYS END CODE **/
   }
-/** ODALYS START CODE **/
-  public void updateProfile() throws SQLException {
-    String FirstName = profileFName.getText();
-    String LastName = profileLName.getText();
-    String Email = proEmail.getText();
-    String Address = profAddress.getText();
-    String PickCountry = countryCombo.getText();
-    String PhoneNum = profNumber.getText();
-    String Birthday = profBirthday.getText();
-    String Mode = modeBox.getText();
-    String[] updateUser = {
-            FirstName, LastName, Email, Address, PickCountry, PhoneNum, Birthday, Mode
-    };
-
-    DatabaseDriver.updateUserInDB(updateUser);
-  }
-
-  public void initialize() {
-    try {
-    } catch (java.lang.NullPointerException exception) {
-      exception.printStackTrace();
-    }
-
-    // Calls the Database
-    DatabaseDriver.initializeDB();
-  }
-
-/** ODALYS END CODE **/
 
   public void handleHomeAction(ActionEvent event) throws IOException {
     Parent homePageParent = FXMLLoader.load(getClass().getResource("homepage.fxml"));
@@ -182,6 +182,8 @@ public class profileController {
   }
 
   public void handleLogoutAction(ActionEvent event) throws IOException {
+    profileInfo.userProfilesGlobal.clear();
+    System.out.println("list is clear");
     Parent homePageParent = FXMLLoader.load(getClass().getResource("loginpage.fxml"));
     Scene homePageScene = new Scene(homePageParent);
     Stage homeStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -195,7 +197,7 @@ public class profileController {
     Stage homeStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);
     homeStage.show();
-    }
+  }
 
   public void handleLightModeAction(ActionEvent event) throws IOException {
     Parent homePageParent = FXMLLoader.load(getClass().getResource("lightProfile.fxml"));
