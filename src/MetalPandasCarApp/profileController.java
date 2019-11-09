@@ -1,7 +1,12 @@
 package MetalPandasCarApp;
 
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
 import javafx.animation.TranslateTransition;
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -9,11 +14,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.SplitPane;
-import javafx.scene.control.TextField;
-import javafx.scene.control.ToggleButton;
-import javafx.scene.control.ToolBar;
+import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
@@ -99,6 +100,10 @@ public class profileController {
   @FXML public BorderPane logOutBorderPane;
 
   @FXML public Button logoutButton;
+
+  private static String updateSQL;
+  private static Connection conn;
+
   /*----------------------------------------------------------*/
   /* PROFILE PAGE */
   /*----------------------------------------------------------*/
@@ -119,13 +124,46 @@ public class profileController {
 
   }
 
-  public void handleUpdateAction(ActionEvent event) throws IOException {
+  public void handleUpdateAction(ActionEvent event) throws IOException, SQLException {
     Parent homePageParent = FXMLLoader.load(getClass().getResource("editPage.fxml"));
     Scene homePageScene = new Scene(homePageParent);
     Stage homeStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);
     homeStage.show();
+
+    /** ODALYS START CODE **/
+    updateProfile();
+
+    /** ODALYS END CODE **/
   }
+/** ODALYS START CODE **/
+  public void updateProfile() throws SQLException {
+    String FirstName = profileFName.getText();
+    String LastName = profileLName.getText();
+    String Email = proEmail.getText();
+    String Address = profAddress.getText();
+    String PickCountry = countryCombo.getText();
+    String PhoneNum = profNumber.getText();
+    String Birthday = profBirthday.getText();
+    String Mode = modeBox.getText();
+    String[] updateUser = {
+            FirstName, LastName, Email, Address, PickCountry, PhoneNum, Birthday, Mode
+    };
+
+    DatabaseDriver.updateUserInDB(updateUser);
+  }
+
+  public void initialize() {
+    try {
+    } catch (java.lang.NullPointerException exception) {
+      exception.printStackTrace();
+    }
+
+    // Calls the Database
+    DatabaseDriver.initializeDB();
+  }
+
+/** ODALYS END CODE **/
 
   public void handleHomeAction(ActionEvent event) throws IOException {
     Parent homePageParent = FXMLLoader.load(getClass().getResource("homepage.fxml"));

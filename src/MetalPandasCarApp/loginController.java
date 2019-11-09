@@ -53,8 +53,6 @@ public class loginController {
     /* Database */
     /*----------------------------------------------------------*/
     Connection conn = DatabaseDriver.initializeDB();
-    Statement stmt = conn.createStatement();
-    //    String sql = "SELECT * FROM USER";
     String getEmail = UsernameField.getText();
     String getPassword = PasswordField.getText();
     String sql = "SELECT * FROM USER WHERE EMAIL = ? AND PASSWORD = ?";

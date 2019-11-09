@@ -74,6 +74,7 @@ public class editController {
     Stage homeStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);
     homeStage.show();
+
   }
 
   public void handlePicEdit(ActionEvent event) {
