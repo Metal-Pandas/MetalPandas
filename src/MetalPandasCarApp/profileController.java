@@ -26,7 +26,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.util.Duration;
-
+//wfqefe
 public class profileController {
   /*----------------------------------------------------------*/
   /* PROFILE PAGE ITEMS */
