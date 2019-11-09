@@ -131,12 +131,12 @@ public class profileController {
     homeStage.setScene(homePageScene);
     homeStage.show();
 
-    /** START CODE **/
+    /** ODALYS START CODE **/
     updateProfile();
 
-    /** END CODE **/
+    /** ODALYS END CODE **/
   }
-/** START CODE **/
+/** ODALYS START CODE **/
   public void updateProfile() throws SQLException {
     String FirstName = profileFName.getText();
     String LastName = profileLName.getText();
@@ -163,7 +163,7 @@ public class profileController {
     DatabaseDriver.initializeDB();
   }
 
-/** END CODE **/
+/** ODALYS END CODE **/
 
   public void handleHomeAction(ActionEvent event) throws IOException {
     Parent homePageParent = FXMLLoader.load(getClass().getResource("homepage.fxml"));

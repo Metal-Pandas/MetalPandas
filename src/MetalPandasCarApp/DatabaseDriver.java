@@ -50,7 +50,7 @@ public class DatabaseDriver {
     System.out.println("User Created!");
   }
 
-  /** START CODE **/
+  /** ODALYS START CODE **/
   public static void updateUserInDB(String[] userUpdate) throws SQLException {
      // querySQL = "INSERT INTO USER(firstName, lastName, email,  address, country, phoneNumber,"
              // + " password, personType,  gender) VALUES (?,?,?,?,?,?,?,?,?)";
@@ -68,5 +68,5 @@ public class DatabaseDriver {
 
       System.out.println("User Updated!");
   }
-  /** END CODE **/
+  /** ODALYS END CODE **/
 }
