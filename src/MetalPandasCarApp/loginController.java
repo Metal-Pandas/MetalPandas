@@ -2,12 +2,14 @@ package MetalPandasCarApp;
 
 import java.io.IOException;
 import java.sql.*;
+import java.util.ArrayList;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
@@ -15,9 +17,10 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import org.h2.command.Prepared;
+import org.h2.engine.User;
 
 public class loginController {
+
   /*----------------------------------------------------------*/
   /* LOGIN PAGE ITEMS */
   /*----------------------------------------------------------*/
@@ -48,13 +51,12 @@ public class loginController {
   /*----------------------------------------------------------*/
   /* LOGIN PAGE */
   /*----------------------------------------------------------*/
+  private ArrayList<Users> userList = new ArrayList<>();
   public void handleLoginAction(MouseEvent mouseEvent) throws SQLException {
     /*----------------------------------------------------------*/
     /* Database */
     /*----------------------------------------------------------*/
     Connection conn = DatabaseDriver.initializeDB();
-    Statement stmt = conn.createStatement();
-    //    String sql = "SELECT * FROM USER";
     String getEmail = UsernameField.getText();
     String getPassword = PasswordField.getText();
     String sql = "SELECT * FROM USER WHERE EMAIL = ? AND PASSWORD = ?";
@@ -73,15 +75,16 @@ public class loginController {
     }
 
     if ((getEmail.equals(dbEmail)) && (getPassword.equals(dbPassword))) {
+
       System.out.println(
-          "GetEmail ="
-              + getEmail
-              + " DB Email  ="
-              + dbEmail
-              + "  getPass ="
-              + getPassword
-              + "  dbPass="
-              + dbPassword);
+              "GetEmail ="
+                      + getEmail
+                      + " DB Email  ="
+                      + dbEmail
+                      + "  getPass ="
+                      + getPassword
+                      + "  dbPass="
+                      + dbPassword);
       try {
         Parent homePageParent = FXMLLoader.load(getClass().getResource("homepage.fxml"));
         Scene homePageScene = new Scene(homePageParent);
@@ -93,12 +96,22 @@ public class loginController {
       }
       System.out.println("Welcome Back!");
     } else {
-      Statustxt.setText("Incorrect Email or Password!");
+      Alert a = new Alert(Alert.AlertType.NONE);
+      a.setAlertType(Alert.AlertType.WARNING);
+      a.setContentText("Incorrect Email or Password!");
+      a.show();
     }
+    /*----------------------------------------------------------*/
+    /* LOAD PROFILE PAGE */
+    /*----------------------------------------------------------*/
+
+    profileInfo.userProfilesGlobal = DatabaseDriver.getUserInfo(dbEmail);
+    userList = DatabaseDriver.getUserInfo(dbEmail);
+    conn.close();
   }
 
   public void handleSignUpAction(MouseEvent mouseEvent) throws IOException {
-    Parent homePageParent = FXMLLoader.load(getClass().getResource("signupPage.fxml"));
+    Parent homePageParent = FXMLLoader.load(getClass().getResource("signUpPage.fxml"));
     Scene homePageScene = new Scene(homePageParent);
     Stage homeStage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);
@@ -124,15 +137,4 @@ public class loginController {
   public void initialize() {
     DatabaseDriver.initializeDB();
   }
-
-  /* public void handleDarkThemeAction(MouseEvent mouseEvent) throws IOException {
-    Parent darkParent = FXMLLoader.load(getClass().getResource("loginpage.fxml"));
-    Scene darkScene = new Scene(darkParent);
-    String darkTheme = "darkTheme.css";
-    darkScene.getStylesheets().add(darkTheme);
-    Stage darkStage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
-    darkStage.setScene(darkScene);
-    darkStage.show();
-  }
-  */
 }

@@ -3,14 +3,20 @@ package MetalPandasCarApp;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.net.URL;
 import java.sql.*;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.ResourceBundle;
 
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 import javafx.collections.FXCollections;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -27,7 +33,7 @@ import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javax.imageio.ImageIO;
 
-public class signUpController {
+public class signUpController{
   /*----------------------------------------------------------*/
   /* SIGN UP PAGE ITEMS */
   /*----------------------------------------------------------*/
@@ -59,7 +65,7 @@ public class signUpController {
 
   @FXML public TextField phoneNumber;
 
-  @FXML public DatePicker birthday;
+//  @FXML public DatePicker birthday;
 
   @FXML public Text iama;
 
@@ -118,14 +124,12 @@ public class signUpController {
     try {
       driverPass.setItems(FXCollections.observableArrayList("Driver", "Passenger"));
       gender.setItems(
-          FXCollections.observableArrayList("Female", "Male", "Non-binary", "Metal Panda"));
+              FXCollections.observableArrayList("Female", "Male", "Non-binary", "Metal Panda"));
     } catch (java.lang.NullPointerException exception) {
       exception.printStackTrace();
     }
-
-    // Calls the Database
-    DatabaseDriver.initializeDB();
   }
+
 
   public void addUser() throws SQLException {
     String FirstName = firstName.getText();
@@ -139,9 +143,10 @@ public class signUpController {
     String Gender = gender.getValue();
 
     String[] signUpUser = {
-      FirstName, LastName, Email, Address, PickCountry, PhoneNum, EnterPass, personType, Gender
+            FirstName, LastName, Email, Address, PickCountry, PhoneNum, EnterPass, personType, Gender
     };
 
-    DatabaseDriver.createUserInDB(signUpUser);
+    Users au = new Users(FirstName, LastName, Email, Address, PickCountry, PhoneNum, EnterPass);
+    profileInfo.userProfilesGlobal.add(au);
   }
 }

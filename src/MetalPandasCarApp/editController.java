@@ -74,6 +74,7 @@ public class editController {
     Stage homeStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);
     homeStage.show();
+
   }
 
   public void handlePicEdit(ActionEvent event) {
@@ -113,11 +114,6 @@ public class editController {
   public void initialize(){
     try{
       driverPass.setItems(FXCollections.observableArrayList("Driver","Passenger"));
-    }
-    catch(java.lang.NullPointerException exception){
-      exception.printStackTrace();
-    }
-    try{
       gender.setItems(FXCollections.observableArrayList("Female","Male", "Non-binary", "Metal Panda"));
     }
     catch(java.lang.NullPointerException exception){
