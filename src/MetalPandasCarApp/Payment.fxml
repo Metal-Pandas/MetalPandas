@@ -44,7 +44,7 @@
                         <Font name="Monospaced Regular" size="15.0" />
                      </font>
                   </Text>
-                  <Button fx:id="addPayButton" layoutX="56.0" layoutY="239.0" mnemonicParsing="false" text="Add Payment Method">
+                  <Button fx:id="addPayButton" layoutX="56.0" layoutY="239.0" mnemonicParsing="false" onAction="#handleAddPaymentAction" text="Add Payment Method">
                      <font>
                         <Font name="Monospaced Regular" size="13.0" />
                      </font>
@@ -65,5 +65,6 @@
             </Pane>
          </children>
       </GridPane>
+      <Button fx:id="goBackButton" layoutX="21.0" layoutY="20.0" mnemonicParsing="false" onAction="#handleGoBackAction" text="Go Back" />
    </children>
 </AnchorPane>

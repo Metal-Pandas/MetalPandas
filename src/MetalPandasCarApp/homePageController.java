@@ -69,6 +69,8 @@ public class homePageController {
 
   @FXML public Label selectTimeTF;
 
+  @FXML public Button paymentButton;
+
   /*----------------------------------------------------------*/
   /* HOME PAGE */
   /*----------------------------------------------------------*/
@@ -126,6 +128,14 @@ public class homePageController {
 
   public void handleLogoutAction(ActionEvent event) throws IOException {
     Parent homePageParent = FXMLLoader.load(getClass().getResource("loginpage.fxml"));
+    Scene homePageScene = new Scene(homePageParent);
+    Stage homeStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+    homeStage.setScene(homePageScene);
+    homeStage.show();
+  }
+
+  public void handlePaymentAction(ActionEvent event) throws IOException{
+    Parent homePageParent = FXMLLoader.load(getClass().getResource("Payment.fxml"));
     Scene homePageScene = new Scene(homePageParent);
     Stage homeStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);
