@@ -157,13 +157,45 @@ public class profileController implements Initializable {
             });
   }
 
-  public void handleUpdateAction(ActionEvent event) throws IOException {
+  public void handleUpdateAction(ActionEvent event) throws IOException, SQLException {
     Parent homePageParent = FXMLLoader.load(getClass().getResource("editPage.fxml"));
     Scene homePageScene = new Scene(homePageParent);
     Stage homeStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);
     homeStage.show();
+
+    updateProfile();
   }
+
+  /** START CODE **/
+  public void updateProfile() throws SQLException {
+    String FirstName = profileFName.getText();
+    String LastName = profileLName.getText();
+    String Email = proEmail.getText();
+    String Address = profAddress.getText();
+    String PickCountry = countryCombo.getText();
+    String PhoneNum = profNumber.getText();
+    String Birthday = profBirthday.getText();
+    String Mode = modeBox.getText();
+    String[] updateUser = {
+            FirstName, LastName, Email, Address, PickCountry, PhoneNum, Birthday, Mode
+    };
+
+    DatabaseDriver.updateUserInDB(updateUser);
+  }
+
+  public void initialize() {
+    try {
+    } catch (java.lang.NullPointerException exception) {
+      exception.printStackTrace();
+    }
+
+    // Calls the Database
+    DatabaseDriver.initializeDB();
+  }
+
+  /** END CODE **/
+
 
   public void handleHomeAction(ActionEvent event) throws IOException {
     Parent homePageParent = FXMLLoader.load(getClass().getResource("homepage.fxml"));
