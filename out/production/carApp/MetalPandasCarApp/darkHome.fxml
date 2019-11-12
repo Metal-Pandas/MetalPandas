@@ -89,7 +89,7 @@
             <Pane prefHeight="200.0" prefWidth="200.0">
                <children>
                   <DatePicker layoutX="9.0" layoutY="72.0" />
-                  <Button fx:id="sendMyRideButton" layoutX="51.0" layoutY="282.0" mnemonicParsing="false" text="Send My Ride" />
+                  <Button fx:id="sendMyRideButton" layoutX="51.0" layoutY="282.0" mnemonicParsing="false" onAction="#handleSendMyRideAction" text="Send My Ride" />
                   <Label fx:id="selectDateTF" layoutX="43.0" layoutY="37.0" text="Select A Date">
                      <font>
                         <Font size="18.0" />

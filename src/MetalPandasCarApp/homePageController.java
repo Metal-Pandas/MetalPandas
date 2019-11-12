@@ -1,8 +1,5 @@
 package MetalPandasCarApp;
 
-import java.io.IOException;
-import java.util.ArrayList;
-
 import javafx.animation.TranslateTransition;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
@@ -19,7 +16,7 @@ import javafx.scene.web.WebView;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
-import javax.xml.crypto.Data;
+import java.io.IOException;
 
 public class homePageController {
   /*----------------------------------------------------------*/
@@ -72,15 +69,20 @@ public class homePageController {
   /*----------------------------------------------------------*/
   /* HOME PAGE */
   /*----------------------------------------------------------*/
-  public void initialize(){
+  public void initialize() {
     WebEngine engine = maps.getEngine();
     engine.load("https://www.google.com/maps/");
 
     try {
-      hourChoiceBox.setItems(FXCollections.observableArrayList("1", "2", "3", "4", "5", "6", "7", "8","9","10", "11", "12"));
-      minuteChoiceBox.setItems(FXCollections.observableArrayList(00,01,02,03,04,05,06,07,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30
-      ,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59));
-      amPmChoiceBox.setItems(FXCollections.observableArrayList("am","pm"));
+      hourChoiceBox.setItems(
+          FXCollections.observableArrayList(
+              "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"));
+      minuteChoiceBox.setItems(
+          FXCollections.observableArrayList(
+              00, 01, 02, 03, 04, 05, 06, 07, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22,
+              23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43,
+              44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59));
+      amPmChoiceBox.setItems(FXCollections.observableArrayList("am", "pm"));
     } catch (java.lang.NullPointerException exception) {
       exception.printStackTrace();
     }
@@ -89,19 +91,18 @@ public class homePageController {
   public void handleMenuAction(ActionEvent event) {
 
     part1Menu.setVisible(true);
-        TranslateTransition openNav = new TranslateTransition(new Duration(350), drawer);
-        openNav.setToX(0);
-        TranslateTransition closeNav = new TranslateTransition(new Duration(350), drawer);
-        menuButton.setOnAction(
-            (ActionEvent evt) -> {
-              if (drawer.getTranslateX() != 0) {
-                openNav.play();
-              } else {
-                closeNav.setToX(-(drawer.getWidth()));
-                closeNav.play();
-              }
-            });
-
+    TranslateTransition openNav = new TranslateTransition(new Duration(350), drawer);
+    openNav.setToX(0);
+    TranslateTransition closeNav = new TranslateTransition(new Duration(350), drawer);
+    menuButton.setOnAction(
+        (ActionEvent evt) -> {
+          if (drawer.getTranslateX() != 0) {
+            openNav.play();
+          } else {
+            closeNav.setToX(-(drawer.getWidth()));
+            closeNav.play();
+          }
+        });
   }
 
   public void handleProfileAction(ActionEvent event) throws IOException {
@@ -113,7 +114,6 @@ public class homePageController {
     Stage homeStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);
     homeStage.show();
-
   }
 
   public void handleFavAction(ActionEvent event) throws IOException {
@@ -126,6 +126,14 @@ public class homePageController {
 
   public void handleLogoutAction(ActionEvent event) throws IOException {
     Parent homePageParent = FXMLLoader.load(getClass().getResource("loginpage.fxml"));
+    Scene homePageScene = new Scene(homePageParent);
+    Stage homeStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+    homeStage.setScene(homePageScene);
+    homeStage.show();
+  }
+
+  public void handleSendMyRideAction(ActionEvent event) throws IOException {
+    Parent homePageParent = FXMLLoader.load(getClass().getResource("profileRating.fxml"));
     Scene homePageScene = new Scene(homePageParent);
     Stage homeStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);
