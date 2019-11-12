@@ -29,15 +29,20 @@ public class forgotPasswordController {
   /*----------------------------------------------------------*/
   /* FORGOT PASSWORD PAGE */
   /*----------------------------------------------------------*/
-  public void handleConfirmButton(ActionEvent event) {
+  public void handleConfirmButton(ActionEvent resetPasswordEvent) {
     if(phoneNumberEnter.getText().equals("2392345555")){
-      forgotPasswordTxt.setText("A message was sent to the phone number.");
+      try {
+      Parent resetPasswordParent = FXMLLoader.load(getClass().getResource("ResetPassword.fxml"));
+      Scene resetPasswordScene = new Scene(resetPasswordParent);
+      Stage resetPasswordStage = (Stage) ((Node) resetPasswordEvent.getSource()).getScene().getWindow();
+      resetPasswordStage.setScene(resetPasswordScene);
+      resetPasswordStage.show();
+    } catch (IOException e) {
+      e.printStackTrace();
     }
-    if(phoneNumberEnter.getText().equals("jsmith@abc.com")){
-      forgotPasswordTxt.setText("A message was sent to the Email.");
-    }
-    if(!phoneNumberEnter.getText().equals("2392345555") && !phoneNumberEnter.getText().equals("jsmith@abc.com")){
-      forgotPasswordTxt.setText("Email/Phone number is invalid.");
+  }
+    if(!phoneNumberEnter.getText().equals("2392345555")){
+      forgotPasswordTxt.setText("Phone number is invalid.");
     }
   }
 
