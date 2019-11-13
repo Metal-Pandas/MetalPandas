@@ -33,6 +33,10 @@ import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javax.imageio.ImageIO;
 
+/**
+ * signUp page controller that handles it's action event.
+ *
+ */
 public class signUpController{
   /*----------------------------------------------------------*/
   /* SIGN UP PAGE ITEMS */
@@ -130,7 +134,11 @@ public class signUpController{
     }
   }
 
-
+  /**
+   * Add Users method creates strings that equal to the textFields.
+   *
+   * @throws SQLException
+   */
   public void addUser() throws SQLException {
     String FirstName = firstName.getText();
     String LastName = lastName.getText();
@@ -142,10 +150,14 @@ public class signUpController{
     String personType = driverPass.getValue();
     String Gender = gender.getValue();
 
+    //A string of array that passes in Users parameters.
     String[] signUpUser = {
             FirstName, LastName, Email, Address, PickCountry, PhoneNum, EnterPass, personType, Gender
     };
 
+
+     // Creates a new object of Users called au and passes users parameters.
+     // Global array adds au.
     Users au = new Users(FirstName, LastName, Email, Address, PickCountry, PhoneNum, EnterPass);
     profileInfo.userProfilesGlobal.add(au);
   }

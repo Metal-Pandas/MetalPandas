@@ -31,6 +31,11 @@ import org.h2.engine.User;
 
 import javax.xml.crypto.Data;
 
+/**
+ * Profile page controller that implements an initialize method for static fields.
+ * The profile controller handles all action event's for profile page and sets a profile page
+ * that gets data and set data to the profile textFields.
+ */
 public class profileController implements Initializable {
 
   /*----------------------------------------------------------*/
@@ -181,6 +186,13 @@ public class profileController implements Initializable {
     homeStage.show();
   }
 
+  /**
+   * Switches scene from pressing the button of Log Out.
+   * Clears the data text fields from profile.
+   *
+   * @param event button pressed to logout.
+   * @throws IOException
+   */
   public void handleLogoutAction(ActionEvent event) throws IOException {
     profileInfo.userProfilesGlobal.clear();
     System.out.println("list is clear");

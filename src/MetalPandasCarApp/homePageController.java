@@ -105,7 +105,7 @@ public class homePageController {
   }
 
   public void handleProfileAction(ActionEvent event) throws IOException {
-    // Calls the Database
+    // Opens the database connection.
     DatabaseDriver.initializeDB();
 
     Parent homePageParent = FXMLLoader.load(getClass().getResource("profile.fxml"));

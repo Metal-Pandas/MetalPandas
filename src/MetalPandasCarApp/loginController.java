@@ -17,7 +17,6 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import org.h2.engine.User;
 
 public class loginController {
 
@@ -51,7 +50,20 @@ public class loginController {
   /*----------------------------------------------------------*/
   /* LOGIN PAGE */
   /*----------------------------------------------------------*/
+    // Array list that assigns Users fields to userList.
   private ArrayList<Users> userList = new ArrayList<>();
+
+    /**
+     * LoginAction handles the scene switch from login to homepage.
+     * Validate the email and password of user input to the email and password of the database.
+     * Incorrect email or password throws a error message.
+     * Global array list associates it's self with dbEmail.
+     * Passes the validation to the profile controller.
+     * Closes the database connection.
+     *
+     * @param mouseEvent
+     * @throws SQLException
+     */
   public void handleLoginAction(MouseEvent mouseEvent) throws SQLException {
     /*----------------------------------------------------------*/
     /* Database */
@@ -134,6 +146,9 @@ public class loginController {
     homeStage.show();
   }
 
+    /**
+     * Method that runs first, creates and open a connection to the database.
+     */
   public void initialize() {
     DatabaseDriver.initializeDB();
   }
