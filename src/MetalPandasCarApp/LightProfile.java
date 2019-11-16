@@ -3,7 +3,6 @@ package MetalPandasCarApp;
 import java.io.IOException;
 import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -15,7 +14,6 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.control.ToolBar;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
@@ -160,7 +158,7 @@ public class LightProfile {
   }
 
   public void handlePandaModeAction(ActionEvent event) throws IOException {
-    Parent homePageParent = FXMLLoader.load(getClass().getResource("profile.fxml"));
+    Parent homePageParent = FXMLLoader.load(getClass().getResource("pandaProfile.fxml"));
     Scene homePageScene = new Scene(homePageParent);
     Stage homeStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);
