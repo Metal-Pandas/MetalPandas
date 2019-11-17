@@ -15,12 +15,12 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
-import org.controlsfx.control.Rating;
+
 
 public class PandaProfileRating {
 
   @FXML public Pane profileRatingBack;
-  @FXML public Rating starRating;
+//  @FXML public Rating starRating;
   @FXML public Label ratingLabelTitle;
   @FXML public Label ratingLabel;
   @FXML public Button confirmRating;
@@ -34,15 +34,15 @@ public class PandaProfileRating {
   }
 
   public void initialize(URL arg0, ResourceBundle arg1){
-    try{
-      starRating.ratingProperty().addListener(new ChangeListener<Number>() {
-        @Override
-        public void changed(ObservableValue<? extends Number> arg0, Number t, Number t1) {
-          ratingLabel.setText("Rating: " + t1.toString());
-        }
-      });
-    } catch (java.lang.NullPointerException exception) {
-      exception.printStackTrace();
-    }
+//    try{
+//      starRating.ratingProperty().addListener(new ChangeListener<Number>() {
+//        @Override
+//        public void changed(ObservableValue<? extends Number> arg0, Number t, Number t1) {
+//          ratingLabel.setText("Rating: " + t1.toString());
+//        }
+//      });
+//    } catch (java.lang.NullPointerException exception) {
+//      exception.printStackTrace();
+//    }
   }
 }
