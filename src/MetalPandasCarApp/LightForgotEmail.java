@@ -31,7 +31,7 @@ public class LightForgotEmail {
   }
 
   public void handleBackAction(ActionEvent actionEvent) throws IOException {
-    Parent homePageParent = FXMLLoader.load(getClass().getResource("darkLogin.fxml"));
+    Parent homePageParent = FXMLLoader.load(getClass().getResource("lightLogin.fxml"));
     Scene homePageScene = new Scene(homePageParent);
     Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);

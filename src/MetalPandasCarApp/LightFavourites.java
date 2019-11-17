@@ -54,7 +54,7 @@ public class LightFavourites {
   }
 
   public void handleLogoutAction(ActionEvent actionEvent) throws IOException {
-    Parent homePageParent = FXMLLoader.load(getClass().getResource("darkLogin.fxml"));
+    Parent homePageParent = FXMLLoader.load(getClass().getResource("lightLogin.fxml"));
     Scene homePageScene = new Scene(homePageParent);
     Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);
@@ -62,7 +62,7 @@ public class LightFavourites {
   }
 
   public void handleProfileAction(ActionEvent actionEvent) throws IOException {
-    Parent homePageParent = FXMLLoader.load(getClass().getResource("darkProfile.fxml"));
+    Parent homePageParent = FXMLLoader.load(getClass().getResource("lightProfile.fxml"));
     Scene homePageScene = new Scene(homePageParent);
     Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);
@@ -70,7 +70,7 @@ public class LightFavourites {
   }
 
   public void handleHomeAction(ActionEvent actionEvent) throws IOException {
-    Parent homePageParent = FXMLLoader.load(getClass().getResource("darkHome.fxml"));
+    Parent homePageParent = FXMLLoader.load(getClass().getResource("lightHome.fxml"));
     Scene homePageScene = new Scene(homePageParent);
     Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);
@@ -78,7 +78,7 @@ public class LightFavourites {
   }
 
   public void handleSchedulesAction(ActionEvent actionEvent) throws IOException {
-    Parent homePageParent = FXMLLoader.load(getClass().getResource("darkAppointments.fxml"));
+    Parent homePageParent = FXMLLoader.load(getClass().getResource("lightAppointments.fxml"));
     Scene homePageScene = new Scene(homePageParent);
     Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);

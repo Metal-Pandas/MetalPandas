@@ -51,7 +51,7 @@ public class PandaHome {
   }
 
   public void handleLogoutAction(ActionEvent actionEvent) throws IOException {
-    Parent homePageParent = FXMLLoader.load(getClass().getResource("darkLogin.fxml"));
+    Parent homePageParent = FXMLLoader.load(getClass().getResource("pandaLogin.fxml"));
     Scene homePageScene = new Scene(homePageParent);
     Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);
@@ -59,7 +59,7 @@ public class PandaHome {
   }
 
   public void handleProfileAction(ActionEvent actionEvent) throws IOException {
-    Parent homePageParent = FXMLLoader.load(getClass().getResource("darkProfile.fxml"));
+    Parent homePageParent = FXMLLoader.load(getClass().getResource("pandaProfile.fxml"));
     Scene homePageScene = new Scene(homePageParent);
     Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);
@@ -67,7 +67,7 @@ public class PandaHome {
   }
 
   public void handleFavouritesAction(ActionEvent actionEvent) throws IOException {
-    Parent homePageParent = FXMLLoader.load(getClass().getResource("darkFavourites.fxml"));
+    Parent homePageParent = FXMLLoader.load(getClass().getResource("pandaFavourites.fxml"));
     Scene homePageScene = new Scene(homePageParent);
     Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);
@@ -80,7 +80,7 @@ public class PandaHome {
   }
 
   public void handleScheduleAction(ActionEvent actionEvent) throws IOException {
-    Parent homePageParent = FXMLLoader.load(getClass().getResource("darkSchedule.fxml"));
+    Parent homePageParent = FXMLLoader.load(getClass().getResource("pandaSchedule.fxml"));
     Scene homePageScene = new Scene(homePageParent);
     Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);
@@ -88,7 +88,7 @@ public class PandaHome {
   }
 
   public void handleSchedulesAction(ActionEvent actionEvent) throws IOException {
-    Parent homePageParent = FXMLLoader.load(getClass().getResource("darkAppointments.fxml"));
+    Parent homePageParent = FXMLLoader.load(getClass().getResource("pandaAppointments.fxml"));
     Scene homePageScene = new Scene(homePageParent);
     Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);

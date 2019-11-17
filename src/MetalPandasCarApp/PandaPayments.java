@@ -33,7 +33,7 @@ public class PandaPayments {
 
 
   public void handleAddPaymentAction(ActionEvent actionEvent) throws IOException {
-    Parent homePageParent = FXMLLoader.load(getClass().getResource("darkAddPayments.fxml"));
+    Parent homePageParent = FXMLLoader.load(getClass().getResource("pandaAddPayments.fxml"));
     Scene homePageScene = new Scene(homePageParent);
     Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);
@@ -41,7 +41,7 @@ public class PandaPayments {
   }
 
   public void handlePayAction(ActionEvent actionEvent) throws IOException {
-    Parent homePageParent = FXMLLoader.load(getClass().getResource("darkAppointments.fxml"));
+    Parent homePageParent = FXMLLoader.load(getClass().getResource("pandaAppointments.fxml"));
     Scene homePageScene = new Scene(homePageParent);
     Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);
@@ -49,7 +49,7 @@ public class PandaPayments {
   }
 
   public void handleBackAction(ActionEvent actionEvent) throws IOException {
-    Parent homePageParent = FXMLLoader.load(getClass().getResource("darkSchedule.fxml"));
+    Parent homePageParent = FXMLLoader.load(getClass().getResource("pandaSchedule.fxml"));
     Scene homePageScene = new Scene(homePageParent);
     Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);

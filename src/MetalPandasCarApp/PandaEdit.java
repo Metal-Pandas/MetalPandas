@@ -79,7 +79,7 @@ public class PandaEdit {
   }
 
   public void handleUpdateAction(ActionEvent actionEvent) throws IOException {
-    Parent homePageParent = FXMLLoader.load(getClass().getResource("darkProfile.fxml"));
+    Parent homePageParent = FXMLLoader.load(getClass().getResource("pandaProfile.fxml"));
     Scene homePageScene = new Scene(homePageParent);
     Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);

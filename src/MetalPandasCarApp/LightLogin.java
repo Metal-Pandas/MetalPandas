@@ -33,7 +33,7 @@ public class LightLogin {
   @FXML public Pane backDrop;
 
   public void handleForgotEmailAction(MouseEvent mouseEvent) throws IOException {
-    Parent homePageParent = FXMLLoader.load(getClass().getResource("darkForgotEmail.fxml"));
+    Parent homePageParent = FXMLLoader.load(getClass().getResource("lightForgotEmail.fxml"));
     Scene homePageScene = new Scene(homePageParent);
     Stage homeStage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);
@@ -41,7 +41,7 @@ public class LightLogin {
   }
 
   public void handleForgotPasswordAction(MouseEvent mouseEvent) throws IOException {
-    Parent homePageParent = FXMLLoader.load(getClass().getResource("darkForgotPassword.fxml"));
+    Parent homePageParent = FXMLLoader.load(getClass().getResource("lightForgotPassword.fxml"));
     Scene homePageScene = new Scene(homePageParent);
     Stage homeStage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);
@@ -88,7 +88,7 @@ public class LightLogin {
     ---------*/
 
     if(loginEmail.getText().equals("jsmith@abc.com") && loginPassword.getText().equals("password")){
-      Parent homePageParent = FXMLLoader.load(getClass().getResource("darkHome.fxml"));
+      Parent homePageParent = FXMLLoader.load(getClass().getResource("lightHome.fxml"));
       Scene homePageScene = new Scene(homePageParent);
       Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
       homeStage.setScene(homePageScene);
@@ -101,7 +101,7 @@ public class LightLogin {
   }
 
   public void handleSignUpAction(ActionEvent actionEvent) throws IOException {
-    Parent homePageParent = FXMLLoader.load(getClass().getResource("darkSignUp.fxml"));
+    Parent homePageParent = FXMLLoader.load(getClass().getResource("lightSignUp.fxml"));
     Scene homePageScene = new Scene(homePageParent);
     Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);

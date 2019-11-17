@@ -1,473 +1,146 @@
-/* LOGIN STYLES */
-#loginBackground {
-  -fx-background-image: url("Background/DarkTheme/login.jpg");
+/* GENERAL ACROSS ALL PAGES */
+.button{
+  -fx-text-fill: #82c343;
+  -fx-background-color: #363636;
+  -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.7), 6, 0.0, 0, 1);
 }
 
-#Title {
-  -fx-text-fill: #66DCE1;
-  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.7), 6, 0.0, 0, 1);
-  -fx-stroke: #FFFFFF;
-  -fx-stroke-width: .5px;
-}
-
-#Backdrop {
-  -fx-opacity: .8;
+#backDrop{
+  -fx-opacity: .9;
   -fx-background-color: #bdc3c6;
 }
 
-#Username {
-  -fx-text-fill: #66DCE1;
-  -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.7), 6, 0.0, 0, 1);
-}
-
-#UsernameField {
+.text-field{
   -fx-text-fill: #0c590f;
   -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.7), 6, 0.0, 0, 1);
 }
 
-#forgotEmail{
-  -fx-text-fill: #0c590f;
-  -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.7), 6, 0.0, 0, 1);
+.combo-box{
+  -fx-background-color: #787878;
 }
 
-#PasswordField {
-  -fx-text-fill: #0c590f;
-  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.7), 6, 0.0, 0, 1);
-}
-
-#Password {
-  -fx-text-fill: #66DCE1;
-  -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.7), 6, 0.0, 0, 1);
-}
-
-#forgotPassword{
-  -fx-text-fill: #0c590f;
-  -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.7), 6, 0.0, 0, 1);
-}
-
-#loginButton {
+.list-cell{
+  -fx-background-color: #787878;
   -fx-text-fill: #82c343;
-  -fx-background-color: #363636;
-  -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.7), 6, 0.0, 0, 1);
 }
 
-#signUp {
+.tool-bar{
+  -fx-background-color: #363636;
+}
+
+.password-field{
+  -fx-text-fill: #0c590f;
+  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.7), 6, 0.0, 0, 1);
+}
+
+#drawer{
+  -fx-background-image: url("Background/DarkTheme/darkTheme.jpg");
+}
+
+/* ADD PAYMENTS PAGE */
+#addPaymentBackground{
+  -fx-background-image: url("Background/DarkTheme/testback2.jpg");
+}
+
+/* APPOINTMENTS PAGE */
+#appointmentsBackground{
+  -fx-background-image: url("Background/DarkTheme/testback2.jpg");
+}
+
+#scheduledPickUps{
+
+}
+
+/* EDIT PAGE */
+#editBackground{
+  -fx-background-image: url("Background/DarkTheme/backgroundDark.jpg");
+}
+
+#driverPassenger{
   -fx-text-fill: #82c343;
-  -fx-background-color: #363636;
-  -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.7), 6, 0.0, 0, 1);
 }
 
-#Statustxt {
-  -fx-font-weight: bold;
-}
-/* SIGN UP STYLES */
-#signUpPane {
-  -fx-background-image: url("Background/DarkTheme/signupEdit.jpg");
-}
-
-#picEdit{
+#gender{
   -fx-text-fill: #82c343;
-  -fx-background-color: #363636;
-  -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.7), 6, 0.0, 0, 1);
 }
 
-#firstName {
-  -fx-text-fill: #0c590f;
-  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.7), 6, 0.0, 0, 1);
+/* FAVOURITES PAGE */
+#favouritesBackground{
+  -fx-background-image: url("Background/DarkTheme/testback2.jpg");
 }
 
-#lastName {
-  -fx-text-fill: #0c590f;
-  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.7), 6, 0.0, 0, 1);
+#favouritesTable{
+
 }
 
-#email {
-  -fx-text-fill: #0c590f;
-  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.7), 6, 0.0, 0, 1);
+/* FORGOT EMAIL PAGE */
+#forgotEmailBackground{
+  -fx-background-image: url("Background/DarkTheme/testback2.jpg");
 }
 
-#address{
-  -fx-text-fill: #0c590f;
-  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.7), 6, 0.0, 0, 1);
+#forgotEmailStatus{
+
 }
 
-#pickCountry{
-  -fx-text-fill: #0c590f;
-  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.7), 6, 0.0, 0, 1);
+/* FORGOT PASSWORD PAGE */
+#forgotPasswordBackground{
+  -fx-background-image: url("Background/DarkTheme/testback2.jpg");
 }
 
-#phoneNumber {
-  -fx-text-fill: #0c590f;
-  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.7), 6, 0.0, 0, 1);
+#forgotPassStatus{
+
 }
 
-#enterPassword{
-  -fx-text-fill: #0c590f;
-  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.7), 6, 0.0, 0, 1);
+#forgotPasswordStatus{
+
 }
 
-#reenterPassword{
-  -fx-text-fill: #0c590f;
-  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.7), 6, 0.0, 0, 1);
+/* HOME PAGE */
+#homeBackground{
+  -fx-background-image: url("Background/DarkTheme/testback2.jpg");
 }
 
-#birthday {
-  -fx-text-fill: #0c590f;
-  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.7), 6, 0.0, 0, 1);
+/* LOGIN PAGE */
+#loginBackground{
+  -fx-background-image: url("Background/DarkTheme/backgroundDark.jpg");
 }
 
-#driverPass {
-  -fx-text-fill: #0c590f;
-  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.7), 6, 0.0, 0, 1);
+#statusText{
+
 }
 
-#gender {
-  -fx-text-fill: #0c590f;
-  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.7), 6, 0.0, 0, 1);
+/* PAYMENTS PAGE */
+#paymentBackground{
+  -fx-background-image: url("Background/DarkTheme/testback2.jpg");
 }
 
-#seeGender {
-  -fx-opacity: .8;
+#backdrop{
+  -fx-opacity: .9;
   -fx-background-color: #bdc3c6;
 }
 
-#iama {
-  -fx-text-fill: #66DCE1;
-  -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.7), 6, 0.0, 0, 1);
+/* PROFILE PAGE */
+#profileBackground{
+  -fx-background-image: url("Background/DarkTheme/backgroundDark.jpg");
 }
 
-#genderLabel {
-  -fx-text-fill: #66DCE1;
-  -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.7), 6, 0.0, 0, 1);
-}
-
-#upSign {
-  -fx-text-fill: #82c343;
-  -fx-background-color: #363636;
-  -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.7), 6, 0.0, 0, 1);
-}
-/* HOME PAGE STYLES */
-#homePageSplitPane {
-  -fx-background-image: url("Background/DarkTheme/home.png");
-}
-#selectDateTF{
-  -fx-text-fill: #0c590f;
-  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.7), 6, 0.0, 0, 1);
-}
-
-#selectTimeTF{
-  -fx-text-fill: #0c590f;
-  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.7), 6, 0.0, 0, 1);
-}
-#sendMyRideButton {
-  -fx-text-fill: #82c343;
-  -fx-background-color: #363636;
-  -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.7), 6, 0.0, 0, 1);
-}
-#drawer {
-  -fx-background-image: url("Background/PandaTheme/login.jpg");
-}
-
-#profileImage {
-  -fx-background-image: url("profile_image.jpg");
-}
-
-#homeBackDrop{
-  -fx-opacity: .5;
-  -fx-background-color: #bdc3c6;
-}
-
-#topToolBar{
-  -fx-background-color: #363636;
-}
-
-#menuButton{
+.toggle-button{
   -fx-text-fill: #82c343;
   -fx-background-color: #363636;
   -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.7), 6, 0.0, 0, 1);
 }
 
-#profileButton{
-  -fx-text-fill: #82c343;
-  -fx-background-color: #363636;
-  -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.7), 6, 0.0, 0, 1);
+/* RESET PASSWORD PAGE */
+#resetBackground{
+  -fx-background-image: url("Background/DarkTheme/testback2.jpg");
 }
 
-#favouritesButton{
-  -fx-text-fill: #82c343;
-  -fx-background-color: #363636;
-  -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.7), 6, 0.0, 0, 1);
+/* SCHEDULE PAGE */
+#scheduleBackground{
+  -fx-background-image: url("Background/DarkTheme/testback2.jpg");
 }
 
-#logoutButton{
-  -fx-text-fill: #82c343;
-  -fx-background-color: #363636;
-  -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.7), 6, 0.0, 0, 1);
-}
-/* PROFILE STYLES */
-#profileSplit {
-  -fx-background-image: url("Background/LightTheme/profiletest.png");
-}
-
-#drawer {
-  -fx-background-image: url("Background/PandaTheme/login.jpg");
-}
-
-#profileImage {
-  -fx-background-image: url("profile_image.jpg");
-}
-
-#profileBackdrop{
-  -fx-opacity: .8;
-  -fx-background-color: #bdc3c6;
-}
-
-#profileFirst{
-  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.7), 6, 0.0, 0, 1);
-}
-
-#profileLast{
-  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.7), 6, 0.0, 0, 1);
-}
-
-#profileEmail{
-  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.7), 6, 0.0, 0, 1);
-}
-
-#profileNumber{
-  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.7), 6, 0.0, 0, 1);
-}
-
-#profileBirthday{
-  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.7), 6, 0.0, 0, 1);
-}
-
-#profileAddress{
-  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.7), 6, 0.0, 0, 1);
-}
-
-#profileCountry{
-  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.7), 6, 0.0, 0, 1);
-}
-
-#profileMode{
-  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.7), 6, 0.0, 0, 1);
-}
-
-#update{
-  -fx-text-fill: #82c343;
-  -fx-background-color: #363636;
-  -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.7), 6, 0.0, 0, 1);
-}
-
-#topToolBar{
-  -fx-background-color: #363636;
-}
-
-#menuButton{
-  -fx-text-fill: #82c343;
-  -fx-background-color: #363636;
-  -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.7), 6, 0.0, 0, 1);
-}
-
-#profileButton{
-  -fx-text-fill: #82c343;
-  -fx-background-color: #363636;
-  -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.7), 6, 0.0, 0, 1);
-}
-
-#favouritesButton{
-  -fx-text-fill: #82c343;
-  -fx-background-color: #363636;
-  -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.7), 6, 0.0, 0, 1);
-}
-
-#logoutButton{
-  -fx-text-fill: #82c343;
-  -fx-background-color: #363636;
-  -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.7), 6, 0.0, 0, 1);
-}
-/* FAVOURITES STYLES */
-#favSplit {
-  -fx-background-image: url("Background/DarkTheme/favourites.jpg");
-}
-
-#drawer {
-  -fx-background-image: url("Background/PandaTheme/login.jpg");
-}
-
-#profileImage {
-  -fx-background-image: url("profile_image.jpg");
-}
-
-#driversListView {
-  -fx-background-color: #bdc3c6;
-}
-
-#locationsListView {
-  -fx-background-color: #bdc3c6;
-}
-
-#locationsTab {
-  -fx-background-color: #bdc3c6;
-}
-
-#driversTab {
-  -fx-background-color: #bdc3c6;
-}
-
-#topToolBar{
-  -fx-background-color: #363636;
-}
-
-#menuButton{
-  -fx-text-fill: #82c343;
-  -fx-background-color: #363636;
-  -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.7), 6, 0.0, 0, 1);
-}
-
-#profileButton{
-  -fx-text-fill: #82c343;
-  -fx-background-color: #363636;
-  -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.7), 6, 0.0, 0, 1);
-}
-
-#favouritesButton{
-  -fx-text-fill: #82c343;
-  -fx-background-color: #363636;
-  -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.7), 6, 0.0, 0, 1);
-}
-
-#logoutButton{
-  -fx-text-fill: #82c343;
-  -fx-background-color: #363636;
-  -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.7), 6, 0.0, 0, 1);
-}
-/* FORGOT EMAIL STYLES */
-#forgotEmailPane{
-  -fx-background-image: url("Background/DarkTheme/forgotEmailPassword.jpg");
-}
-
-#enterPhoneNumber {
-  -fx-text-fill: #0c590f;
-  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.7), 6, 0.0, 0, 1);
-}
-
-#confirmButton {
-  -fx-text-fill: #82c343;
-  -fx-background-color: #363636;
-  -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.7), 6, 0.0, 0, 1);
-}
-
-#backButton {
-  -fx-text-fill: #82c343;
-  -fx-background-color: #363636;
-  -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.7), 6, 0.0, 0, 1);
-}
-/* FORGOT PASSWORD STYLES */
-#forgotPasswordPane{
-  -fx-background-image: url("Background/DarkTheme/forgotEmailPassword.jpg");
-}
-
-#phoneNumberEnter{
-  -fx-text-fill: #0c590f;
-  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.7), 6, 0.0, 0, 1);
-}
-
-#confirmButton {
-  -fx-text-fill: #82c343;
-  -fx-background-color: #363636;
-  -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.7), 6, 0.0, 0, 1);
-}
-
-#backButton {
-  -fx-text-fill: #82c343;
-  -fx-background-color: #363636;
-  -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.7), 6, 0.0, 0, 1);
-}
-/* EDIT STYLES */
-#signUpPane {
-  -fx-background-image: url("Background/DarkTheme/signupEdit.jpg");
-}
-
-#picEdit{
-  -fx-text-fill: #82c343;
-  -fx-background-color: #363636;
-  -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.7), 6, 0.0, 0, 1);
-}
-
-#firstName {
-  -fx-text-fill: #0c590f;
-  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.7), 6, 0.0, 0, 1);
-}
-
-#lastName {
-  -fx-text-fill: #0c590f;
-  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.7), 6, 0.0, 0, 1);
-}
-
-#email {
-  -fx-text-fill: #0c590f;
-  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.7), 6, 0.0, 0, 1);
-}
-
-#address{
-  -fx-text-fill: #0c590f;
-  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.7), 6, 0.0, 0, 1);
-}
-
-#pickCountry{
-  -fx-text-fill: #0c590f;
-  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.7), 6, 0.0, 0, 1);
-}
-
-#phoneNumber {
-  -fx-text-fill: #0c590f;
-  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.7), 6, 0.0, 0, 1);
-}
-
-#enterPassword{
-  -fx-text-fill: #0c590f;
-  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.7), 6, 0.0, 0, 1);
-}
-
-#reenterPassword{
-  -fx-text-fill: #0c590f;
-  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.7), 6, 0.0, 0, 1);
-}
-
-#birthday {
-  -fx-text-fill: #0c590f;
-  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.7), 6, 0.0, 0, 1);
-}
-
-#driverPass {
-  -fx-text-fill: #0c590f;
-  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.7), 6, 0.0, 0, 1);
-}
-
-#gender {
-  -fx-text-fill: #0c590f;
-  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.7), 6, 0.0, 0, 1);
-}
-
-#seeGender {
-  -fx-opacity: .8;
-  -fx-background-color: #bdc3c6;
-}
-
-#iama {
-  -fx-text-fill: #66DCE1;
-  -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.7), 6, 0.0, 0, 1);
-}
-
-#genderLabel {
-  -fx-text-fill: #66DCE1;
-  -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.7), 6, 0.0, 0, 1);
-}
-
-#updateProfile {
-  -fx-text-fill: #82c343;
-  -fx-background-color: #363636;
-  -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.7), 6, 0.0, 0, 1);
+/* SIGN UP PAGE */
+#signUpBackground{
+  -fx-background-image: url("Background/DarkTheme/backgroundDark.jpg");
 }

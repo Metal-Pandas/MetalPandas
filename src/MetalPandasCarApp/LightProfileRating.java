@@ -26,7 +26,7 @@ public class LightProfileRating {
   @FXML public Button confirmRating;
 
   public void handleConfirmRatingAction(ActionEvent actionEvent) throws IOException {
-    Parent homePageParent = FXMLLoader.load(getClass().getResource("darkHome.fxml"));
+    Parent homePageParent = FXMLLoader.load(getClass().getResource("lightHome.fxml"));
     Scene homePageScene = new Scene(homePageParent);
     Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);

@@ -33,7 +33,7 @@ public class LightPayments {
 
 
   public void handleAddPaymentAction(ActionEvent actionEvent) throws IOException {
-    Parent homePageParent = FXMLLoader.load(getClass().getResource("darkAddPayments.fxml"));
+    Parent homePageParent = FXMLLoader.load(getClass().getResource("lightAddPayments.fxml"));
     Scene homePageScene = new Scene(homePageParent);
     Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);
@@ -41,7 +41,7 @@ public class LightPayments {
   }
 
   public void handlePayAction(ActionEvent actionEvent) throws IOException {
-    Parent homePageParent = FXMLLoader.load(getClass().getResource("darkAppointments.fxml"));
+    Parent homePageParent = FXMLLoader.load(getClass().getResource("lightAppointments.fxml"));
     Scene homePageScene = new Scene(homePageParent);
     Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);
@@ -49,7 +49,7 @@ public class LightPayments {
   }
 
   public void handleBackAction(ActionEvent actionEvent) throws IOException {
-    Parent homePageParent = FXMLLoader.load(getClass().getResource("darkSchedule.fxml"));
+    Parent homePageParent = FXMLLoader.load(getClass().getResource("lightSchedule.fxml"));
     Scene homePageScene = new Scene(homePageParent);
     Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);

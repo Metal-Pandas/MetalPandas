@@ -34,7 +34,7 @@
 }
 
 #drawer{
-  -fx-background-image: url("Background/DarkTheme/darkTheme.jpg");
+  -fx-background-image: url("Background/PandaTheme/login.jpg");
 }
 
 /* ADD PAYMENTS PAGE */
@@ -53,7 +53,7 @@
 
 /* EDIT PAGE */
 #editBackground{
-  -fx-background-image: url("Background/DarkTheme/backgroundDark.jpg");
+  -fx-background-image: url("Background/PandaTheme/signupEdit.jpg");
 }
 
 #driverPassenger{
@@ -66,7 +66,7 @@
 
 /* FAVOURITES PAGE */
 #favouritesBackground{
-  -fx-background-image: url("Background/DarkTheme/testback2.jpg");
+  -fx-background-image: url("Background/PandaTheme/favourites.jpg");
 }
 
 #favouritesTable{
@@ -75,7 +75,7 @@
 
 /* FORGOT EMAIL PAGE */
 #forgotEmailBackground{
-  -fx-background-image: url("Background/DarkTheme/testback2.jpg");
+  -fx-background-image: url("Background/PandaTheme/forgotEmailPassword.jpg");
 }
 
 #forgotEmailStatus{
@@ -84,7 +84,7 @@
 
 /* FORGOT PASSWORD PAGE */
 #forgotPasswordBackground{
-  -fx-background-image: url("Background/DarkTheme/testback2.jpg");
+  -fx-background-image: url("Background/PandaTheme/forgotEmailPassword.jpg");
 }
 
 #forgotPassStatus{
@@ -97,12 +97,12 @@
 
 /* HOME PAGE */
 #homeBackground{
-  -fx-background-image: url("Background/DarkTheme/testback2.jpg");
+  -fx-background-image: url("Background/PandaTheme/ooo.jpg");
 }
 
 /* LOGIN PAGE */
 #loginBackground{
-  -fx-background-image: url("Background/DarkTheme/backgroundDark.jpg");
+  -fx-background-image: url("Background/PandaTheme/login.jpg");
 }
 
 #statusText{
@@ -111,7 +111,7 @@
 
 /* PAYMENTS PAGE */
 #paymentBackground{
-  -fx-background-image: url("Background/DarkTheme/testback2.jpg");
+  -fx-background-image: url("Background/PandaTheme/ooo.jpg");
 }
 
 #backdrop{
@@ -121,7 +121,7 @@
 
 /* PROFILE PAGE */
 #profileBackground{
-  -fx-background-image: url("Background/DarkTheme/backgroundDark.jpg");
+  -fx-background-image: url("Background/PandaTheme/profile.jpg");
 }
 
 .toggle-button{
@@ -132,15 +132,15 @@
 
 /* RESET PASSWORD PAGE */
 #resetBackground{
-  -fx-background-image: url("Background/DarkTheme/testback2.jpg");
+  -fx-background-image: url("Background/PandaTheme/forgotEmailPassword.jpg");
 }
 
 /* SCHEDULE PAGE */
 #scheduleBackground{
-  -fx-background-image: url("Background/DarkTheme/testback2.jpg");
+  -fx-background-image: url("Background/PandaTheme/homeback.jpg");
 }
 
 /* SIGN UP PAGE */
 #signUpBackground{
-  -fx-background-image: url("Background/DarkTheme/backgroundDark.jpg");
+  -fx-background-image: url("Background/PandaTheme/signupEdit.jpg");
 }
