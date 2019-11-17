@@ -53,6 +53,6 @@
   </Pane>
   <Button fx:id="signUP" layoutX="524.0" layoutY="369.0" mnemonicParsing="false" onAction="#handleSignUpAction" text="Sign Up!" />
   <stylesheets>
-    <URL value="@darkTheme.css" />
+    <URL value="@lightTheme.css" />
   </stylesheets>
 </AnchorPane>

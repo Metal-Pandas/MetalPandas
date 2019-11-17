@@ -26,6 +26,6 @@
   <Button fx:id="signUp" layoutX="295.0" layoutY="361.0" mnemonicParsing="false" onAction="#handleSignUpAction" text="Sign Up" />
   <Label fx:id="statusText" layoutX="166.0" layoutY="291.0" prefHeight="52.0" prefWidth="178.0" />
   <stylesheets>
-    <URL value="@darkTheme.css" />
+    <URL value="@pandaTheme.css" />
   </stylesheets>
 </AnchorPane>

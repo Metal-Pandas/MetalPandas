@@ -70,6 +70,6 @@
     </VBox>
   </SplitPane>
   <stylesheets>
-    <URL value="@darkTheme.css" />
+    <URL value="@pandaTheme.css" />
   </stylesheets>
 </GridPane>

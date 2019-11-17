@@ -30,6 +30,6 @@
   <Button fx:id="paymentBack" layoutX="523.0" layoutY="361.0" mnemonicParsing="false" onAction="#handleBackAction" text="Back" />
   <Button fx:id="paymentConfirm" layoutX="432.0" layoutY="268.0" mnemonicParsing="false" onAction="#handleConfirmAction" text="Confirm" />
   <stylesheets>
-    <URL value="@darkTheme.css" />
+    <URL value="@pandaTheme.css" />
   </stylesheets>
 </AnchorPane>

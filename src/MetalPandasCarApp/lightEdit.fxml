@@ -50,6 +50,6 @@
   </Pane>
   <Button fx:id="update" layoutX="520.0" layoutY="365.0" mnemonicParsing="false" onAction="#handleUpdateAction" text="Update!" />
   <stylesheets>
-    <URL value="@darkTheme.css" />
+    <URL value="@lightTheme.css" />
   </stylesheets>
 </AnchorPane>

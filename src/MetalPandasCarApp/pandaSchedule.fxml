@@ -28,6 +28,6 @@
   <Button fx:id="schedule" layoutX="261.0" layoutY="361.0" mnemonicParsing="false" onAction="#handleScheduleAction" text="Schedule!" />
   <Button fx:id="backButton" layoutX="536.0" layoutY="361.0" mnemonicParsing="false" onAction="#handleBackAction" text="Back" />
   <stylesheets>
-    <URL value="@darkTheme.css" />
+    <URL value="@pandaTheme.css" />
   </stylesheets>
 </AnchorPane>

@@ -76,6 +76,6 @@
     </VBox>
   </SplitPane>
   <stylesheets>
-    <URL value="@darkTheme.css" />
+    <URL value="@lightTheme.css" />
   </stylesheets>
 </GridPane>
