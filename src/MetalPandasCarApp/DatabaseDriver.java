@@ -19,7 +19,7 @@ public class DatabaseDriver {
     // Connection establish.
 
     final String jdbcDriver = "org.h2.Driver";
-    final String dbUrl = "jdbc:h2:./Lib/MetalPandasDB";
+    final String dbUrl = "jdbc:h2:./Lib/MetalPandasdB";
 
     final String USER = "";
     final String PASS = "";
