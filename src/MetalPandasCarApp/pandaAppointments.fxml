@@ -15,14 +15,14 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MetalPandasCarApp.PandaFavourites">
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MetalPandasCarApp.PandaAppointments">
   <columnConstraints>
     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
   </columnConstraints>
   <rowConstraints>
     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
   </rowConstraints>
-  <SplitPane fx:id="favouritesBackground" prefHeight="200.0" prefWidth="200.0">
+  <SplitPane fx:id="appointmentsBackground" prefHeight="200.0" prefWidth="200.0">
     <VBox prefHeight="200.0" prefWidth="100.0">
       <ToolBar fx:id="toolBar" prefHeight="40.0" prefWidth="200.0">
         <Button fx:id="menuButton" mnemonicParsing="false" onAction="#handleMenuAction" text="Menu" />
@@ -53,18 +53,17 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
               <Button fx:id="profileButton" mnemonicParsing="false" onAction="#handleProfileAction" text="Profile" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
-              <Button fx:id="homeButton" mnemonicParsing="false" onAction="#handleHomeAction" text="Home" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
-              <Button fx:id="schedules" mnemonicParsing="false" onAction="#handleSchedulesAction" text="Schedules" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+              <Button fx:id="favouritesButton" mnemonicParsing="false" onAction="#handleFavouritesButton" text="Favourites" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+              <Button fx:id="homeButton" mnemonicParsing="false" onAction="#handleHomeAction" text="Home" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
               <Button fx:id="logoutButton" mnemonicParsing="false" onAction="#handleLogoutAction" text="Logout" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
             </GridPane>
           </VBox>
         </HBox>
-        <TableView fx:id="favouritesTable" maxHeight="400.0" maxWidth="409.0" minHeight="0.0" minWidth="0.0" prefHeight="363.0" prefWidth="400.0" StackPane.alignment="CENTER_RIGHT">
+        <TableView fx:id="scheduledPickUps" maxHeight="400.0" maxWidth="409.0" minHeight="0.0" minWidth="0.0" prefHeight="374.0" prefWidth="409.0" StackPane.alignment="CENTER_RIGHT">
           <columns>
-            <TableColumn fx:id="driverFirstName" prefWidth="114.0" text="Last Name" />
-            <TableColumn fx:id="driverLastName" minWidth="0.0" prefWidth="77.0" text="First Name" />
-            <TableColumn fx:id="driverRating" prefWidth="63.0" text="Rating" />
-            <TableColumn fx:id="previousDestination" prefWidth="154.0" text="Destination" />
+            <TableColumn fx:id="dateColumn" prefWidth="114.0" text="Date" />
+            <TableColumn fx:id="timeColumn" minWidth="0.0" prefWidth="77.0" text="Time" />
+            <TableColumn fx:id="destinationColumn" prefWidth="217.0" text="Destination" />
           </columns>
         </TableView>
       </StackPane>

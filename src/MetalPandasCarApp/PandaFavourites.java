@@ -10,58 +10,35 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.SplitPane;
-import javafx.scene.control.TabPane;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.ToolBar;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
-import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
 public class PandaFavourites {
-  /*----------------------------------------------------------*/
-  /* FAVOURITES PAGE ITEMS */
-  /*----------------------------------------------------------*/
-  @FXML public SplitPane favSplit;
-
-  @FXML public GridPane homePageBack;
-
-  @FXML public VBox setUp;
-
-  @FXML public ToolBar topToolBar;
-
+  @FXML public SplitPane favouritesBackground;
+  @FXML public ToolBar toolBar;
   @FXML public Button menuButton;
-
-  @FXML public StackPane stackPane;
-
-  @FXML public HBox part1Menu;
-
   @FXML public VBox drawer;
-
-  @FXML public GridPane imageGrid;
-
-  @FXML public ImageView signProfilePic;
-
-  @FXML public BorderPane buttonMenu;
-
+  @FXML public HBox hBox;
+  @FXML public ImageView profileImage;
   @FXML public Button profileButton;
-
-  @FXML public Button favouritesButton;
-
-  @FXML public BorderPane logOutBorderPane;
-
+  @FXML public Button homeButton;
   @FXML public Button logoutButton;
+  @FXML public TableView favouritesTable;
+  @FXML public TableColumn driverLastName;
+  @FXML public TableColumn driverFirstName;
+  @FXML public TableColumn driverRating;
+  @FXML public TableColumn previousDestination;
+  @FXML public Button schedules;
 
-  public TabPane favouritesTabPane;
 
-  /*----------------------------------------------------------*/
-  /* FAVOURITES PAGE */
-  /*----------------------------------------------------------*/
-  public void handleMenuAction(ActionEvent event) {
-    part1Menu.setVisible(true);
+  public void handleMenuAction(ActionEvent actionEvent) {
+    hBox.setVisible(true);
     TranslateTransition openNav = new TranslateTransition(new Duration(350), drawer);
     openNav.setToX(0);
     TranslateTransition closeNav = new TranslateTransition(new Duration(350), drawer);
@@ -74,32 +51,37 @@ public class PandaFavourites {
             closeNav.play();
           }
         });
-
   }
 
-  public void handleHomeAction(ActionEvent event) throws IOException {
-    Parent homePageParent = FXMLLoader.load(getClass().getResource("pandaHome.fxml"));
+  public void handleLogoutAction(ActionEvent actionEvent) throws IOException {
+    Parent homePageParent = FXMLLoader.load(getClass().getResource("darkLogin.fxml"));
     Scene homePageScene = new Scene(homePageParent);
-    Stage homeStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+    Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);
     homeStage.show();
   }
 
-  public void handleProfileAction(ActionEvent event) throws IOException {
-    Parent homePageParent = FXMLLoader.load(getClass().getResource("pandaProfile.fxml"));
+  public void handleProfileAction(ActionEvent actionEvent) throws IOException {
+    Parent homePageParent = FXMLLoader.load(getClass().getResource("darkProfile.fxml"));
     Scene homePageScene = new Scene(homePageParent);
-    Stage homeStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+    Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);
     homeStage.show();
   }
 
-  public void handleLogoutAction(ActionEvent event) throws IOException {
-    Parent homePageParent = FXMLLoader.load(getClass().getResource("pandaLogin.fxml"));
+  public void handleHomeAction(ActionEvent actionEvent) throws IOException {
+    Parent homePageParent = FXMLLoader.load(getClass().getResource("darkHome.fxml"));
     Scene homePageScene = new Scene(homePageParent);
-    Stage homeStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+    Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);
     homeStage.show();
   }
 
-
+  public void handleSchedulesAction(ActionEvent actionEvent) throws IOException {
+    Parent homePageParent = FXMLLoader.load(getClass().getResource("darkAppointments.fxml"));
+    Scene homePageScene = new Scene(homePageParent);
+    Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+    homeStage.setScene(homePageScene);
+    homeStage.show();
+  }
 }

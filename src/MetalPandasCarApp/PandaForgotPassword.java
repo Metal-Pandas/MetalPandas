@@ -8,48 +8,55 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 public class PandaForgotPassword {
-  /*----------------------------------------------------------*/
-  /* FORGOT PASSWORD PAGE ITEMS */
-  /*----------------------------------------------------------*/
-  @FXML public AnchorPane forgotPasswordPane;
+  @FXML public AnchorPane forgotPasswordBackground;
+  @FXML public Label forgotPassLabel;
+  @FXML public TextField forgotPasswordPhoneNumber;
+  @FXML public Button passwordConfirm;
+  @FXML public Label forgotPassStatus;
+  @FXML public Label orLabel;
+  @FXML public Label forgotPasswordLabel;
+  @FXML public TextField forgotPasswordEmail;
+  @FXML public Button passConfirm;
+  @FXML public Label forgotPasswordStatus;
+  @FXML public Button passBack;
 
-  @FXML public TextField phoneNumberEnter;
 
-  @FXML private Text forgotPasswordTxt;
+  public void handleConfirmAction(ActionEvent actionEvent) throws IOException {
+    if(forgotPasswordPhoneNumber.getText().equals("1234567890")){
+      Parent homePageParent = FXMLLoader.load(getClass().getResource("darkReset.fxml"));
+      Scene homePageScene = new Scene(homePageParent);
+      Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+      homeStage.setScene(homePageScene);
+      homeStage.show();
+    }
 
-  @FXML public Button confirmButton;
+    if(!forgotPasswordPhoneNumber.getText().equals("1234567890")){
+      forgotPassStatus.setText("Invalid Phone Number!");
+    }
 
-  @FXML public Button backButton;
-  /*----------------------------------------------------------*/
-  /* FORGOT PASSWORD PAGE */
-  /*----------------------------------------------------------*/
-  public void handleConfirmButton(ActionEvent resetPasswordEvent) {
-    if(phoneNumberEnter.getText().equals("2392345555")){
-      try {
-      Parent resetPasswordParent = FXMLLoader.load(getClass().getResource("pandaReset.fxml"));
-      Scene resetPasswordScene = new Scene(resetPasswordParent);
-      Stage resetPasswordStage = (Stage) ((Node) resetPasswordEvent.getSource()).getScene().getWindow();
-      resetPasswordStage.setScene(resetPasswordScene);
-      resetPasswordStage.show();
-    } catch (IOException e) {
-      e.printStackTrace();
+    if(forgotPasswordEmail.getText().equals("jsmith@abc.com")) {
+      Parent homePageParent = FXMLLoader.load(getClass().getResource("darkReset.fxml"));
+      Scene homePageScene = new Scene(homePageParent);
+      Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+      homeStage.setScene(homePageScene);
+      homeStage.show();
+    }
+
+    if(!forgotPasswordEmail.getText().equals("jsmith@abc.com")){
+      forgotPasswordStatus.setText("Invalid Email Address!");
     }
   }
-    if(!phoneNumberEnter.getText().equals("2392345555")){
-      forgotPasswordTxt.setText("Phone number is invalid.");
-    }
-  }
 
-  public void handleBackAction(ActionEvent event) throws IOException {
-    Parent homePageParent = FXMLLoader.load(getClass().getResource("pandaLogin.fxml"));
+  public void handleBackAction(ActionEvent actionEvent) throws IOException {
+    Parent homePageParent = FXMLLoader.load(getClass().getResource("darkLogin.fxml"));
     Scene homePageScene = new Scene(homePageParent);
-    Stage homeStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+    Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);
     homeStage.show();
   }

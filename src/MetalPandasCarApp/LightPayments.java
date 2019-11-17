@@ -16,7 +16,7 @@ import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
-public class PandaPayments {
+public class LightPayments {
   @FXML public AnchorPane paymentBackground;
   @FXML public Text paymentTitle;
   @FXML public Pane backdrop;

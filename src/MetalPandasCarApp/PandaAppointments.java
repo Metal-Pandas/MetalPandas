@@ -10,28 +10,30 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.SplitPane;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.ToolBar;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import javafx.scene.web.WebEngine;
-import javafx.scene.web.WebView;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
-public class LightHome {
-  @FXML public SplitPane homeBackground;
-  @FXML public VBox drawer;
-  @FXML public HBox hBox;
+public class PandaAppointments {
+  @FXML public SplitPane appointmentsBackground;
   @FXML public ToolBar toolBar;
   @FXML public Button menuButton;
-  @FXML public WebView maps;
+  @FXML public VBox drawer;
+  @FXML public HBox hBox;
   @FXML public ImageView profileImage;
   @FXML public Button profileButton;
   @FXML public Button favouritesButton;
+  @FXML public Button homeButton;
   @FXML public Button logoutButton;
-  @FXML public Button scheduleButton;
-  @FXML public Button schedules;
+  @FXML public TableView scheduledPickUps;
+  @FXML public TableColumn dateColumn;
+  @FXML public TableColumn timeColumn;
+  @FXML public TableColumn destinationColumn;
 
 
   public void handleMenuAction(ActionEvent actionEvent) {
@@ -66,29 +68,16 @@ public class LightHome {
     homeStage.show();
   }
 
-  public void handleFavouritesAction(ActionEvent actionEvent) throws IOException {
+  public void handleHomeAction(ActionEvent actionEvent) throws IOException {
+    Parent homePageParent = FXMLLoader.load(getClass().getResource("darkHome.fxml"));
+    Scene homePageScene = new Scene(homePageParent);
+    Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+    homeStage.setScene(homePageScene);
+    homeStage.show();
+  }
+
+  public void handleFavouritesButton(ActionEvent actionEvent) throws IOException {
     Parent homePageParent = FXMLLoader.load(getClass().getResource("darkFavourites.fxml"));
-    Scene homePageScene = new Scene(homePageParent);
-    Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-    homeStage.setScene(homePageScene);
-    homeStage.show();
-  }
-
-  public void initialize() {
-    WebEngine engine = maps.getEngine();
-    engine.load("https://www.google.com/maps/");
-  }
-
-  public void handleScheduleAction(ActionEvent actionEvent) throws IOException {
-    Parent homePageParent = FXMLLoader.load(getClass().getResource("darkSchedule.fxml"));
-    Scene homePageScene = new Scene(homePageParent);
-    Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-    homeStage.setScene(homePageScene);
-    homeStage.show();
-  }
-
-  public void handleSchedulesAction(ActionEvent actionEvent) throws IOException {
-    Parent homePageParent = FXMLLoader.load(getClass().getResource("darkAppointments.fxml"));
     Scene homePageScene = new Scene(homePageParent);
     Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);

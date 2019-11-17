@@ -13,7 +13,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
-public class PandaReset {
+public class LightReset {
   @FXML public AnchorPane resetBackground;
   @FXML public Button confirmButton;
   @FXML public PasswordField password;

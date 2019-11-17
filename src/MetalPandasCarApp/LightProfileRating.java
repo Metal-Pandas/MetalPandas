@@ -17,7 +17,7 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import org.controlsfx.control.Rating;
 
-public class PandaProfileRating {
+public class LightProfileRating {
 
   @FXML public Pane profileRatingBack;
   @FXML public Rating starRating;
