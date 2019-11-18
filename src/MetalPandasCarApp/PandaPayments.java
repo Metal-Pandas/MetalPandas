@@ -41,7 +41,7 @@ public class PandaPayments {
   }
 
   public void handlePayAction(ActionEvent actionEvent) throws IOException {
-    Parent homePageParent = FXMLLoader.load(getClass().getResource("pandaAppointments.fxml"));
+    Parent homePageParent = FXMLLoader.load(getClass().getResource("pandaProfileRating.fxml"));
     Scene homePageScene = new Scene(homePageParent);
     Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);
