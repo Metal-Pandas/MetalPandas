@@ -8,40 +8,32 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 public class DarkForgotEmail {
-  /*----------------------------------------------------------*/
-  /* FORGOT EMAIL PAGE ITEMS */
-  /*----------------------------------------------------------*/
-  @FXML public AnchorPane forgotEmailPane;
+  @FXML public AnchorPane forgotEmailBackground;
+  @FXML public TextField forgotPhoneNumber;
+  @FXML public Label forgotEmailLabel;
+  @FXML public Button confirm;
+  @FXML public Button back;
+  @FXML public Label forgotEmailStatus;
 
-  @FXML public TextField enterPhoneNumber;
-
-  @FXML public Text phoneNumberInvalid;
-
-  @FXML public Button confirmButton;
-
-  @FXML public Button backButton;
-  /*----------------------------------------------------------*/
-  /* FORGOT EMAIL PAGE */
-  /*----------------------------------------------------------*/
-  public void handleConfirmButton(ActionEvent event) {
-    if(enterPhoneNumber.getText().equals("2392345555")){
-      phoneNumberInvalid.setText("A message was sent to the phone number.");
+  public void handleConfirmAction(ActionEvent actionEvent) {
+    if(forgotPhoneNumber.getText().equals("1234567890")){
+      forgotEmailStatus.setText("A message has been sent to your phone number!");
     }
-    if(!enterPhoneNumber.getText().equals("2392345555")){
-      phoneNumberInvalid.setText("Phone number is invalid.");
+    if(!forgotPhoneNumber.getText().equals("1234567890")){
+      forgotEmailStatus.setText("Phone number is invalid!");
     }
   }
 
-  public void handleBackAction(ActionEvent event) throws IOException {
+  public void handleBackAction(ActionEvent actionEvent) throws IOException {
     Parent homePageParent = FXMLLoader.load(getClass().getResource("darkLogin.fxml"));
     Scene homePageScene = new Scene(homePageParent);
-    Stage homeStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+    Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);
     homeStage.show();
   }
