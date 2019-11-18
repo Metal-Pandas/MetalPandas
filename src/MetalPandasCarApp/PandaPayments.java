@@ -38,6 +38,8 @@ public class PandaPayments {
     Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);
     homeStage.show();
+
+
   }
 
   public void handlePayAction(ActionEvent actionEvent) throws IOException {

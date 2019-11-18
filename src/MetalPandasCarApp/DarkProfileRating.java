@@ -1,6 +1,5 @@
 package MetalPandasCarApp;
 
-import java.io.IOException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -15,11 +14,17 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 
+import java.io.IOException;
+
 public class DarkProfileRating {
 
   @FXML public Pane profileRatingBackground;
   @FXML public Label ratingLabelTitle;
-  @FXML public Label ratingLabel;
+  @FXML public Label ratingLabel1;
+  @FXML public Label ratingLabel2;
+  @FXML public Label ratingLabel3;
+  @FXML public Label ratingLabel4;
+  @FXML public Label ratingLabel5;
   @FXML public Button confirmRating;
   @FXML public Circle rating1;
   @FXML public Circle rating2;
