@@ -19,19 +19,11 @@ import org.controlsfx.control.Rating;
 
 public class LightProfileRating {
 
-  @FXML public Pane profileRatingBack;
+  @FXML public Pane profileRatingBackground;
   @FXML public Rating starRating;
   @FXML public Label ratingLabelTitle;
   @FXML public Label ratingLabel;
   @FXML public Button confirmRating;
-
-  public void handleConfirmRatingAction(ActionEvent actionEvent) throws IOException {
-    Parent homePageParent = FXMLLoader.load(getClass().getResource("lightHome.fxml"));
-    Scene homePageScene = new Scene(homePageParent);
-    Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-    homeStage.setScene(homePageScene);
-    homeStage.show();
-  }
 
   public void initialize(URL arg0, ResourceBundle arg1){
     try{
@@ -44,5 +36,13 @@ public class LightProfileRating {
     } catch (java.lang.NullPointerException exception) {
       exception.printStackTrace();
     }
+  }
+
+  public void handleRatingAction(ActionEvent actionEvent) throws IOException {
+    Parent homePageParent = FXMLLoader.load(getClass().getResource("lightAppointments.fxml"));
+    Scene homePageScene = new Scene(homePageParent);
+    Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+    homeStage.setScene(homePageScene);
+    homeStage.show();
   }
 }

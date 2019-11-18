@@ -6,24 +6,22 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 <?import org.controlsfx.control.Rating?>
-<?import java.net.URL?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171"
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+  prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1"
   xmlns:fx="http://javafx.com/fxml/1" fx:controller="MetalPandasCarApp.PandaProfileRating">
-   <Pane fx:id="profileRatingBack" prefHeight="400.0" prefWidth="600.0">
-      <Rating fx:id="starRating" layoutX="205.0" layoutY="168.0" prefHeight="29.0"
-        prefWidth="207.0"/>
-      <Label fx:id="ratingLabelTitle" layoutX="106.0" layoutY="71.0" prefHeight="53.0"
-        prefWidth="409.0" text="Please Rate Your Driver" textAlignment="CENTER">
+   <Pane fx:id="profileRatingBackground" layoutX="1.0" layoutY="-2.0" prefHeight="400.0"
+     prefWidth="600.0">
+      <Rating fx:id="starRating" layoutX="220.0" layoutY="184.0" prefHeight="32.0" prefWidth="270.0"
+        rating="0.0"/>
+      <Label fx:id="ratingLabelTitle" layoutX="134.0" layoutY="84.0" prefHeight="47.0"
+        prefWidth="349.0" text="Please Rate your Driver:">
          <font>
-            <Font size="36.0"/>
+            <Font size="32.0"/>
          </font>
       </Label>
-      <Label fx:id="ratingLabel"/>
-      <Button fx:id="confirmRating" layoutX="252.0" layoutY="256.0" mnemonicParsing="false"
-        onAction="#handleConfirmRatingAction" text="Confirm Rating"/>
+      <Button fx:id="confirmRating" layoutX="424.0" layoutY="238.0" mnemonicParsing="false"
+        onAction="#handleRatingAction" text="Confirm"/>
    </Pane>
-   <stylesheets>
-      <URL value="@pandaTheme.css" />
-   </stylesheets>
 </AnchorPane>
