@@ -16,10 +16,10 @@ public class DatabaseDriver {
   private static ArrayList<Users> userInfo = new ArrayList();
 
   public static Connection initializeDB() {
-    // Connection establish.
+    // Connection Establish
 
     final String jdbcDriver = "org.h2.Driver";
-    final String dbUrl = "jdbc:h2:./Lib/dB";
+    final String dbUrl = "jdbc:h2:./Lib/MetalPandasdB";
 
     final String USER = "";
     final String PASS = "";
