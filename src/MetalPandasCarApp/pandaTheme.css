@@ -144,3 +144,9 @@
 #signUpBackground{
   -fx-background-image: url("Background/PandaTheme/signupEdit.jpg");
 }
+
+/* Rating Page */
+
+#profileRatingBackground{
+  -fx-background-image: url("Background/PandaTheme/pandaRating.png");
+}
