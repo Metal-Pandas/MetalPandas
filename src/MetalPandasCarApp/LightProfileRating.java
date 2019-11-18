@@ -12,7 +12,6 @@ import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
-import javafx.scene.shape.Arc;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 
@@ -23,9 +22,9 @@ public class LightProfileRating {
   @FXML public Label ratingLabel;
   @FXML public Button confirmRating;
   @FXML public Circle rating1;
-  @FXML public Arc rating2;
+  @FXML public Circle rating2;
   @FXML public Circle rating3;
-  @FXML public Arc rating4;
+  @FXML public Circle rating4;
   @FXML public Circle rating5;
 
   public void handleRateAction(ActionEvent actionEvent) throws IOException {
