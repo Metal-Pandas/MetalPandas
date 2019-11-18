@@ -46,8 +46,8 @@ public class DatabaseDriver {
   public static void createUserInDB(String[] signUpUser) throws SQLException {
     try {
       querySQL =
-              "INSERT INTO USER(firstName, lastName, email,  address, country, phoneNumber,"
-                      + " password, personType,  gender) VALUES (?,?,?,?,?,?,?,?,?)";
+          "INSERT INTO USER( firstName, lastName, email, phoneNumber, address, city, state, zip, country, password," +
+                  "month, day, year, gender, personType) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 
       pstmt = conn.prepareStatement(querySQL);
 
@@ -74,7 +74,6 @@ public class DatabaseDriver {
     try {
       initializeDB();
 
-      //
       querySQL = "SELECT * FROM USER WHERE EMAIL = ?";
 
       PreparedStatement pstmt = conn.prepareStatement(querySQL);
@@ -87,38 +86,37 @@ public class DatabaseDriver {
         String firstName = rs.getString("firstName");
         String lastName = rs.getString("lastName");
         mail = rs.getString("email");
-        String address = rs.getString("address");
-        String country = rs.getString("country");
         String phoneNumber = rs.getString("phoneNumber");
+        String address = rs.getString("address");
+        String city = rs.getString("city");
+        String state = rs.getString("state");
+        String zip = rs.getString("zip");
+        String country = rs.getString("country");
+        String password = rs.getString("password");
+        String month = rs.getString("month");
+        String day = rs.getString("day");
+        String year = rs.getString("year");
+        String gender = rs.getString("gender");
         String pType = rs.getString("personType");
 
-        userInfo.add(new Users(firstName, lastName, mail, address, country, phoneNumber, pType));
+        String[] birthday = {
+                month,
+                day,
+                year
+        };
+
+        String[] location = {
+                address,
+                zip,
+        };
+
+        userInfo.add(new Users(firstName, lastName, mail, phoneNumber, address,
+                state, city, zip, country, password, month, day, year, gender, pType));
+        userInfo.add(new Users(firstName, lastName, mail, phoneNumber, location, birthday, gender, pType));
       }
     } catch (SQLException exception) {
       exception.printStackTrace();
     }
     return userInfo;
   }
-
-
-  /** START CODE **/
-  public static void updateUserInDB(String[] userUpdate) throws SQLException {
-    // querySQL = "INSERT INTO USER(firstName, lastName, email,  address, country, phoneNumber,"
-    // + " password, personType,  gender) VALUES (?,?,?,?,?,?,?,?,?)";
-    querySQL = "UPDATE USER SET FIRSTNAME, LASTNAME, EMAIL, ADDRESS, COUNTRY, PHONENUMBER,"
-            + "PERSONTYPE";
-
-    PreparedStatement pstmt = conn.prepareStatement(querySQL);
-
-    int i = 1;
-    for (String str : userUpdate) {
-      pstmt.setString(i, str);
-      i++;
-    }
-    pstmt.executeUpdate();
-
-    System.out.println("User Updated!");
-  }
-  /** END CODE **/
-
 }

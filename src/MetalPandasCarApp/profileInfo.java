@@ -2,7 +2,7 @@ package MetalPandasCarApp;
 
 import java.util.ArrayList;
 
-public class profileInfo {
+class profileInfo {
   static ArrayList<Users> userProfilesGlobal = new ArrayList<>();
 
 }

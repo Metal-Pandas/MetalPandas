@@ -1,10 +1,18 @@
 package MetalPandasCarApp;
 
 import java.io.IOException;
+import java.net.URL;
+import java.sql.Connection;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.ResourceBundle;
+
 import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -21,7 +29,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
-public class PandaProfile {
+public class PandaProfile implements Initializable {
   @FXML public SplitPane profileBackground;
   @FXML public VBox drawer;
   @FXML public HBox hBox;
@@ -54,6 +62,35 @@ public class PandaProfile {
   @FXML public Button favouritesButton;
   @FXML public Button logoutButton;
   @FXML public Button schedules;
+
+  /**
+   * setProfilePage passes an ArrayList of Users called user.
+   * setText from database to text fields of profileController. calls the first index in db.
+   *  userList should only be at ZERO!
+   *
+   * @param user an arrayList that holds Users.
+   */
+  void setProfilePage(ArrayList<Users> user)  {
+    firstName.setText(user.get(0).getFirstName());
+    lastName.setText(user.get(0).getLastName());
+    emailAddress.setText(user.get(0).getMail());
+    phoneNumber.setText(user.get(0).getPhoneNumber());
+    address.setText(Arrays.toString(user.get(0).getLocation()));
+    birthday.setText(Arrays.toString(user.get(0).getBirthday()));
+    gender.setText(user.get(0).getGender());
+    mode.setText(user.get(0).getDriverPass());
+//  rating.setText(user.get(0).getRating());
+  }
+
+  /**
+   * First method and code to run when window opens. It initialize userProfileGlobal to setProfilePage.
+   * @param url Database connection
+   * @param resourceBundle Database library.
+   */
+  @Override
+  public void initialize(URL url, ResourceBundle resourceBundle) {
+    setProfilePage(profileInfo.userProfilesGlobal);
+  }
 
   public void handleUpdateAction(ActionEvent actionEvent) throws IOException {
     Parent homePageParent = FXMLLoader.load(getClass().getResource("pandaEdit.fxml"));
