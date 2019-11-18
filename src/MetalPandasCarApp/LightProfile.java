@@ -9,99 +9,78 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.SplitPane;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.control.ToolBar;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
-import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
 public class LightProfile {
-  /*----------------------------------------------------------*/
-  /* PROFILE PAGE ITEMS */
-  /*----------------------------------------------------------*/
-  @FXML public SplitPane profileSplit;
-
-  @FXML public Pane profileBackdrop;
-
-  @FXML public Text profileFirst;
-
-  @FXML public Text profileLast;
-
-  @FXML public Text profileEmail;
-
-  @FXML public Text profileNumber;
-
-  @FXML public Text profileBirthday;
-
-  @FXML public Text profileAddress;
-
-  @FXML public Text profileCountry;
-
-  @FXML public Text profileMode;
-
-  @FXML public TextField profileFName;
-
-  @FXML public TextField profileLName;
-
-  @FXML public TextField proEmail;
-
-  @FXML public TextField profNumber;
-
-  @FXML public TextField profBirthday;
-
-  @FXML public TextField profAddress;
-
-  @FXML public TextField countryCombo;
-
-  @FXML public TextField modeBox;
-
-  @FXML public Button update;
-
-  @FXML public GridPane homePageBack;
-
-  @FXML public VBox setUp;
-
-  @FXML public ToolBar topToolBar;
-
-  @FXML public Button menuButton;
-
-  @FXML public ToggleButton darkMode;
-
-  @FXML public ToggleButton pandaMode;
-
-  @FXML public StackPane stackPane;
-
-  @FXML public HBox part1Menu;
-
+  @FXML public SplitPane profileBackground;
   @FXML public VBox drawer;
-
-  @FXML public GridPane imageGrid;
-
-  @FXML public ImageView signProfilePic;
-
-  @FXML public BorderPane buttonMenu;
-
-  @FXML public Button profileButton;
-
+  @FXML public HBox hBox;
+  @FXML public ToolBar toolBar;
+  @FXML public Button menuButton;
+  @FXML public ToggleButton darkMode;
+  @FXML public ToggleButton pandaMode;
+  @FXML public Pane backDrop;
+  @FXML public Label firstNameLabel;
+  @FXML public Label lastNameLabel;
+  @FXML public Label emailLabel;
+  @FXML public Label phoneNumberLabel;
+  @FXML public Label addressLabel;
+  @FXML public Label birthdayLabel;
+  @FXML public Label genderLabel;
+  @FXML public Label modeLabel;
+  @FXML public Label ratingLabel;
+  @FXML public TextField firstName;
+  @FXML public TextField lastName;
+  @FXML public TextField emailAddress;
+  @FXML public TextField phoneNumber;
+  @FXML public TextField address;
+  @FXML public TextField birthday;
+  @FXML public TextField gender;
+  @FXML public TextField mode;
+  @FXML public TextField rating;
+  @FXML public Button profileUpdate;
+  @FXML public ImageView profileImage;
+  @FXML public Button homeButton;
   @FXML public Button favouritesButton;
-
-  @FXML public BorderPane logOutBorderPane;
-
   @FXML public Button logoutButton;
-  /*----------------------------------------------------------*/
-  /* PROFILE PAGE */
-  /*----------------------------------------------------------*/
-  public void handleMenuAction(ActionEvent event) {
-    part1Menu.setVisible(true);
+  @FXML public Button schedules;
+
+  public void handleUpdateAction(ActionEvent actionEvent) throws IOException {
+    Parent homePageParent = FXMLLoader.load(getClass().getResource("lightEdit.fxml"));
+    Scene homePageScene = new Scene(homePageParent);
+    Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+    homeStage.setScene(homePageScene);
+    homeStage.show();
+  }
+
+  public void handlePandaModeAction(ActionEvent actionEvent) throws IOException {
+    Parent homePageParent = FXMLLoader.load(getClass().getResource("pandaProfile.fxml"));
+    Scene homePageScene = new Scene(homePageParent);
+    Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+    homeStage.setScene(homePageScene);
+    homeStage.show();
+  }
+
+  public void handleDarkModeAction(ActionEvent actionEvent) throws IOException {
+    Parent homePageParent = FXMLLoader.load(getClass().getResource("darkProfile.fxml"));
+    Scene homePageScene = new Scene(homePageParent);
+    Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+    homeStage.setScene(homePageScene);
+    homeStage.show();
+  }
+
+  public void handleMenuAction(ActionEvent actionEvent) {
+    hBox.setVisible(true);
     TranslateTransition openNav = new TranslateTransition(new Duration(350), drawer);
     openNav.setToX(0);
     TranslateTransition closeNav = new TranslateTransition(new Duration(350), drawer);
@@ -114,53 +93,36 @@ public class LightProfile {
             closeNav.play();
           }
         });
-
   }
 
-  public void handleUpdateAction(ActionEvent event) throws IOException {
-    Parent homePageParent = FXMLLoader.load(getClass().getResource("lightEdit.fxml"));
-    Scene homePageScene = new Scene(homePageParent);
-    Stage homeStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-    homeStage.setScene(homePageScene);
-    homeStage.show();
-  }
-
-  public void handleHomeAction(ActionEvent event) throws IOException {
-    Parent homePageParent = FXMLLoader.load(getClass().getResource("lightHome.fxml"));
-    Scene homePageScene = new Scene(homePageParent);
-    Stage homeStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-    homeStage.setScene(homePageScene);
-    homeStage.show();
-  }
-
-  public void handleFavAction(ActionEvent event) throws IOException {
-    Parent homePageParent = FXMLLoader.load(getClass().getResource("lightFavourites.fxml"));
-    Scene homePageScene = new Scene(homePageParent);
-    Stage homeStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-    homeStage.setScene(homePageScene);
-    homeStage.show();
-  }
-
-  public void handleLogoutAction(ActionEvent event) throws IOException {
+  public void handleLogoutAction(ActionEvent actionEvent) throws IOException {
     Parent homePageParent = FXMLLoader.load(getClass().getResource("lightLogin.fxml"));
     Scene homePageScene = new Scene(homePageParent);
-    Stage homeStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+    Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);
     homeStage.show();
   }
 
-  public void handleDarkModeAction(ActionEvent event) throws IOException {
-    Parent homePageParent = FXMLLoader.load(getClass().getResource("darkProfile.fxml"));
+  public void handleHomeAction(ActionEvent actionEvent) throws IOException {
+    Parent homePageParent = FXMLLoader.load(getClass().getResource("lightHome.fxml"));
     Scene homePageScene = new Scene(homePageParent);
-    Stage homeStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+    Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);
     homeStage.show();
   }
 
-  public void handlePandaModeAction(ActionEvent event) throws IOException {
-    Parent homePageParent = FXMLLoader.load(getClass().getResource("pandaProfile.fxml"));
+  public void handleFavouritesAction(ActionEvent actionEvent) throws IOException {
+    Parent homePageParent = FXMLLoader.load(getClass().getResource("lightFavourites.fxml"));
     Scene homePageScene = new Scene(homePageParent);
-    Stage homeStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+    Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+    homeStage.setScene(homePageScene);
+    homeStage.show();
+  }
+
+  public void handleSchedulesAction(ActionEvent actionEvent) throws IOException {
+    Parent homePageParent = FXMLLoader.load(getClass().getResource("lightAppointments.fxml"));
+    Scene homePageScene = new Scene(homePageParent);
+    Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);
     homeStage.show();
   }
