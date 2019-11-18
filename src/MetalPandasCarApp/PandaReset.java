@@ -7,6 +7,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.input.MouseEvent;
@@ -32,19 +34,14 @@ public class PandaReset {
       Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
       homeStage.setScene(homePageScene);
       homeStage.show();
+
+      Alert confirmPopUp = new Alert(Alert.AlertType.NONE);
+      confirmPopUp.setAlertType(AlertType.INFORMATION);
+      confirmPopUp.setContentText("Password has been changed! \n Thank you!");
+      confirmPopUp.show();
     }
     else if(!password.getText().equals(reenterPassword.getText())){
       passwordCheckText.setText("Passwords do not match.");
     }
-  }
-
-  public void handlePopupAction(MouseEvent mouseEvent) throws IOException {
-    if (password.getText().equals(reenterPassword.getText())) {
-      Parent homePageParent = FXMLLoader.load(getClass().getResource("pandaResetPasswordPopup.fxml"));
-      Scene homePageScene = new Scene(homePageParent);
-      Stage homeStage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
-      homeStage.setScene(homePageScene);
-      homeStage.show();
-      }
   }
 }
