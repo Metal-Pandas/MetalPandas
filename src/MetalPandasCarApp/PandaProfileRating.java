@@ -43,7 +43,7 @@ public class PandaProfileRating {
     }
   }
 
-  public void handleRatingAction(ActionEvent actionEvent) throws IOException {
+  public void handleRateAction(ActionEvent actionEvent) throws IOException {
     Parent homePageParent = FXMLLoader.load(getClass().getResource("darkAppointments.fxml"));
     Scene homePageScene = new Scene(homePageParent);
     Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.net.URL?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -8,7 +9,6 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<?import java.net.URL?>
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MetalPandasCarApp.PandaProfileRating">
    <Pane fx:id="profileRatingBackground" layoutX="1.0" layoutY="-2.0" prefHeight="400.0" prefWidth="600.0">
       <Label fx:id="ratingLabelTitle" layoutX="134.0" layoutY="84.0" prefHeight="47.0" prefWidth="349.0" text="Please Rate your Driver:">
@@ -16,7 +16,7 @@
             <Font size="32.0" />
          </font>
       </Label>
-      <Button fx:id="confirmRating" layoutX="424.0" layoutY="238.0" mnemonicParsing="false" onAction="#handleRatingAction" text="Confirm" />
+      <Button fx:id="confirmRating" layoutX="424.0" layoutY="238.0" mnemonicParsing="false" onAction="#handleRateAction" text="Confirm" />
       <Pane layoutX="107.0" layoutY="163.0" prefHeight="75.0" prefWidth="298.0">
          <Circle fx:id="rating1" fill="TRANSPARENT" layoutX="30.0" layoutY="40.0" onMouseClicked="#handleRating1Action" radius="22.0" stroke="BLACK" strokeType="INSIDE" />
          <Arc fx:id="rating2" fill="TRANSPARENT" layoutX="82.0" layoutY="42.0" length="270.0" onMouseClicked="#handleRating2Action" radiusX="26.0" radiusY="24.0" startAngle="45.0" stroke="BLACK" strokeType="INSIDE" type="ROUND" />
