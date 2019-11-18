@@ -1,5 +1,6 @@
 package MetalPandasCarApp;
 
+import java.io.IOException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -14,12 +15,9 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 
-import java.io.IOException;
-
 public class PandaProfileRating {
 
   @FXML public Pane profileRatingBackground;
-  //@FXML public Rating starRating;
   @FXML public Label ratingLabelTitle;
   @FXML public Label ratingLabel;
   @FXML public Button confirmRating;
@@ -28,7 +26,6 @@ public class PandaProfileRating {
   @FXML public Circle rating3;
   @FXML public Circle rating4;
   @FXML public Circle rating5;
-
 
   public void handleRateAction(ActionEvent actionEvent) throws IOException {
     Parent homePageParent = FXMLLoader.load(getClass().getResource("darkAppointments.fxml"));
