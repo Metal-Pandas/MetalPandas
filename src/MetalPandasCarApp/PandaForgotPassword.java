@@ -24,7 +24,6 @@ public class PandaForgotPassword {
   @FXML public TextField forgotPasswordEmail;
   @FXML public Button passConfirm;
   @FXML public Label forgotPasswordStatus;
-  @FXML public Button passBack;
 
 
   public void handleConfirmAction(ActionEvent actionEvent) throws IOException {
@@ -38,6 +37,7 @@ public class PandaForgotPassword {
 
     if(!forgotPasswordEmail.getText().equals("jsmith@abc.com")){
       forgotPasswordStatus.setText("Invalid Email Address!");
+      forgotPassStatus.setText(" ");
     }
   }
 
@@ -52,6 +52,7 @@ public class PandaForgotPassword {
 
     if(!forgotPasswordPhoneNumber.getText().equals("1234567890")){
       forgotPassStatus.setText("Invalid Phone Number!");
+      forgotPasswordStatus.setText(" ");
     }
   }
 
