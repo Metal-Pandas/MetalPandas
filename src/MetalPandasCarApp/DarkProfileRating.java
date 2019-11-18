@@ -1,10 +1,6 @@
 package MetalPandasCarApp;
 
 import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -19,12 +15,10 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Arc;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
-import org.controlsfx.control.Rating;
 
 public class DarkProfileRating {
 
   @FXML public Pane profileRatingBackground;
-  @FXML public Rating starRating;
   @FXML public Label ratingLabelTitle;
   @FXML public Label ratingLabel;
   @FXML public Button confirmRating;
@@ -33,15 +27,6 @@ public class DarkProfileRating {
   @FXML public Circle rating3;
   @FXML public Arc rating4;
   @FXML public Circle rating5;
-
-  public void initialize(URL arg0, ResourceBundle arg1){
-    try{
-      starRating.ratingProperty().addListener(
-          (arg01, t, t1) -> ratingLabel.setText("Rating: " + t1.toString()));
-    } catch (java.lang.NullPointerException exception) {
-      exception.printStackTrace();
-    }
-  }
 
   public void handleRateAction(ActionEvent actionEvent) throws IOException {
     Parent homePageParent = FXMLLoader.load(getClass().getResource("darkAppointments.fxml"));
