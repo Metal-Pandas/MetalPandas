@@ -17,5 +17,14 @@
       </library>
     </orderEntry>
     <orderEntry type="library" exported="" name="controlsfx-8.40.15" level="project" />
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/Downloads/jar_files (1)/controlsfx-8.40.11.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
   </component>
 </module>
