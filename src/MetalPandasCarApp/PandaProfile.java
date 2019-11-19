@@ -75,8 +75,8 @@ public class PandaProfile implements Initializable {
     lastName.setText(user.get(0).getLastName());
     emailAddress.setText(user.get(0).getMail());
     phoneNumber.setText(user.get(0).getPhoneNumber());
-    address.setText(Arrays.toString(user.get(0).getLocation()));
-    birthday.setText(Arrays.toString(user.get(0).getBirthday()));
+//    address.setText(Arrays.toString(user.get(0).getLocation()));
+//    birthday.setText(Arrays.toString(user.get(0).getBirthday()));
     gender.setText(user.get(0).getGender());
     mode.setText(user.get(0).getDriverPass());
 //  rating.setText(user.get(0).getRating());
