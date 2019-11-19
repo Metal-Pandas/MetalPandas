@@ -160,7 +160,9 @@ public class PandaSignUp {
 
     String[] birthday = {Month, Day, Year};
 
-    String[] location = {Address, Zip};
+    String[] location = {
+      Address, City, State, Zip, PickCountry,
+    };
 
     DatabaseDriver.createUserInDB(signUpUser);
     Users au =
