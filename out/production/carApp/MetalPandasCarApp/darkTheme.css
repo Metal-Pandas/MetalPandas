@@ -144,3 +144,8 @@
 #signUpBackground{
   -fx-background-image: url("Background/DarkTheme/backgroundDark.jpg");
 }
+
+/* Rating Page */
+#profileRatingBackground{
+  -fx-background-image: url("Background/DarkTheme/darkPandaRating.png");
+}

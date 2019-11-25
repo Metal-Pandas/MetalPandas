@@ -39,12 +39,12 @@
 
 /* ADD PAYMENTS PAGE */
 #addPaymentBackground{
-  -fx-background-image: url("Background/DarkTheme/testback2.jpg");
+  -fx-background-image: url("Background/PandaTheme/ooo.jpg");
 }
 
 /* APPOINTMENTS PAGE */
 #appointmentsBackground{
-  -fx-background-image: url("Background/DarkTheme/testback2.jpg");
+  -fx-background-image: url("Background/PandaTheme/ooo.jpg");
 }
 
 #scheduledPickUps{
@@ -143,4 +143,9 @@
 /* SIGN UP PAGE */
 #signUpBackground{
   -fx-background-image: url("Background/PandaTheme/signupEdit.jpg");
+}
+
+/* Rating Page */
+#profileRatingBackground{
+  -fx-background-image: url("Background/PandaTheme/pandaRating.png");
 }

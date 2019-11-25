@@ -24,22 +24,9 @@ public class PandaForgotPassword {
   @FXML public TextField forgotPasswordEmail;
   @FXML public Button passConfirm;
   @FXML public Label forgotPasswordStatus;
-  @FXML public Button passBack;
 
 
   public void handleConfirmAction(ActionEvent actionEvent) throws IOException {
-    if(forgotPasswordPhoneNumber.getText().equals("1234567890")){
-      Parent homePageParent = FXMLLoader.load(getClass().getResource("pandaReset.fxml"));
-      Scene homePageScene = new Scene(homePageParent);
-      Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-      homeStage.setScene(homePageScene);
-      homeStage.show();
-    }
-
-    if(!forgotPasswordPhoneNumber.getText().equals("1234567890")){
-      forgotPassStatus.setText("Invalid Phone Number!");
-    }
-
     if(forgotPasswordEmail.getText().equals("jsmith@abc.com")) {
       Parent homePageParent = FXMLLoader.load(getClass().getResource("pandaReset.fxml"));
       Scene homePageScene = new Scene(homePageParent);
@@ -50,6 +37,22 @@ public class PandaForgotPassword {
 
     if(!forgotPasswordEmail.getText().equals("jsmith@abc.com")){
       forgotPasswordStatus.setText("Invalid Email Address!");
+      forgotPassStatus.setText(" ");
+    }
+  }
+
+  public void handlePasswordConfirmAction(ActionEvent actionEvent) throws IOException{
+    if(forgotPasswordPhoneNumber.getText().equals("1234567890")){
+      Parent homePageParent = FXMLLoader.load(getClass().getResource("pandaReset.fxml"));
+      Scene homePageScene = new Scene(homePageParent);
+      Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+      homeStage.setScene(homePageScene);
+      homeStage.show();
+    }
+
+    if(!forgotPasswordPhoneNumber.getText().equals("1234567890")){
+      forgotPassStatus.setText("Invalid Phone Number!");
+      forgotPasswordStatus.setText(" ");
     }
   }
 
