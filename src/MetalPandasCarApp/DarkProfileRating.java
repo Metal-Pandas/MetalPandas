@@ -8,6 +8,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
@@ -18,7 +19,7 @@ import java.io.IOException;
 
 public class DarkProfileRating {
 
-  @FXML public Pane profileRatingBackground;
+  @FXML public Pane profileRatingBack;
   @FXML public Label ratingLabelTitle;
   @FXML public Label ratingLabel1;
   @FXML public Label ratingLabel2;
@@ -31,6 +32,11 @@ public class DarkProfileRating {
   @FXML public Circle rating3;
   @FXML public Circle rating4;
   @FXML public Circle rating5;
+  @FXML public ImageView ratingPic1;
+  @FXML public ImageView ratingPic2;
+  @FXML public ImageView ratingPic3;
+  @FXML public ImageView ratingPic4;
+  @FXML public ImageView ratingPic5;
 
   public void handleRateAction(ActionEvent actionEvent) throws IOException {
     Parent homePageParent = FXMLLoader.load(getClass().getResource("darkAppointments.fxml"));
@@ -40,43 +46,43 @@ public class DarkProfileRating {
     homeStage.show();
   }
 
-    public void handleRating1Action(MouseEvent mouseEvent) {
-      rating1.setFill(javafx.scene.paint.Color.YELLOW);
-      rating2.setFill(Color.TRANSPARENT);
-      rating3.setFill(Color.TRANSPARENT);
-      rating4.setFill(Color.TRANSPARENT);
-      rating5.setFill(Color.TRANSPARENT);
-    }
+  public void handleRating1Action(MouseEvent mouseEvent) {
+    rating1.setFill(javafx.scene.paint.Color.YELLOW);
+    rating2.setFill(Color.TRANSPARENT);
+    rating3.setFill(Color.TRANSPARENT);
+    rating4.setFill(Color.TRANSPARENT);
+    rating5.setFill(Color.TRANSPARENT);
+  }
 
-    public void handleRating2Action(MouseEvent mouseEvent) {
-      rating1.setFill(javafx.scene.paint.Color.YELLOW);
-      rating2.setFill(javafx.scene.paint.Color.YELLOW);
-      rating3.setFill(Color.TRANSPARENT);
-      rating4.setFill(Color.TRANSPARENT);
-      rating5.setFill(Color.TRANSPARENT);
-    }
+  public void handleRating2Action(MouseEvent mouseEvent) {
+    rating1.setFill(javafx.scene.paint.Color.YELLOW);
+    rating2.setFill(javafx.scene.paint.Color.YELLOW);
+    rating3.setFill(Color.TRANSPARENT);
+    rating4.setFill(Color.TRANSPARENT);
+    rating5.setFill(Color.TRANSPARENT);
+  }
 
-    public void handleRating3Action(MouseEvent mouseEvent) {
-      rating1.setFill(javafx.scene.paint.Color.YELLOW);
-      rating2.setFill(javafx.scene.paint.Color.YELLOW);
-      rating3.setFill(javafx.scene.paint.Color.YELLOW);
-      rating4.setFill(Color.TRANSPARENT);
-      rating5.setFill(Color.TRANSPARENT);
-    }
+  public void handleRating3Action(MouseEvent mouseEvent) {
+    rating1.setFill(javafx.scene.paint.Color.YELLOW);
+    rating2.setFill(javafx.scene.paint.Color.YELLOW);
+    rating3.setFill(javafx.scene.paint.Color.YELLOW);
+    rating4.setFill(Color.TRANSPARENT);
+    rating5.setFill(Color.TRANSPARENT);
+  }
 
-    public void handleRating4Action(MouseEvent mouseEvent) {
-      rating1.setFill(javafx.scene.paint.Color.YELLOW);
-      rating2.setFill(javafx.scene.paint.Color.YELLOW);
-      rating3.setFill(javafx.scene.paint.Color.YELLOW);
-      rating4.setFill(javafx.scene.paint.Color.YELLOW);
-      rating5.setFill(Color.TRANSPARENT);
-    }
+  public void handleRating4Action(MouseEvent mouseEvent) {
+    rating1.setFill(javafx.scene.paint.Color.YELLOW);
+    rating2.setFill(javafx.scene.paint.Color.YELLOW);
+    rating3.setFill(javafx.scene.paint.Color.YELLOW);
+    rating4.setFill(javafx.scene.paint.Color.YELLOW);
+    rating5.setFill(Color.TRANSPARENT);
+  }
 
-    public void handleRating5Action(MouseEvent mouseEvent) {
-      rating1.setFill(javafx.scene.paint.Color.YELLOW);
-      rating2.setFill(javafx.scene.paint.Color.YELLOW);
-      rating3.setFill(javafx.scene.paint.Color.YELLOW);
-      rating4.setFill(javafx.scene.paint.Color.YELLOW);
-      rating5.setFill(javafx.scene.paint.Color.YELLOW);
-    }
+  public void handleRating5Action(MouseEvent mouseEvent) {
+    rating1.setFill(javafx.scene.paint.Color.YELLOW);
+    rating2.setFill(javafx.scene.paint.Color.YELLOW);
+    rating3.setFill(javafx.scene.paint.Color.YELLOW);
+    rating4.setFill(javafx.scene.paint.Color.YELLOW);
+    rating5.setFill(javafx.scene.paint.Color.YELLOW);
+  }
 }

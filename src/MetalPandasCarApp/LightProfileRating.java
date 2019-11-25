@@ -8,6 +8,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
@@ -17,8 +18,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class LightProfileRating {
-
-  @FXML public Pane profileRatingBackground;
+  @FXML public Pane profileRatingBack;
   @FXML public Label ratingLabelTitle;
   @FXML public Label ratingLabel1;
   @FXML public Label ratingLabel2;
@@ -31,6 +31,11 @@ public class LightProfileRating {
   @FXML public Circle rating3;
   @FXML public Circle rating4;
   @FXML public Circle rating5;
+  @FXML public ImageView ratingPic1;
+  @FXML public ImageView ratingPic2;
+  @FXML public ImageView ratingPic3;
+  @FXML public ImageView ratingPic4;
+  @FXML public ImageView ratingPic5;
 
   public void handleRateAction(ActionEvent actionEvent) throws IOException {
     Parent homePageParent = FXMLLoader.load(getClass().getResource("darkAppointments.fxml"));

@@ -128,11 +128,15 @@ public class PandaSignUp {
     String LastName = lastName.getText();
     String Email = emailAddress.getText();
     String PhoneNum = phoneNumber.getText();
-    String Address = street.getText();
-    String City = city.getText();
-    String State = state.getText();
-    String Zip = zipCode.getText();
-    String PickCountry = country.getText();
+    String Password = password.getText();
+    String Address = street.getText() + city.getText() + state.getText() + country.getText();
+
+    System.out.println(Address);
+
+//    String City = city.getText();
+//    String State = state.getText();
+//    String Zip = zipCode.getText();
+//    String PickCountry = country.getText();
     String EnterPass = password.getText();
     String Day = day.toString();
     String Month = month.getValue();
@@ -145,10 +149,10 @@ public class PandaSignUp {
       LastName,
       Email,
       Address,
-      City,
-      State,
-      Zip,
-      PickCountry,
+//      City,
+//      State,
+//      Zip,
+//      PickCountry,
       PhoneNum,
       EnterPass,
       Day,
@@ -158,15 +162,15 @@ public class PandaSignUp {
       Gender,
     };
 
-    String[] birthday = {Month, Day, Year};
-
-    String[] location = {
-      Address, City, State, Zip, PickCountry,
-    };
+//    String[] birthday = {Month, Day, Year};
+//
+//    String[] location = {
+//      Address, City, State, Zip, PickCountry,
+//    };
 
     DatabaseDriver.createUserInDB(signUpUser);
     Users au =
-        new Users(FirstName, LastName, Email, PhoneNum, location, birthday, Gender, DriverPass);
+        new Users(FirstName, LastName, Email, PhoneNum, Address, Password, Month, Day, Year, Gender, DriverPass);
     profileInfo.userProfilesGlobal.add(au);
   }
 }
