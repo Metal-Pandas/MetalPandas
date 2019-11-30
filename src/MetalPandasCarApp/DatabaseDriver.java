@@ -107,7 +107,9 @@ public class DatabaseDriver {
 
       /*  String[] location = {
                 address,
+                city,
                 zip,
+                country
         };
 */
         userInfo.add(new Users(firstName, lastName, mail, phoneNumber, address,
