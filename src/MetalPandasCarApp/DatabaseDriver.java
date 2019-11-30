@@ -8,7 +8,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class DatabaseDriver {
-
+  private static String query;
   private static String querySQL;
   private static Connection conn;
   private static PreparedStatement pstmt;
@@ -20,7 +20,7 @@ public class DatabaseDriver {
     // Connection establish.
 
     final String jdbcDriver = "org.h2.Driver";
-    final String dbUrl = "jdbc:h2:./Lib/MetalPandasDB";
+    final String dbUrl = "jdbc:h2:./Lib/MetalPandasDb";
 
     final String USER = "";
     final String PASS = "";
@@ -41,36 +41,38 @@ public class DatabaseDriver {
    * ChoiceBox and ComboBox. Loops through the values and increments each time, stops after country.
    *
    * @param signUpUser an array of strings.
-   * @throws SQLException
    */
   public static void createUserInDB(String[] signUpUser) throws SQLException {
     try {
-      String querySQL =
-          "INSERT INTO USER( firstName, lastName, email, phoneNumber, address, city, state, zip, country, password,"
-              + "month, day, year, gender, personType) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+      initializeDB();
+      String query =
+          "INSERT INTO USER( firstname, lastname, email, phonenumber, address, city, state, zip, country, password, " +
+                  "repassword, month, day, year, gender, persontype) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 
-      pstmt = conn.prepareStatement(querySQL);
+      pstmt = conn.prepareStatement(query);
 
       int i = 1;
       for (String str : signUpUser) {
         pstmt.setString(i, str);
         i++;
       }
+
       pstmt.executeUpdate();
 
       System.out.println("User Created!");
     } catch (NullPointerException e) {
       e.printStackTrace();
     }
+    conn.close();
   }
 
   public static ArrayList<Users> getUserInfo(String mail) {
     try {
       initializeDB();
 
-      querySQL = "SELECT * FROM USER WHERE EMAIL = ?";
+      query = "SELECT * FROM USER WHERE EMAIL = ?";
 
-      pstmt = conn.prepareStatement(querySQL);
+      pstmt = conn.prepareStatement(query);
 
       pstmt.setString(1, mail);
 
@@ -82,16 +84,17 @@ public class DatabaseDriver {
         mail = rs.getString("email");
         String phoneNumber = rs.getString("phoneNumber");
         String address = rs.getString("address");
-        String city = rs.getString("city");
         String state = rs.getString("state");
+        String city = rs.getString("city");
         String zip = rs.getString("zip");
         String country = rs.getString("country");
         String password = rs.getString("password");
+        String rePassword = rs.getString("rePassword");
         String month = rs.getString("month");
         String day = rs.getString("day");
         String year = rs.getString("year");
-        String gender = rs.getString("gender");
         String pType = rs.getString("personType");
+        String gender = rs.getString("gender");
 
         userInfo.add(
             new Users(
@@ -105,12 +108,15 @@ public class DatabaseDriver {
                 zip,
                 country,
                 password,
+                rePassword,
                 month,
                 day,
                 year,
-                gender,
-                pType));
+                pType,
+                gender));
       }
+      conn.close();
+
     } catch (SQLException exception) {
       exception.printStackTrace();
     }
@@ -118,9 +124,11 @@ public class DatabaseDriver {
   }
 
   public static void createPaymentInDb(String[] paymentSignUp) throws SQLException {
+    initializeDB();
     try {
       querySQL =
-          "INSERT INTO PAYMENT(paymentCombo, cardHolder, cardNumber, ccvNumber, expirationMonth, expirationYear) VALUES (?,?,?,?,?,?)";
+          "INSERT INTO PAYMENT(paymentCombo, cardHolder, cardNumber, ccvNumber, expirationMonth, expirationYear) "
+              + "VALUES (?,?,?,?,?,?)";
 
       pstmt = conn.prepareStatement(querySQL);
 
@@ -135,31 +143,35 @@ public class DatabaseDriver {
     } catch (NullPointerException e) {
       e.printStackTrace();
     }
+    conn.close();
+    pstmt.close();
   }
 
-  public static ArrayList<UsersPayment> getPaymentInfo(String paymentType) {
+  public static ArrayList<UsersPayment> getPaymentInfo(String ccv) {
     try {
       initializeDB();
 
-      querySQL = "SELECT * FROM PAYMENT WHERE PAYMENTCOMBO = ?";
+      querySQL = "SELECT * FROM PAYMENT WHERE CCVNUMBER = ?";
 
       pstmt = conn.prepareStatement(querySQL);
 
-      pstmt.setString(1, paymentType);
+      pstmt.setString(1, ccv);
 
       ResultSet rs = pstmt.executeQuery();
 
       while (rs.next()) {
-        paymentType = rs.getString("paymentCombo");
+        String paymentType = rs.getString("paymentCombo");
         String cardName = rs.getString("cardHolder");
-        String ccv = rs.getString("ccvNumber");
         String cardNumber = rs.getString("cardNumber");
+        ccv = rs.getString("ccvNumber");
         String expMonth = rs.getString("expirationMonth");
         String expYear = rs.getString("expirationYear");
 
         userPayment.add(
-            new UsersPayment(paymentType, cardName, ccv, cardNumber, expMonth, expYear));
+            new UsersPayment(paymentType, cardName, cardNumber, ccv, expMonth, expYear));
       }
+      conn.close();
+      pstmt.close();
     } catch (SQLException exception) {
       exception.printStackTrace();
     }
