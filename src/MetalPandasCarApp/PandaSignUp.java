@@ -131,7 +131,7 @@ public class PandaSignUp {
     String State = state.getText();
     String Zip = zipCode.getText();
     String PickCountry = country.getText();
-    String EnterPass = password.getText();
+    String RePassword = password.getText();
     String Month = month.getValue();
     String Day = day.toString();
     String Year = year.getText();
@@ -142,13 +142,14 @@ public class PandaSignUp {
       FirstName,
       LastName,
       Email,
+      PhoneNum,
       Address,
       City,
       State,
       Zip,
       PickCountry,
-      PhoneNum,
-      EnterPass,
+      Password,
+      RePassword,
       Month,
       Day,
       Year,
@@ -170,6 +171,7 @@ public class PandaSignUp {
             Zip,
             PickCountry,
             Password,
+            RePassword,
             Month,
             Day,
             Year,

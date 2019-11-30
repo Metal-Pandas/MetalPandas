@@ -81,7 +81,7 @@ public class PandaProfile implements Initializable {
             + " "
             + user.get(0).getZip());
     birthday.setText(
-        user.get(0).getMonth() + "/" + user.get(0).getDay() + "/" + user.get(0).getYear());
+        user.get(0).getMonth() + " / " + user.get(0).getDay() + " / " + user.get(0).getYear());
     gender.setText(user.get(0).getGender());
     mode.setText(user.get(0).getDriverPass());
     //  rating.setText(user.get(0).getRating());
