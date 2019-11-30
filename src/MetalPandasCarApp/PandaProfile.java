@@ -2,10 +2,7 @@ package MetalPandasCarApp;
 
 import java.io.IOException;
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.Statement;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.ResourceBundle;
 
 import javafx.animation.TranslateTransition;
@@ -99,7 +96,7 @@ public class PandaProfile implements Initializable {
    */
   @Override
   public void initialize(URL url, ResourceBundle resourceBundle) {
-    setProfilePage(profileInfo.userProfilesGlobal);
+    setProfilePage(UsersInfo.userProfilesGlobal);
   }
 
   public void handleUpdateAction(ActionEvent actionEvent) throws IOException {

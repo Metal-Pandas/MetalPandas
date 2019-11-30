@@ -24,7 +24,6 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
-import org.w3c.dom.ls.LSOutput;
 
 import javax.imageio.ImageIO;
 
@@ -119,8 +118,6 @@ public class PandaSignUp {
     } catch (Exception e) {
       e.printStackTrace();
     }
-
-    //     DatabaseDriver.initializeDB();
   }
 
   public void addUser() throws SQLException {
@@ -178,6 +175,6 @@ public class PandaSignUp {
             Year,
             Gender,
             DriverPass);
-    profileInfo.userProfilesGlobal.add(au);
+    UsersInfo.userProfilesGlobal.add(au);
   }
 }
