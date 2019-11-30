@@ -99,20 +99,21 @@ public class DatabaseDriver {
         String gender = rs.getString("gender");
         String pType = rs.getString("personType");
 
-//        String[] birthday = {
-//                month,
-//                day,
-//                year
-//        };
-
-      /*  String[] location = {
+        userInfo.add(new Users(firstName,
+                lastName,
+                mail,
+                phoneNumber,
                 address,
+                city,
+                state,
                 zip,
-        };
-*/
-        userInfo.add(new Users(firstName, lastName, mail, phoneNumber, address,
-                password, month, day, year, gender, pType));
-//        userInfo.add(new Users(firstName, lastName, mail, phoneNumber, location, birthday, gender, pType));
+                country,
+                password,
+                month,
+                day,
+                year,
+                gender,
+                pType));
       }
     } catch (SQLException exception) {
       exception.printStackTrace();
