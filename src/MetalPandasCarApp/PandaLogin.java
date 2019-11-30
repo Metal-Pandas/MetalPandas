@@ -79,7 +79,7 @@ public class PandaLogin {
       a.setContentText("Incorrect Email/Password. Don't have an account? Sign up!");
       a.show();
     }
-    profileInfo.userProfilesGlobal = DatabaseDriver.getUserInfo(dbEmail);
+    UsersInfo.userProfilesGlobal = DatabaseDriver.getUserInfo(dbEmail);
     userList = DatabaseDriver.getUserInfo(dbEmail);
     conn.close();
   }

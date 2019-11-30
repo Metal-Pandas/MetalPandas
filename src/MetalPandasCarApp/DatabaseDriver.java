@@ -14,6 +14,7 @@ public class DatabaseDriver {
   private static PreparedStatement pstmt;
 
   private static ArrayList<Users> userInfo = new ArrayList();
+  private static ArrayList<UsersPayment> userPayment = new ArrayList();
 
   public static Connection initializeDB() {
     // Connection establish.
@@ -36,18 +37,17 @@ public class DatabaseDriver {
   }
 
   /**
-   * Creates a USER of datatype String.
-   * Accepts USER inputs from the TexFields, PasswordFields, ChoiceBox and ComboBox.
-   *  Loops through the values and increments each time, stops after country.
+   * Creates a USER of datatype String. Accepts USER inputs from the TexFields, PasswordFields,
+   * ChoiceBox and ComboBox. Loops through the values and increments each time, stops after country.
    *
    * @param signUpUser an array of strings.
    * @throws SQLException
    */
   public static void createUserInDB(String[] signUpUser) throws SQLException {
     try {
-      querySQL =
-          "INSERT INTO USER( firstName, lastName, email, phoneNumber, address, city, state, zip, country, password," +
-                  "month, day, year, gender, personType) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+      String querySQL =
+          "INSERT INTO USER( firstName, lastName, email, phoneNumber, address, city, state, zip, country, password,"
+              + "month, day, year, gender, personType) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 
       pstmt = conn.prepareStatement(querySQL);
 
@@ -64,19 +64,13 @@ public class DatabaseDriver {
     }
   }
 
-  /**
-   *
-   *
-   * @param mail
-   * @return
-   */
   public static ArrayList<Users> getUserInfo(String mail) {
     try {
       initializeDB();
 
       querySQL = "SELECT * FROM USER WHERE EMAIL = ?";
 
-      PreparedStatement pstmt = conn.prepareStatement(querySQL);
+      pstmt = conn.prepareStatement(querySQL);
 
       pstmt.setString(1, mail);
 
@@ -99,7 +93,9 @@ public class DatabaseDriver {
         String gender = rs.getString("gender");
         String pType = rs.getString("personType");
 
-        userInfo.add(new Users(firstName,
+        userInfo.add(
+            new Users(
+                firstName,
                 lastName,
                 mail,
                 phoneNumber,
@@ -119,5 +115,54 @@ public class DatabaseDriver {
       exception.printStackTrace();
     }
     return userInfo;
+  }
+
+  public static void createPaymentInDb(String[] paymentSignUp) throws SQLException {
+    try {
+      querySQL =
+          "INSERT INTO PAYMENT(paymentCombo, cardHolder, cardNumber, ccvNumber, expirationMonth, expirationYear) VALUES (?,?,?,?,?,?)";
+
+      pstmt = conn.prepareStatement(querySQL);
+
+      int i = 1;
+      for (String str1 : paymentSignUp) {
+        pstmt.setString(i, str1);
+        i++;
+      }
+      pstmt.executeUpdate();
+
+      System.out.println("Payment Created!");
+    } catch (NullPointerException e) {
+      e.printStackTrace();
+    }
+  }
+
+  public static ArrayList<UsersPayment> getPaymentInfo(String paymentType) {
+    try {
+      initializeDB();
+
+      querySQL = "SELECT * FROM PAYMENT WHERE PAYMENTCOMBO = ?";
+
+      pstmt = conn.prepareStatement(querySQL);
+
+      pstmt.setString(1, paymentType);
+
+      ResultSet rs = pstmt.executeQuery();
+
+      while (rs.next()) {
+        paymentType = rs.getString("paymentCombo");
+        String cardName = rs.getString("cardHolder");
+        String ccv = rs.getString("ccvNumber");
+        String cardNumber = rs.getString("cardNumber");
+        String expMonth = rs.getString("expirationMonth");
+        String expYear = rs.getString("expirationYear");
+
+        userPayment.add(
+            new UsersPayment(paymentType, cardName, ccv, cardNumber, expMonth, expYear));
+      }
+    } catch (SQLException exception) {
+      exception.printStackTrace();
+    }
+    return userPayment;
   }
 }
