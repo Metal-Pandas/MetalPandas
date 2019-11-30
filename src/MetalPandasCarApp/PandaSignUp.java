@@ -133,7 +133,7 @@ public class PandaSignUp {
     String PickCountry = country.getText();
     String RePassword = password.getText();
     String Month = month.getValue();
-    String Day = day.toString();
+    String Day = day.getValue().toString();
     String Year = year.getText();
     String DriverPass = driverPassenger.getValue();
     String Gender = gender.getValue();

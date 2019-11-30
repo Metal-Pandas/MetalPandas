@@ -69,7 +69,7 @@ public class PandaAddPayments {
     String CardHolder = cardHolderName.getText();
     String CardNumber = cardNumber.getText();
     String CcvNumber = paymentCCV.getText();
-    String ExpMonth = expirationMonth.toString();
+    String ExpMonth = expirationMonth.getValue().toString();
     String ExpYear = expirationYear.getText();
 
     String[] paymentSignUp = {PaymentType, CardHolder, CardNumber, CcvNumber, ExpMonth, ExpYear};

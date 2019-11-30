@@ -10,11 +10,13 @@ import java.util.ArrayList;
 public class DatabaseDriver {
   private static String query;
   private static String querySQL;
+  private static String sql;
   private static Connection conn;
   private static PreparedStatement pstmt;
 
   private static ArrayList<Users> userInfo = new ArrayList();
   private static ArrayList<UsersPayment> userPayment = new ArrayList();
+  private static ArrayList<UsersSchedule> userSchedule= new ArrayList();
 
   public static Connection initializeDB() {
     // Connection establish.
@@ -45,7 +47,7 @@ public class DatabaseDriver {
   public static void createUserInDB(String[] signUpUser) throws SQLException {
     try {
       initializeDB();
-      String query =
+       query =
           "INSERT INTO USER( firstname, lastname, email, phonenumber, address, city, state, zip, country, password, " +
                   "repassword, month, day, year, gender, persontype) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 
@@ -126,7 +128,7 @@ public class DatabaseDriver {
   public static void createPaymentInDb(String[] paymentSignUp) throws SQLException {
     initializeDB();
     try {
-      querySQL =
+      querySQL=
           "INSERT INTO PAYMENT(paymentCombo, cardHolder, cardNumber, ccvNumber, expirationMonth, expirationYear) "
               + "VALUES (?,?,?,?,?,?)";
 
@@ -146,7 +148,6 @@ public class DatabaseDriver {
     conn.close();
     pstmt.close();
   }
-
   public static ArrayList<UsersPayment> getPaymentInfo(String ccv) {
     try {
       initializeDB();
@@ -168,7 +169,7 @@ public class DatabaseDriver {
         String expYear = rs.getString("expirationYear");
 
         userPayment.add(
-            new UsersPayment(paymentType, cardName, cardNumber, ccv, expMonth, expYear));
+                new UsersPayment(paymentType, cardName, cardNumber, ccv, expMonth, expYear));
       }
       conn.close();
       pstmt.close();
@@ -177,4 +178,61 @@ public class DatabaseDriver {
     }
     return userPayment;
   }
+
+  public static void createScheduleInDb(String[] scheduleSignUp) throws SQLException {
+    initializeDB();
+    try {
+      querySQL =
+              "INSERT INTO SCHEDULE(schedulemonth, scheduleday, scheduleHour, scheduleMinute, scheduleAmpm) VALUES (?,?,?,?,?)";
+
+      pstmt = conn.prepareStatement(querySQL);
+
+      int i = 1;
+      for (String str2 : scheduleSignUp) {
+        pstmt.setString(i, str2);
+        i++;
+      }
+      pstmt.executeUpdate();
+
+      System.out.println("Schedule Created!");
+    } catch (NullPointerException e) {
+      e.printStackTrace();
+    }
+    conn.close();
+    pstmt.close();
+  }
+
+  public static ArrayList<UsersSchedule> getScheduleInfo(String hr, String min) {
+    try {
+      initializeDB();
+
+      sql = "SELECT * FROM SCHEDULE WHERE SCHEDULEHOUR = ? AND SCHEDULEMINUTE = ?";
+
+      pstmt = conn.prepareStatement(sql);
+
+      pstmt.setString(1, hr);
+      pstmt.setString(2, min);
+
+      ResultSet rs = pstmt.executeQuery();
+
+      while (rs.next()) {
+        String scheduleMonth = rs.getString("scheduleMonth");
+        String scheduleDay = rs.getString("scheduleDay");
+        hr = rs.getString("scheduleHour");
+        min = rs.getString("scheduleMinute");
+        String scheduleAmPm = rs.getString("scheduleAmPm");
+
+        userSchedule.add(
+            new UsersSchedule(scheduleMonth, scheduleDay, hr, min, scheduleAmPm ));
+      }
+      conn.close();
+      pstmt.close();
+    } catch (SQLException exception) {
+      exception.printStackTrace();
+    }
+    return userSchedule;
+  }
+
+
+
 }
