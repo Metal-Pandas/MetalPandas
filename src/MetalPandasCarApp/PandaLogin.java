@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.sql.*;
 import java.util.ArrayList;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -32,7 +34,7 @@ public class PandaLogin {
   @FXML public Label statusText;
   @FXML public Pane backDrop;
 
-  private ArrayList<Users> userList = new ArrayList<>();
+  private ObservableList<Users> userList = FXCollections.observableArrayList();
 
   public void handleLoginAction(ActionEvent actionEvent) throws SQLException {
     Connection conn = DatabaseDriver.initializeDB();

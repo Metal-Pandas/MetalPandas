@@ -78,7 +78,12 @@ public class PandaHome {
     homeStage.show();
   }
 
-  public void handleFavouritesAction(ActionEvent actionEvent) throws IOException {
+  public void handleFavouritesAction(ActionEvent actionEvent) throws IOException, SQLException {
+    Connection conn = DatabaseDriver.initializeDB();
+    String sql = "SELECT * FROM USER";
+    PreparedStatement pstmt = conn.prepareStatement(sql);
+    pstmt.executeQuery();
+
     Parent homePageParent = FXMLLoader.load(getClass().getResource("pandaFavourites.fxml"));
     Scene homePageScene = new Scene(homePageParent);
     Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();

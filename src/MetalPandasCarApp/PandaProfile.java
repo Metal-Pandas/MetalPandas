@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import javafx.animation.TranslateTransition;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -66,7 +67,7 @@ public class PandaProfile implements Initializable {
    *
    * @param user an arrayList that holds Users.
    */
-  void setProfilePage(ArrayList<Users> user) {
+  void setProfilePage(ObservableList<Users> user) {
     firstName.setText(user.get(0).getFirstName());
     lastName.setText(user.get(0).getLastName());
     emailAddress.setText(user.get(0).getMail());

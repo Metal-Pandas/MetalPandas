@@ -1,5 +1,6 @@
 package MetalPandasCarApp;
 
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.cell.PropertyValueFactory;
 
@@ -19,7 +20,7 @@ public class DatabaseDriver {
   private static Connection conn;
   private static PreparedStatement pstmt;
 
-  private static ArrayList<Users> userInfo = new ArrayList();
+  private static ObservableList<Users> userInfo = FXCollections.observableArrayList();
   private static ArrayList<UsersCardPayment> userCardPayment = new ArrayList();
   private static ArrayList<UsersSchedule> userSchedule= new ArrayList();
   private static ArrayList<UsersPayment> userPayment= new ArrayList();
@@ -74,7 +75,7 @@ public class DatabaseDriver {
     conn.close();
   }
 
-  public static ArrayList<Users> getUserInfo(String mail) {
+  public static ObservableList<Users> getUserInfo(String mail) {
     try {
       initializeDB();
 
