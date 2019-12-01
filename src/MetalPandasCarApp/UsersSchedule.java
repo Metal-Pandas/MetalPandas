@@ -6,6 +6,8 @@ public class UsersSchedule {
     private String hour;
     private String minute;
     private String amPm;
+    private String time;
+    private String date;
 
     public UsersSchedule(String scheduleMonth, String scheduleDay, String hour, String minute, String amPm){
         this.scheduleMonth = scheduleMonth;
@@ -13,6 +15,28 @@ public class UsersSchedule {
         this.hour = hour;
         this.minute = minute;
         this.amPm = amPm;
+    }
+
+    public UsersSchedule(String time, String date, String amPm){
+        this.time = time;
+        this.date = date;
+        this.amPm = amPm;
+    }
+
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
     }
 
     public String getScheduleMonth() {

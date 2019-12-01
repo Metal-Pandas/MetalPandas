@@ -1,5 +1,8 @@
 package MetalPandasCarApp;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
 import java.util.ArrayList;
 
 class UsersInfo {
@@ -7,6 +10,6 @@ class UsersInfo {
 
   static ArrayList<UsersCardPayment> usersCardPaymentGlobal = new ArrayList<>();
 
-  static ArrayList<UsersSchedule> usersScheduleGlobal = new ArrayList<>();
+  static ObservableList<UsersSchedule> usersScheduleGlobal = FXCollections.observableArrayList();
 
 }
