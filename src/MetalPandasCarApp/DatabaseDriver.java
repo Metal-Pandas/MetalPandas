@@ -11,12 +11,15 @@ public class DatabaseDriver {
   private static String query;
   private static String querySQL;
   private static String sql;
+  private static String sqlQuery;
+
   private static Connection conn;
   private static PreparedStatement pstmt;
 
   private static ArrayList<Users> userInfo = new ArrayList();
-  private static ArrayList<UsersPayment> userPayment = new ArrayList();
+  private static ArrayList<UsersCardPayment> userCardPayment = new ArrayList();
   private static ArrayList<UsersSchedule> userSchedule= new ArrayList();
+  private static ArrayList<UsersPayment> userPayment= new ArrayList();
 
   public static Connection initializeDB() {
     // Connection establish.
@@ -125,17 +128,17 @@ public class DatabaseDriver {
     return userInfo;
   }
 
-  public static void createPaymentInDb(String[] paymentSignUp) throws SQLException {
+  public static void createCardPaymentInDb(String[] cardPaymentSignUp) throws SQLException {
     initializeDB();
     try {
       querySQL=
-          "INSERT INTO PAYMENT(paymentCombo, cardHolder, cardNumber, ccvNumber, expirationMonth, expirationYear) "
+          "INSERT INTO ADDCARD(paymentCombo, cardHolder, cardNumber, ccvNumber, expirationMonth, expirationYear) "
               + "VALUES (?,?,?,?,?,?)";
 
       pstmt = conn.prepareStatement(querySQL);
 
       int i = 1;
-      for (String str1 : paymentSignUp) {
+      for (String str1 : cardPaymentSignUp) {
         pstmt.setString(i, str1);
         i++;
       }
@@ -148,11 +151,11 @@ public class DatabaseDriver {
     conn.close();
     pstmt.close();
   }
-  public static ArrayList<UsersPayment> getPaymentInfo(String ccv) {
+  public static ArrayList<UsersCardPayment> getCardPaymentInfo(String ccv) {
     try {
       initializeDB();
 
-      querySQL = "SELECT * FROM PAYMENT WHERE CCVNUMBER = ?";
+      querySQL = "SELECT * FROM ADDCARD WHERE CCVNUMBER = ?";
 
       pstmt = conn.prepareStatement(querySQL);
 
@@ -168,15 +171,15 @@ public class DatabaseDriver {
         String expMonth = rs.getString("expirationMonth");
         String expYear = rs.getString("expirationYear");
 
-        userPayment.add(
-                new UsersPayment(paymentType, cardName, cardNumber, ccv, expMonth, expYear));
+        userCardPayment.add(
+                new UsersCardPayment(paymentType, cardName, cardNumber, ccv, expMonth, expYear));
       }
       conn.close();
       pstmt.close();
     } catch (SQLException exception) {
       exception.printStackTrace();
     }
-    return userPayment;
+    return userCardPayment;
   }
 
   public static void createScheduleInDb(String[] scheduleSignUp) throws SQLException {
@@ -234,5 +237,53 @@ public class DatabaseDriver {
   }
 
 
+  public static void createPaymentInDb(String[] paymentSignUp) throws SQLException {
+    initializeDB();
+    try {
+      sqlQuery =
+              "INSERT INTO PAYMENT(paymentoption, tipamount, totalamount) VALUES (?,?,?)";
 
+      pstmt = conn.prepareStatement(sqlQuery);
+
+      int i = 1;
+      for (String str3 : paymentSignUp) {
+        pstmt.setString(i, str3);
+        i++;
+      }
+      pstmt.executeUpdate();
+
+      System.out.println("Paid!");
+    } catch (NullPointerException e) {
+      e.printStackTrace();
+    }
+    conn.close();
+    pstmt.close();
+  }
+
+  public static ArrayList<UsersPayment> getPaymentInfo(String pO) {
+    try {
+      initializeDB();
+
+      sqlQuery = "SELECT * FROM PAYMENT WHERE PAYMENTOPTION = ?";
+
+      pstmt = conn.prepareStatement(sqlQuery);
+
+      pstmt.setString(1, pO);
+
+      ResultSet rs = pstmt.executeQuery();
+
+      while (rs.next()) {
+        pO = rs.getString("paymentOption");
+        String tip = rs.getString("tipAmount");
+        String total = rs.getString("totalAmount");
+
+        userPayment.add(new UsersPayment(pO,tip,total));
+        }
+      conn.close();
+      pstmt.close();
+    } catch (SQLException exception) {
+      exception.printStackTrace();
+    }
+    return userPayment;
+  }
 }
