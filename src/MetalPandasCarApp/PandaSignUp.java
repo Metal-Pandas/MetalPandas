@@ -24,7 +24,6 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
-import org.w3c.dom.ls.LSOutput;
 
 import javax.imageio.ImageIO;
 
@@ -119,8 +118,6 @@ public class PandaSignUp {
     } catch (Exception e) {
       e.printStackTrace();
     }
-
-    //     DatabaseDriver.initializeDB();
   }
 
   public void addUser() throws SQLException {
@@ -129,17 +126,14 @@ public class PandaSignUp {
     String Email = emailAddress.getText();
     String PhoneNum = phoneNumber.getText();
     String Password = password.getText();
-    String Address = street.getText() + city.getText() + state.getText() + country.getText();
-
-    System.out.println(Address);
-
-//    String City = city.getText();
-//    String State = state.getText();
-//    String Zip = zipCode.getText();
-//    String PickCountry = country.getText();
-    String EnterPass = password.getText();
-    String Day = day.toString();
+    String Address = street.getText();
+    String City = city.getText();
+    String State = state.getText();
+    String Zip = zipCode.getText();
+    String PickCountry = country.getText();
+    String RePassword = password.getText();
     String Month = month.getValue();
+    String Day = day.getValue().toString();
     String Year = year.getText();
     String DriverPass = driverPassenger.getValue();
     String Gender = gender.getValue();
@@ -148,29 +142,41 @@ public class PandaSignUp {
       FirstName,
       LastName,
       Email,
-      Address,
-//      City,
-//      State,
-//      Zip,
-//      PickCountry,
       PhoneNum,
-      EnterPass,
-      Day,
+      Address,
+      City,
+      State,
+      Zip,
+      PickCountry,
+      Password,
+      RePassword,
       Month,
+      Day,
       Year,
-      DriverPass,
       Gender,
+      DriverPass,
     };
 
-//    String[] birthday = {Month, Day, Year};
-//
-//    String[] location = {
-//      Address, City, State, Zip, PickCountry,
-//    };
-
     DatabaseDriver.createUserInDB(signUpUser);
+
     Users au =
-        new Users(FirstName, LastName, Email, PhoneNum, Address, Password, Month, Day, Year, Gender, DriverPass);
-    profileInfo.userProfilesGlobal.add(au);
+        new Users(
+            FirstName,
+            LastName,
+            Email,
+            PhoneNum,
+            Address,
+            City,
+            State,
+            Zip,
+            PickCountry,
+            Password,
+            RePassword,
+            Month,
+            Day,
+            Year,
+            Gender,
+            DriverPass);
+    UsersInfo.userProfilesGlobal.add(au);
   }
 }
