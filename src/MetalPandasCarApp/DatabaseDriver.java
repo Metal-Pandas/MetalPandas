@@ -1,5 +1,8 @@
 package MetalPandasCarApp;
 
+import javafx.collections.ObservableList;
+import javafx.scene.control.cell.PropertyValueFactory;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -221,7 +224,7 @@ public class DatabaseDriver {
       while (rs.next()) {
         String scheduleMonth = rs.getString("scheduleMonth");
         String scheduleDay = rs.getString("scheduleDay");
-        hr = rs.getString("scheduleHour");
+        hr = rs.getString("scheduleHour") + rs.getString("scheduleMinute");
         min = rs.getString("scheduleMinute");
         String scheduleAmPm = rs.getString("scheduleAmPm");
 
@@ -286,4 +289,5 @@ public class DatabaseDriver {
     }
     return userPayment;
   }
+
 }
