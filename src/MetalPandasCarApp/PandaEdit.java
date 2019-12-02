@@ -104,8 +104,8 @@ public class PandaEdit {
       pstmt.setString(11, reenterPassword.getText());
       pstmt.setString(13, driverPassenger.getValue());
       pstmt.setString(12, gender.getValue());
-      System.out.println("Sql string == " + sql);
-      System.out.println("Email:" + emailAddress.getText());
+//      System.out.println("Sql string == " + sql);
+//      System.out.println("Email:" + emailAddress.getText());
       pstmt.executeUpdate();
 
       Alert alert = new Alert(Alert.AlertType.INFORMATION);
