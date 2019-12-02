@@ -63,4 +63,10 @@ public class LightPayments {
       e.printStackTrace();
     }
   }
+
+  public void handleCalcTotal(ActionEvent actionEvent) {
+    int TipAmount = Integer.parseInt(tipAmount.getText());
+    int totalAmount = TipAmount + 10;
+    totalCostAmount.setText(String.valueOf(totalAmount));
+  }
 }
