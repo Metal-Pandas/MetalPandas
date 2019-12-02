@@ -24,6 +24,7 @@ public class PandaForgotPassword {
   @FXML public TextField forgotPasswordEmail;
   @FXML public Button passConfirm;
   @FXML public Label forgotPasswordStatus;
+  @FXML public Button passBack;
 
 
   public void handleConfirmAction(ActionEvent actionEvent) throws IOException {

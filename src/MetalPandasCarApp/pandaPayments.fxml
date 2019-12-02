@@ -11,12 +11,14 @@
 
 <AnchorPane fx:id="paymentBackground" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MetalPandasCarApp.PandaPayments">
    <Pane fx:id="backDrop" layoutX="192.0" layoutY="104.0" prefHeight="212.0" prefWidth="347.0">
-      <children>
-         <Button fx:id="calcTotal" layoutX="217.0" layoutY="100.0" mnemonicParsing="false" onAction="#handleCalcPayment" text="Calculate Total" />
-         <Text fx:id="totalCostLabel" layoutX="76.0" layoutY="149.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Cost:" />
-         <TextField fx:id="totalCostAmount" layoutX="190.0" layoutY="132.0" />
-         <Text layoutX="217.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="*All trips cost $10" wrappingWidth="93.8125" />
-      </children></Pane>
+      <Button fx:id="calcTotal" layoutX="217.0" layoutY="100.0" mnemonicParsing="false"
+        onAction="#handleCalcPayment" text="Calculate Total"/>
+      <Text fx:id="totalCostLabel" layoutX="76.0" layoutY="149.0" strokeType="OUTSIDE"
+        strokeWidth="0.0" text="Total Cost:"/>
+      <TextField fx:id="totalCostAmount" layoutX="190.0" layoutY="132.0"/>
+      <Text layoutX="217.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0"
+        text="*All trips cost $10" wrappingWidth="93.8125"/>
+   </Pane>
    <Button fx:id="backButton" layoutX="550.0" layoutY="361.0" mnemonicParsing="false" onAction="#handleBackAction" text="Back" />
    <Text fx:id="paymentTitle" layoutX="212.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Payment">
       <font>

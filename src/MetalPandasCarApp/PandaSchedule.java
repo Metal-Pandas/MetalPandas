@@ -82,7 +82,7 @@ public class PandaSchedule {
       e.printStackTrace();
     }
   }
-  public void addSchedule() throws SQLException {
+  private void addSchedule() throws SQLException {
     String ScheduleMonth = scheduleMonth.getValue();
     String ScheduleDay = scheduleDay.getValue().toString();
     String ScheduleHour = hour.getValue().toString();
