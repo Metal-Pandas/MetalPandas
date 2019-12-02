@@ -1,5 +1,6 @@
 package MetalPandasCarApp;
 
+//User Payment
 public class UsersCardPayment {
   private String paymentCombo;
   private String cardHolder;
