@@ -68,6 +68,7 @@ public class PandaPayments {
     }
   }
 
+
   public void addPayment() throws SQLException {
     String PaymentOption = paymentOption.getValue();
     String TipAmount = tipAmount.getText();
@@ -76,5 +77,12 @@ public class PandaPayments {
     String[] paymentSignUp = {PaymentOption, TipAmount, TotalAmount};
 
     DatabaseDriver.createPaymentInDb(paymentSignUp);
+  }
+
+
+  public void handleCalcPayment(ActionEvent actionEvent) {
+    int TipAmount = Integer.parseInt(tipAmount.getText());
+    int totalAmount = TipAmount + 10;
+    totalCostAmount.setText( String.valueOf(totalAmount));
   }
 }

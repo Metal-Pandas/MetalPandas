@@ -63,4 +63,10 @@ public class DarkPayments {
       e.printStackTrace();
     }
   }
+
+  public void handleCalcTotalButton(ActionEvent actionEvent) {
+    int TipAmount = Integer.parseInt(tipAmount.getText());
+    int totalAmount = TipAmount + 10;
+    totalCostAmount.setText(String.valueOf(totalAmount));
+  }
 }

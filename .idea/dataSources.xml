@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="MetalPandasDb" uuid="461f5e92-c5bf-41fb-9567-3c5a40f2e577">
+    <data-source source="LOCAL" name="MetalPandasDb" uuid="1e24db85-c517-430e-a994-fa34fc847cf3">
       <driver-ref>h2.unified</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.h2.Driver</jdbc-driver>
