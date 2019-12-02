@@ -57,14 +57,14 @@ public class PandaLogin {
 
     if ((getEmail.equals(dbEmail)) && (getPassword.equals(dbPassword))) {
       System.out.println(
-              "GetEmail ="
-                      + getEmail
-                      + " DB Email  ="
-                      + dbEmail
-                      + "  getPass ="
-                      + getPassword
-                      + "  dbPass="
-                      + dbPassword);
+          "GetEmail ="
+              + getEmail
+              + " DB Email  ="
+              + dbEmail
+              + "  getPass ="
+              + getPassword
+              + "  dbPass="
+              + dbPassword);
       try {
         Parent homePageParent = FXMLLoader.load(getClass().getResource("pandaHome.fxml"));
         Scene homePageScene = new Scene(homePageParent);

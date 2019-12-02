@@ -2,6 +2,9 @@ package MetalPandasCarApp;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
@@ -100,7 +103,12 @@ public class PandaProfile implements Initializable {
     setProfilePage(UsersInfo.userProfilesGlobal);
   }
 
-  public void handleUpdateAction(ActionEvent actionEvent) throws IOException {
+  public void handleUpdateAction(ActionEvent actionEvent) throws IOException, SQLException {
+    Connection conn = DatabaseDriver.initializeDB();
+    String sql = "SELECT * FROM USER";
+    PreparedStatement pstmt = conn.prepareStatement(sql);
+    pstmt.executeQuery();
+
     Parent homePageParent = FXMLLoader.load(getClass().getResource("pandaEdit.fxml"));
     Scene homePageScene = new Scene(homePageParent);
     Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
@@ -141,7 +149,6 @@ public class PandaProfile implements Initializable {
   }
 
   public void handleLogoutAction(ActionEvent actionEvent) throws IOException {
-    UsersInfo.userProfilesGlobal.clear();
     Parent homePageParent = FXMLLoader.load(getClass().getResource("pandaLogin.fxml"));
     Scene homePageScene = new Scene(homePageParent);
     Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
@@ -163,6 +170,7 @@ public class PandaProfile implements Initializable {
     Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);
     homeStage.show();
+//    UsersInfo.userProfilesGlobal.clear();
   }
 
   public void handleSchedulesAction(ActionEvent actionEvent) throws IOException {
@@ -171,5 +179,6 @@ public class PandaProfile implements Initializable {
     Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);
     homeStage.show();
+//    UsersInfo.usersScheduleGlobal.clear();
   }
 }

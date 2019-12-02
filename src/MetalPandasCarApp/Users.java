@@ -53,7 +53,7 @@ public class Users {
     this.rePassword = rePassword;
   }
 
-  public Users(String firstName, String lastName){
+  public Users(String firstName, String lastName) {
     this.firstName = firstName;
     this.lastName = lastName;
   }

@@ -22,8 +22,8 @@ public class DatabaseDriver {
 
   private static ObservableList<Users> userInfo = FXCollections.observableArrayList();
   private static ArrayList<UsersCardPayment> userCardPayment = new ArrayList();
-  private static ArrayList<UsersSchedule> userSchedule= new ArrayList();
-  private static ArrayList<UsersPayment> userPayment= new ArrayList();
+  private static ArrayList<UsersSchedule> userSchedule = new ArrayList();
+  private static ArrayList<UsersPayment> userPayment = new ArrayList();
 
   public static Connection initializeDB() {
     // Connection establish.
@@ -54,9 +54,9 @@ public class DatabaseDriver {
   public static void createUserInDB(String[] signUpUser) throws SQLException {
     try {
       initializeDB();
-       query =
-          "INSERT INTO USER( firstname, lastname, email, phonenumber, address, city, state, zip, country, password, " +
-                  "repassword, month, day, year, gender, persontype) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+      query =
+          "INSERT INTO USER( firstname, lastname, email, phonenumber, address, city, state, zip, country, password, "
+              + "repassword, month, day, year, gender, persontype) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 
       pstmt = conn.prepareStatement(query);
 
@@ -135,7 +135,7 @@ public class DatabaseDriver {
   public static void createCardPaymentInDb(String[] cardPaymentSignUp) throws SQLException {
     initializeDB();
     try {
-      querySQL=
+      querySQL =
           "INSERT INTO ADDCARD(paymentCombo, cardHolder, cardNumber, ccvNumber, expirationMonth, expirationYear) "
               + "VALUES (?,?,?,?,?,?)";
 
@@ -155,6 +155,7 @@ public class DatabaseDriver {
     conn.close();
     pstmt.close();
   }
+
   public static ArrayList<UsersCardPayment> getCardPaymentInfo(String ccv) {
     try {
       initializeDB();
@@ -176,7 +177,7 @@ public class DatabaseDriver {
         String expYear = rs.getString("expirationYear");
 
         userCardPayment.add(
-                new UsersCardPayment(paymentType, cardName, cardNumber, ccv, expMonth, expYear));
+            new UsersCardPayment(paymentType, cardName, cardNumber, ccv, expMonth, expYear));
       }
       conn.close();
       pstmt.close();
@@ -190,7 +191,7 @@ public class DatabaseDriver {
     initializeDB();
     try {
       querySQL =
-              "INSERT INTO SCHEDULE(schedulemonth, scheduleday, scheduleHour, scheduleMinute, scheduleAmpm) VALUES (?,?,?,?,?)";
+          "INSERT INTO SCHEDULE(schedulemonth, scheduleday, scheduleHour, scheduleMinute, scheduleAmpm) VALUES (?,?,?,?,?)";
 
       pstmt = conn.prepareStatement(querySQL);
 
@@ -229,8 +230,7 @@ public class DatabaseDriver {
         min = rs.getString("scheduleMinute");
         String scheduleAmPm = rs.getString("scheduleAmPm");
 
-        userSchedule.add(
-            new UsersSchedule(scheduleMonth, scheduleDay, hr, min, scheduleAmPm ));
+        userSchedule.add(new UsersSchedule(scheduleMonth, scheduleDay, hr, min, scheduleAmPm));
       }
       conn.close();
       pstmt.close();
@@ -240,12 +240,10 @@ public class DatabaseDriver {
     return userSchedule;
   }
 
-
   public static void createPaymentInDb(String[] paymentSignUp) throws SQLException {
     initializeDB();
     try {
-      sqlQuery =
-              "INSERT INTO PAYMENT(paymentoption, tipamount, totalamount) VALUES (?,?,?)";
+      sqlQuery = "INSERT INTO PAYMENT(paymentoption, tipamount, totalamount) VALUES (?,?,?)";
 
       pstmt = conn.prepareStatement(sqlQuery);
 
@@ -281,8 +279,8 @@ public class DatabaseDriver {
         String tip = rs.getString("tipAmount");
         String total = rs.getString("totalAmount");
 
-        userPayment.add(new UsersPayment(pO,tip,total));
-        }
+        userPayment.add(new UsersPayment(pO, tip, total));
+      }
       conn.close();
       pstmt.close();
     } catch (SQLException exception) {
@@ -290,5 +288,4 @@ public class DatabaseDriver {
     }
     return userPayment;
   }
-
 }

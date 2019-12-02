@@ -45,7 +45,6 @@ public class PandaHome {
   @FXML public Button scheduleButton;
   @FXML public Button schedules;
 
-  private ArrayList<UsersSchedule> userList = new ArrayList<>();
   public void handleMenuAction(ActionEvent actionEvent) {
     hBox.setVisible(true);
     TranslateTransition openNav = new TranslateTransition(new Duration(350), drawer);
@@ -89,6 +88,12 @@ public class PandaHome {
     Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);
     homeStage.show();
+
+    UsersInfo.userProfilesGlobal.clear();
+
+    conn.close();
+    pstmt.close();
+
   }
 
   public void initialize() {
@@ -115,6 +120,10 @@ public class PandaHome {
     Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);
     homeStage.show();
-    }
 
+    UsersInfo.usersScheduleGlobal.clear();
+
+    conn.close();
+    pstmt.close();
+  }
 }

@@ -39,11 +39,11 @@ public class PandaFavourites implements Initializable {
   @FXML public Button profileButton;
   @FXML public Button homeButton;
   @FXML public Button logoutButton;
-  @FXML public TableView  favouritesTable;
-  @FXML public TableColumn<?,?> driverLastName;
-  @FXML public TableColumn<?,?> driverFirstName;
-  @FXML public TableColumn<?,?> driverRating;
-  @FXML public TableColumn<?,?> previousDestination;
+  @FXML public TableView<Users> favouritesTable;
+  @FXML public TableColumn<?, ?> driverLastName;
+  @FXML public TableColumn<?, ?> driverFirstName;
+  @FXML public TableColumn<?, ?> driverRating;
+  @FXML public TableColumn<?, ?> previousDestination;
   @FXML public Button schedules;
 
   void setFavouritesTable(ObservableList<Users> userProfilesGlobal) {
@@ -60,7 +60,7 @@ public class PandaFavourites implements Initializable {
         String firstName = rs.getString(2);
         String lastName = rs.getString(3);
 
-        Users items = new Users(firstName,lastName);
+        Users items = new Users(firstName, lastName);
         userProfilesGlobal.add(items);
       }
 
@@ -69,13 +69,17 @@ public class PandaFavourites implements Initializable {
       driverFirstName.setCellValueFactory(new PropertyValueFactory("firstName"));
       driverLastName.setCellValueFactory(new PropertyValueFactory("lastName"));
 
+      conn.close();
+      stmt.close();
+
     } catch (SQLException e) {
       e.printStackTrace();
     }
+
   }
 
-
   public void handleMenuAction(ActionEvent actionEvent) {
+
     hBox.setVisible(true);
     TranslateTransition openNav = new TranslateTransition(new Duration(350), drawer);
     openNav.setToX(0);
@@ -121,10 +125,12 @@ public class PandaFavourites implements Initializable {
     Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);
     homeStage.show();
+
   }
 
   @Override
   public void initialize(URL url, ResourceBundle resourceBundle) {
+
     setFavouritesTable(UsersInfo.userProfilesGlobal);
   }
 }

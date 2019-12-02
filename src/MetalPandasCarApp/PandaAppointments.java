@@ -127,6 +127,7 @@ public class PandaAppointments implements Initializable {
     Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);
     homeStage.show();
+//    UsersInfo.userProfilesGlobal.clear();
   }
 
   @Override
