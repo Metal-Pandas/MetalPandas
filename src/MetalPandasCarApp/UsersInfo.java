@@ -2,7 +2,7 @@ package MetalPandasCarApp;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-
+// Users Info
 class UsersInfo {
   static ObservableList<Users> userProfilesGlobal = FXCollections.observableArrayList();
 
