@@ -33,7 +33,7 @@ public class DarkForgotEmail {
   }
 
   public void handleBackAction(ActionEvent actionEvent) throws IOException {
-    Parent homePageParent = FXMLLoader.load(getClass().getResource("pandaLogin.fxml"));
+    Parent homePageParent = FXMLLoader.load(getClass().getResource("darkLogin.fxml"));
     Scene homePageScene = new Scene(homePageParent);
     Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);

@@ -9,23 +9,26 @@
 <?import javafx.scene.text.Text?>
 
 <AnchorPane fx:id="scheduleBackground" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MetalPandasCarApp.LightSchedule">
-  <Pane fx:id="backDrop" layoutX="198.0" layoutY="51.0" prefHeight="263.0" prefWidth="392.0" />
-  <Text fx:id="selectDateLabel" layoutX="262.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select a Date:" textAlignment="CENTER" wrappingWidth="232.583984375">
-    <font>
-      <Font size="31.0" />
-    </font>
-  </Text>
-  <ComboBox fx:id="scheduleMonth" layoutX="230.0" layoutY="123.0" prefWidth="150.0" promptText="Month" />
-  <ComboBox fx:id="scheduleDay" layoutX="405.0" layoutY="123.0" prefHeight="25.0" prefWidth="150.0" promptText="Day" />
-  <Text fx:id="selectTimeLabel" layoutX="262.0" layoutY="235.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select a Time:" textAlignment="CENTER" wrappingWidth="232.583984375">
-    <font>
-      <Font size="31.0" />
-    </font>
-  </Text>
-  <ComboBox fx:id="hour" layoutX="210.0" layoutY="273.0" prefHeight="25.0" prefWidth="100.0" promptText="Hour" />
-  <ComboBox fx:id="minute" layoutX="344.0" layoutY="273.0" prefHeight="25.0" prefWidth="92.0" promptText="Minute" />
-  <ComboBox fx:id="amPm" layoutX="470.0" layoutY="273.0" prefHeight="25.0" prefWidth="111.0" promptText="AM or PM?" />
-  <Button fx:id="schedule" layoutX="261.0" layoutY="361.0" mnemonicParsing="false" onAction="#handleScheduleAction" text="Schedule!" />
+  <Pane fx:id="backDrop" layoutX="118.0" layoutY="51.0" prefHeight="234.0" prefWidth="392.0">
+    <Text fx:id="selectDateLabel" layoutX="55.0" layoutY="40.0" strokeType="OUTSIDE"
+      strokeWidth="0.0" text="Select a Date:" textAlignment="CENTER" wrappingWidth="281.583984375">
+      <font>
+        <Font name="Monospaced Regular" size="31.0"/>
+      </font>
+    </Text>
+    <Text fx:id="selectTimeLabel" layoutX="64.0" layoutY="157.0" strokeType="OUTSIDE"
+      strokeWidth="0.0" text="Select a Time:" textAlignment="CENTER" wrappingWidth="263.583984375">
+      <font>
+        <Font name="Monospaced Regular" size="31.0"/>
+      </font>
+    </Text>
+  </Pane>
+  <ComboBox fx:id="scheduleMonth" layoutX="150.0" layoutY="123.0" prefWidth="150.0" promptText="Month" />
+  <ComboBox fx:id="scheduleDay" layoutX="325.0" layoutY="123.0" prefHeight="25.0" prefWidth="150.0" promptText="Day" />
+  <ComboBox fx:id="hour" layoutX="130.0" layoutY="243.0" prefHeight="25.0" prefWidth="100.0" promptText="Hour" />
+  <ComboBox fx:id="minute" layoutX="264.0" layoutY="243.0" prefHeight="25.0" prefWidth="92.0" promptText="Minute" />
+  <ComboBox fx:id="amPm" layoutX="390.0" layoutY="243.0" prefHeight="25.0" prefWidth="111.0" promptText="AM or PM?" />
+  <Button fx:id="schedule" layoutX="266.0" layoutY="361.0" mnemonicParsing="false" onAction="#handleScheduleAction" text="Schedule!" />
   <Button fx:id="backButton" layoutX="536.0" layoutY="361.0" mnemonicParsing="false" onAction="#handleBackAction" text="Back" />
   <stylesheets>
     <URL value="@lightTheme.css" />

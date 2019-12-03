@@ -34,17 +34,17 @@
 }
 
 #drawer{
-  -fx-background-image: url("Background/DarkTheme/darkTheme.jpg");
+  -fx-background-image: url("Background/LightTheme/lightTheme.jpg");
 }
 
 /* ADD PAYMENTS PAGE */
 #addPaymentBackground{
-  -fx-background-image: url("Background/DarkTheme/testback2.jpg");
+  -fx-background-image: url("Background/LightTheme/lightBackground.jpg");
 }
 
 /* APPOINTMENTS PAGE */
 #appointmentsBackground{
-  -fx-background-image: url("Background/DarkTheme/testback2.jpg");
+  -fx-background-image: url("Background/LightTheme/lightBackground.jpg");
 }
 
 #scheduledPickUps{
@@ -53,7 +53,7 @@
 
 /* EDIT PAGE */
 #editBackground{
-  -fx-background-image: url("Background/DarkTheme/backgroundDark.jpg");
+  -fx-background-image: url("Background/LightTheme/lightBack.jpg");
 }
 
 #driverPassenger{
@@ -66,7 +66,7 @@
 
 /* FAVOURITES PAGE */
 #favouritesBackground{
-  -fx-background-image: url("Background/DarkTheme/testback2.jpg");
+  -fx-background-image: url("Background/LightTheme/lightBackground.jpg");
 }
 
 #favouritesTable{
@@ -75,7 +75,7 @@
 
 /* FORGOT EMAIL PAGE */
 #forgotEmailBackground{
-  -fx-background-image: url("Background/DarkTheme/testback2.jpg");
+  -fx-background-image: url("Background/LightTheme/lightBackground.jpg");
 }
 
 #forgotEmailStatus{
@@ -84,7 +84,7 @@
 
 /* FORGOT PASSWORD PAGE */
 #forgotPasswordBackground{
-  -fx-background-image: url("Background/DarkTheme/testback2.jpg");
+  -fx-background-image: url("Background/LightTheme/lightBackground.jpg");
 }
 
 #forgotPassStatus{
@@ -97,12 +97,12 @@
 
 /* HOME PAGE */
 #homeBackground{
-  -fx-background-image: url("Background/DarkTheme/testback2.jpg");
+  -fx-background-image: url("Background/LightTheme/lightBackground.jpg");
 }
 
 /* LOGIN PAGE */
 #loginBackground{
-  -fx-background-image: url("Background/DarkTheme/backgroundDark.jpg");
+  -fx-background-image: url("Background/LightTheme/lightBack.jpg");
 }
 
 #statusText{
@@ -111,7 +111,7 @@
 
 /* PAYMENTS PAGE */
 #paymentBackground{
-  -fx-background-image: url("Background/DarkTheme/testback2.jpg");
+  -fx-background-image: url("Background/LightTheme/lightBackground.jpg");
 }
 
 #backdrop{
@@ -121,7 +121,7 @@
 
 /* PROFILE PAGE */
 #profileBackground{
-  -fx-background-image: url("Background/DarkTheme/backgroundDark.jpg");
+  -fx-background-image: url("Background/LightTheme/lightBack.jpg");
 }
 
 .toggle-button{
@@ -132,20 +132,20 @@
 
 /* RESET PASSWORD PAGE */
 #resetBackground{
-  -fx-background-image: url("Background/DarkTheme/testback2.jpg");
+  -fx-background-image: url("Background/LightTheme/lightBackground.jpg");
 }
 
 /* SCHEDULE PAGE */
 #scheduleBackground{
-  -fx-background-image: url("Background/DarkTheme/testback2.jpg");
+  -fx-background-image: url("Background/LightTheme/lightBackground.jpg");
 }
 
 /* SIGN UP PAGE */
 #signUpBackground{
-  -fx-background-image: url("Background/DarkTheme/backgroundDark.jpg");
+  -fx-background-image: url("Background/LightTheme/lightBack.jpg");
 }
 
 /* Rating Page */
 #profileRatingBackground{
-  -fx-background-image: url("Background/LightTheme/lightPandaRating.png");
+  -fx-background-image: url("Background/LightTheme/lightBack.jpg");
 }

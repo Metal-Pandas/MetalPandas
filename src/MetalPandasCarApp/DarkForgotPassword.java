@@ -31,7 +31,7 @@ public class DarkForgotPassword {
 
   public void handleConfirmAction(ActionEvent actionEvent) throws IOException {
     if(forgotPasswordEmail.getText().equals("jsmith@abc.com")) {
-      Parent homePageParent = FXMLLoader.load(getClass().getResource("pandaReset.fxml"));
+      Parent homePageParent = FXMLLoader.load(getClass().getResource("darkReset.fxml"));
       Scene homePageScene = new Scene(homePageParent);
       Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
       homeStage.setScene(homePageScene);
@@ -46,7 +46,7 @@ public class DarkForgotPassword {
 
   public void handlePasswordConfirmAction(ActionEvent actionEvent) throws IOException{
     if(forgotPasswordPhoneNumber.getText().equals("1234567890")){
-      Parent homePageParent = FXMLLoader.load(getClass().getResource("pandaReset.fxml"));
+      Parent homePageParent = FXMLLoader.load(getClass().getResource("darkReset.fxml"));
       Scene homePageScene = new Scene(homePageParent);
       Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
       homeStage.setScene(homePageScene);
@@ -60,7 +60,7 @@ public class DarkForgotPassword {
   }
 
   public void handleBackAction(ActionEvent actionEvent) throws IOException {
-    Parent homePageParent = FXMLLoader.load(getClass().getResource("pandaLogin.fxml"));
+    Parent homePageParent = FXMLLoader.load(getClass().getResource("darkLogin.fxml"));
     Scene homePageScene = new Scene(homePageParent);
     Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);
