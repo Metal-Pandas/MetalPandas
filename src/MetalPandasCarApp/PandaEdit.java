@@ -8,6 +8,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -78,8 +79,7 @@ public class PandaEdit {
   }
 
   public void handleUpdateAction(ActionEvent actionEvent) throws IOException, SQLException {
-    try {
-        Users currentUser = UsersInfo.userProfilesGlobal.get(0);
+      Users currentUser = UsersInfo.userProfilesGlobal.get(0);
 
       Connection conn = DatabaseDriver.initializeDB();
       String sql =
@@ -102,22 +102,19 @@ public class PandaEdit {
         pstmt.setString(11, reenterPassword.getText());
         pstmt.setString(13, driverPassenger.getValue());
         pstmt.setString(12, gender.getValue());
-//      System.out.println("Sql string == " + sql);
-//      System.out.println("Email:" +emailAddress.getText());
         pstmt.executeUpdate();
 
       Alert alert = new Alert(Alert.AlertType.INFORMATION);
       alert.setTitle("Information Dialog");
       alert.setHeaderText("User details has been updated");
       alert.showAndWait();
-    } catch (SQLException e) {
-      e.printStackTrace();
-    }
+
     Parent homePageParent = FXMLLoader.load(getClass().getResource("pandaProfile.fxml"));
     Scene homePageScene = new Scene(homePageParent);
     Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);
     homeStage.show();
+
   }
 
   public void initialize() {
@@ -125,6 +122,7 @@ public class PandaEdit {
       driverPassenger.setItems(FXCollections.observableArrayList("Driver", "Passenger"));
       gender.setItems(
           FXCollections.observableArrayList("Female", "Male", "Non-binary", "Metal Panda"));
+
     } catch (Exception e) {
       e.printStackTrace();
     }
