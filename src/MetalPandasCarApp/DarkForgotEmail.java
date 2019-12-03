@@ -11,6 +11,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 public class DarkForgotEmail {
@@ -20,6 +21,7 @@ public class DarkForgotEmail {
   @FXML public Button confirm;
   @FXML public Button back;
   @FXML public Label forgotEmailStatus;
+  @FXML public Pane backDrop;
 
   public void handleConfirmAction(ActionEvent actionEvent) {
     if(forgotPhoneNumber.getText().equals("1234567890")){
@@ -31,7 +33,7 @@ public class DarkForgotEmail {
   }
 
   public void handleBackAction(ActionEvent actionEvent) throws IOException {
-    Parent homePageParent = FXMLLoader.load(getClass().getResource("darkLogin.fxml"));
+    Parent homePageParent = FXMLLoader.load(getClass().getResource("pandaLogin.fxml"));
     Scene homePageScene = new Scene(homePageParent);
     Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);

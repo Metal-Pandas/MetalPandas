@@ -70,7 +70,7 @@ public class PandaProfile implements Initializable {
    *
    * @param user an arrayList that holds Users.
    */
-  void setProfilePage(ObservableList<Users> user) {
+  private void setProfilePage(ObservableList<Users> user) {
     firstName.setText(user.get(0).getFirstName());
     lastName.setText(user.get(0).getLastName());
     emailAddress.setText(user.get(0).getMail());

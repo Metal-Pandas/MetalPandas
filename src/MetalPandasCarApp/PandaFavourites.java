@@ -46,7 +46,7 @@ public class PandaFavourites implements Initializable {
   @FXML public TableColumn<?, ?> previousDestination;
   @FXML public Button schedules;
 
-  void setFavouritesTable(ObservableList<Users> userProfilesGlobal) {
+  private void setFavouritesTable(ObservableList<Users> userProfilesGlobal) {
     try {
       Connection conn = DatabaseDriver.initializeDB();
 

@@ -11,6 +11,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 public class LightForgotPassword {
@@ -25,11 +26,12 @@ public class LightForgotPassword {
   @FXML public Button passConfirm;
   @FXML public Label forgotPasswordStatus;
   @FXML public Button passBack;
+  @FXML public Pane backDrop;
 
 
   public void handleConfirmAction(ActionEvent actionEvent) throws IOException {
     if(forgotPasswordEmail.getText().equals("jsmith@abc.com")) {
-      Parent homePageParent = FXMLLoader.load(getClass().getResource("lightReset.fxml"));
+      Parent homePageParent = FXMLLoader.load(getClass().getResource("pandaReset.fxml"));
       Scene homePageScene = new Scene(homePageParent);
       Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
       homeStage.setScene(homePageScene);
@@ -38,12 +40,13 @@ public class LightForgotPassword {
 
     if(!forgotPasswordEmail.getText().equals("jsmith@abc.com")){
       forgotPasswordStatus.setText("Invalid Email Address!");
+      forgotPassStatus.setText(" ");
     }
   }
 
   public void handlePasswordConfirmAction(ActionEvent actionEvent) throws IOException{
     if(forgotPasswordPhoneNumber.getText().equals("1234567890")){
-      Parent homePageParent = FXMLLoader.load(getClass().getResource("lightReset.fxml"));
+      Parent homePageParent = FXMLLoader.load(getClass().getResource("pandaReset.fxml"));
       Scene homePageScene = new Scene(homePageParent);
       Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
       homeStage.setScene(homePageScene);
@@ -52,11 +55,12 @@ public class LightForgotPassword {
 
     if(!forgotPasswordPhoneNumber.getText().equals("1234567890")){
       forgotPassStatus.setText("Invalid Phone Number!");
+      forgotPasswordStatus.setText(" ");
     }
   }
 
   public void handleBackAction(ActionEvent actionEvent) throws IOException {
-    Parent homePageParent = FXMLLoader.load(getClass().getResource("lightLogin.fxml"));
+    Parent homePageParent = FXMLLoader.load(getClass().getResource("pandaLogin.fxml"));
     Scene homePageScene = new Scene(homePageParent);
     Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);
