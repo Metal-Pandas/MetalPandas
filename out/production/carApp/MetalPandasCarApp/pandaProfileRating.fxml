@@ -19,11 +19,11 @@
       </Label>
       <Button fx:id="confirmRating" layoutX="252.0" layoutY="256.0" mnemonicParsing="false" onAction="#handleRateAction" text="Confirm Rating" />
       <Pane layoutX="56.0" layoutY="143.0" prefHeight="101.0" prefWidth="502.0">
-         <Circle fx:id="rating1" accessibleRole="BUTTON" fill="TRANSPARENT" layoutX="49.0" layoutY="51.0" onMouseMoved="#handleRating1Action" radius="45.0" stroke="BLACK" strokeType="INSIDE" />
-         <Circle fx:id="rating2" accessibleRole="BUTTON" fill="TRANSPARENT" layoutX="149.0" layoutY="51.0" onMouseMoved="#handleRating2Action" radius="45.0" stroke="BLACK" strokeType="INSIDE" />
-         <Circle fx:id="rating3" accessibleRole="BUTTON" fill="TRANSPARENT" layoutX="249.0" layoutY="51.0" onMouseMoved="#handleRating3Action" radius="45.0" stroke="BLACK" strokeType="INSIDE" />
-         <Circle fx:id="rating4" accessibleRole="BUTTON" fill="TRANSPARENT" layoutX="349.0" layoutY="51.0" onMouseMoved="#handleRating4Action" radius="45.0" stroke="BLACK" strokeType="INSIDE" />
-         <Circle fx:id="rating5" accessibleRole="BUTTON" fill="TRANSPARENT" layoutX="449.0" layoutY="51.0" onMouseMoved="#handleRating5Action" radius="45.0" stroke="BLACK" strokeType="INSIDE" />
+         <Circle fx:id="rating1" accessibleRole="BUTTON" fill="TRANSPARENT" layoutX="49.0" layoutY="51.0" onMouseClicked="#handleSelectRating1Action" onMouseMoved="#handleRating1Action" radius="45.0" stroke="BLACK" strokeType="INSIDE" />
+         <Circle fx:id="rating2" accessibleRole="BUTTON" fill="TRANSPARENT" layoutX="149.0" layoutY="51.0" onMouseClicked="#handleSelectRating2Action" onMouseMoved="#handleRating2Action" radius="45.0" stroke="BLACK" strokeType="INSIDE" />
+         <Circle fx:id="rating3" accessibleRole="BUTTON" fill="TRANSPARENT" layoutX="249.0" layoutY="51.0" onMouseClicked="#handleSelectRating3Action" onMouseMoved="#handleRating3Action" radius="45.0" stroke="BLACK" strokeType="INSIDE" />
+         <Circle fx:id="rating4" accessibleRole="BUTTON" fill="TRANSPARENT" layoutX="349.0" layoutY="51.0" onMouseClicked="#handleSelectRating4Action" onMouseMoved="#handleRating4Action" radius="45.0" stroke="BLACK" strokeType="INSIDE" />
+         <Circle fx:id="rating5" accessibleRole="BUTTON" fill="TRANSPARENT" layoutX="449.0" layoutY="51.0" onMouseClicked="#handleSelectRating5Action" onMouseMoved="#handleRating5Action" radius="45.0" stroke="BLACK" strokeType="INSIDE" />
          <ImageView fx:id="ratingPic1" fitHeight="53.0" fitWidth="50.0" layoutX="24.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
             <Image url="@rating.png" />
          </ImageView>
