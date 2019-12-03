@@ -1,5 +1,6 @@
 package MetalPandasCarApp;
 
+import java.util.Random;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -39,12 +40,35 @@ public class PandaProfileRating {
   @FXML public AnchorPane paymentBackground;
   @FXML public Pane backDrop;
 
+  public int ratingReadOut = (5+3) / 2;
+
   public void handleRateAction(ActionEvent actionEvent) throws IOException {
     Parent homePageParent = FXMLLoader.load(getClass().getResource("pandaAppointments.fxml"));
     Scene homePageScene = new Scene(homePageParent);
     Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);
     homeStage.show();
+  }
+
+  public void handleSelectRating1Action(MouseEvent mouseEvent) {
+    int ratingReadout = 1;
+    System.out.println("You have selected " + ratingReadout + " Pandas");
+  }
+  public void handleSelectRating2Action(MouseEvent mouseEvent) {
+    int ratingReadout= 2;
+    System.out.println("You have selected " + ratingReadout + " Pandas");
+  }
+  public void handleSelectRating3Action(MouseEvent mouseEvent) {
+    int ratingReadout= 3;
+    System.out.println("You have selected " + ratingReadout + " Pandas");
+  }
+  public void handleSelectRating4Action(MouseEvent mouseEvent) {
+    int ratingReadout= 4;
+    System.out.println("You have selected " + ratingReadout + " Pandas");
+  }
+  public void handleSelectRating5Action(MouseEvent mouseEvent) {
+    int ratingReadout= 5;
+    System.out.println("You have selected " + ratingReadout + " Pandas");
   }
 
   public void handleRating1Action(MouseEvent mouseEvent) {
