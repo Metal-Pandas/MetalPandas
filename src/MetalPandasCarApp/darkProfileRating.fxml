@@ -10,20 +10,20 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MetalPandasCarApp.DarkProfileRating">
-  <Pane fx:id="profileRatingBack" prefHeight="400.0" prefWidth="600.0">
-    <Label fx:id="ratingLabelTitle" layoutX="106.0" layoutY="21.0" prefHeight="53.0" prefWidth="409.0" text="Please Rate Your Driver" textAlignment="CENTER">
+<AnchorPane fx:id="paymentBackground" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MetalPandasCarApp.DarkProfileRating">
+  <Pane fx:id="backDrop" prefHeight="298.0" prefWidth="600.0">
+    <Label fx:id="ratingLabelTitle" layoutX="58.0" layoutY="21.0" prefHeight="53.0" prefWidth="509.0" text="Please Rate Your Driver" textAlignment="CENTER">
       <font>
-        <Font size="36.0" />
+        <Font name="Monospaced Regular" size="36.0" />
       </font>
     </Label>
     <Button fx:id="confirmRating" layoutX="252.0" layoutY="256.0" mnemonicParsing="false" onAction="#handleRateAction" text="Confirm Rating" />
     <Pane layoutX="56.0" layoutY="143.0" prefHeight="101.0" prefWidth="502.0">
-      <Circle fx:id="rating1" fill="TRANSPARENT" layoutX="49.0" layoutY="51.0" onMouseMoved="#handleRating1Action" radius="45.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fx:id="rating2" fill="TRANSPARENT" layoutX="149.0" layoutY="51.0" onMouseMoved="#handleRating2Action" radius="45.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fx:id="rating3" fill="TRANSPARENT" layoutX="249.0" layoutY="51.0" onMouseMoved="#handleRating3Action" radius="45.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fx:id="rating4" fill="TRANSPARENT" layoutX="349.0" layoutY="51.0" onMouseMoved="#handleRating4Action" radius="45.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fx:id="rating5" fill="TRANSPARENT" layoutX="449.0" layoutY="51.0" onMouseMoved="#handleRating5Action" radius="45.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="rating1" accessibleRole="BUTTON" fill="TRANSPARENT" layoutX="49.0" layoutY="51.0" onMouseMoved="#handleRating1Action" radius="45.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="rating2" accessibleRole="BUTTON" fill="TRANSPARENT" layoutX="149.0" layoutY="51.0" onMouseMoved="#handleRating2Action" radius="45.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="rating3" accessibleRole="BUTTON" fill="TRANSPARENT" layoutX="249.0" layoutY="51.0" onMouseMoved="#handleRating3Action" radius="45.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="rating4" accessibleRole="BUTTON" fill="TRANSPARENT" layoutX="349.0" layoutY="51.0" onMouseMoved="#handleRating4Action" radius="45.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="rating5" accessibleRole="BUTTON" fill="TRANSPARENT" layoutX="449.0" layoutY="51.0" onMouseMoved="#handleRating5Action" radius="45.0" stroke="BLACK" strokeType="INSIDE" />
       <ImageView fx:id="ratingPic1" fitHeight="53.0" fitWidth="50.0" layoutX="24.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
         <Image url="@rating.png" />
       </ImageView>
@@ -40,11 +40,26 @@
         <Image url="@rating.png" />
       </ImageView>
     </Pane>
-    <Label fx:id="ratingLabel1" layoutX="102.0" layoutY="126.0" text="1" />
-    <Label fx:id="ratingLabel2" layoutX="202.0" layoutY="126.0" text="2" />
-    <Label fx:id="ratingLabel3" layoutX="303.0" layoutY="126.0" text="3" />
-    <Label fx:id="ratingLabel4" layoutX="404.0" layoutY="126.0" text="4" />
-    <Label fx:id="ratingLabel5" layoutX="497.0" layoutY="126.0" text="5" />
+    <Label fx:id="ratingLabel1" layoutX="102.0" layoutY="126.0" text="1">
+      <font>
+        <Font name="Monospaced Bold" size="12.0" />
+      </font></Label>
+    <Label fx:id="ratingLabel2" layoutX="202.0" layoutY="126.0" text="2">
+      <font>
+        <Font name="Monospaced Bold" size="12.0" />
+      </font></Label>
+    <Label fx:id="ratingLabel3" layoutX="303.0" layoutY="126.0" text="3">
+      <font>
+        <Font name="Monospaced Bold" size="12.0" />
+      </font></Label>
+    <Label fx:id="ratingLabel4" layoutX="404.0" layoutY="126.0" text="4">
+      <font>
+        <Font name="Monospaced Bold" size="12.0" />
+      </font></Label>
+    <Label fx:id="ratingLabel5" layoutX="497.0" layoutY="126.0" text="5">
+      <font>
+        <Font name="Monospaced Bold" size="12.0" />
+      </font></Label>
   </Pane>
   <stylesheets>
     <URL value="@darkTheme.css" />

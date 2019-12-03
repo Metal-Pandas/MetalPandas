@@ -30,6 +30,7 @@ public class LightPayments {
   @FXML public TextField totalCostAmount;
   @FXML public Button pay;
   @FXML public Button backButton;
+  @FXML public Button calcTotal;
 
 
   public void handleAddPaymentAction(ActionEvent actionEvent) throws IOException {
@@ -68,5 +69,8 @@ public class LightPayments {
     int TipAmount = Integer.parseInt(tipAmount.getText());
     int totalAmount = TipAmount + 10;
     totalCostAmount.setText(String.valueOf(totalAmount));
+  }
+
+  public void handleCalcPayment(ActionEvent actionEvent) {
   }
 }

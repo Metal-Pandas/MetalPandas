@@ -11,6 +11,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 public class PandaForgotPassword {
@@ -25,6 +26,7 @@ public class PandaForgotPassword {
   @FXML public Button passConfirm;
   @FXML public Label forgotPasswordStatus;
   @FXML public Button passBack;
+  @FXML public Pane backDrop;
 
 
   public void handleConfirmAction(ActionEvent actionEvent) throws IOException {
