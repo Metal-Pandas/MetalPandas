@@ -1,7 +1,8 @@
 package MetalPandasCarApp;
 
-
 import java.io.IOException;
+import java.sql.SQLException;
+
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -25,17 +26,16 @@ public class PandaAddPayments {
   @FXML public Text paymentType;
   @FXML public ComboBox<String> paymentCombo;
   @FXML public Text cardHolderLabel;
-  @FXML public  TextField cardHolderName;
-  @FXML public  Text cardNumberLabel;
-  @FXML public  TextField cardNumber;
-  @FXML public  Text CCVlabel;
-  @FXML public  TextField paymentCCV;
+  @FXML public TextField cardHolderName;
+  @FXML public Text cardNumberLabel;
+  @FXML public TextField cardNumber;
+  @FXML public Text CCVlabel;
+  @FXML public TextField paymentCCV;
   @FXML public Button paymentConfirm;
   @FXML public Button paymentBack;
   @FXML public Text expirationLabel;
   @FXML public ComboBox<Integer> expirationMonth;
   @FXML public TextField expirationYear;
-
 
   public void handleBackAction(ActionEvent actionEvent) throws IOException {
     Parent homePageParent = FXMLLoader.load(getClass().getResource("pandaSchedule.fxml"));
@@ -45,7 +45,8 @@ public class PandaAddPayments {
     homeStage.show();
   }
 
-  public void handleConfirmAction(ActionEvent actionEvent) throws IOException {
+  public void handleConfirmAction(ActionEvent actionEvent) throws IOException, SQLException {
+    addCardPayment();
     Parent homePageParent = FXMLLoader.load(getClass().getResource("pandaPayments.fxml"));
     Scene homePageScene = new Scene(homePageParent);
     Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
@@ -53,12 +54,26 @@ public class PandaAddPayments {
     homeStage.show();
   }
 
-  public void initialize(){
-    try{
+  public void initialize() {
+    try {
       paymentCombo.setItems(FXCollections.observableArrayList("Gift Card", "Debit/Credit"));
-      expirationMonth.setItems(FXCollections.observableArrayList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12));
-    } catch (Exception e){
+      expirationMonth.setItems(
+          FXCollections.observableArrayList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12));
+    } catch (Exception e) {
       e.printStackTrace();
     }
+  }
+
+  public void addCardPayment() throws SQLException {
+    String PaymentType = paymentCombo.getValue();
+    String CardHolder = cardHolderName.getText();
+    String CardNumber = cardNumber.getText();
+    String CcvNumber = paymentCCV.getText();
+    String ExpMonth = expirationMonth.getValue().toString();
+    String ExpYear = expirationYear.getText();
+
+    String[] cardPaymentSignUp = {PaymentType, CardHolder, CardNumber, CcvNumber, ExpMonth, ExpYear};
+
+    DatabaseDriver.createCardPaymentInDb(cardPaymentSignUp);
   }
 }

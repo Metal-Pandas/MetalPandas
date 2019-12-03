@@ -1,23 +1,22 @@
 package MetalPandasCarApp;
 
 public class Users {
-  private String zip;
-  private String city;
   private String firstName;
   private String lastName;
   private String mail;
-  private String address;
-  private String country;
   private String phoneNumber;
+  private String address;
+  private String city;
   private String state;
+  private String zip;
+  private String country;
   private String password;
-  private String driverPass;
-  private String gender;
   private String month;
   private String day;
   private String year;
-  //  private String[] birthday;
-  //  private  String[] location;
+  private String gender;
+  private String driverPass;
+  private String rePassword;
 
   public Users(
       String firstName,
@@ -25,16 +24,17 @@ public class Users {
       String mail,
       String phoneNumber,
       String address,
-//      String state,
-//      String city,
-//      String zip,
-//      String country,
+      String city,
+      String state,
+      String zip,
+      String country,
       String password,
       String month,
       String day,
       String year,
       String gender,
-      String driverPass) {
+      String driverPass,
+      String rePassword) {
     this.firstName = firstName;
     this.lastName = lastName;
     this.mail = mail;
@@ -43,33 +43,28 @@ public class Users {
     this.day = day;
     this.year = year;
     this.address = address;
-//    this.state = state;
-//    this.city = city;
-//    this.zip = zip;
-//    this.country = country;
+    this.state = state;
+    this.city = city;
+    this.zip = zip;
+    this.country = country;
     this.password = password;
     this.gender = gender;
     this.driverPass = driverPass;
+    this.rePassword = rePassword;
   }
 
-  //  public Users(
-  //          String firstName,
-  //          String lastName,
-  //          String mail,
-  //          String phoneNumber,
-  //          String[] location,
-  //          String[] birthday,
-  //          String gender,
-  //          String driverPass) {
-  //    this.firstName = firstName;
-  //    this.lastName = lastName;
-  //    this.mail = mail;
-  //    this.phoneNumber = phoneNumber;
-  //    this.location = location;
-  //    this.birthday = birthday;
-  //    this.gender = gender;
-  //    this.driverPass = driverPass;
-  //  }
+  public Users(String firstName, String lastName) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
+
+  public String getRePassword() {
+    return rePassword;
+  }
+
+  public void setRePassword(String rePassword) {
+    this.rePassword = rePassword;
+  }
 
   public String getZip() {
     return zip;
@@ -122,14 +117,6 @@ public class Users {
   public void setYear(String year) {
     this.year = year;
   }
-
-//  public String[] getLocation() {
-//    return location;
-//  }
-//
-//  public void setLocation(String[] location) {
-//    this.location = location;
-//  }
 
   public String getFirstName() {
     return firstName;
@@ -202,15 +189,4 @@ public class Users {
   public void setGender(String gender) {
     this.gender = gender;
   }
-  }
-
-//  public String[] getBirthday() {
-//    return birthday;
-//  }
-//
-//  public void setBirthday(String[] birthday) {
-//    this.birthday = birthday;
-//  }
-//
-//  }
-
+}

@@ -3,12 +3,13 @@ package MetalPandasCarApp;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
-import java.sql.Statement;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.ResourceBundle;
 
 import javafx.animation.TranslateTransition;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -64,35 +65,50 @@ public class PandaProfile implements Initializable {
   @FXML public Button schedules;
 
   /**
-   * setProfilePage passes an ArrayList of Users called user.
-   * setText from database to text fields of profileController. calls the first index in db.
-   *  userList should only be at ZERO!
+   * setProfilePage passes an ArrayList of Users called user. setText from database to text fields
+   * of profileController. calls the first index in db. userList should only be at ZERO!
    *
    * @param user an arrayList that holds Users.
    */
-  void setProfilePage(ArrayList<Users> user)  {
+  void setProfilePage(ObservableList<Users> user) {
     firstName.setText(user.get(0).getFirstName());
     lastName.setText(user.get(0).getLastName());
     emailAddress.setText(user.get(0).getMail());
     phoneNumber.setText(user.get(0).getPhoneNumber());
-//    address.setText(Arrays.toString(user.get(0).getLocation()));
-//    birthday.setText(Arrays.toString(user.get(0).getBirthday()));
+    address.setText(
+        user.get(0).getAddress()
+            + " "
+            + user.get(0).getCity()
+            + ","
+            + " "
+            + user.get(0).getState()
+            + " "
+            + user.get(0).getZip());
+    birthday.setText(
+        user.get(0).getMonth() + " / " + user.get(0).getDay() + " / " + user.get(0).getYear());
     gender.setText(user.get(0).getGender());
     mode.setText(user.get(0).getDriverPass());
-//  rating.setText(user.get(0).getRating());
+    //  rating.setText(user.get(0).getRating());
   }
 
   /**
-   * First method and code to run when window opens. It initialize userProfileGlobal to setProfilePage.
+   * First method and code to run when window opens. It initialize userProfileGlobal to
+   * setProfilePage.
+   *
    * @param url Database connection
    * @param resourceBundle Database library.
    */
   @Override
   public void initialize(URL url, ResourceBundle resourceBundle) {
-    setProfilePage(profileInfo.userProfilesGlobal);
+    setProfilePage(UsersInfo.userProfilesGlobal);
   }
 
-  public void handleUpdateAction(ActionEvent actionEvent) throws IOException {
+  public void handleUpdateAction(ActionEvent actionEvent) throws IOException, SQLException {
+    Connection conn = DatabaseDriver.initializeDB();
+    String sql = "SELECT * FROM USER";
+    PreparedStatement pstmt = conn.prepareStatement(sql);
+    pstmt.executeQuery();
+
     Parent homePageParent = FXMLLoader.load(getClass().getResource("pandaEdit.fxml"));
     Scene homePageScene = new Scene(homePageParent);
     Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
@@ -154,6 +170,7 @@ public class PandaProfile implements Initializable {
     Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);
     homeStage.show();
+//    UsersInfo.userProfilesGlobal.clear();
   }
 
   public void handleSchedulesAction(ActionEvent actionEvent) throws IOException {
@@ -162,5 +179,6 @@ public class PandaProfile implements Initializable {
     Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);
     homeStage.show();
+//    UsersInfo.usersScheduleGlobal.clear();
   }
 }

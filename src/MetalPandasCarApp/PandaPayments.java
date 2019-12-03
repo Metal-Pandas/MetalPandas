@@ -1,6 +1,10 @@
 package MetalPandasCarApp;
 
 import java.io.IOException;
+import java.math.BigDecimal;
+import java.sql.SQLException;
+import java.util.ArrayList;
+
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -31,18 +35,16 @@ public class PandaPayments {
   @FXML public Button pay;
   @FXML public Button backButton;
 
-
   public void handleAddPaymentAction(ActionEvent actionEvent) throws IOException {
     Parent homePageParent = FXMLLoader.load(getClass().getResource("pandaAddPayments.fxml"));
     Scene homePageScene = new Scene(homePageParent);
     Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);
     homeStage.show();
-
-
   }
 
-  public void handlePayAction(ActionEvent actionEvent) throws IOException {
+  public void handlePayAction(ActionEvent actionEvent) throws IOException, SQLException {
+    addPayment();
     Parent homePageParent = FXMLLoader.load(getClass().getResource("pandaProfileRating.fxml"));
     Scene homePageScene = new Scene(homePageParent);
     Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
@@ -64,5 +66,23 @@ public class PandaPayments {
     } catch (Exception e){
       e.printStackTrace();
     }
+  }
+
+
+  public void addPayment() throws SQLException {
+    String PaymentOption = paymentOption.getValue();
+    String TipAmount = tipAmount.getText();
+    String TotalAmount = totalCostAmount.getText();
+
+    String[] paymentSignUp = {PaymentOption, TipAmount, TotalAmount};
+
+    DatabaseDriver.createPaymentInDb(paymentSignUp);
+  }
+
+
+  public void handleCalcPayment(ActionEvent actionEvent) {
+    int TipAmount = Integer.parseInt(tipAmount.getText());
+    int totalAmount = TipAmount + 10;
+    totalCostAmount.setText( String.valueOf(totalAmount));
   }
 }
