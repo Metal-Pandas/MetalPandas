@@ -10,24 +10,36 @@
 <?import javafx.scene.text.Text?>
 
 <AnchorPane fx:id="paymentBackground" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MetalPandasCarApp.LightPayments">
-  <Pane fx:id="backDrop" layoutX="192.0" layoutY="104.0" prefHeight="212.0" prefWidth="347.0">
-      <children>
-        <Text fx:id="totalCostLabel" layoutX="68.0" layoutY="149.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Cost:" />
-        <TextField fx:id="totalCostAmount" layoutX="190.0" layoutY="132.0" />
-        <Text fx:id="tipLabel" layoutX="77.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tip:" />
-        <TextField fx:id="tipAmount" layoutX="190.0" layoutY="65.0" />
-         <Button fx:id="calcTotal" layoutX="207.0" layoutY="100.0" mnemonicParsing="false" onAction="#handleCalcTotal" text="Calculate Payment" />
-         <Text layoutX="213.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="*All rides cost $10" wrappingWidth="102.615234375" />
-      </children></Pane>
+  <Pane fx:id="backDrop" layoutX="114.0" layoutY="22.0" prefHeight="331.0" prefWidth="383.0" />
   <Button fx:id="backButton" layoutX="550.0" layoutY="361.0" mnemonicParsing="false" onAction="#handleBackAction" text="Back" />
-  <Text fx:id="paymentTitle" layoutX="212.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Payment">
+  <Text layoutX="324.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="*All trips cost $10" wrappingWidth="139.8125">
     <font>
-      <Font size="51.0" />
+      <Font name="Monospaced Bold" size="12.0" />
+    </font>
+  </Text>
+  <Text fx:id="paymentTitle" layoutX="202.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Payment">
+    <font>
+      <Font name="Monospaced Regular" size="51.0" />
     </font></Text>
-  <Text fx:id="selectPaymentLabel" layoutX="211.0" layoutY="133.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select Payment Option:" />
-  <Button fx:id="addPaymentMethod" layoutX="225.0" layoutY="267.0" mnemonicParsing="false" onAction="#handleAddPaymentAction" text="Add Payment Method" />
-  <ComboBox fx:id="paymentOption" layoutX="380.0" layoutY="117.0" prefWidth="150.0" />
-  <Button fx:id="pay" layoutX="490.0" layoutY="267.0" mnemonicParsing="false" onAction="#handlePayAction" text="Pay" />
+  <Text fx:id="selectPaymentLabel" layoutX="131.0" layoutY="123.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select Payment Option:">
+    <font>
+      <Font name="Monospaced Bold" size="13.0" />
+    </font></Text>
+  <Text fx:id="tipLabel" layoutX="205.0" layoutY="203.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tip:">
+    <font>
+      <Font name="Monospaced Bold" size="13.0" />
+    </font></Text>
+  <Button fx:id="addPaymentMethod" layoutX="165.0" layoutY="317.0" mnemonicParsing="false" onAction="#handleAddPaymentAction" text="Add Payment Method" />
+  <ComboBox fx:id="paymentOption" layoutX="320.0" layoutY="107.0" prefWidth="150.0" />
+  <TextField fx:id="tipAmount" layoutX="320.0" layoutY="187.0" />
+  <Button fx:id="pay" layoutX="430.0" layoutY="317.0" mnemonicParsing="false" onAction="#handlePayAction" text="Pay" />
+  <TextField fx:id="totalCostAmount" layoutX="320.0" layoutY="266.0" />
+  <Text fx:id="totalCostLabel" layoutX="176.0" layoutY="283.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Cost:">
+    <font>
+      <Font name="Monospaced Bold" size="13.0" />
+    </font>
+  </Text>
+  <Button fx:id="calcTotal" layoutX="376.0" layoutY="218.0" mnemonicParsing="false" onAction="#handleCalcPayment" text="Calculate Total" />
   <stylesheets>
     <URL value="@lightTheme.css" />
   </stylesheets>

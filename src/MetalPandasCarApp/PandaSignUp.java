@@ -120,7 +120,7 @@ public class PandaSignUp {
     }
   }
 
-  public void addUser() throws SQLException {
+  private void addUser() throws SQLException {
     String FirstName = firstName.getText();
     String LastName = lastName.getText();
     String Email = emailAddress.getText();
