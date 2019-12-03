@@ -10,11 +10,12 @@
 
 <AnchorPane fx:id="resetBackground" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MetalPandasCarApp.PandaReset">
    <Pane fx:id="backDrop" layoutX="113.0" layoutY="43.0" prefHeight="148.0" prefWidth="355.0">
-      <children>
-         <PasswordField fx:id="password" layoutX="21.0" layoutY="60.0" prefWidth="149.0" promptText="New Password" />
-         <PasswordField fx:id="reenterPassword" layoutX="183.0" layoutY="59.0" promptText="Reenter New Password" />
-         <Button fx:id="confirmButton" layoutX="273.0" layoutY="101.0" mnemonicParsing="false" onAction="#handleConfirmAction" text="Confirm" />
-      </children>
+      <PasswordField fx:id="password" layoutX="21.0" layoutY="60.0" prefWidth="149.0"
+        promptText="New Password"/>
+      <PasswordField fx:id="reenterPassword" layoutX="183.0" layoutY="59.0"
+        promptText="Reenter New Password"/>
+      <Button fx:id="confirmButton" layoutX="273.0" layoutY="101.0" mnemonicParsing="false"
+        onAction="#handleConfirmAction" text="Confirm"/>
    </Pane>
    <Text fx:id="resetPasswordLabel" layoutX="133.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Reset Password:" wrappingWidth="324.06591796875">
       <font>

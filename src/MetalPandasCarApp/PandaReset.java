@@ -33,7 +33,7 @@ public class PandaReset {
     }
 
     else if (password.getText().equals(reenterPassword.getText())) {
-      Parent homePageParent = FXMLLoader.load(getClass().getResource("darkLogin.fxml"));
+      Parent homePageParent = FXMLLoader.load(getClass().getResource("pandaLogin.fxml"));
       Scene homePageScene = new Scene(homePageParent);
       Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
       homeStage.setScene(homePageScene);
