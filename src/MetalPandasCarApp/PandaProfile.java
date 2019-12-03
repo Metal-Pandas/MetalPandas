@@ -30,7 +30,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
-public class PandaProfile implements Initializable {
+public class PandaProfile extends PandaProfileRating implements Initializable {
   @FXML public SplitPane profileBackground;
   @FXML public VBox drawer;
   @FXML public HBox hBox;
@@ -88,7 +88,7 @@ public class PandaProfile implements Initializable {
         user.get(0).getMonth() + " / " + user.get(0).getDay() + " / " + user.get(0).getYear());
     gender.setText(user.get(0).getGender());
     mode.setText(user.get(0).getDriverPass());
-    //  rating.setText(user.get(0).getRating());
+    rating.setText(String.valueOf(ratingReadOut));
   }
 
   /**
