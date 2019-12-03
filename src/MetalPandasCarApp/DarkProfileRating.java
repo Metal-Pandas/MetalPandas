@@ -10,16 +10,15 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
-
 import java.io.IOException;
 
 public class DarkProfileRating {
 
-  @FXML public Pane profileRatingBack;
   @FXML public Label ratingLabelTitle;
   @FXML public Label ratingLabel1;
   @FXML public Label ratingLabel2;
@@ -37,6 +36,8 @@ public class DarkProfileRating {
   @FXML public ImageView ratingPic3;
   @FXML public ImageView ratingPic4;
   @FXML public ImageView ratingPic5;
+  @FXML public AnchorPane paymentBackground;
+  @FXML public Pane backDrop;
 
   public void handleRateAction(ActionEvent actionEvent) throws IOException {
     Parent homePageParent = FXMLLoader.load(getClass().getResource("darkAppointments.fxml"));

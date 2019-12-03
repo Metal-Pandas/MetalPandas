@@ -64,7 +64,7 @@ public class PandaAddPayments {
     }
   }
 
-  public void addCardPayment() throws SQLException {
+  private void addCardPayment() throws SQLException {
     String PaymentType = paymentCombo.getValue();
     String CardHolder = cardHolderName.getText();
     String CardNumber = cardNumber.getText();

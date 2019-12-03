@@ -11,6 +11,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 public class LightForgotEmail {
@@ -20,6 +21,7 @@ public class LightForgotEmail {
   @FXML public Button confirm;
   @FXML public Button back;
   @FXML public Label forgotEmailStatus;
+  @FXML public Pane backDrop;
 
   public void handleConfirmAction(ActionEvent actionEvent) {
     if(forgotPhoneNumber.getText().equals("1234567890")){

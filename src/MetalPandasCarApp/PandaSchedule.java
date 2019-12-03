@@ -82,23 +82,24 @@ public class PandaSchedule {
       e.printStackTrace();
     }
   }
-  public void addSchedule() throws SQLException {
+
+  private void addSchedule() throws SQLException {
     String ScheduleMonth = scheduleMonth.getValue();
     String ScheduleDay = scheduleDay.getValue().toString();
     String ScheduleHour = hour.getValue().toString();
     String ScheduleMinute = minute.getValue();
     String ScheduleApPm = amPm.getValue();
 
-    String Time = scheduleMonth.getValue() +  scheduleDay.getValue().toString();
-    String Date = hour.getValue().toString() +  minute.getValue();
+    String Time = scheduleMonth.getValue() + scheduleDay.getValue().toString();
+    String Date = hour.getValue().toString() + minute.getValue();
 
-    String[] scheduleSignUp = {ScheduleMonth, ScheduleDay, ScheduleHour, ScheduleMinute, ScheduleApPm};
+    String[] scheduleSignUp = {
+      ScheduleMonth, ScheduleDay, ScheduleHour, ScheduleMinute, ScheduleApPm
+    };
 
     DatabaseDriver.createScheduleInDb(scheduleSignUp);
 
-    UsersSchedule as =
-            new UsersSchedule(Time, Date, ScheduleApPm);
+    UsersSchedule as = new UsersSchedule(Time, Date, ScheduleApPm);
     UsersInfo.usersScheduleGlobal.add(as);
-    }
   }
-
+}
