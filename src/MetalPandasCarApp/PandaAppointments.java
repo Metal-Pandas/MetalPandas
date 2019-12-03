@@ -46,7 +46,7 @@ public class PandaAppointments implements Initializable {
   @FXML public TableColumn<?, ?> timeColumn;
   @FXML public TableColumn<?, ?> destinationColumn;
 
-  void setAppointmentPage(ObservableList<UsersSchedule> usersScheduleGlobal) {
+  private void setAppointmentPage(ObservableList<UsersSchedule> usersScheduleGlobal) {
     try {
       Connection conn = DatabaseDriver.initializeDB();
       String sql = "SELECT * FROM SCHEDULE";

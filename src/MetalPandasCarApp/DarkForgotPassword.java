@@ -11,6 +11,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 public class DarkForgotPassword {
@@ -25,6 +26,7 @@ public class DarkForgotPassword {
   @FXML public Button passConfirm;
   @FXML public Label forgotPasswordStatus;
   @FXML public Button passBack;
+  @FXML public Pane backDrop;
 
 
   public void handleConfirmAction(ActionEvent actionEvent) throws IOException {
@@ -38,6 +40,7 @@ public class DarkForgotPassword {
 
     if(!forgotPasswordEmail.getText().equals("jsmith@abc.com")){
       forgotPasswordStatus.setText("Invalid Email Address!");
+      forgotPassStatus.setText(" ");
     }
   }
 
@@ -52,6 +55,7 @@ public class DarkForgotPassword {
 
     if(!forgotPasswordPhoneNumber.getText().equals("1234567890")){
       forgotPassStatus.setText("Invalid Phone Number!");
+      forgotPasswordStatus.setText(" ");
     }
   }
 

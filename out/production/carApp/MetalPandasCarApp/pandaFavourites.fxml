@@ -61,8 +61,8 @@
         </HBox>
         <TableView fx:id="favouritesTable" maxHeight="400.0" maxWidth="409.0" minHeight="0.0" minWidth="0.0" prefHeight="363.0" prefWidth="400.0" StackPane.alignment="CENTER_RIGHT">
           <columns>
-            <TableColumn fx:id="driverFirstName" prefWidth="114.0" text="Last Name" />
-            <TableColumn fx:id="driverLastName" minWidth="0.0" prefWidth="77.0" text="First Name" />
+            <TableColumn fx:id="driverFirstName" prefWidth="114.0" text="First Name" />
+            <TableColumn fx:id="driverLastName" minWidth="0.0" prefWidth="77.0" text="Last Name" />
             <TableColumn fx:id="driverRating" prefWidth="63.0" text="Rating" />
             <TableColumn fx:id="previousDestination" prefWidth="154.0" text="Destination" />
           </columns>

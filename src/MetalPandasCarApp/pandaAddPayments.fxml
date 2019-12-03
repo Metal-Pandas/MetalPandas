@@ -10,25 +10,40 @@
 <?import javafx.scene.text.Text?>
 
 <AnchorPane fx:id="addPaymentBackground" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MetalPandasCarApp.PandaAddPayments">
-  <Pane fx:id="backDrop" layoutX="195.0" layoutY="94.0" prefHeight="172.0" prefWidth="295.0">
-    <Text fx:id="expirationLabel" layoutX="14.0" layoutY="154.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Expiration Date:" />
-    <ComboBox fx:id="expirationMonth" layoutX="117.0" layoutY="137.0" prefHeight="25.0" prefWidth="83.0" promptText="Month" />
-    <TextField fx:id="expirationYear" layoutX="205.0" layoutY="137.0" prefHeight="25.0" prefWidth="59.0" promptText="YY" />
-  </Pane>
-  <Text fx:id="addPaymentTitle" layoutX="204.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add A Payment Method">
+  <Pane fx:id="backDrop" layoutX="115.0" layoutY="31.0" prefHeight="296.0" prefWidth="416.0" />
+  <Text fx:id="addPaymentTitle" layoutX="134.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add A Payment Method">
     <font>
-      <Font size="32.0" />
+      <Font name="Monospaced Regular" size="32.0" />
     </font></Text>
-  <Text fx:id="paymentType" layoutX="210.0" layoutY="128.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Payment type:" />
-  <ComboBox fx:id="paymentCombo" layoutX="312.0" layoutY="111.0" prefWidth="150.0" promptText="SELECT PAYMENT" />
-  <Text fx:id="cardHolderLabel" layoutX="210.0" layoutY="161.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cardholder Name:" />
-  <TextField fx:id="cardHolderName" layoutX="313.0" layoutY="143.0" />
-  <Text fx:id="cardNumberLabel" layoutX="210.0" layoutY="191.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Card Number:" />
-  <TextField fx:id="cardNumber" layoutX="313.0" layoutY="173.0" />
-  <Text fx:id="CCVlabel" layoutX="210.0" layoutY="221.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CCV:" />
-  <TextField fx:id="paymentCCV" layoutX="313.0" layoutY="203.0" />
+  <Text fx:id="paymentType" layoutX="150.0" layoutY="108.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Payment type:">
+      <font>
+         <Font name="Monospaced Bold" size="14.0" />
+      </font></Text>
+  <ComboBox fx:id="paymentCombo" layoutX="302.0" layoutY="91.0" prefWidth="150.0" promptText="SELECT PAYMENT" />
+  <Text fx:id="cardHolderLabel" layoutX="150.0" layoutY="151.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cardholder Name:">
+      <font>
+         <Font name="Monospaced Bold" size="14.0" />
+      </font></Text>
+  <TextField fx:id="cardHolderName" layoutX="303.0" layoutY="133.0" />
+  <Text fx:id="cardNumberLabel" layoutX="150.0" layoutY="191.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Card Number:">
+      <font>
+         <Font name="Monospaced Bold" size="14.0" />
+      </font></Text>
+  <TextField fx:id="cardNumber" layoutX="303.0" layoutY="173.0" />
+  <Text fx:id="CCVlabel" layoutX="150.0" layoutY="231.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CCV:">
+      <font>
+         <Font name="Monospaced Bold" size="14.0" />
+      </font></Text>
+  <TextField fx:id="paymentCCV" layoutX="303.0" layoutY="213.0" />
   <Button fx:id="paymentBack" layoutX="523.0" layoutY="361.0" mnemonicParsing="false" onAction="#handleBackAction" text="Back" />
-  <Button fx:id="paymentConfirm" layoutX="432.0" layoutY="268.0" mnemonicParsing="false" onAction="#handleConfirmAction" text="Confirm" />
+  <Button fx:id="paymentConfirm" layoutX="462.0" layoutY="293.0" mnemonicParsing="false" onAction="#handleConfirmAction" text="Confirm" />
+ <Text fx:id="expirationLabel" layoutX="150.0" layoutY="270.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Expiration Date:">
+      <font>
+         <Font name="Monospaced Bold" size="14.0" />
+      </font>
+   </Text>
+ <ComboBox fx:id="expirationMonth" layoutX="304.0" layoutY="254.0" prefHeight="25.0" prefWidth="83.0" promptText="Month" />
+ <TextField fx:id="expirationYear" layoutX="393.0" layoutY="253.0" prefHeight="25.0" prefWidth="59.0" promptText="YY" />
   <stylesheets>
     <URL value="@pandaTheme.css" />
   </stylesheets>

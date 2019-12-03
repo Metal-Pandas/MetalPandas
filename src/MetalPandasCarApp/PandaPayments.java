@@ -34,6 +34,7 @@ public class PandaPayments {
   @FXML public TextField totalCostAmount;
   @FXML public Button pay;
   @FXML public Button backButton;
+  @FXML public Button calcTotal;
 
   public void handleAddPaymentAction(ActionEvent actionEvent) throws IOException {
     Parent homePageParent = FXMLLoader.load(getClass().getResource("pandaAddPayments.fxml"));
@@ -68,8 +69,7 @@ public class PandaPayments {
     }
   }
 
-
-  public void addPayment() throws SQLException {
+  private void addPayment() throws SQLException {
     String PaymentOption = paymentOption.getValue();
     String TipAmount = tipAmount.getText();
     String TotalAmount = totalCostAmount.getText();
@@ -78,7 +78,6 @@ public class PandaPayments {
 
     DatabaseDriver.createPaymentInDb(paymentSignUp);
   }
-
 
   public void handleCalcPayment(ActionEvent actionEvent) {
     int TipAmount = Integer.parseInt(tipAmount.getText());

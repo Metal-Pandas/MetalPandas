@@ -12,6 +12,7 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
@@ -21,6 +22,7 @@ public class PandaReset {
   @FXML public PasswordField password;
   @FXML public PasswordField reenterPassword;
   @FXML public Text resetPasswordLabel;
+  @FXML public Pane backDrop;
 
   public void handleConfirmAction(ActionEvent actionEvent) throws IOException{
     if (password.getText().equals("")){
@@ -31,7 +33,7 @@ public class PandaReset {
     }
 
     else if (password.getText().equals(reenterPassword.getText())) {
-      Parent homePageParent = FXMLLoader.load(getClass().getResource("darkLogin.fxml"));
+      Parent homePageParent = FXMLLoader.load(getClass().getResource("pandaLogin.fxml"));
       Scene homePageScene = new Scene(homePageParent);
       Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
       homeStage.setScene(homePageScene);
