@@ -45,7 +45,6 @@ public class PandaHome {
   @FXML public Button scheduleButton;
   @FXML public Button schedules;
 
-  private ArrayList<UsersSchedule> userList = new ArrayList<>();
   public void handleMenuAction(ActionEvent actionEvent) {
     hBox.setVisible(true);
     TranslateTransition openNav = new TranslateTransition(new Duration(350), drawer);
@@ -78,12 +77,23 @@ public class PandaHome {
     homeStage.show();
   }
 
-  public void handleFavouritesAction(ActionEvent actionEvent) throws IOException {
+  public void handleFavouritesAction(ActionEvent actionEvent) throws IOException, SQLException {
+    Connection conn = DatabaseDriver.initializeDB();
+    String sql = "SELECT * FROM USER";
+    PreparedStatement pstmt = conn.prepareStatement(sql);
+    pstmt.executeQuery();
+
     Parent homePageParent = FXMLLoader.load(getClass().getResource("pandaFavourites.fxml"));
     Scene homePageScene = new Scene(homePageParent);
     Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);
     homeStage.show();
+
+    UsersInfo.userProfilesGlobal.clear();
+
+    conn.close();
+    pstmt.close();
+
   }
 
   public void initialize() {
@@ -110,6 +120,10 @@ public class PandaHome {
     Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);
     homeStage.show();
-    }
 
+    UsersInfo.usersScheduleGlobal.clear();
+
+    conn.close();
+    pstmt.close();
+  }
 }

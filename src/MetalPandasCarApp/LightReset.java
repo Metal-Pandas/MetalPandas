@@ -12,6 +12,7 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
@@ -21,6 +22,7 @@ public class LightReset {
   @FXML public PasswordField password;
   @FXML public PasswordField reenterPassword;
   @FXML public Text resetPasswordLabel;
+  @FXML public Pane backDrop;
 
   public void handleConfirmAction(ActionEvent actionEvent) throws IOException{
     if (password.getText().equals("")){

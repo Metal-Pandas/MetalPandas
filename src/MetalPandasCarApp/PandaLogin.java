@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.sql.*;
 import java.util.ArrayList;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -32,7 +34,7 @@ public class PandaLogin {
   @FXML public Label statusText;
   @FXML public Pane backDrop;
 
-  private ArrayList<Users> userList = new ArrayList<>();
+  private ObservableList<Users> userList = FXCollections.observableArrayList();
 
   public void handleLoginAction(ActionEvent actionEvent) throws SQLException {
     Connection conn = DatabaseDriver.initializeDB();
@@ -55,14 +57,14 @@ public class PandaLogin {
 
     if ((getEmail.equals(dbEmail)) && (getPassword.equals(dbPassword))) {
       System.out.println(
-              "GetEmail ="
-                      + getEmail
-                      + " DB Email  ="
-                      + dbEmail
-                      + "  getPass ="
-                      + getPassword
-                      + "  dbPass="
-                      + dbPassword);
+          "GetEmail ="
+              + getEmail
+              + " DB Email  ="
+              + dbEmail
+              + "  getPass ="
+              + getPassword
+              + "  dbPass="
+              + dbPassword);
       try {
         Parent homePageParent = FXMLLoader.load(getClass().getResource("pandaHome.fxml"));
         Scene homePageScene = new Scene(homePageParent);
