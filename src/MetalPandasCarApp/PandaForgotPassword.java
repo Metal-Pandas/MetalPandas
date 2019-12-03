@@ -39,7 +39,7 @@ public class PandaForgotPassword {
   private ObservableList<Users> userPhone = FXCollections.observableArrayList();
   private ObservableList<Users> userEmail = FXCollections.observableArrayList();
 
-  public void handleConfirmAction(ActionEvent actionEvent) throws IOException, SQLException {
+  public void handleConfirmAction(ActionEvent actionEvent) throws SQLException {
     Connection conn = DatabaseDriver.initializeDB();
     String forgotEmail = forgotPasswordEmail.getText();
 
@@ -59,8 +59,8 @@ public class PandaForgotPassword {
 
     if ((forgotEmail.equals(dbForgotEmail))){
       System.out.println(
-              "GetPhoneNumber ="
-                      + forgotEmail);
+          "GetPhoneNumber ="
+              + forgotEmail);
 
       try {
         Parent homePageParent = FXMLLoader.load(getClass().getResource("pandaReset.fxml"));
@@ -83,7 +83,7 @@ public class PandaForgotPassword {
   }
 
 
-  public void handlePasswordConfirmAction(ActionEvent actionEvent) throws IOException, SQLException {
+  public void handlePasswordConfirmAction(ActionEvent actionEvent) throws SQLException {
     Connection conn = DatabaseDriver.initializeDB();
     String phoneNumber = forgotPasswordPhoneNumber.getText();
 
@@ -103,8 +103,8 @@ public class PandaForgotPassword {
 
     if ((phoneNumber.equals(dbPhoneNumber))){
       System.out.println(
-              "GetPhoneNumber ="
-                      + phoneNumber);
+          "GetPhoneNumber ="
+              + phoneNumber);
 
       try {
         Parent homePageParent = FXMLLoader.load(getClass().getResource("pandaReset.fxml"));
