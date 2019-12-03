@@ -16,6 +16,7 @@ public class Users {
   private String year;
   private String gender;
   private String driverPass;
+  private String rePassword;
 
   public Users(
       String firstName,
@@ -32,7 +33,8 @@ public class Users {
       String day,
       String year,
       String gender,
-      String driverPass) {
+      String driverPass,
+      String rePassword) {
     this.firstName = firstName;
     this.lastName = lastName;
     this.mail = mail;
@@ -48,6 +50,20 @@ public class Users {
     this.password = password;
     this.gender = gender;
     this.driverPass = driverPass;
+    this.rePassword = rePassword;
+  }
+
+  public Users(String firstName, String lastName) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
+
+  public String getRePassword() {
+    return rePassword;
+  }
+
+  public void setRePassword(String rePassword) {
+    this.rePassword = rePassword;
   }
 
   public String getZip() {
@@ -173,6 +189,4 @@ public class Users {
   public void setGender(String gender) {
     this.gender = gender;
   }
-  }
-
-
+}

@@ -1,73 +1,37 @@
 package MetalPandasCarApp;
 
 public class UsersPayment {
-  private String paymentCombo;
-  private String cardHolder;
-  private String cardNumber;
-  private String ccvNumber;
-  private String expirationMonth;
-  private String expirationYear;
+  private String paymentOption;
+  private String tipAmount;
+  private String totalAmount;
 
-  public UsersPayment(
-      String paymentCombo,
-      String cardHolder,
-      String cardNumber,
-      String ccvNumber,
-      String expirationMonth,
-      String expirationYear) {
-    this.paymentCombo = paymentCombo;
-    this.cardHolder = cardHolder;
-    this.cardNumber = cardNumber;
-    this.ccvNumber = ccvNumber;
-    this.expirationMonth = expirationMonth;
-    this.expirationYear = expirationYear;
+  public UsersPayment(String paymentOption, String tipAmount, String totalAmount) {
+    this.paymentOption = paymentOption;
+    this.tipAmount = tipAmount;
+    this.totalAmount = totalAmount;
   }
 
-  public String getCardHolder() {
-    return cardHolder;
+  public String getPaymentOption() {
+    return paymentOption;
   }
 
-  public void setCardHolder(String cardHolder) {
-    this.cardHolder = cardHolder;
+  public void setPaymentOption(String paymentOption) {
+    this.paymentOption = paymentOption;
   }
 
-  public String getExpirationYear() {
-    return expirationYear;
+  public String getTipAmount() {
+    return tipAmount;
   }
 
-  public void setExpirationYear(String expirationYear) {
-    this.expirationYear = expirationYear;
+  public void setTipAmount(String tipAmount) {
+    this.tipAmount = tipAmount;
   }
 
-  public String getPaymentCombo() {
-    return paymentCombo;
+  public String getTotalAmount() {
+    return totalAmount;
   }
 
-  public void setPaymentCombo(String paymentCombo) {
-    this.paymentCombo = paymentCombo;
-  }
-
-  public String getExpirationMonth() {
-    return expirationMonth;
-  }
-
-  public void setExpirationMonth(String expirationMonth) {
-    this.expirationMonth = expirationMonth;
-  }
-
-  public String getCardNumber() {
-    return cardNumber;
-  }
-
-  public void setCardNumber(String cardNumber) {
-    this.cardNumber = cardNumber;
-  }
-
-  public String getCcvNumber() {
-    return ccvNumber;
-  }
-
-  public void setCcvNumber(String ccvNumber) {
-    this.ccvNumber = ccvNumber;
+  public void setTotalAmount(String totalAmount) {
+    this.totalAmount = totalAmount;
   }
 }

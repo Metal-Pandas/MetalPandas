@@ -32,8 +32,8 @@ public class PandaSchedule {
   @FXML public Button backButton;
   @FXML public Pane backDrop;
 
-  public void handleScheduleAction(ActionEvent actionEvent) throws IOException {
-
+  public void handleScheduleAction(ActionEvent actionEvent) throws IOException, SQLException {
+    addSchedule();
     Parent homePageParent = FXMLLoader.load(getClass().getResource("pandaPayments.fxml"));
     Scene homePageScene = new Scene(homePageParent);
     Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
@@ -82,4 +82,23 @@ public class PandaSchedule {
       e.printStackTrace();
     }
   }
+  public void addSchedule() throws SQLException {
+    String ScheduleMonth = scheduleMonth.getValue();
+    String ScheduleDay = scheduleDay.getValue().toString();
+    String ScheduleHour = hour.getValue().toString();
+    String ScheduleMinute = minute.getValue();
+    String ScheduleApPm = amPm.getValue();
+
+    String Time = scheduleMonth.getValue() +  scheduleDay.getValue().toString();
+    String Date = hour.getValue().toString() +  minute.getValue();
+
+    String[] scheduleSignUp = {ScheduleMonth, ScheduleDay, ScheduleHour, ScheduleMinute, ScheduleApPm};
+
+    DatabaseDriver.createScheduleInDb(scheduleSignUp);
+
+    UsersSchedule as =
+            new UsersSchedule(Time, Date, ScheduleApPm);
+    UsersInfo.usersScheduleGlobal.add(as);
+    }
   }
+

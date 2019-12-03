@@ -2,10 +2,14 @@ package MetalPandasCarApp;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import javafx.animation.TranslateTransition;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -66,7 +70,7 @@ public class PandaProfile implements Initializable {
    *
    * @param user an arrayList that holds Users.
    */
-  void setProfilePage(ArrayList<Users> user) {
+  void setProfilePage(ObservableList<Users> user) {
     firstName.setText(user.get(0).getFirstName());
     lastName.setText(user.get(0).getLastName());
     emailAddress.setText(user.get(0).getMail());
@@ -81,7 +85,7 @@ public class PandaProfile implements Initializable {
             + " "
             + user.get(0).getZip());
     birthday.setText(
-        user.get(0).getMonth() + "/" + user.get(0).getDay() + "/" + user.get(0).getYear());
+        user.get(0).getMonth() + " / " + user.get(0).getDay() + " / " + user.get(0).getYear());
     gender.setText(user.get(0).getGender());
     mode.setText(user.get(0).getDriverPass());
     //  rating.setText(user.get(0).getRating());
@@ -99,7 +103,12 @@ public class PandaProfile implements Initializable {
     setProfilePage(UsersInfo.userProfilesGlobal);
   }
 
-  public void handleUpdateAction(ActionEvent actionEvent) throws IOException {
+  public void handleUpdateAction(ActionEvent actionEvent) throws IOException, SQLException {
+    Connection conn = DatabaseDriver.initializeDB();
+    String sql = "SELECT * FROM USER";
+    PreparedStatement pstmt = conn.prepareStatement(sql);
+    pstmt.executeQuery();
+
     Parent homePageParent = FXMLLoader.load(getClass().getResource("pandaEdit.fxml"));
     Scene homePageScene = new Scene(homePageParent);
     Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
@@ -161,6 +170,7 @@ public class PandaProfile implements Initializable {
     Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);
     homeStage.show();
+//    UsersInfo.userProfilesGlobal.clear();
   }
 
   public void handleSchedulesAction(ActionEvent actionEvent) throws IOException {
@@ -169,5 +179,6 @@ public class PandaProfile implements Initializable {
     Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);
     homeStage.show();
+//    UsersInfo.usersScheduleGlobal.clear();
   }
 }

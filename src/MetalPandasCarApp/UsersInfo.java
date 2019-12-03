@@ -1,10 +1,11 @@
 package MetalPandasCarApp;
 
-import java.util.ArrayList;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 class UsersInfo {
-  static ArrayList<Users> userProfilesGlobal = new ArrayList<>();
+  static ObservableList<Users> userProfilesGlobal = FXCollections.observableArrayList();
 
-  static ArrayList<UsersPayment> usersPaymentGlobal = new ArrayList<>();
+  static ObservableList<UsersSchedule> usersScheduleGlobal = FXCollections.observableArrayList();
 
 }

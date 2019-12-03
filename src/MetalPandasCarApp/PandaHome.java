@@ -1,10 +1,19 @@
 package MetalPandasCarApp;
 
 import java.io.IOException;
+import java.net.URL;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.ResourceBundle;
+
 import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -18,6 +27,9 @@ import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import org.h2.engine.Database;
+
+import javax.xml.crypto.Data;
 
 public class PandaHome {
   @FXML public SplitPane homeBackground;
@@ -32,7 +44,6 @@ public class PandaHome {
   @FXML public Button logoutButton;
   @FXML public Button scheduleButton;
   @FXML public Button schedules;
-
 
   public void handleMenuAction(ActionEvent actionEvent) {
     hBox.setVisible(true);
@@ -66,12 +77,23 @@ public class PandaHome {
     homeStage.show();
   }
 
-  public void handleFavouritesAction(ActionEvent actionEvent) throws IOException {
+  public void handleFavouritesAction(ActionEvent actionEvent) throws IOException, SQLException {
+    Connection conn = DatabaseDriver.initializeDB();
+    String sql = "SELECT * FROM USER";
+    PreparedStatement pstmt = conn.prepareStatement(sql);
+    pstmt.executeQuery();
+
     Parent homePageParent = FXMLLoader.load(getClass().getResource("pandaFavourites.fxml"));
     Scene homePageScene = new Scene(homePageParent);
     Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);
     homeStage.show();
+
+    UsersInfo.userProfilesGlobal.clear();
+
+    conn.close();
+    pstmt.close();
+
   }
 
   public void initialize() {
@@ -87,11 +109,21 @@ public class PandaHome {
     homeStage.show();
   }
 
-  public void handleSchedulesAction(ActionEvent actionEvent) throws IOException {
+  public void handleSchedulesAction(ActionEvent actionEvent) throws IOException, SQLException {
+    Connection conn = DatabaseDriver.initializeDB();
+    String sql = "SELECT * FROM SCHEDULE";
+    PreparedStatement pstmt = conn.prepareStatement(sql);
+    pstmt.executeQuery();
+
     Parent homePageParent = FXMLLoader.load(getClass().getResource("pandaAppointments.fxml"));
     Scene homePageScene = new Scene(homePageParent);
     Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);
     homeStage.show();
+
+    UsersInfo.usersScheduleGlobal.clear();
+
+    conn.close();
+    pstmt.close();
   }
 }

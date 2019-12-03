@@ -46,7 +46,7 @@ public class PandaAddPayments {
   }
 
   public void handleConfirmAction(ActionEvent actionEvent) throws IOException, SQLException {
-    addPayment();
+    addCardPayment();
     Parent homePageParent = FXMLLoader.load(getClass().getResource("pandaPayments.fxml"));
     Scene homePageScene = new Scene(homePageParent);
     Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
@@ -64,18 +64,16 @@ public class PandaAddPayments {
     }
   }
 
-  public void addPayment() throws SQLException {
+  public void addCardPayment() throws SQLException {
     String PaymentType = paymentCombo.getValue();
     String CardHolder = cardHolderName.getText();
     String CardNumber = cardNumber.getText();
     String CcvNumber = paymentCCV.getText();
-    int ExpMonth = expirationMonth.getValue();
+    String ExpMonth = expirationMonth.getValue().toString();
     String ExpYear = expirationYear.getText();
 
-    String[] paymentSignUp = {
-      PaymentType, CardHolder, CardNumber, CcvNumber, String.valueOf(ExpMonth), ExpYear
-    };
+    String[] cardPaymentSignUp = {PaymentType, CardHolder, CardNumber, CcvNumber, ExpMonth, ExpYear};
 
-    DatabaseDriver.createPaymentInDb(paymentSignUp);
+    DatabaseDriver.createCardPaymentInDb(cardPaymentSignUp);
   }
 }
