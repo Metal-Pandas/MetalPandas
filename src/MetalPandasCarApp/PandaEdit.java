@@ -86,6 +86,7 @@ public class PandaEdit {
           "UPDATE USER SET FIRSTNAME=?, LASTNAME=?, EMAIL=?, PHONENUMBER=?, ADDRESS=?,"
               + "CITY=?, STATE=?, ZIP=?, COUNTRY=?, PASSWORD=?, REPASSWORD=?,"
               + "GENDER=?, PERSONTYPE=? WHERE EMAIL= '" + currentUser.getMail()+ "'";
+
       PreparedStatement pstmt = conn.prepareStatement(sql);
 
         pstmt.setString(1, firstName.getText());
