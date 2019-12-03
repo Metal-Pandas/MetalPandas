@@ -1,6 +1,10 @@
 package MetalPandasCarApp;
 
 import java.io.IOException;
+import java.math.BigDecimal;
+import java.sql.SQLException;
+import java.util.ArrayList;
+
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -32,7 +36,6 @@ public class DarkPayments {
   @FXML public Button backButton;
   @FXML public Button calcTotal;
 
-
   public void handleAddPaymentAction(ActionEvent actionEvent) throws IOException {
     Parent homePageParent = FXMLLoader.load(getClass().getResource("darkAddPayments.fxml"));
     Scene homePageScene = new Scene(homePageParent);
@@ -41,7 +44,8 @@ public class DarkPayments {
     homeStage.show();
   }
 
-  public void handlePayAction(ActionEvent actionEvent) throws IOException {
+  public void handlePayAction(ActionEvent actionEvent) throws IOException, SQLException {
+    addPayment();
     Parent homePageParent = FXMLLoader.load(getClass().getResource("darkProfileRating.fxml"));
     Scene homePageScene = new Scene(homePageParent);
     Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
@@ -65,12 +69,19 @@ public class DarkPayments {
     }
   }
 
-  public void handleCalcTotalButton(ActionEvent actionEvent) {
-    int TipAmount = Integer.parseInt(tipAmount.getText());
-    int totalAmount = TipAmount + 10;
-    totalCostAmount.setText(String.valueOf(totalAmount));
+  private void addPayment() throws SQLException {
+    String PaymentOption = paymentOption.getValue();
+    String TipAmount = tipAmount.getText();
+    String TotalAmount = totalCostAmount.getText();
+
+    String[] paymentSignUp = {PaymentOption, TipAmount, TotalAmount};
+
+    DatabaseDriver.createPaymentInDb(paymentSignUp);
   }
 
   public void handleCalcPayment(ActionEvent actionEvent) {
+    int TipAmount = Integer.parseInt(tipAmount.getText());
+    int totalAmount = TipAmount + 10;
+    totalCostAmount.setText( String.valueOf(totalAmount));
   }
 }
