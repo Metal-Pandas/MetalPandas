@@ -94,7 +94,7 @@ public class DarkSchedule {
     String Date = hour.getValue().toString() + minute.getValue();
 
     String[] scheduleSignUp = {
-      ScheduleMonth, ScheduleDay, ScheduleHour, ScheduleMinute, ScheduleApPm
+        ScheduleMonth, ScheduleDay, ScheduleHour, ScheduleMinute, ScheduleApPm
     };
 
     DatabaseDriver.createScheduleInDb(scheduleSignUp);
