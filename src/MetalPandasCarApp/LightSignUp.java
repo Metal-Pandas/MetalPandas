@@ -3,6 +3,8 @@ package MetalPandasCarApp;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.sql.SQLException;
+
 import javafx.collections.FXCollections;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
@@ -22,6 +24,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+
 import javax.imageio.ImageIO;
 
 public class LightSignUp {
@@ -80,7 +83,8 @@ public class LightSignUp {
     }
   }
 
-  public void handleSignUpAction(ActionEvent actionEvent) throws IOException {
+  public void handleSignUpAction(ActionEvent actionEvent) throws IOException, SQLException {
+    addUser();
     Parent homePageParent = FXMLLoader.load(getClass().getResource("lightHome.fxml"));
     Scene homePageScene = new Scene(homePageParent);
     Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
@@ -88,28 +92,49 @@ public class LightSignUp {
     homeStage.show();
   }
 
-  public void initialize(){
-    try{
-      month.setItems(FXCollections.observableArrayList("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"));
-      day.setItems(FXCollections.observableArrayList(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31));
+  public void initialize() {
+    try {
+      month.setItems(
+          FXCollections.observableArrayList(
+              "January",
+              "February",
+              "March",
+              "April",
+              "May",
+              "June",
+              "July",
+              "August",
+              "September",
+              "October",
+              "November",
+              "December"));
+      day.setItems(
+          FXCollections.observableArrayList(
+              1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24,
+              25, 26, 27, 28, 29, 30, 31));
       driverPassenger.setItems(FXCollections.observableArrayList("Driver", "Passenger"));
-      gender.setItems(FXCollections.observableArrayList("Female", "Male", "Non-binary", "Metal Panda"));
-    } catch (Exception e){
+      gender.setItems(
+          FXCollections.observableArrayList("Female", "Male", "Non-binary", "Metal Panda"));
+    } catch (Exception e) {
       e.printStackTrace();
     }
-
-    // DatabaseDriver.initializeDB();
   }
 
-  /* public void addUser() throws SQLException {
+  private void addUser() throws SQLException {
     String FirstName = firstName.getText();
     String LastName = lastName.getText();
     String Email = emailAddress.getText();
-    String Address = street.getText();
-    String PickCountry = country.getText();
     String PhoneNum = phoneNumber.getText();
-    String EnterPass = password.getText();
-    String Birthday = month.toString();
+    String Password = password.getText();
+    String Address = street.getText();
+    String City = city.getText();
+    String State = state.getText();
+    String Zip = zipCode.getText();
+    String PickCountry = country.getText();
+    String RePassword = password.getText();
+    String Month = month.getValue();
+    String Day = day.getValue().toString();
+    String Year = year.getText();
     String DriverPass = driverPassenger.getValue();
     String Gender = gender.getValue();
 
@@ -117,17 +142,41 @@ public class LightSignUp {
         FirstName,
         LastName,
         Email,
-        Address,
-        PickCountry,
         PhoneNum,
-        EnterPass,
-//    Birthday,
+        Address,
+        City,
+        State,
+        Zip,
+        PickCountry,
+        Password,
+        RePassword,
+        Month,
+        Day,
+        Year,
+        Gender,
         DriverPass,
-        Gender
     };
 
     DatabaseDriver.createUserInDB(signUpUser);
-  } */
 
-
+    Users au =
+        new Users(
+            FirstName,
+            LastName,
+            Email,
+            PhoneNum,
+            Address,
+            City,
+            State,
+            Zip,
+            PickCountry,
+            Password,
+            RePassword,
+            Month,
+            Day,
+            Year,
+            Gender,
+            DriverPass);
+    UsersInfo.userProfilesGlobal.add(au);
+  }
 }

@@ -1,16 +1,18 @@
 package MetalPandasCarApp;
 
 import java.io.IOException;
+import java.sql.*;
+import java.util.ArrayList;
+
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -32,6 +34,58 @@ public class LightLogin {
   @FXML public Label statusText;
   @FXML public Pane backDrop;
 
+  private ObservableList<Users> userList = FXCollections.observableArrayList();
+
+  public void handleLoginAction(ActionEvent actionEvent) throws SQLException {
+    Connection conn = DatabaseDriver.initializeDB();
+    String getEmail = loginEmail.getText();
+    String getPassword = loginPassword.getText();
+    String sql = "SELECT * FROM USER WHERE EMAIL = ? AND PASSWORD = ?";
+
+    PreparedStatement pstmt = conn.prepareStatement(sql);
+    pstmt.setString(1, getEmail);
+    pstmt.setString(2, getPassword);
+    ResultSet rs = pstmt.executeQuery();
+
+    String dbEmail = "";
+    String dbPassword = "";
+
+    while (rs.next()) {
+      dbEmail = rs.getString("Email");
+      dbPassword = rs.getString("Password");
+    }
+
+    if ((getEmail.equals(dbEmail)) && (getPassword.equals(dbPassword))) {
+      System.out.println(
+          "GetEmail ="
+              + getEmail
+              + " DB Email  ="
+              + dbEmail
+              + "  getPass ="
+              + getPassword
+              + "  dbPass="
+              + dbPassword);
+      try {
+        Parent homePageParent = FXMLLoader.load(getClass().getResource("lightHome.fxml"));
+        Scene homePageScene = new Scene(homePageParent);
+        Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        homeStage.setScene(homePageScene);
+        homeStage.show();
+      } catch (IOException e) {
+        e.printStackTrace();
+      }
+      System.out.println("Welcome Back!");
+    } else {
+      Alert a = new Alert(Alert.AlertType.NONE);
+      a.setAlertType(Alert.AlertType.WARNING);
+      a.setContentText("Incorrect Email/Password. Don't have an account? Sign up!");
+      a.show();
+    }
+    UsersInfo.userProfilesGlobal = DatabaseDriver.getUserInfo(dbEmail);
+    userList = DatabaseDriver.getUserInfo(dbEmail);
+    conn.close();
+  }
+
   public void handleForgotEmailAction(MouseEvent mouseEvent) throws IOException {
     Parent homePageParent = FXMLLoader.load(getClass().getResource("lightForgotEmail.fxml"));
     Scene homePageScene = new Scene(homePageParent);
@@ -46,58 +100,6 @@ public class LightLogin {
     Stage homeStage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);
     homeStage.show();
-  }
-
-  public void handleLoginAction(ActionEvent actionEvent) throws IOException {
-
-    /*----------------------------------------------------------*/
-    /* Database */
-    /*---------
-    Connection conn = DatabaseDriver.initializeDB();
-    Statement stmt = conn.createStatement();
-    String sql = "SELECT * FROM USER";
-    ResultSet rs = stmt.executeQuery(sql);
-    String Email = "";
-    String EnterPass = "";
-    while (rs.next()) {
-      System.out.println(rs.getString("Email"));
-      System.out.println(rs.getString("Password"));
-      Email = rs.getString("Email");
-      EnterPass = rs.getString("Password");
-    }
-    String EnterPass1 = PasswordField.getText();
-    String Email1 = UsernameField.getText();
-
-    // System.out.println(EnterPass1 + "  - " + Email1);
-
-    if ((Email.equals(Email1)) && (EnterPass.equals(EnterPass1))) {
-      try {
-        Parent homePageParent = FXMLLoader.load(getClass().getResource("darkHome.fxml"));
-        Scene homePageScene = new Scene(homePageParent);
-        Stage homeStage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
-        homeStage.setScene(homePageScene);
-        homeStage.show();
-      } catch (IOException e) {
-        e.printStackTrace();
-      }
-      System.out.println("Welcome Back!");
-    } else {
-      Statustxt.setText("Incorrect Email or Password!");
-    }
-
-    ---------*/
-
-    if(loginEmail.getText().equals("jsmith@abc.com") && loginPassword.getText().equals("password")){
-      Parent homePageParent = FXMLLoader.load(getClass().getResource("lightHome.fxml"));
-      Scene homePageScene = new Scene(homePageParent);
-      Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-      homeStage.setScene(homePageScene);
-      homeStage.show();
-    }
-
-    if(!loginEmail.getText().equals("jsmith@abc.com") || loginPassword.getText().equals("password")){
-      statusText.setText("Incorrect Email/Password. Don't \nhave an account? Sign up!");
-    }
   }
 
   public void handleSignUpAction(ActionEvent actionEvent) throws IOException {
