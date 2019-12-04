@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import javafx.animation.TranslateTransition;
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -17,11 +18,15 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.SplitPane;
 import javafx.scene.control.ToolBar;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
@@ -44,6 +49,11 @@ public class PandaHome {
   @FXML public Button logoutButton;
   @FXML public Button scheduleButton;
   @FXML public Button schedules;
+  @FXML public Button addToFavourites;
+  @FXML public ComboBox endDestination;
+  @FXML public ComboBox startDestination;
+  @FXML public Pane backDrop;
+  @FXML public ComboBox driver;
 
   public void handleMenuAction(ActionEvent actionEvent) {
     hBox.setVisible(true);
@@ -99,7 +109,12 @@ public class PandaHome {
   public void initialize() {
     WebEngine engine = maps.getEngine();
     engine.load("https://www.google.com/maps/");
+
+    driver.setItems(FXCollections.observableArrayList("Katy", "Kevin", "Owen", "Nick", "Odalys", "Jana"));
+    startDestination.setItems(FXCollections.observableArrayList("Target: 10000 Gulf Center Dr, Fort Myers, FL 33913", "FGCU West Lake: FGCU - West Lake Village, Fort Myers, FL 33967", "FGCU North Lake: FGCU North Lake, Fort Myers, FL 33965", "FGCU South Village: 10501 FGCU Blvd S, Fort Myers, FL 33965", "Publix: 20311 Grande Oak Blvd, Estero, FL 33928"));
+    endDestination.setItems(FXCollections.observableArrayList("Target: 10000 Gulf Center Dr, Fort Myers, FL 33913", "FGCU West Lake: FGCU - West Lake Village, Fort Myers, FL 33967", "FGCU North Lake: FGCU North Lake, Fort Myers, FL 33965", "FGCU South Village: 10501 FGCU Blvd S, Fort Myers, FL 33965", "Publix: 20311 Grande Oak Blvd, Estero, FL 33928"));
   }
+
 
   public void handleScheduleAction(ActionEvent actionEvent) throws IOException {
     Parent homePageParent = FXMLLoader.load(getClass().getResource("pandaSchedule.fxml"));
@@ -125,5 +140,12 @@ public class PandaHome {
 
     conn.close();
     pstmt.close();
+  }
+
+  public void handleAddFavouritesAction(ActionEvent actionEvent) {
+    Alert a = new Alert(Alert.AlertType.NONE);
+    a.setAlertType(AlertType.INFORMATION);
+    a.setContentText("Information has been added to your favourites!");
+    a.show();
   }
 }

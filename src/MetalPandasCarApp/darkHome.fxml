@@ -3,16 +3,21 @@
 <?import java.net.URL?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.ToolBar?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 <?import javafx.scene.web.WebView?>
 
 <GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MetalPandasCarApp.DarkHome">
@@ -28,6 +33,7 @@
         <Button fx:id="menuButton" mnemonicParsing="false" onAction="#handleMenuAction" text="Menu" />
       </ToolBar>
       <StackPane layoutX="-100.0" layoutY="50.0" prefHeight="387.0" prefWidth="598.0">
+        <WebView fx:id="maps" maxHeight="325.0" maxWidth="409.0" prefHeight="325.0" prefWidth="250.0" StackPane.alignment="TOP_LEFT" />
         <HBox fx:id="hBox" prefHeight="363.0" prefWidth="351.0" visible="false">
           <VBox fx:id="drawer" prefHeight="363.0" prefWidth="190.0">
             <GridPane prefHeight="160.0" prefWidth="195.0">
@@ -44,32 +50,46 @@
             </GridPane>
             <GridPane prefHeight="205.0" prefWidth="190.0">
               <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
               </columnConstraints>
               <rowConstraints>
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
-              <Button fx:id="profileButton" mnemonicParsing="false" onAction="#handleProfileAction"
-                text="Profile" GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
-              <Button fx:id="favouritesButton" mnemonicParsing="false"
-                onAction="#handleFavouritesAction" text="Favourites" GridPane.halignment="CENTER"
-                GridPane.rowIndex="1" GridPane.valignment="CENTER"/>
-              <Button fx:id="schedules" mnemonicParsing="false" onAction="#handleSchedulesAction"
-                text="Schedules" GridPane.halignment="CENTER" GridPane.rowIndex="2"
-                GridPane.valignment="CENTER"/>
-              <Button fx:id="logoutButton" mnemonicParsing="false" onAction="#handleLogoutAction"
-                text="Logout" GridPane.halignment="CENTER" GridPane.rowIndex="3"
-                GridPane.valignment="CENTER"/>
+              <Button fx:id="profileButton" mnemonicParsing="false" onAction="#handleProfileAction" text="Profile" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+              <Button fx:id="favouritesButton" mnemonicParsing="false" onAction="#handleFavouritesAction" text="Favourites" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+              <Button fx:id="schedules" mnemonicParsing="false" onAction="#handleSchedulesAction" text="Schedules" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+              <Button fx:id="logoutButton" mnemonicParsing="false" onAction="#handleLogoutAction" text="Logout" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
             </GridPane>
           </VBox>
         </HBox>
-        <WebView fx:id="maps" maxHeight="325.0" maxWidth="409.0" prefHeight="363.0" prefWidth="400.0" StackPane.alignment="TOP_RIGHT" />
-        <Button fx:id="scheduleButton" mnemonicParsing="false" onAction="#handleScheduleAction" text="Schedule a pick up!" StackPane.alignment="BOTTOM_RIGHT">
+        <AnchorPane prefHeight="200.0" prefWidth="200.0">
+          <Pane fx:id="backDrop" layoutX="415.0" prefHeight="325.0" prefWidth="178.0" />
+          <Label layoutX="453.0" layoutY="12.0" text="Driver:">
+            <font>
+              <Font name="Monospaced Regular" size="26.0" />
+            </font>
+          </Label>
+          <ComboBox fx:id="driver" layoutX="427.0" layoutY="60.0" prefHeight="25.0" prefWidth="157.0" promptText="DRIVER" />
+          <Label layoutX="463.0" layoutY="107.0" text="Start:">
+            <font>
+              <Font name="Monospaced Regular" size="26.0" />
+            </font>
+          </Label>
+          <ComboBox fx:id="startDestination" layoutX="427.0" layoutY="146.0" prefHeight="25.0" prefWidth="157.0" promptText="START DESTINATION" />
+          <Label layoutX="473.0" layoutY="192.0" text="End:">
+            <font>
+              <Font name="Monospaced Regular" size="26.0" />
+            </font>
+          </Label>
+          <ComboBox fx:id="endDestination" layoutX="427.0" layoutY="240.0" prefHeight="25.0" prefWidth="157.0" promptText="END DESTINATION" />
+          <Button fx:id="addToFavourites" layoutX="455.0" layoutY="289.0" mnemonicParsing="false" onAction="#handleAddFavouritesAction" text="Add to Favourites" />
+        </AnchorPane>
+        <Button fx:id="scheduleButton" mnemonicParsing="false" onAction="#handleScheduleAction" text="Schedule a pick up!" StackPane.alignment="BOTTOM_LEFT">
           <StackPane.margin>
-            <Insets bottom="10.0" right="10.0" />
+            <Insets bottom="10.0" left="10.0" />
           </StackPane.margin>
         </Button>
       </StackPane>
