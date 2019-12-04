@@ -115,6 +115,7 @@ public class PandaHome {
     endDestination.setItems(FXCollections.observableArrayList("Target: 10000 Gulf Center Dr, Fort Myers, FL 33913", "FGCU West Lake: FGCU - West Lake Village, Fort Myers, FL 33967", "FGCU North Lake: FGCU North Lake, Fort Myers, FL 33965", "FGCU South Village: 10501 FGCU Blvd S, Fort Myers, FL 33965", "Publix: 20311 Grande Oak Blvd, Estero, FL 33928"));
   }
 
+
   public void handleScheduleAction(ActionEvent actionEvent) throws IOException {
     Parent homePageParent = FXMLLoader.load(getClass().getResource("pandaSchedule.fxml"));
     Scene homePageScene = new Scene(homePageParent);
