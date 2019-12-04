@@ -103,7 +103,7 @@ public class PandaSignUp {
         || gender.getValue().equals("")) {
       Alert a = new Alert(Alert.AlertType.NONE);
       a.setAlertType(Alert.AlertType.WARNING);
-      a.setContentText("Incorrect Email/Password. Don't have an account? Sign up!");
+      a.setContentText("Please fill all required fields!");
       a.show();
     } else {
       addUser();
