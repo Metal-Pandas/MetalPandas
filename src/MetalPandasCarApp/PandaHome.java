@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import javafx.animation.TranslateTransition;
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -108,6 +109,10 @@ public class PandaHome {
   public void initialize() {
     WebEngine engine = maps.getEngine();
     engine.load("https://www.google.com/maps/");
+
+    driver.setItems(FXCollections.observableArrayList("Katy", "Kevin", "Owen", "Nick", "Odalys", "Jana"));
+    startDestination.setItems(FXCollections.observableArrayList("Target: 10000 Gulf Center Dr, Fort Myers, FL 33913", "FGCU West Lake: FGCU - West Lake Village, Fort Myers, FL 33967", "FGCU North Lake: FGCU North Lake, Fort Myers, FL 33965", "FGCU South Village: 10501 FGCU Blvd S, Fort Myers, FL 33965", "Publix: 20311 Grande Oak Blvd, Estero, FL 33928"));
+    endDestination.setItems(FXCollections.observableArrayList("Target: 10000 Gulf Center Dr, Fort Myers, FL 33913", "FGCU West Lake: FGCU - West Lake Village, Fort Myers, FL 33967", "FGCU North Lake: FGCU North Lake, Fort Myers, FL 33965", "FGCU South Village: 10501 FGCU Blvd S, Fort Myers, FL 33965", "Publix: 20311 Grande Oak Blvd, Estero, FL 33928"));
   }
 
   public void handleScheduleAction(ActionEvent actionEvent) throws IOException {
