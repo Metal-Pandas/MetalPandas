@@ -17,11 +17,15 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.SplitPane;
 import javafx.scene.control.ToolBar;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
@@ -44,6 +48,11 @@ public class PandaHome {
   @FXML public Button logoutButton;
   @FXML public Button scheduleButton;
   @FXML public Button schedules;
+  @FXML public Button addToFavourites;
+  @FXML public ComboBox endDestination;
+  @FXML public ComboBox startDestination;
+  @FXML public Pane backDrop;
+  @FXML public ComboBox driver;
 
   public void handleMenuAction(ActionEvent actionEvent) {
     hBox.setVisible(true);
@@ -125,5 +134,12 @@ public class PandaHome {
 
     conn.close();
     pstmt.close();
+  }
+
+  public void handleAddFavouritesAction(ActionEvent actionEvent) {
+    Alert a = new Alert(Alert.AlertType.NONE);
+    a.setAlertType(AlertType.INFORMATION);
+    a.setContentText("Information has been added to your favourites!");
+    a.show();
   }
 }
