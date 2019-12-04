@@ -40,8 +40,6 @@ public class PandaProfileRating {
   @FXML public AnchorPane paymentBackground;
   @FXML public Pane backDrop;
 
-  public int ratingReadOut = (5+3) / 2;
-
   public void handleRateAction(ActionEvent actionEvent) throws IOException {
     Parent homePageParent = FXMLLoader.load(getClass().getResource("pandaAppointments.fxml"));
     Scene homePageScene = new Scene(homePageParent);

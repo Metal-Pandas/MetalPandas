@@ -17,29 +17,29 @@
     </font></Text>
   <Text fx:id="paymentType" layoutX="150.0" layoutY="108.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Payment type:">
       <font>
-         <Font name="Monospaced Bold" size="14.0" />
+         <Font name="Monospaced Regular" size="14.0" />
       </font></Text>
   <ComboBox fx:id="paymentCombo" layoutX="302.0" layoutY="91.0" prefWidth="150.0" promptText="SELECT PAYMENT" />
   <Text fx:id="cardHolderLabel" layoutX="150.0" layoutY="151.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cardholder Name:">
       <font>
-         <Font name="Monospaced Bold" size="14.0" />
+         <Font name="Monospaced Regular" size="14.0" />
       </font></Text>
   <TextField fx:id="cardHolderName" layoutX="303.0" layoutY="133.0" />
   <Text fx:id="cardNumberLabel" layoutX="150.0" layoutY="191.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Card Number:">
       <font>
-         <Font name="Monospaced Bold" size="14.0" />
+         <Font name="Monospaced Regular" size="14.0" />
       </font></Text>
   <TextField fx:id="cardNumber" layoutX="303.0" layoutY="173.0" />
   <Text fx:id="CCVlabel" layoutX="150.0" layoutY="231.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CCV:">
       <font>
-         <Font name="Monospaced Bold" size="14.0" />
+         <Font name="Monospaced Regular" size="14.0" />
       </font></Text>
   <TextField fx:id="paymentCCV" layoutX="303.0" layoutY="213.0" />
   <Button fx:id="paymentBack" layoutX="523.0" layoutY="361.0" mnemonicParsing="false" onAction="#handleBackAction" text="Back" />
   <Button fx:id="paymentConfirm" layoutX="462.0" layoutY="293.0" mnemonicParsing="false" onAction="#handleConfirmAction" text="Confirm" />
  <Text fx:id="expirationLabel" layoutX="150.0" layoutY="270.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Expiration Date:">
       <font>
-         <Font name="Monospaced Bold" size="14.0" />
+         <Font name="Monospaced Regular" size="14.0" />
       </font>
    </Text>
  <ComboBox fx:id="expirationMonth" layoutX="304.0" layoutY="254.0" prefHeight="25.0" prefWidth="83.0" promptText="Month" />
