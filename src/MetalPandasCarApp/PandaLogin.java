@@ -37,55 +37,62 @@ public class PandaLogin {
   private ObservableList<Users> userList = FXCollections.observableArrayList();
 
   public void handleLoginAction(ActionEvent actionEvent) throws SQLException {
-    Connection conn = DatabaseDriver.initializeDB();
-    String getEmail = loginEmail.getText();
-    String getPassword = loginPassword.getText();
-    String sql = "SELECT * FROM USER WHERE EMAIL = ? AND PASSWORD = ?";
-
-    PreparedStatement pstmt = conn.prepareStatement(sql);
-    pstmt.setString(1, getEmail);
-    pstmt.setString(2, getPassword);
-    ResultSet rs = pstmt.executeQuery();
-
-    String dbEmail = "";
-    String dbPassword = "";
-
-    while (rs.next()) {
-      dbEmail = rs.getString("Email");
-      dbPassword = rs.getString("Password");
-    }
-
-    if ((getEmail.equals(dbEmail)) && (getPassword.equals(dbPassword))) {
-      System.out.println(
-          "GetEmail ="
-              + getEmail
-              + " DB Email  ="
-              + dbEmail
-              + "  getPass ="
-              + getPassword
-              + "  dbPass="
-              + dbPassword);
-      try {
-        Parent homePageParent = FXMLLoader.load(getClass().getResource("pandaHome.fxml"));
-        Scene homePageScene = new Scene(homePageParent);
-        Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-        homeStage.setScene(homePageScene);
-        homeStage.show();
-      } catch (IOException e) {
-        e.printStackTrace();
-      }
-      System.out.println("Welcome Back!");
-    } else {
+    if (loginEmail.getText().equals("") || loginPassword.getText().equals("")) {
       Alert a = new Alert(Alert.AlertType.NONE);
       a.setAlertType(Alert.AlertType.WARNING);
       a.setContentText("Incorrect Email/Password. Don't have an account? Sign up!");
       a.show();
-    }
-    UsersInfo.userProfilesGlobal = DatabaseDriver.getUserInfo(dbEmail);
-    userList = DatabaseDriver.getUserInfo(dbEmail);
-    conn.close();
-  }
+    } else {
 
+      Connection conn = DatabaseDriver.initializeDB();
+      String getEmail = loginEmail.getText();
+      String getPassword = loginPassword.getText();
+      String sql = "SELECT * FROM USER WHERE EMAIL = ? AND PASSWORD = ?";
+
+      PreparedStatement pstmt = conn.prepareStatement(sql);
+      pstmt.setString(1, getEmail);
+      pstmt.setString(2, getPassword);
+      ResultSet rs = pstmt.executeQuery();
+
+      String dbEmail = "";
+      String dbPassword = "";
+
+      while (rs.next()) {
+        dbEmail = rs.getString("Email");
+        dbPassword = rs.getString("Password");
+      }
+
+      if ((getEmail.equals(dbEmail)) && (getPassword.equals(dbPassword))) {
+        System.out.println(
+            "GetEmail ="
+                + getEmail
+                + " DB Email  ="
+                + dbEmail
+                + "  getPass ="
+                + getPassword
+                + "  dbPass="
+                + dbPassword);
+        try {
+          Parent homePageParent = FXMLLoader.load(getClass().getResource("pandaHome.fxml"));
+          Scene homePageScene = new Scene(homePageParent);
+          Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+          homeStage.setScene(homePageScene);
+          homeStage.show();
+        } catch (IOException e) {
+          e.printStackTrace();
+        }
+        System.out.println("Welcome Back!");
+      } else {
+        Alert a = new Alert(Alert.AlertType.NONE);
+        a.setAlertType(Alert.AlertType.WARNING);
+        a.setContentText("Incorrect Email/Password. Don't have an account? Sign up!");
+        a.show();
+      }
+      UsersInfo.userProfilesGlobal = DatabaseDriver.getUserInfo(dbEmail);
+      userList = DatabaseDriver.getUserInfo(dbEmail);
+      conn.close();
+    }
+}
   public void handleForgotEmailAction(MouseEvent mouseEvent) throws IOException {
     Parent homePageParent = FXMLLoader.load(getClass().getResource("pandaForgotEmail.fxml"));
     Scene homePageScene = new Scene(homePageParent);
@@ -109,4 +116,5 @@ public class PandaLogin {
     homeStage.setScene(homePageScene);
     homeStage.show();
   }
+
 }
