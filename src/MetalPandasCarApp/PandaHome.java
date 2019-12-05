@@ -48,10 +48,10 @@ public class PandaHome {
   @FXML public Button scheduleButton;
   @FXML public Button schedules;
   @FXML public Button addToFavourites;
-  @FXML public ComboBox endDestination;
-  @FXML public ComboBox startDestination;
+  @FXML public ComboBox<String>endDestination;
+  @FXML public ComboBox<String>startDestination;
   @FXML public Pane backDrop;
-  @FXML public ComboBox driver;
+  @FXML public ComboBox<String>driver;
 
   public void handleMenuAction(ActionEvent actionEvent) {
     hBox.setVisible(true);
@@ -59,14 +59,14 @@ public class PandaHome {
     openNav.setToX(0);
     TranslateTransition closeNav = new TranslateTransition(new Duration(350), drawer);
     menuButton.setOnAction(
-        (ActionEvent evt) -> {
-          if (drawer.getTranslateX() != 0) {
-            openNav.play();
-          } else {
-            closeNav.setToX(-(drawer.getWidth()));
-            closeNav.play();
-          }
-        });
+            (ActionEvent evt) -> {
+              if (drawer.getTranslateX() != 0) {
+                openNav.play();
+              } else {
+                closeNav.setToX(-(drawer.getWidth()));
+                closeNav.play();
+              }
+            });
   }
 
   public void handleLogoutAction(ActionEvent actionEvent) throws IOException {
@@ -86,43 +86,38 @@ public class PandaHome {
   }
 
   public void handleFavouritesAction(ActionEvent actionEvent) throws IOException, SQLException {
-    Connection conn = DatabaseDriver.initializeDB();
-    String sql = "SELECT * FROM USER";
-    PreparedStatement pstmt = conn.prepareStatement(sql);
-    pstmt.executeQuery();
-
+    addUserFavorites();
     Parent homePageParent = FXMLLoader.load(getClass().getResource("pandaFavourites.fxml"));
     Scene homePageScene = new Scene(homePageParent);
     Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);
     homeStage.show();
 
-    UsersInfo.userProfilesGlobal.clear();
-
-    conn.close();
-    pstmt.close();
   }
 
   public void initialize() {
     WebEngine engine = maps.getEngine();
     engine.load("https://www.google.com/maps/");
-
+try{
     driver.setItems(
-        FXCollections.observableArrayList("Katy", "Kevin", "Owen", "Nick", "Odalys", "Jana"));
+            FXCollections.observableArrayList("Katy", "Kevin", "Owen", "Nick", "Odalys", "Jana"));
     startDestination.setItems(
-        FXCollections.observableArrayList(
-            "Target: 10000 Gulf Center Dr, Fort Myers, FL 33913",
-            "FGCU West Lake: FGCU - West Lake Village, Fort Myers, FL 33967",
-            "FGCU North Lake: FGCU North Lake, Fort Myers, FL 33965",
-            "FGCU South Village: 10501 FGCU Blvd S, Fort Myers, FL 33965",
-            "Publix: 20311 Grande Oak Blvd, Estero, FL 33928"));
+            FXCollections.observableArrayList(
+                    "Target: 10000 Gulf Center Dr, Fort Myers, FL 33913",
+                    "FGCU West Lake: FGCU - West Lake Village, Fort Myers, FL 33967",
+                    "FGCU North Lake: FGCU North Lake, Fort Myers, FL 33965",
+                    "FGCU South Village: 10501 FGCU Blvd S, Fort Myers, FL 33965",
+                    "Publix: 20311 Grande Oak Blvd, Estero, FL 33928"));
     endDestination.setItems(
-        FXCollections.observableArrayList(
-            "Target: 10000 Gulf Center Dr, Fort Myers, FL 33913",
-            "FGCU West Lake: FGCU - West Lake Village, Fort Myers, FL 33967",
-            "FGCU North Lake: FGCU North Lake, Fort Myers, FL 33965",
-            "FGCU South Village: 10501 FGCU Blvd S, Fort Myers, FL 33965",
-            "Publix: 20311 Grande Oak Blvd, Estero, FL 33928"));
+            FXCollections.observableArrayList(
+                    "Target: 10000 Gulf Center Dr, Fort Myers, FL 33913",
+                    "FGCU West Lake: FGCU - West Lake Village, Fort Myers, FL 33967",
+                    "FGCU North Lake: FGCU North Lake, Fort Myers, FL 33965",
+                    "FGCU South Village: 10501 FGCU Blvd S, Fort Myers, FL 33965",
+                    "Publix: 20311 Grande Oak Blvd, Estero, FL 33928"));
+    } catch (Exception e) {
+  e.printStackTrace();
+}
   }
 
   public void handleScheduleAction(ActionEvent actionEvent) throws IOException {
@@ -160,13 +155,13 @@ public class PandaHome {
   }
 
   private void addUserFavorites() throws SQLException {
-    String Driver = driver.getValue().toString();
-    String Start = startDestination.getValue().toString();
-    String End = endDestination.getValue().toString();
+    String Driver = driver.getValue();
+    String Start = startDestination.getValue();
+    String End = endDestination.getValue();
 
-    String[] signUpFavorites = {Driver, Start, End};
+    String[] signUpFavourites = {Driver, Start, End};
 
-    DatabaseDriver.createFavouriteInDb(signUpFavorites);
+    DatabaseDriver.createFavouriteInDb(signUpFavourites);
 
     UsersFavourites favourites = new UsersFavourites(Driver, Start, End);
     UsersInfo.usersFavouritesGlobal.add(favourites);

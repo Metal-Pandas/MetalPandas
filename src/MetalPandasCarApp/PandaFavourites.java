@@ -40,12 +40,12 @@ public class PandaFavourites implements Initializable {
   @FXML public Button homeButton;
   @FXML public Button logoutButton;
   @FXML public TableView<UsersFavourites> favouritesTable;
-  @FXML public TableColumn<?, ?> driver;
+  @FXML public TableColumn<?,?> driver;
   @FXML public TableColumn<?, ?> startDestination;
   @FXML public TableColumn<?, ?> endDestination;
   @FXML public Button schedules;
 
-  private void setFavouritesTable(ObservableList<UsersFavourites> usersFavouritesGlobal) {
+  private void setFavouritesTable(ObservableList<UsersFavourites> usersFavourites) {
     try {
       Connection conn = DatabaseDriver.initializeDB();
 
@@ -61,14 +61,14 @@ public class PandaFavourites implements Initializable {
         String endDes = rs.getString(3);
 
         UsersFavourites items = new UsersFavourites(driverDes,startDes,endDes);
-       usersFavouritesGlobal.add(items);
+        usersFavourites.add(items);
       }
 
-      favouritesTable.setItems(usersFavouritesGlobal);
+      favouritesTable.setItems(usersFavourites);
 
-      driver.setCellValueFactory(new PropertyValueFactory("driver"));
-      startDestination.setCellValueFactory(new PropertyValueFactory("startDestination"));
-      endDestination.setCellValueFactory(new PropertyValueFactory("endDestination"));
+      driver.setCellValueFactory(new PropertyValueFactory<>("driver"));
+      startDestination.setCellValueFactory(new PropertyValueFactory<>("startDestination"));
+      endDestination.setCellValueFactory(new PropertyValueFactory<>("endDestination"));
 
       conn.close();
       stmt.close();
@@ -76,7 +76,6 @@ public class PandaFavourites implements Initializable {
     } catch (SQLException e) {
       e.printStackTrace();
     }
-
   }
 
   public void handleMenuAction(ActionEvent actionEvent) {
@@ -86,14 +85,14 @@ public class PandaFavourites implements Initializable {
     openNav.setToX(0);
     TranslateTransition closeNav = new TranslateTransition(new Duration(350), drawer);
     menuButton.setOnAction(
-        (ActionEvent evt) -> {
-          if (drawer.getTranslateX() != 0) {
-            openNav.play();
-          } else {
-            closeNav.setToX(-(drawer.getWidth()));
-            closeNav.play();
-          }
-        });
+            (ActionEvent evt) -> {
+              if (drawer.getTranslateX() != 0) {
+                openNav.play();
+              } else {
+                closeNav.setToX(-(drawer.getWidth()));
+                closeNav.play();
+              }
+            });
   }
 
   public void handleLogoutAction(ActionEvent actionEvent) throws IOException {
@@ -131,7 +130,6 @@ public class PandaFavourites implements Initializable {
 
   @Override
   public void initialize(URL url, ResourceBundle resourceBundle) {
-
     setFavouritesTable(UsersInfo.usersFavouritesGlobal);
   }
 }
