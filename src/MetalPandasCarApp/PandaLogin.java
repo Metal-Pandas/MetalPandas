@@ -13,6 +13,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -37,13 +38,6 @@ public class PandaLogin {
   private ObservableList<Users> userList = FXCollections.observableArrayList();
 
   public void handleLoginAction(ActionEvent actionEvent) throws SQLException {
-    if (loginEmail.getText().equals("") || loginPassword.getText().equals("")) {
-      Alert a = new Alert(Alert.AlertType.NONE);
-      a.setAlertType(Alert.AlertType.WARNING);
-      a.setContentText("Incorrect Email/Password. Don't have an account? Sign up!");
-      a.show();
-    } else {
-
       Connection conn = DatabaseDriver.initializeDB();
       String getEmail = loginEmail.getText();
       String getPassword = loginPassword.getText();
@@ -81,7 +75,10 @@ public class PandaLogin {
         } catch (IOException e) {
           e.printStackTrace();
         }
-        System.out.println("Welcome Back!");
+        Alert a = new Alert(Alert.AlertType.NONE);
+        a.setAlertType(AlertType.INFORMATION);
+        a.setContentText("Welcome Back!");
+        a.show();
       } else {
         Alert a = new Alert(Alert.AlertType.NONE);
         a.setAlertType(Alert.AlertType.WARNING);
@@ -92,7 +89,7 @@ public class PandaLogin {
       userList = DatabaseDriver.getUserInfo(dbEmail);
       conn.close();
     }
-}
+
   public void handleForgotEmailAction(MouseEvent mouseEvent) throws IOException {
     Parent homePageParent = FXMLLoader.load(getClass().getResource("pandaForgotEmail.fxml"));
     Scene homePageScene = new Scene(homePageParent);

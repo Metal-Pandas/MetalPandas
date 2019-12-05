@@ -33,6 +33,7 @@
         <Button fx:id="menuButton" mnemonicParsing="false" onAction="#handleMenuAction" text="Menu" />
       </ToolBar>
       <StackPane layoutX="-100.0" layoutY="50.0" prefHeight="387.0" prefWidth="598.0">
+        <WebView fx:id="maps" maxHeight="325.0" maxWidth="409.0" prefHeight="325.0" prefWidth="250.0" StackPane.alignment="TOP_LEFT" />
         <HBox fx:id="hBox" prefHeight="363.0" prefWidth="351.0" visible="false">
           <VBox fx:id="drawer" prefHeight="363.0" prefWidth="190.0">
             <GridPane prefHeight="160.0" prefWidth="195.0">
@@ -65,33 +66,32 @@
           </VBox>
         </HBox>
         <AnchorPane prefHeight="200.0" prefWidth="200.0">
-          <Pane fx:id="backDrop" layoutX="2.0" layoutY="8.0" prefHeight="325.0" prefWidth="178.0" />
-          <Label layoutX="40.0" layoutY="20.0" text="Driver:">
+          <Pane fx:id="backDrop" layoutX="415.0" prefHeight="325.0" prefWidth="178.0" />
+          <Label layoutX="453.0" layoutY="12.0" text="Driver:">
             <font>
               <Font name="Monospaced Regular" size="26.0" />
             </font>
           </Label>
-          <ComboBox fx:id="driver" layoutX="14.0" layoutY="68.0" prefHeight="25.0" prefWidth="157.0" promptText="DRIVER" />
-          <Label layoutX="50.0" layoutY="115.0" text="Start:">
+          <ComboBox fx:id="driver" layoutX="427.0" layoutY="60.0" prefHeight="25.0" prefWidth="157.0" promptText="DRIVER" />
+          <Label layoutX="463.0" layoutY="107.0" text="Start:">
             <font>
               <Font name="Monospaced Regular" size="26.0" />
             </font>
           </Label>
-          <ComboBox fx:id="startDestination" layoutX="14.0" layoutY="154.0" prefHeight="25.0" prefWidth="157.0" promptText="START DESTINATION" />
-          <Label layoutX="60.0" layoutY="200.0" text="End:">
+          <ComboBox fx:id="startDestination" layoutX="427.0" layoutY="146.0" prefHeight="25.0" prefWidth="157.0" promptText="START DESTINATION" />
+          <Label layoutX="473.0" layoutY="192.0" text="End:">
             <font>
               <Font name="Monospaced Regular" size="26.0" />
             </font>
           </Label>
-          <ComboBox fx:id="endDestination" layoutX="14.0" layoutY="248.0" prefHeight="25.0" prefWidth="157.0" promptText="END DESTINATION" />
-          <Button fx:id="addToFavourites" layoutX="42.0" layoutY="297.0" mnemonicParsing="false" onAction="#handleAddFavouritesAction" text="Add to Favourites" />
+          <ComboBox fx:id="endDestination" layoutX="427.0" layoutY="240.0" prefHeight="25.0" prefWidth="157.0" promptText="END DESTINATION" />
+          <Button fx:id="addToFavourites" layoutX="455.0" layoutY="289.0" mnemonicParsing="false" onAction="#handleAddFavouritesAction" text="Add to Favourites" />
         </AnchorPane>
-        <Button fx:id="scheduleButton" mnemonicParsing="false" onAction="#handleScheduleAction" text="Schedule a pick up!" StackPane.alignment="BOTTOM_RIGHT">
+        <Button fx:id="scheduleButton" mnemonicParsing="false" onAction="#handleScheduleAction" text="Schedule a pick up!" StackPane.alignment="BOTTOM_CENTER">
           <StackPane.margin>
-            <Insets bottom="10.0" right="10.0" />
+            <Insets bottom="10.0" left="10.0" />
           </StackPane.margin>
         </Button>
-        <WebView fx:id="maps" maxHeight="325.0" maxWidth="409.0" prefHeight="363.0" prefWidth="400.0" StackPane.alignment="TOP_RIGHT" />
       </StackPane>
     </VBox>
   </SplitPane>

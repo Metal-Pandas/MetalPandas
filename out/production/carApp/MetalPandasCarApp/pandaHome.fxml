@@ -33,28 +33,7 @@
         <Button fx:id="menuButton" mnemonicParsing="false" onAction="#handleMenuAction" text="Menu" />
       </ToolBar>
       <StackPane layoutX="-100.0" layoutY="50.0" prefHeight="387.0" prefWidth="598.0">
-        <AnchorPane prefHeight="200.0" prefWidth="200.0">
-          <Pane fx:id="backDrop" layoutX="6.0" prefHeight="325.0" prefWidth="178.0" />
-               <Label layoutX="44.0" layoutY="12.0" text="Driver:">
-                  <font>
-                     <Font name="Monospaced Regular" size="26.0" />
-                  </font>
-               </Label>
-               <ComboBox fx:id="driver" layoutX="18.0" layoutY="60.0" prefHeight="25.0" prefWidth="157.0" promptText="DRIVER" />
-          <Label layoutX="54.0" layoutY="107.0" text="Start:">
-            <font>
-              <Font name="Monospaced Regular" size="26.0" />
-            </font>
-          </Label>
-          <ComboBox fx:id="startDestination" layoutX="18.0" layoutY="146.0" prefHeight="25.0" prefWidth="157.0" promptText="START DESTINATION" />
-          <Label layoutX="64.0" layoutY="192.0" text="End:">
-            <font>
-              <Font name="Monospaced Regular" size="26.0" />
-            </font>
-          </Label>
-          <ComboBox fx:id="endDestination" layoutX="18.0" layoutY="240.0" prefHeight="25.0" prefWidth="157.0" promptText="END DESTINATION" />
-          <Button fx:id="addToFavourites" layoutX="46.0" layoutY="289.0" mnemonicParsing="false" onAction="#handleAddFavouritesAction" text="Add to Favourites" />
-        </AnchorPane>
+        <WebView fx:id="maps" maxHeight="325.0" maxWidth="409.0" prefHeight="325.0" prefWidth="250.0" StackPane.alignment="TOP_LEFT" />
         <HBox fx:id="hBox" prefHeight="363.0" prefWidth="351.0" visible="false">
           <VBox fx:id="drawer" prefHeight="363.0" prefWidth="190.0">
             <GridPane prefHeight="160.0" prefWidth="195.0">
@@ -86,12 +65,33 @@
             </GridPane>
           </VBox>
         </HBox>
-        <Button fx:id="scheduleButton" mnemonicParsing="false" onAction="#handleScheduleAction" text="Schedule a pick up!" StackPane.alignment="BOTTOM_RIGHT">
+        <AnchorPane maxWidth="178.0" minWidth="178.0" prefHeight="363.0" prefWidth="178.0" StackPane.alignment="TOP_RIGHT">
+          <Pane fx:id="backDrop" layoutX="4.0" layoutY="9.0" prefHeight="325.0" prefWidth="178.0" />
+               <Label layoutX="38.0" layoutY="12.0" text="Driver:">
+                  <font>
+                     <Font name="Monospaced Regular" size="26.0" />
+                  </font>
+               </Label>
+               <ComboBox fx:id="driver" layoutX="12.0" layoutY="60.0" prefHeight="25.0" prefWidth="157.0" promptText="DRIVER" />
+          <Label layoutX="48.0" layoutY="107.0" text="Start:">
+            <font>
+              <Font name="Monospaced Regular" size="26.0" />
+            </font>
+          </Label>
+          <ComboBox fx:id="startDestination" layoutX="12.0" layoutY="146.0" prefHeight="25.0" prefWidth="157.0" promptText="START DESTINATION" />
+          <Label layoutX="58.0" layoutY="192.0" text="End:">
+            <font>
+              <Font name="Monospaced Regular" size="26.0" />
+            </font>
+          </Label>
+          <ComboBox fx:id="endDestination" layoutX="12.0" layoutY="240.0" prefHeight="25.0" prefWidth="157.0" promptText="END DESTINATION" />
+          <Button fx:id="addToFavourites" layoutX="40.0" layoutY="289.0" mnemonicParsing="false" onAction="#handleAddFavouritesAction" text="Add to Favourites" />
+        </AnchorPane>
+        <Button fx:id="scheduleButton" mnemonicParsing="false" onAction="#handleScheduleAction" text="Schedule a pick up!" StackPane.alignment="BOTTOM_CENTER">
           <StackPane.margin>
-            <Insets bottom="10.0" right="10.0" />
+            <Insets bottom="10.0" left="10.0" />
           </StackPane.margin>
         </Button>
-        <WebView fx:id="maps" maxHeight="325.0" maxWidth="409.0" prefHeight="325.0" prefWidth="250.0" StackPane.alignment="TOP_RIGHT" />
       </StackPane>
     </VBox>
   </SplitPane>

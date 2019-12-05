@@ -1,5 +1,6 @@
 package MetalPandasCarApp;
 
+// Users schedule
 public class UsersSchedule {
   private String scheduleMonth;
   private String scheduleDay;

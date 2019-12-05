@@ -117,11 +117,13 @@ public class PandaProfile implements Initializable {
   }
 
   public void handleDarkModeAction(ActionEvent actionEvent) throws IOException {
+    setProfilePage(UsersInfo.userProfilesGlobal);
     Parent homePageParent = FXMLLoader.load(getClass().getResource("darkProfile.fxml"));
     Scene homePageScene = new Scene(homePageParent);
     Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);
     homeStage.show();
+
   }
 
   public void handleLightModeAction(ActionEvent actionEvent) throws IOException {

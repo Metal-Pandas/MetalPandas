@@ -5,10 +5,10 @@ import java.io.File;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -79,47 +79,42 @@ public class PandaEdit {
   }
 
   public void handleUpdateAction(ActionEvent actionEvent) throws IOException, SQLException {
-    try {
       Users currentUser = UsersInfo.userProfilesGlobal.get(0);
 
       Connection conn = DatabaseDriver.initializeDB();
       String sql =
           "UPDATE USER SET FIRSTNAME=?, LASTNAME=?, EMAIL=?, PHONENUMBER=?, ADDRESS=?,"
               + "CITY=?, STATE=?, ZIP=?, COUNTRY=?, PASSWORD=?, REPASSWORD=?,"
-              + "GENDER=?, PERSONTYPE=? WHERE EMAIL= '"
-              + currentUser.getMail()
-              + "'";
+              + "GENDER=?, PERSONTYPE=? WHERE EMAIL= '" + currentUser.getMail()+ "'";
+
       PreparedStatement pstmt = conn.prepareStatement(sql);
 
-      pstmt.setString(1, firstName.getText());
-      pstmt.setString(2, lastName.getText());
-      pstmt.setString(3, emailAddress.getText());
-      pstmt.setString(4, phoneNumber.getText());
-      pstmt.setString(5, street.getText());
-      pstmt.setString(6, city.getText());
-      pstmt.setString(7, state.getText());
-      pstmt.setString(8, zipCode.getText());
-      pstmt.setString(9, country.getText());
-      pstmt.setString(10, password.getText());
-      pstmt.setString(11, reenterPassword.getText());
-      pstmt.setString(13, driverPassenger.getValue());
-      pstmt.setString(12, gender.getValue());
-//      System.out.println("Sql string == " + sql);
-//      System.out.println("Email:" + emailAddress.getText());
-      pstmt.executeUpdate();
+        pstmt.setString(1, firstName.getText());
+        pstmt.setString(2, lastName.getText());
+        pstmt.setString(3, emailAddress.getText());
+        pstmt.setString(4, phoneNumber.getText());
+        pstmt.setString(5, street.getText());
+        pstmt.setString(6, city.getText());
+        pstmt.setString(7, state.getText());
+        pstmt.setString(8, zipCode.getText());
+        pstmt.setString(9, country.getText());
+        pstmt.setString(10, password.getText());
+        pstmt.setString(11, reenterPassword.getText());
+        pstmt.setString(13, driverPassenger.getValue());
+        pstmt.setString(12, gender.getValue());
+        pstmt.executeUpdate();
 
       Alert alert = new Alert(Alert.AlertType.INFORMATION);
       alert.setTitle("Information Dialog");
       alert.setHeaderText("User details has been updated");
       alert.showAndWait();
-    } catch (SQLException e) {
-      e.printStackTrace();
-    }
+
     Parent homePageParent = FXMLLoader.load(getClass().getResource("pandaProfile.fxml"));
     Scene homePageScene = new Scene(homePageParent);
     Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);
     homeStage.show();
+
   }
 
   public void initialize() {
@@ -127,6 +122,7 @@ public class PandaEdit {
       driverPassenger.setItems(FXCollections.observableArrayList("Driver", "Passenger"));
       gender.setItems(
           FXCollections.observableArrayList("Female", "Male", "Non-binary", "Metal Panda"));
+
     } catch (Exception e) {
       e.printStackTrace();
     }
