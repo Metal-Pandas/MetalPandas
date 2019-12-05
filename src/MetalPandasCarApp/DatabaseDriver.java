@@ -57,8 +57,8 @@ public class DatabaseDriver {
     try {
       initializeDB();
       query =
-          "INSERT INTO USER( firstname, lastname, email, phonenumber, address, city, state, zip, country, password, "
-              + "repassword, month, day, year, gender, persontype) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+              "INSERT INTO USER( firstname, lastname, email, phonenumber, address, city, state, zip, country, password, "
+                      + "repassword, month, day, year, gender, persontype) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 
       pstmt = conn.prepareStatement(query);
 
@@ -108,23 +108,23 @@ public class DatabaseDriver {
         String gender = rs.getString("gender");
 
         userInfo.add(
-            new Users(
-                firstName,
-                lastName,
-                mail,
-                phoneNumber,
-                address,
-                city,
-                state,
-                zip,
-                country,
-                password,
-                rePassword,
-                month,
-                day,
-                year,
-                pType,
-                gender));
+                new Users(
+                        firstName,
+                        lastName,
+                        mail,
+                        phoneNumber,
+                        address,
+                        city,
+                        state,
+                        zip,
+                        country,
+                        password,
+                        rePassword,
+                        month,
+                        day,
+                        year,
+                        pType,
+                        gender));
       }
       conn.close();
 
@@ -138,8 +138,8 @@ public class DatabaseDriver {
     initializeDB();
     try {
       querySQL =
-          "INSERT INTO ADDCARD(paymentCombo, cardHolder, cardNumber, ccvNumber, expirationMonth, expirationYear) "
-              + "VALUES (?,?,?,?,?,?)";
+              "INSERT INTO ADDCARD(paymentCombo, cardHolder, cardNumber, ccvNumber, expirationMonth, expirationYear) "
+                      + "VALUES (?,?,?,?,?,?)";
 
       pstmt = conn.prepareStatement(querySQL);
 
@@ -179,7 +179,7 @@ public class DatabaseDriver {
         String expYear = rs.getString("expirationYear");
 
         userCardPayment.add(
-            new UsersCardPayment(paymentType, cardName, cardNumber, ccv, expMonth, expYear));
+                new UsersCardPayment(paymentType, cardName, cardNumber, ccv, expMonth, expYear));
       }
       conn.close();
       pstmt.close();
@@ -193,7 +193,7 @@ public class DatabaseDriver {
     initializeDB();
     try {
       querySQL =
-          "INSERT INTO SCHEDULE(schedulemonth, scheduleday, scheduleHour, scheduleMinute, scheduleAmpm) VALUES (?,?,?,?,?)";
+              "INSERT INTO SCHEDULE(schedulemonth, scheduleday, scheduleHour, scheduleMinute, scheduleAmpm) VALUES (?,?,?,?,?)";
 
       pstmt = conn.prepareStatement(querySQL);
 
@@ -291,7 +291,7 @@ public class DatabaseDriver {
     return userPayment;
   }
 
-  public static void createFavouriteInDb(String[] favouritesSignUp) throws SQLException {
+  public static void createFavouriteInDb(String[] signUpFavourites) throws SQLException {
     initializeDB();
     try {
       sqlQuery = "INSERT INTO FAVOURITES(DRIVER, STARTDESTINATION, ENDDESTINATION) VALUES (?,?,?)";
@@ -299,7 +299,7 @@ public class DatabaseDriver {
       pstmt = conn.prepareStatement(sqlQuery);
 
       int i = 1;
-      for (String str4 : favouritesSignUp) {
+      for (String str4 :  signUpFavourites) {
         pstmt.setString(i, str4);
         i++;
       }
@@ -313,7 +313,7 @@ public class DatabaseDriver {
     pstmt.close();
   }
 
-  public static ObservableList<UsersFavourites> getFavouritesInfo(String driver) {
+  public static ObservableList<UsersFavourites> getFavouritesInfo(String drivers) {
     try {
       initializeDB();
 
@@ -321,16 +321,16 @@ public class DatabaseDriver {
 
       pstmt = conn.prepareStatement(sqlString);
 
-      pstmt.setString(1,driver);
+      pstmt.setString(1,drivers);
 
       ResultSet rs = pstmt.executeQuery();
 
       while (rs.next()) {
-        driver = rs.getString("driver");
-        String start = rs.getString("startDestination");
-        String end = rs.getString("endDestination");
+        drivers = rs.getString("driver");
+        String starts = rs.getString("startDestination");
+        String ends= rs.getString("endDestination");
 
-        userFavourites.add(new UsersFavourites(driver,start,end));
+        userFavourites.add(new UsersFavourites(drivers,starts,ends));
       }
       conn.close();
       pstmt.close();
