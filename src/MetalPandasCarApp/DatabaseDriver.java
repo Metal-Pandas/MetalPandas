@@ -16,6 +16,7 @@ public class DatabaseDriver {
   private static String querySQL;
   private static String sql;
   private static String sqlQuery;
+  private static String sqlString;
 
   private static Connection conn;
   private static PreparedStatement pstmt;
@@ -24,6 +25,7 @@ public class DatabaseDriver {
   private static ArrayList<UsersCardPayment> userCardPayment = new ArrayList();
   private static ArrayList<UsersSchedule> userSchedule = new ArrayList();
   private static ArrayList<UsersPayment> userPayment = new ArrayList();
+  private static ObservableList<UsersFavourites> userFavourites = FXCollections.observableArrayList();
 
   public static Connection initializeDB() {
     // Connection establish.
@@ -287,5 +289,54 @@ public class DatabaseDriver {
       exception.printStackTrace();
     }
     return userPayment;
+  }
+
+  public static void createFavouriteInDb(String[] favouritesSignUp) throws SQLException {
+    initializeDB();
+    try {
+      sqlQuery = "INSERT INTO FAVOURITES(DRIVER, STARTDESTINATION, ENDDESTINATION) VALUES (?,?,?)";
+
+      pstmt = conn.prepareStatement(sqlQuery);
+
+      int i = 1;
+      for (String str4 : favouritesSignUp) {
+        pstmt.setString(i, str4);
+        i++;
+      }
+      pstmt.executeUpdate();
+
+      System.out.println("Added!");
+    } catch (NullPointerException e) {
+      e.printStackTrace();
+    }
+    conn.close();
+    pstmt.close();
+  }
+
+  public static ObservableList<UsersFavourites> getFavouritesInfo(String driver) {
+    try {
+      initializeDB();
+
+      sqlString = "SELECT * FROM FAVOURITES WHERE DRIVER = ?";
+
+      pstmt = conn.prepareStatement(sqlString);
+
+      pstmt.setString(1,driver);
+
+      ResultSet rs = pstmt.executeQuery();
+
+      while (rs.next()) {
+        driver = rs.getString("driver");
+        String start = rs.getString("startDestination");
+        String end = rs.getString("endDestination");
+
+        userFavourites.add(new UsersFavourites(driver,start,end));
+      }
+      conn.close();
+      pstmt.close();
+    } catch (SQLException exception) {
+      exception.printStackTrace();
+    }
+    return userFavourites;
   }
 }
