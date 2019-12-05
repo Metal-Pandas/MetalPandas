@@ -10,5 +10,6 @@
     <file url="file://$PROJECT_DIR$/src/MetalPandasCarApp/PandaHome.java" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/src/MetalPandasCarApp/PandaLogin.java" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/src/MetalPandasCarApp/PandaProfile.java" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/src/MetalPandasCarApp/PandaReset.java" dialect="GenericSQL" />
   </component>
 </project>

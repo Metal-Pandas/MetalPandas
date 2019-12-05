@@ -13,6 +13,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -37,54 +38,57 @@ public class PandaLogin {
   private ObservableList<Users> userList = FXCollections.observableArrayList();
 
   public void handleLoginAction(ActionEvent actionEvent) throws SQLException {
-    Connection conn = DatabaseDriver.initializeDB();
-    String getEmail = loginEmail.getText();
-    String getPassword = loginPassword.getText();
-    String sql = "SELECT * FROM USER WHERE EMAIL = ? AND PASSWORD = ?";
+      Connection conn = DatabaseDriver.initializeDB();
+      String getEmail = loginEmail.getText();
+      String getPassword = loginPassword.getText();
+      String sql = "SELECT * FROM USER WHERE EMAIL = ? AND PASSWORD = ?";
 
-    PreparedStatement pstmt = conn.prepareStatement(sql);
-    pstmt.setString(1, getEmail);
-    pstmt.setString(2, getPassword);
-    ResultSet rs = pstmt.executeQuery();
+      PreparedStatement pstmt = conn.prepareStatement(sql);
+      pstmt.setString(1, getEmail);
+      pstmt.setString(2, getPassword);
+      ResultSet rs = pstmt.executeQuery();
 
-    String dbEmail = "";
-    String dbPassword = "";
+      String dbEmail = "";
+      String dbPassword = "";
 
-    while (rs.next()) {
-      dbEmail = rs.getString("Email");
-      dbPassword = rs.getString("Password");
-    }
-
-    if ((getEmail.equals(dbEmail)) && (getPassword.equals(dbPassword))) {
-      System.out.println(
-          "GetEmail ="
-              + getEmail
-              + " DB Email  ="
-              + dbEmail
-              + "  getPass ="
-              + getPassword
-              + "  dbPass="
-              + dbPassword);
-      try {
-        Parent homePageParent = FXMLLoader.load(getClass().getResource("pandaHome.fxml"));
-        Scene homePageScene = new Scene(homePageParent);
-        Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-        homeStage.setScene(homePageScene);
-        homeStage.show();
-      } catch (IOException e) {
-        e.printStackTrace();
+      while (rs.next()) {
+        dbEmail = rs.getString("Email");
+        dbPassword = rs.getString("Password");
       }
-      System.out.println("Welcome Back!");
-    } else {
-      Alert a = new Alert(Alert.AlertType.NONE);
-      a.setAlertType(Alert.AlertType.WARNING);
-      a.setContentText("Incorrect Email/Password. Don't have an account? Sign up!");
-      a.show();
+
+      if ((getEmail.equals(dbEmail)) && (getPassword.equals(dbPassword))) {
+        System.out.println(
+            "GetEmail ="
+                + getEmail
+                + " DB Email  ="
+                + dbEmail
+                + "  getPass ="
+                + getPassword
+                + "  dbPass="
+                + dbPassword);
+        try {
+          Parent homePageParent = FXMLLoader.load(getClass().getResource("pandaHome.fxml"));
+          Scene homePageScene = new Scene(homePageParent);
+          Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+          homeStage.setScene(homePageScene);
+          homeStage.show();
+        } catch (IOException e) {
+          e.printStackTrace();
+        }
+        Alert a = new Alert(Alert.AlertType.NONE);
+        a.setAlertType(AlertType.INFORMATION);
+        a.setContentText("Welcome Back!");
+        a.show();
+      } else {
+        Alert a = new Alert(Alert.AlertType.NONE);
+        a.setAlertType(Alert.AlertType.WARNING);
+        a.setContentText("Incorrect Email/Password. Don't have an account? Sign up!");
+        a.show();
+      }
+      UsersInfo.userProfilesGlobal = DatabaseDriver.getUserInfo(dbEmail);
+      userList = DatabaseDriver.getUserInfo(dbEmail);
+      conn.close();
     }
-    UsersInfo.userProfilesGlobal = DatabaseDriver.getUserInfo(dbEmail);
-    userList = DatabaseDriver.getUserInfo(dbEmail);
-    conn.close();
-  }
 
   public void handleForgotEmailAction(MouseEvent mouseEvent) throws IOException {
     Parent homePageParent = FXMLLoader.load(getClass().getResource("pandaForgotEmail.fxml"));
@@ -109,4 +113,5 @@ public class PandaLogin {
     homeStage.setScene(homePageScene);
     homeStage.show();
   }
+
 }

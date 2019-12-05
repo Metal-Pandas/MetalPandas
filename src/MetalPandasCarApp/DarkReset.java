@@ -1,6 +1,10 @@
 package MetalPandasCarApp;
 
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -24,32 +28,30 @@ public class DarkReset {
   @FXML public Text resetPasswordLabel;
   @FXML public Pane backDrop;
 
-  public void handleConfirmAction(ActionEvent actionEvent) throws IOException{
-    if (password.getText().equals("")){
-      Alert confirmPopUp = new Alert(Alert.AlertType.NONE);
-      confirmPopUp.setAlertType(AlertType.WARNING);
-      confirmPopUp.setContentText("Please enter a new Password.");
-      confirmPopUp.show();
-    }
+  public void handleConfirmAction(ActionEvent actionEvent) throws IOException, SQLException {
+    Users currentUser = UsersInfo.userProfilesGlobal.get(0);
 
-    else if (password.getText().equals(reenterPassword.getText())) {
-      Parent homePageParent = FXMLLoader.load(getClass().getResource("darkLogin.fxml"));
-      Scene homePageScene = new Scene(homePageParent);
-      Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-      homeStage.setScene(homePageScene);
-      homeStage.show();
+    Connection conn = DatabaseDriver.initializeDB();
+    String sql =
+        "UPDATE USER SET PASSWORD = ? WHERE PASSWORD= '"
+            + currentUser.getPassword()
+            + "'";
 
-      Alert confirmPopUp = new Alert(Alert.AlertType.NONE);
-      confirmPopUp.setAlertType(AlertType.INFORMATION);
-      confirmPopUp.setContentText("Password has been changed! Thank you!");
-      confirmPopUp.show();
-    }
+    PreparedStatement pstmt = conn.prepareStatement(sql);
 
-    else if(!password.getText().equals(reenterPassword.getText())){
-      Alert confirmPopUp = new Alert(Alert.AlertType.NONE);
-      confirmPopUp.setAlertType(AlertType.WARNING);
-      confirmPopUp.setContentText("Passwords do not match.");
-      confirmPopUp.show();
-    }
+    pstmt.setString(1, password.getText());
+
+    pstmt.executeUpdate();
+
+    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+    alert.setTitle("Information Dialog");
+    alert.setHeaderText("Your password has been updated");
+    alert.showAndWait();
+
+    Parent homePageParent = FXMLLoader.load(getClass().getResource("darkLogin.fxml"));
+    Scene homePageScene = new Scene(homePageParent);
+    Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+    homeStage.setScene(homePageScene);
+    homeStage.show();
   }
 }

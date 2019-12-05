@@ -12,9 +12,9 @@
 <AnchorPane fx:id="paymentBackground" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MetalPandasCarApp.DarkPayments">
   <Pane fx:id="backDrop" layoutX="194.0" layoutY="22.0" prefHeight="331.0" prefWidth="383.0" />
   <Button fx:id="backButton" layoutX="550.0" layoutY="361.0" mnemonicParsing="false" onAction="#handleBackAction" text="Back" />
-  <Text layoutX="404.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="*All trips cost $10" wrappingWidth="139.8125">
+  <Text layoutX="404.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" text="*All trips cost $10" wrappingWidth="149.0">
     <font>
-      <Font name="Monospaced Bold" size="12.0" />
+      <Font name="Monospaced Regular" size="13.0" />
     </font>
   </Text>
   <Text fx:id="paymentTitle" layoutX="282.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Payment">
@@ -23,11 +23,11 @@
     </font></Text>
   <Text fx:id="selectPaymentLabel" layoutX="211.0" layoutY="123.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select Payment Option:">
     <font>
-      <Font name="Monospaced Bold" size="13.0" />
+      <Font name="Monospaced Regular" size="13.0" />
     </font></Text>
   <Text fx:id="tipLabel" layoutX="285.0" layoutY="203.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tip:">
     <font>
-      <Font name="Monospaced Bold" size="13.0" />
+      <Font name="Monospaced Regular" size="13.0" />
     </font></Text>
   <Button fx:id="addPaymentMethod" layoutX="245.0" layoutY="317.0" mnemonicParsing="false" onAction="#handleAddPaymentAction" text="Add Payment Method" />
   <ComboBox fx:id="paymentOption" layoutX="400.0" layoutY="107.0" prefWidth="150.0" />
@@ -36,7 +36,7 @@
   <TextField fx:id="totalCostAmount" layoutX="400.0" layoutY="266.0" />
   <Text fx:id="totalCostLabel" layoutX="256.0" layoutY="283.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Cost:">
     <font>
-      <Font name="Monospaced Bold" size="13.0" />
+      <Font name="Monospaced Regular" size="13.0" />
     </font>
   </Text>
   <Button fx:id="calcTotal" layoutX="456.0" layoutY="218.0" mnemonicParsing="false" onAction="#handleCalcPayment" text="Calculate Total" />
