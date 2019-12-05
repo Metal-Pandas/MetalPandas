@@ -87,7 +87,7 @@
           <ComboBox fx:id="endDestination" layoutX="427.0" layoutY="240.0" prefHeight="25.0" prefWidth="157.0" promptText="END DESTINATION" />
           <Button fx:id="addToFavourites" layoutX="455.0" layoutY="289.0" mnemonicParsing="false" onAction="#handleAddFavouritesAction" text="Add to Favourites" />
         </AnchorPane>
-        <Button fx:id="scheduleButton" mnemonicParsing="false" onAction="#handleScheduleAction" text="Schedule a pick up!" StackPane.alignment="BOTTOM_LEFT">
+        <Button fx:id="scheduleButton" mnemonicParsing="false" onAction="#handleScheduleAction" text="Schedule a pick up!" StackPane.alignment="BOTTOM_CENTER">
           <StackPane.margin>
             <Insets bottom="10.0" left="10.0" />
           </StackPane.margin>
