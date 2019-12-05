@@ -28,6 +28,13 @@
         <Button fx:id="menuButton" mnemonicParsing="false" onAction="#handleMenuAction" text="Menu" />
       </ToolBar>
       <StackPane prefHeight="387.0" prefWidth="598.0">
+        <TableView fx:id="favouritesTable" maxHeight="400.0" maxWidth="600.0" minHeight="0.0" minWidth="0.0" prefHeight="363.0" prefWidth="400.0" StackPane.alignment="CENTER_RIGHT">
+          <columns>
+            <TableColumn fx:id="driver" prefWidth="114.0" text="Driver" />
+            <TableColumn fx:id="startDestination" minWidth="0.0" prefWidth="116.0" text="Start Destination" />
+            <TableColumn fx:id="endDestination" prefWidth="178.0" text="End Destination" />
+          </columns>
+        </TableView>
         <HBox fx:id="hBox" prefHeight="100.0" prefWidth="200.0" visible="false">
           <VBox fx:id="drawer" prefHeight="353.0" prefWidth="195.0">
             <GridPane prefHeight="160.0" prefWidth="195.0">
@@ -59,13 +66,6 @@
             </GridPane>
           </VBox>
         </HBox>
-        <TableView fx:id="favouritesTable" maxHeight="400.0" maxWidth="600.0" minHeight="0.0" minWidth="0.0" prefHeight="363.0" prefWidth="400.0" StackPane.alignment="CENTER_RIGHT">
-          <columns>
-            <TableColumn fx:id="driver" prefWidth="114.0" text="Driver" />
-            <TableColumn fx:id="startDestination" minWidth="0.0" prefWidth="116.0" text="Start Destination" />
-            <TableColumn fx:id="endDestination" prefWidth="178.0" text="End Destination" />
-          </columns>
-        </TableView>
       </StackPane>
     </VBox>
   </SplitPane>
