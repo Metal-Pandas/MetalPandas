@@ -65,29 +65,29 @@
             </GridPane>
           </VBox>
         </HBox>
-        <AnchorPane prefHeight="200.0" prefWidth="200.0">
-          <Pane fx:id="backDrop" layoutX="415.0" prefHeight="325.0" prefWidth="178.0" />
-               <Label layoutX="453.0" layoutY="12.0" text="Driver:">
+        <AnchorPane maxWidth="178.0" minWidth="178.0" prefHeight="363.0" prefWidth="178.0" StackPane.alignment="TOP_RIGHT">
+          <Pane fx:id="backDrop" layoutX="4.0" layoutY="9.0" prefHeight="325.0" prefWidth="178.0" />
+               <Label layoutX="38.0" layoutY="12.0" text="Driver:">
                   <font>
                      <Font name="Monospaced Regular" size="26.0" />
                   </font>
                </Label>
-               <ComboBox fx:id="driver" layoutX="427.0" layoutY="60.0" prefHeight="25.0" prefWidth="157.0" promptText="DRIVER" />
-          <Label layoutX="463.0" layoutY="107.0" text="Start:">
+               <ComboBox fx:id="driver" layoutX="12.0" layoutY="60.0" prefHeight="25.0" prefWidth="157.0" promptText="DRIVER" />
+          <Label layoutX="48.0" layoutY="107.0" text="Start:">
             <font>
               <Font name="Monospaced Regular" size="26.0" />
             </font>
           </Label>
-          <ComboBox fx:id="startDestination" layoutX="427.0" layoutY="146.0" prefHeight="25.0" prefWidth="157.0" promptText="START DESTINATION" />
-          <Label layoutX="473.0" layoutY="192.0" text="End:">
+          <ComboBox fx:id="startDestination" layoutX="12.0" layoutY="146.0" prefHeight="25.0" prefWidth="157.0" promptText="START DESTINATION" />
+          <Label layoutX="58.0" layoutY="192.0" text="End:">
             <font>
               <Font name="Monospaced Regular" size="26.0" />
             </font>
           </Label>
-          <ComboBox fx:id="endDestination" layoutX="427.0" layoutY="240.0" prefHeight="25.0" prefWidth="157.0" promptText="END DESTINATION" />
-          <Button fx:id="addToFavourites" layoutX="455.0" layoutY="289.0" mnemonicParsing="false" onAction="#handleAddFavouritesAction" text="Add to Favourites" />
+          <ComboBox fx:id="endDestination" layoutX="12.0" layoutY="240.0" prefHeight="25.0" prefWidth="157.0" promptText="END DESTINATION" />
+          <Button fx:id="addToFavourites" layoutX="40.0" layoutY="289.0" mnemonicParsing="false" onAction="#handleAddFavouritesAction" text="Add to Favourites" />
         </AnchorPane>
-        <Button fx:id="scheduleButton" mnemonicParsing="false" onAction="#handleScheduleAction" text="Schedule a pick up!" StackPane.alignment="BOTTOM_LEFT">
+        <Button fx:id="scheduleButton" mnemonicParsing="false" onAction="#handleScheduleAction" text="Schedule a pick up!" StackPane.alignment="BOTTOM_CENTER">
           <StackPane.margin>
             <Insets bottom="10.0" left="10.0" />
           </StackPane.margin>
