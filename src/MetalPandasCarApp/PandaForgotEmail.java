@@ -56,7 +56,7 @@ public class PandaForgotEmail {
       System.out.println("GetPhoneNumber =" + phoneNumber);
       Alert a = new Alert(Alert.AlertType.NONE);
       a.setAlertType(AlertType.INFORMATION);
-      a.setContentText("Text has been sent!");
+      a.setContentText("A text has been sent!");
       a.show();
 
       Parent homePageParent = FXMLLoader.load(getClass().getResource("pandaLogin.fxml"));
