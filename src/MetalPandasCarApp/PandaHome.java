@@ -143,8 +143,14 @@ public class PandaHome {
     pstmt.close();
   }
 
-  public void handleAddFavouritesAction(MouseEvent mouseEvent) {
-    if(driver.getValue().equals("") || startDestination.getValue().equals("") || endDestination.getValue().equals("")){
+  public void handleAddFavouritesAction(MouseEvent mouseEvent) throws SQLException {
+    Connection conn = DatabaseDriver.initializeDB();
+
+
+
+    if(driver.getValue().equals("") ||
+        startDestination.getValue().equals("") ||
+        endDestination.getValue().equals("")){
       Alert a = new Alert(Alert.AlertType.NONE);
       a.setAlertType(AlertType.WARNING);
       a.setContentText("All information was not entered! Please enter all fields and try again!");
@@ -156,6 +162,7 @@ public class PandaHome {
       a.setContentText("Information has been added to your favourites!");
       a.show();
     }
+    conn.close();
   }
 
 }
