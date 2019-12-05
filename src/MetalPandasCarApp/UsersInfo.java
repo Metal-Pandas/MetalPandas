@@ -8,4 +8,5 @@ class UsersInfo {
 
   static ObservableList<UsersSchedule> usersScheduleGlobal = FXCollections.observableArrayList();
 
+  static ObservableList<UsersFavourites> usersFavouritesGlobal = FXCollections.observableArrayList();
 }

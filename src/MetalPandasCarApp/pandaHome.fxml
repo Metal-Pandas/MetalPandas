@@ -66,7 +66,7 @@
           </VBox>
         </HBox>
         <AnchorPane maxWidth="178.0" minWidth="178.0" prefHeight="363.0" prefWidth="178.0" StackPane.alignment="TOP_RIGHT">
-          <Pane fx:id="backDrop" prefHeight="325.0" prefWidth="178.0" />
+          <Pane fx:id="backDrop" layoutX="4.0" layoutY="9.0" prefHeight="325.0" prefWidth="178.0" />
                <Label layoutX="38.0" layoutY="12.0" text="Driver:">
                   <font>
                      <Font name="Monospaced Regular" size="26.0" />
@@ -85,7 +85,7 @@
             </font>
           </Label>
           <ComboBox fx:id="endDestination" layoutX="12.0" layoutY="240.0" prefHeight="25.0" prefWidth="157.0" promptText="END DESTINATION" />
-          <Button fx:id="addToFavourites" layoutX="40.0" layoutY="289.0" mnemonicParsing="false" onMouseClicked="#handleAddFavouritesAction" text="Add to Favourites" />
+          <Button fx:id="addToFavourites" layoutX="40.0" layoutY="289.0" mnemonicParsing="false" onAction="#handleAddFavouritesAction" text="Add to Favourites" />
         </AnchorPane>
         <Button fx:id="scheduleButton" mnemonicParsing="false" onAction="#handleScheduleAction" text="Schedule a pick up!" StackPane.alignment="BOTTOM_CENTER">
           <StackPane.margin>
