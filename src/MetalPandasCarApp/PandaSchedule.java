@@ -24,9 +24,9 @@ public class PandaSchedule {
   @FXML public AnchorPane scheduleBackground;
   @FXML public Text selectDateLabel;
   @FXML public ComboBox<String> scheduleMonth;
-  @FXML public ComboBox<Integer> scheduleDay;
+  @FXML public ComboBox<String> scheduleDay;
   @FXML public Text selectTimeLabel;
-  @FXML public ComboBox<Integer> hour;
+  @FXML public ComboBox<String> hour;
   @FXML public ComboBox<String> minute;
   @FXML public ComboBox<String> amPm;
   @FXML public Button schedule;
@@ -51,7 +51,7 @@ public class PandaSchedule {
       homeStage.setScene(homePageScene);
       homeStage.show();
     }
-  }
+}
 
   public void handleBackAction(ActionEvent actionEvent) throws IOException {
     Parent homePageParent = FXMLLoader.load(getClass().getResource("pandaHome.fxml"));
@@ -79,9 +79,10 @@ public class PandaSchedule {
               "December"));
       scheduleDay.setItems(
           FXCollections.observableArrayList(
-              1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24,
-              25, 26, 27, 28, 29, 30, 31));
-      hour.setItems(FXCollections.observableArrayList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12));
+              "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13",
+              "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27",
+              "28", "29", "30", "31"));
+      hour.setItems(FXCollections.observableArrayList("1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"));
       minute.setItems(
           FXCollections.observableArrayList(
               "00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13",
