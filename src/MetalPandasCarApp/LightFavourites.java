@@ -39,35 +39,36 @@ public class LightFavourites implements Initializable {
   @FXML public Button profileButton;
   @FXML public Button homeButton;
   @FXML public Button logoutButton;
-  @FXML public TableView<Users> favouritesTable;
-  @FXML public TableColumn<?, ?> driverLastName;
-  @FXML public TableColumn<?, ?> driverFirstName;
-  @FXML public TableColumn<?, ?> driverRating;
-  @FXML public TableColumn<?, ?> previousDestination;
+  @FXML public TableView<UsersFavourites> favouritesTable;
+  @FXML public TableColumn<?,?> driver;
+  @FXML public TableColumn<?, ?> startDestination;
+  @FXML public TableColumn<?, ?> endDestination;
   @FXML public Button schedules;
 
-  private void setFavouritesTable(ObservableList<Users> userProfilesGlobal) {
+  private void setFavouritesTable(ObservableList<UsersFavourites> usersFavourites) {
     try {
       Connection conn = DatabaseDriver.initializeDB();
 
-      String sql = "SELECT * FROM USER";
+      String sql = "SELECT * FROM FAVOURITES";
 
       Statement stmt = conn.createStatement();
 
       ResultSet rs = stmt.executeQuery(sql);
 
       while (rs.next()) {
-        String firstName = rs.getString(2);
-        String lastName = rs.getString(3);
+        String driverDes = rs.getString(1);
+        String startDes = rs.getString(2);
+        String endDes = rs.getString(3);
 
-        Users items = new Users(firstName, lastName);
-        userProfilesGlobal.add(items);
+        UsersFavourites items = new UsersFavourites(driverDes,startDes,endDes);
+        usersFavourites.add(items);
       }
 
-      favouritesTable.setItems(userProfilesGlobal);
+      favouritesTable.setItems(usersFavourites);
 
-      driverFirstName.setCellValueFactory(new PropertyValueFactory("firstName"));
-      driverLastName.setCellValueFactory(new PropertyValueFactory("lastName"));
+      driver.setCellValueFactory(new PropertyValueFactory<>("driver"));
+      startDestination.setCellValueFactory(new PropertyValueFactory<>("startDestination"));
+      endDestination.setCellValueFactory(new PropertyValueFactory<>("endDestination"));
 
       conn.close();
       stmt.close();
@@ -75,7 +76,6 @@ public class LightFavourites implements Initializable {
     } catch (SQLException e) {
       e.printStackTrace();
     }
-
   }
 
   public void handleMenuAction(ActionEvent actionEvent) {
@@ -130,7 +130,6 @@ public class LightFavourites implements Initializable {
 
   @Override
   public void initialize(URL url, ResourceBundle resourceBundle) {
-
-    setFavouritesTable(UsersInfo.userProfilesGlobal);
+    setFavouritesTable(UsersInfo.usersFavouritesGlobal);
   }
 }
