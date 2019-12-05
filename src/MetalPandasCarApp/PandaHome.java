@@ -25,6 +25,7 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.SplitPane;
 import javafx.scene.control.ToolBar;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
@@ -142,10 +143,26 @@ public class PandaHome {
     pstmt.close();
   }
 
-  public void handleAddFavouritesAction(ActionEvent actionEvent) {
-    Alert a = new Alert(Alert.AlertType.NONE);
-    a.setAlertType(AlertType.INFORMATION);
-    a.setContentText("Information has been added to your favourites!");
-    a.show();
+  public void handleAddFavouritesAction(MouseEvent mouseEvent) throws SQLException {
+    Connection conn = DatabaseDriver.initializeDB();
+
+
+
+    if(driver.getValue().equals("") ||
+        startDestination.getValue().equals("") ||
+        endDestination.getValue().equals("")){
+      Alert a = new Alert(Alert.AlertType.NONE);
+      a.setAlertType(AlertType.WARNING);
+      a.setContentText("All information was not entered! Please enter all fields and try again!");
+      a.show();
+    }
+    else{
+      Alert a = new Alert(Alert.AlertType.NONE);
+      a.setAlertType(AlertType.INFORMATION);
+      a.setContentText("Information has been added to your favourites!");
+      a.show();
+    }
+    conn.close();
   }
+
 }

@@ -13,6 +13,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -81,7 +82,10 @@ public class PandaLogin {
         } catch (IOException e) {
           e.printStackTrace();
         }
-        System.out.println("Welcome Back!");
+        Alert a = new Alert(Alert.AlertType.NONE);
+        a.setAlertType(AlertType.INFORMATION);
+        a.setContentText("Welcome Back!");
+        a.show();
       } else {
         Alert a = new Alert(Alert.AlertType.NONE);
         a.setAlertType(Alert.AlertType.WARNING);
