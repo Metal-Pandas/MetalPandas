@@ -38,6 +38,12 @@ public class PandaLogin {
   private ObservableList<Users> userList = FXCollections.observableArrayList();
 
   public void handleLoginAction(ActionEvent actionEvent) throws SQLException {
+    if(loginEmail.getText().equals("") || loginPassword.getText().equals("")){
+      Alert a = new Alert(Alert.AlertType.NONE);
+      a.setAlertType(Alert.AlertType.WARNING);
+      a.setContentText("Incorrect Email/Password. Don't have an account? Sign up!");
+      a.show();
+    }else{
       Connection conn = DatabaseDriver.initializeDB();
       String getEmail = loginEmail.getText();
       String getPassword = loginPassword.getText();
@@ -79,16 +85,12 @@ public class PandaLogin {
         a.setAlertType(AlertType.INFORMATION);
         a.setContentText("Welcome Back!");
         a.show();
-      } else {
-        Alert a = new Alert(Alert.AlertType.NONE);
-        a.setAlertType(Alert.AlertType.WARNING);
-        a.setContentText("Incorrect Email/Password. Don't have an account? Sign up!");
-        a.show();
       }
       UsersInfo.userProfilesGlobal = DatabaseDriver.getUserInfo(dbEmail);
       userList = DatabaseDriver.getUserInfo(dbEmail);
       conn.close();
     }
+  }
 
   public void handleForgotEmailAction(MouseEvent mouseEvent) throws IOException {
     Parent homePageParent = FXMLLoader.load(getClass().getResource("pandaForgotEmail.fxml"));
