@@ -6,14 +6,15 @@ profile, payment, and area they are providing or using the service. The user wil
 # Authors
 - Kathryn Campo
 - Jana Grunewald
-- Odalys Martinez
+- Odalys Martinez-Villa
 - Kevin Mak
 - Nick Wright
 - Owen Rose
 
 ## Demonstration
-You can find a video of our Alpha Build below:
+- You can find a video of our Alpha Build below:
 https://youtu.be/nQOjyDzGnyU
+- Here is a video of our final deliverable: https://youtu.be/MwK8OBSgO2U
 
 ## Documentation
 JavaDocs in IDE.
@@ -46,5 +47,6 @@ Stack Overflow, Scenebuilder, IntelliJ
 11/09/2019 The beta of our prototype has integrated googlemaps API, a rating system for drivers, additional payment pages and increased 
           database functionality.
 
-12/5/2019 The final beta of our prototype was submitted and shown to the class. Overall the program is mostly functional.
+12/5/2019 The final beta of our prototype was submitted and shown to the class. Overall the program is mostly functional. Users can now update their profile, schedule a ride, create favorites, add a payment method and pay for a ride. The dark and light theme now work with all the scenes properly. User-friendly error messages now pop up whenever a user enters a wrong credential and when a user leaves a field blank.
+
 

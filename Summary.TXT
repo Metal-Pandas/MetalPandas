@@ -1,0 +1,242 @@
+﻿a bulleted list of the main functionality in each scene
+
+
+* darkAddPayments
+1. The user will select payment type.
+2. The user will enter payment information.
+3. The user will confirm payment by clicked the confirm button.
+4. The user can go to the previous scene by clicking the back button.
+5. The user can access the menu and menu options
+* darkAppointments
+1. The user can see the different rides they have scheduled. 
+2. The user can view scheduled trips and previous trips
+* darkDriverCarInformation
+1. The user can register their car.
+* darkDriverEdit
+1. The user can click the Edit button to select a profile picture from their files.
+2. The user can enter personal information to create a profile. 
+3. The user can select whether they are a driver or passenger.
+4. The user can select their gender.
+5. The user can click the Update! button to save their information in their account
+* darkDriverHome
+1. The user can choose a ride to complete from a table.
+2. * darkDriverProfile
+1. The user may edit first and last name
+2. The user may edit their address
+3. The user may change their user status and gender
+4. The user may update their phone number
+5. The user may update their profile picture
+* darkDriverRating
+1. The user is able to rate their passengers on a scale of 1 - 5.
+* darkDriverSchedule
+1. The user can see their schedule for the day and plan accordingly.
+* darkEdit
+1. The user can click the Edit button to select a profile picture from their files.
+2. The user can enter personal information to create a profile. 
+3. The user can select whether they are a driver or passenger.
+4. The user can select their gender.
+5. The user can click the Update! button to save their information in their account
+* darkFavourites
+1. The user can see the destinations they use frequently.
+2. The user can see the drivers they have used and liked.
+* darkForgotEmail
+1. The user can enter their phone number they used when creating an account.
+2. The user can click confirm to receive a pop up that says a text has been sent to them.
+3. The user can click the back button to return to the login scene.
+* darkForgotPassword
+1. The user can enter their phone number.
+2. The user can enter their email. 
+3. The user can click the confirm button to go to the reset password scene.
+4. The user can click the back button to return to the login scene.
+* darkHome
+1. The user can see the time it takes to travel from one destination to the next via google maps. 
+2. The user can add a driver and destinations to their favourites.
+3. The user is able to start the process of booking a car ride.
+* darkLogin
+1. The user can enter their email in the Email: textfield.
+2. The user can enter their password in the Password: textfield.
+3. The user can click the forgot password link to switch to the forgot email scene.
+4. The user can click the forgot password link to switch to the forgot password scene.
+5. The user can click the Login button to login to their account.
+6. The user can click the Sign Up button to switch to the sign up scene
+* darkPayments
+1. The user may choose a payment type
+2. The user may insert payment information
+3. The user may select a tip amount and receive an updated total
+4. The user may record a payment 
+* darkProfile
+1. The user may edit first and last name
+2. The user may edit their address
+3. The user may change their user status and gender
+4. The user may update their phone number
+5. The user may update their profile picture
+* darkProfileRating
+1. The user is able to rate their driver on a scale of 1 - 5.
+* darkReset
+1. The user may reset their username and password from this page
+* darkSchedule
+1. The user may schedule a ride with date and time with the schedule button
+* darkSignUp
+1. The user will create an account with basic profile information including name, date, age, profile type, gender and contact information.
+* lightAddPayments
+1. The user will select payment type.
+2. The user will enter payment information.
+3. The user will confirm payment by clicked the confirm button.
+4. The user can go to the previous scene by clicking the back button.
+5. The user can access the menu and menu options
+* lightAppointments
+1. The user can see the different rides they have scheduled. 
+2. The user can view scheduled trips and previous trips
+* lightDriverCarInformation
+1. The user can register their car.
+* lightDriverEdit
+1. The user can click the Edit button to select a profile picture from their files.
+2. The user can enter personal information to create a profile. 
+3. The user can select whether they are a driver or passenger.
+4. The user can select their gender.
+5. The user can click the Update! button to save their information in their 
+* lightDriverHome
+1. The user can choose a ride to complete.
+* lightDriverProfile
+1. The user may edit first and last name
+2. The user may edit their address
+3. The user may change their user status and gender
+4. The user may update their phone number
+5. The user may update their profile picture
+* lightDriverRating
+1. The user is able to rate their passengers on a scale of 1 - 5.
+* lightDriverSchedule
+1. The user can see their schedule for the day and plan accordingly.
+* lightEdit
+1. The user can click the Edit button to select a profile picture from their files.
+2. The user can enter personal information to create a profile. 
+3. The user can select whether they are a driver or passenger.
+4. The user can select their gender.
+5. The user can click the Update! button to save their information in their account
+* lightFavourites
+1. The user will see favorited drivers or passengers on this page.
+* lightForgotEmail
+1. The user can enter their phone number they used when creating an account.
+2. The user can click confirm to receive a pop up that says a text has been sent to them.
+3. The user can click the back button to return to the login scene.
+* lightForgotPassword
+1. The user can enter their phone number.
+2. The user can enter their email. 
+3. The user can click the confirm button to go to the reset password scene.
+4. The user can click the back button to return to the login scene.
+* lightHome
+1. The user can see the time it takes to travel from one destination to the next via google maps. 
+2. The user can add a driver and destinations to their favourites.
+3. The user is able to start the process of booking a car ride.
+* lightLogin
+1. The user can enter their email in the Email: textfield.
+2. The user can enter their password in the Password: textfield.
+3. The user can click the forgot password link to switch to the forgot email scene.
+4. The user can click the forgot password link to switch to the forgot password scene.
+5. The user can click the Login button to login to their account.
+6. The user can click the Sign Up button to switch to the sign up scene
+* lightPayments
+1. The user may choose a payment type
+2. The user may insert payment information
+3. The user may select a tip amount and receive an updated total
+4. The user may record a payment 
+* lightProfile
+1. The user may edit first and last name
+2. The user may edit their address
+3. The user may change their user status and gender
+4. The user may update their phone number
+5. The user may update their profile picture
+* lightProfileRating
+1. The user is able to rate their driver on a scale of 1 - 5.
+* lightReset
+1. The user is able to reset their email and password.
+* lightSchedule
+1. The user may schedule a ride with date and time with the schedule button
+* lightSignUp
+1. The user can click the Edit button to select a profile picture from their files.
+2. The user can enter personal information to create a profile. 
+3. The user can select whether they are a driver or passenger.
+4. The user can select their gender.
+5. The user can click the Sign Up! button to save their information in their account
+* pandaAddPayments
+1. The user will select payment type.
+2. The user will enter payment information.
+3. The user will confirm payment by clicked the confirm button.
+4. The user can go to the previous scene by clicking the back button.
+5. The user can access the menu and menu options
+
+
+* pandaAppointments
+1. The user can see the different rides they have scheduled. 
+2. The user can view scheduled trips and previous trips
+* pandaDriverCarInformation
+1. The user can register their car.
+* pandaDriverEdit
+1. The user can click the Edit button to select a profile picture from their files.
+2. The user can enter personal information to create a profile. 
+3. The user can select whether they are a driver or passenger.
+4. The user can select their gender.
+5. The user can click the Update! button to save their information in their account
+* pandaDriverHome
+1. The user can choose a ride to complete.
+* pandaDriverProfile
+1. The user may edit first and last name
+2. The user may edit their address
+3. The user may change their user status and gender
+4. The user may update their phone number
+5. The user may update their profile picture
+* pandaDriverRating
+1. The user is able to rate their passengers on a scale of 1 - 5.
+* pandaDriverSchedule
+1. The user can see their schedule for the day and plan accordingly.
+* pandaEdit
+1. The user can click the Edit button to select a profile picture from their files.
+2. The user can enter personal information to create a profile. 
+3. The user can select whether they are a driver or passenger.
+4. The user can select their gender.
+5. The user can click the Update! button to save their information in their account
+* pandaFavourites
+1. The user will see favorited drivers or passengers on this page.
+* pandaForgotEmail
+1. The user can enter their phone number they used when creating an account.
+2. The user can click confirm to receive a pop up that says a text has been sent to them.
+3. The user can click the back button to return to the login scene.
+* pandaForgotPassword
+1. The user can enter their phone number.
+2. The user can enter their email. 
+3. The user can click the confirm button to go to the reset password scene.
+4. The user can click the back button to return to the login scene.
+* pandaHome
+1. The user can see the time it takes to travel from one destination to the next via google maps. 
+2. The user can add a driver and destinations to their favourites.
+3. The user is able to start the process of booking a car ride.
+* pandaLogin
+1. The user can enter their email in the Email: textfield.
+2. The user can enter their password in the Password: textfield.
+3. The user can click the forgot password link to switch to the forgot email scene.
+4. The user can click the forgot password link to switch to the forgot password scene.
+5. The user can click the Login button to login to their account.
+6. The user can click the Sign Up button to switch to the sign up scene
+* pandaPayments
+1. The user may choose a payment type
+2. The user may insert payment information
+3. The user may select a tip amount and receive an updated total
+4. The user may record a payment 
+* pandaProfile
+1. The user may edit first and last name
+2. The user may edit their address
+3. The user may change their user status and gender
+4. The user may update their phone number
+5. The user may update their profile picture
+* pandaProfileRating
+1. The user is able to rate their driver on a scale of 1 - 5.
+* pandaReset
+1. The user may reset their password from this page
+* pandaSchedule
+1. The user may schedule a ride with date and time with the schedule button
+* pandaSignUp
+1. The user can click the Edit button to select a profile picture from their files.
+2. The user can enter personal information to create a profile. 
+3. The user can select whether they are a driver or passenger.
+4. The user can select their gender.
+5. The user can click the Sign Up! button to save their information in their account

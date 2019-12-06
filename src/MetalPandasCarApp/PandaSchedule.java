@@ -61,6 +61,7 @@ public class PandaSchedule {
   }
 
   public void handleBackAction(ActionEvent actionEvent) throws IOException {
+    addSchedule();
     Parent homePageParent = FXMLLoader.load(getClass().getResource("pandaHome.fxml"));
     Scene homePageScene = new Scene(homePageParent);
     Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
