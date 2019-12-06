@@ -15,6 +15,7 @@ profile, payment, and area they are providing or using the service. The user wil
 - You can find a video of our Alpha Build below:
 https://youtu.be/nQOjyDzGnyU
 - Here is a video of our final deliverable: https://youtu.be/MwK8OBSgO2U
+![](demo.gif)
 
 ## Documentation
 JavaDocs in IDE.
