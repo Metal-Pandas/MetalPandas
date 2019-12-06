@@ -63,6 +63,8 @@ public class DarkDriverProfile implements Initializable {
   @FXML public Button favouritesButton;
   @FXML public Button logoutButton;
   @FXML public Button schedules;
+  @FXML public Button carInformation;
+  @FXML public Button scheduleButton;
 
   /**
    * setProfilePage passes an ArrayList of Users called user. setText from database to text fields
@@ -157,28 +159,26 @@ public class DarkDriverProfile implements Initializable {
   }
 
   public void handleHomeAction(ActionEvent actionEvent) throws IOException {
-    Parent homePageParent = FXMLLoader.load(getClass().getResource("darkHome.fxml"));
+    Parent homePageParent = FXMLLoader.load(getClass().getResource("darkDriverHome.fxml"));
     Scene homePageScene = new Scene(homePageParent);
     Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);
     homeStage.show();
   }
 
-  public void handleFavouritesAction(ActionEvent actionEvent) throws IOException {
-    Parent homePageParent = FXMLLoader.load(getClass().getResource("darkFavourites.fxml"));
+  public void handleCarInformationAction(ActionEvent actionEvent) throws IOException {
+    Parent homePageParent = FXMLLoader.load(getClass().getResource("darkDriverSchedule.fxml"));
     Scene homePageScene = new Scene(homePageParent);
     Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);
     homeStage.show();
-//    UsersInfo.userProfilesGlobal.clear();
   }
 
-  public void handleSchedulesAction(ActionEvent actionEvent) throws IOException {
-    Parent homePageParent = FXMLLoader.load(getClass().getResource("darkAppointments.fxml"));
+  public void handleScheduleButton(ActionEvent actionEvent) throws IOException {
+    Parent homePageParent = FXMLLoader.load(getClass().getResource("darkDriverSchedule.fxml"));
     Scene homePageScene = new Scene(homePageParent);
     Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);
     homeStage.show();
-//    UsersInfo.usersScheduleGlobal.clear();
   }
 }

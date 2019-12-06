@@ -36,8 +36,6 @@ public class DarkDriverCarInformation implements Initializable {
   @FXML public HBox hBox;
   @FXML public ToolBar toolBar;
   @FXML public Button menuButton;
-  @FXML public ToggleButton lightMode;
-  @FXML public ToggleButton pandaMode;
   @FXML public Pane backDrop;
   @FXML public Label firstNameLabel;
   @FXML public Label lastNameLabel;
@@ -46,8 +44,6 @@ public class DarkDriverCarInformation implements Initializable {
   @FXML public Label addressLabel;
   @FXML public Label birthdayLabel;
   @FXML public Label genderLabel;
-  @FXML public Label modeLabel;
-  @FXML public Label ratingLabel;
   @FXML public TextField firstName;
   @FXML public TextField lastName;
   @FXML public TextField emailAddress;
@@ -63,6 +59,8 @@ public class DarkDriverCarInformation implements Initializable {
   @FXML public Button favouritesButton;
   @FXML public Button logoutButton;
   @FXML public Button schedules;
+  @FXML public Button profileButton;
+  @FXML public Button scheduleButton;
 
   /**
    * setProfilePage passes an ArrayList of Users called user. setText from database to text fields
@@ -116,22 +114,6 @@ public class DarkDriverCarInformation implements Initializable {
     homeStage.show();
   }
 
-  public void handlePandaModeAction(ActionEvent actionEvent) throws IOException {
-    Parent homePageParent = FXMLLoader.load(getClass().getResource("pandaProfile.fxml"));
-    Scene homePageScene = new Scene(homePageParent);
-    Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-    homeStage.setScene(homePageScene);
-    homeStage.show();
-  }
-
-  public void handleLightModeAction(ActionEvent actionEvent) throws IOException {
-    Parent homePageParent = FXMLLoader.load(getClass().getResource("lightProfile.fxml"));
-    Scene homePageScene = new Scene(homePageParent);
-    Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-    homeStage.setScene(homePageScene);
-    homeStage.show();
-  }
-
   public void handleMenuAction(ActionEvent actionEvent) {
     hBox.setVisible(true);
     TranslateTransition openNav = new TranslateTransition(new Duration(350), drawer);
@@ -157,28 +139,26 @@ public class DarkDriverCarInformation implements Initializable {
   }
 
   public void handleHomeAction(ActionEvent actionEvent) throws IOException {
-    Parent homePageParent = FXMLLoader.load(getClass().getResource("darkHome.fxml"));
+    Parent homePageParent = FXMLLoader.load(getClass().getResource("darkDriverHome.fxml"));
     Scene homePageScene = new Scene(homePageParent);
     Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);
     homeStage.show();
   }
 
-  public void handleFavouritesAction(ActionEvent actionEvent) throws IOException {
-    Parent homePageParent = FXMLLoader.load(getClass().getResource("darkFavourites.fxml"));
+  public void handleProfileAction(ActionEvent actionEvent) throws IOException {
+    Parent homePageParent = FXMLLoader.load(getClass().getResource("darkDriverProfile.fxml"));
     Scene homePageScene = new Scene(homePageParent);
     Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);
     homeStage.show();
-//    UsersInfo.userProfilesGlobal.clear();
   }
 
-  public void handleSchedulesAction(ActionEvent actionEvent) throws IOException {
-    Parent homePageParent = FXMLLoader.load(getClass().getResource("darkAppointments.fxml"));
+  public void handleScheduleButton(ActionEvent actionEvent) throws IOException {
+    Parent homePageParent = FXMLLoader.load(getClass().getResource("darkDriverSchedule.fxml"));
     Scene homePageScene = new Scene(homePageParent);
     Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);
     homeStage.show();
-//    UsersInfo.usersScheduleGlobal.clear();
   }
 }

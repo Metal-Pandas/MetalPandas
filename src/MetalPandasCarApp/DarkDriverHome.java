@@ -34,6 +34,9 @@ public class DarkDriverHome {
   @FXML public TableColumn dateColumn;
   @FXML public TableColumn timeColumn;
   @FXML public TableColumn destinationColumn;
+  @FXML public Button confirmRide;
+  @FXML public Button scheduleButton;
+  @FXML public Button carInformation;
 
 
   public void handleMenuAction(ActionEvent actionEvent) {
@@ -61,21 +64,34 @@ public class DarkDriverHome {
   }
 
   public void handleProfileAction(ActionEvent actionEvent) throws IOException {
-    Parent homePageParent = FXMLLoader.load(getClass().getResource("darkProfile.fxml"));
+    Parent homePageParent = FXMLLoader.load(getClass().getResource("darkDriverProfile.fxml"));
     Scene homePageScene = new Scene(homePageParent);
     Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);
     homeStage.show();
   }
 
-  public void handleHomeAction(ActionEvent actionEvent) throws IOException {
-    Parent homePageParent = FXMLLoader.load(getClass().getResource("darkHome.fxml"));
+  public void handleConfirmRideAction(ActionEvent actionEvent) throws IOException {
+    Parent homePageParent = FXMLLoader.load(getClass().getResource("darkDriverCarInformation.fxml"));
     Scene homePageScene = new Scene(homePageParent);
     Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);
     homeStage.show();
   }
 
-  public void handleConfirmRideAction(ActionEvent actionEvent) {
+  public void handleCarInformationAction(ActionEvent actionEvent) throws IOException {
+    Parent homePageParent = FXMLLoader.load(getClass().getResource("darkDriverSchedule.fxml"));
+    Scene homePageScene = new Scene(homePageParent);
+    Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+    homeStage.setScene(homePageScene);
+    homeStage.show();
+  }
+
+  public void handleScheduleButton(ActionEvent actionEvent) throws IOException {
+    Parent homePageParent = FXMLLoader.load(getClass().getResource("darkDriverSchedule.fxml"));
+    Scene homePageScene = new Scene(homePageParent);
+    Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+    homeStage.setScene(homePageScene);
+    homeStage.show();
   }
 }
