@@ -19,7 +19,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
-public class DarkDriverHome {
+public class LightDriverHome {
   @FXML public SplitPane appointmentsBackground;
   @FXML public ToolBar toolBar;
   @FXML public Button menuButton;
