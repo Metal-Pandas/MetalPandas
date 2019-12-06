@@ -12,7 +12,7 @@
 
 <AnchorPane fx:id="paymentBackground" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MetalPandasCarApp.DarkDriverRating">
   <Pane fx:id="backDrop" prefHeight="298.0" prefWidth="600.0">
-    <Label fx:id="ratingLabelTitle" layoutX="58.0" layoutY="21.0" prefHeight="53.0" prefWidth="509.0" text="Please Rate Your Driver" textAlignment="CENTER">
+    <Label fx:id="ratingLabelTitle" layoutX="14.0" layoutY="21.0" prefHeight="53.0" prefWidth="572.0" text="Please Rate Your Passenger" textAlignment="CENTER">
       <font>
         <Font name="Monospaced Regular" size="36.0" />
       </font>
