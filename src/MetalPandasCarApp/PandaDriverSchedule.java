@@ -56,7 +56,7 @@ public class PandaDriverSchedule {
   }
 
   public void handleLogoutAction(ActionEvent actionEvent) throws IOException {
-    Parent homePageParent = FXMLLoader.load(getClass().getResource("darkLogin.fxml"));
+    Parent homePageParent = FXMLLoader.load(getClass().getResource("pandaLogin.fxml"));
     Scene homePageScene = new Scene(homePageParent);
     Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);
@@ -64,7 +64,7 @@ public class PandaDriverSchedule {
   }
 
   public void handleProfileAction(ActionEvent actionEvent) throws IOException {
-    Parent homePageParent = FXMLLoader.load(getClass().getResource("darkDriverProfile.fxml"));
+    Parent homePageParent = FXMLLoader.load(getClass().getResource("pandaDriverProfile.fxml"));
     Scene homePageScene = new Scene(homePageParent);
     Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);
@@ -72,7 +72,7 @@ public class PandaDriverSchedule {
   }
 
   public void handleConfirmRideAction(ActionEvent actionEvent) throws IOException {
-    Parent homePageParent = FXMLLoader.load(getClass().getResource("darkDriverCarInformation.fxml"));
+    Parent homePageParent = FXMLLoader.load(getClass().getResource("pandaDriverCarInformation.fxml"));
     Scene homePageScene = new Scene(homePageParent);
     Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);
@@ -80,7 +80,7 @@ public class PandaDriverSchedule {
   }
 
   public void handleCarInformationAction(ActionEvent actionEvent) throws IOException {
-    Parent homePageParent = FXMLLoader.load(getClass().getResource("darkDriverSchedule.fxml"));
+    Parent homePageParent = FXMLLoader.load(getClass().getResource("pandaDriverSchedule.fxml"));
     Scene homePageScene = new Scene(homePageParent);
     Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);
@@ -88,7 +88,7 @@ public class PandaDriverSchedule {
   }
 
   public void handleScheduleButton(ActionEvent actionEvent) throws IOException {
-    Parent homePageParent = FXMLLoader.load(getClass().getResource("darkDriverSchedule.fxml"));
+    Parent homePageParent = FXMLLoader.load(getClass().getResource("pandaDriverSchedule.fxml"));
     Scene homePageScene = new Scene(homePageParent);
     Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);

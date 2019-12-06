@@ -109,7 +109,7 @@ public class PandaDriverProfile implements Initializable {
     PreparedStatement pstmt = conn.prepareStatement(sql);
     pstmt.executeQuery();
 
-    Parent homePageParent = FXMLLoader.load(getClass().getResource("darkEdit.fxml"));
+    Parent homePageParent = FXMLLoader.load(getClass().getResource("pandaDriverEdit.fxml"));
     Scene homePageScene = new Scene(homePageParent);
     Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);
@@ -117,7 +117,7 @@ public class PandaDriverProfile implements Initializable {
   }
 
   public void handlePandaModeAction(ActionEvent actionEvent) throws IOException {
-    Parent homePageParent = FXMLLoader.load(getClass().getResource("pandaProfile.fxml"));
+    Parent homePageParent = FXMLLoader.load(getClass().getResource("darkDriverProfile.fxml"));
     Scene homePageScene = new Scene(homePageParent);
     Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);
@@ -125,7 +125,7 @@ public class PandaDriverProfile implements Initializable {
   }
 
   public void handleLightModeAction(ActionEvent actionEvent) throws IOException {
-    Parent homePageParent = FXMLLoader.load(getClass().getResource("lightProfile.fxml"));
+    Parent homePageParent = FXMLLoader.load(getClass().getResource("lightDriverProfile.fxml"));
     Scene homePageScene = new Scene(homePageParent);
     Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);
@@ -149,7 +149,7 @@ public class PandaDriverProfile implements Initializable {
   }
 
   public void handleLogoutAction(ActionEvent actionEvent) throws IOException {
-    Parent homePageParent = FXMLLoader.load(getClass().getResource("darkLogin.fxml"));
+    Parent homePageParent = FXMLLoader.load(getClass().getResource("pandaLogin.fxml"));
     Scene homePageScene = new Scene(homePageParent);
     Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);
@@ -157,7 +157,7 @@ public class PandaDriverProfile implements Initializable {
   }
 
   public void handleHomeAction(ActionEvent actionEvent) throws IOException {
-    Parent homePageParent = FXMLLoader.load(getClass().getResource("darkDriverHome.fxml"));
+    Parent homePageParent = FXMLLoader.load(getClass().getResource("pandaDriverHome.fxml"));
     Scene homePageScene = new Scene(homePageParent);
     Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);
@@ -165,7 +165,7 @@ public class PandaDriverProfile implements Initializable {
   }
 
   public void handleCarInformationAction(ActionEvent actionEvent) throws IOException {
-    Parent homePageParent = FXMLLoader.load(getClass().getResource("darkDriverSchedule.fxml"));
+    Parent homePageParent = FXMLLoader.load(getClass().getResource("pandaDriverSchedule.fxml"));
     Scene homePageScene = new Scene(homePageParent);
     Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);
@@ -173,7 +173,7 @@ public class PandaDriverProfile implements Initializable {
   }
 
   public void handleScheduleButton(ActionEvent actionEvent) throws IOException {
-    Parent homePageParent = FXMLLoader.load(getClass().getResource("darkDriverSchedule.fxml"));
+    Parent homePageParent = FXMLLoader.load(getClass().getResource("pandaDriverSchedule.fxml"));
     Scene homePageScene = new Scene(homePageParent);
     Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);

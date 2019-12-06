@@ -40,7 +40,7 @@ public class DarkDriverRating {
   @FXML public Pane backDrop;
 
   public void handleRateAction(ActionEvent actionEvent) throws IOException {
-    Parent homePageParent = FXMLLoader.load(getClass().getResource("darkAppointments.fxml"));
+    Parent homePageParent = FXMLLoader.load(getClass().getResource("darkDriverHome.fxml"));
     Scene homePageScene = new Scene(homePageParent);
     Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);

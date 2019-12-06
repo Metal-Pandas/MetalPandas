@@ -107,7 +107,7 @@ public class DarkDriverCarInformation implements Initializable {
     PreparedStatement pstmt = conn.prepareStatement(sql);
     pstmt.executeQuery();
 
-    Parent homePageParent = FXMLLoader.load(getClass().getResource("darkEdit.fxml"));
+    Parent homePageParent = FXMLLoader.load(getClass().getResource("darkDriverEdit.fxml"));
     Scene homePageScene = new Scene(homePageParent);
     Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);

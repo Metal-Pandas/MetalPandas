@@ -15,7 +15,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="editBackground" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MetalPandasCarApp.DarkDriverEdit">
+<AnchorPane fx:id="editBackground" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MetalPandasCarApp.PandaDriverEdit">
   <ImageView fx:id="profileImage" fitHeight="163.0" fitWidth="217.0" layoutX="177.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
     <Image url="@profile_image.jpg" />
   </ImageView>
@@ -57,6 +57,6 @@
   </Pane>
   <Button fx:id="update" layoutX="520.0" layoutY="365.0" mnemonicParsing="false" onAction="#handleUpdateAction" text="Update!" />
   <stylesheets>
-    <URL value="@darkTheme.css" />
+    <URL value="@pandaTheme.css" />
   </stylesheets>
 </AnchorPane>

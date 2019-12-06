@@ -118,7 +118,7 @@ public class LightDriverEdit {
     } catch (SQLException e) {
       e.printStackTrace();
     }
-    Parent homePageParent = FXMLLoader.load(getClass().getResource("darkDriverProfile.fxml"));
+    Parent homePageParent = FXMLLoader.load(getClass().getResource("lightDriverProfile.fxml"));
     Scene homePageScene = new Scene(homePageParent);
     Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);
