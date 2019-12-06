@@ -13,6 +13,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
@@ -84,12 +85,34 @@ public class DarkSignUp {
   }
 
   public void handleSignUpAction(ActionEvent actionEvent) throws IOException, SQLException {
-    addUser();
-    Parent homePageParent = FXMLLoader.load(getClass().getResource("darkHome.fxml"));
-    Scene homePageScene = new Scene(homePageParent);
-    Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-    homeStage.setScene(homePageScene);
-    homeStage.show();
+    if (firstName.getText().equals("")
+        || lastName.getText().equals("")
+        || emailAddress.getText().equals("")
+        || phoneNumber.getText().equals("")
+        || street.getText().equals("")
+        || state.getText().equals("")
+        || city.getText().equals("")
+        || zipCode.getText().equals("")
+        || country.getText().equals("")
+        || password.getText().equals("")
+        || reenterPassword.getText().equals("")
+        || month.getValue().equals("")
+        || day.getValue().equals("")
+        || year.getText().equals("")
+        || driverPassenger.getValue().equals("")
+        || gender.getValue().equals("")) {
+      Alert a = new Alert(Alert.AlertType.NONE);
+      a.setAlertType(Alert.AlertType.WARNING);
+      a.setContentText("Please fill all required fields!");
+      a.show();
+    } else {
+      addUser();
+      Parent homePageParent = FXMLLoader.load(getClass().getResource("darkHome.fxml"));
+      Scene homePageScene = new Scene(homePageParent);
+      Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+      homeStage.setScene(homePageScene);
+      homeStage.show();
+    }
   }
 
   public void initialize() {

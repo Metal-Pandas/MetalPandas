@@ -12,6 +12,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
@@ -36,21 +37,36 @@ public class DarkPayments {
   @FXML public Button backButton;
   @FXML public Button calcTotal;
 
-  public void handleAddPaymentAction(ActionEvent actionEvent) throws IOException {
-    Parent homePageParent = FXMLLoader.load(getClass().getResource("darkAddPayments.fxml"));
-    Scene homePageScene = new Scene(homePageParent);
-    Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-    homeStage.setScene(homePageScene);
-    homeStage.show();
+  public void handleAddPaymentAction(ActionEvent actionEvent) {
+    try{
+      Parent homePageParent = FXMLLoader.load(getClass().getResource("darkAddPayments.fxml"));
+      Scene homePageScene = new Scene(homePageParent);
+      Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+      homeStage.setScene(homePageScene);
+      homeStage.show();
+    }catch (IOException e){
+      e.printStackTrace();
+    }
   }
 
-  public void handlePayAction(ActionEvent actionEvent) throws IOException, SQLException {
-    addPayment();
-    Parent homePageParent = FXMLLoader.load(getClass().getResource("darkProfileRating.fxml"));
-    Scene homePageScene = new Scene(homePageParent);
-    Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-    homeStage.setScene(homePageScene);
-    homeStage.show();
+  public void handlePayAction(ActionEvent actionEvent) {
+    if(tipAmount.getText().equals("") || tipAmount.getText().equals("") || paymentOption.getValue().equals("")){
+      Alert a = new Alert(Alert.AlertType.NONE);
+      a.setAlertType(Alert.AlertType.WARNING);
+      a.setContentText("Please fill all required fields!");
+      a.show();
+    }else{
+      try{
+        addPayment();
+        Parent homePageParent = FXMLLoader.load(getClass().getResource("darkProfileRating.fxml"));
+        Scene homePageScene = new Scene(homePageParent);
+        Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        homeStage.setScene(homePageScene);
+        homeStage.show();
+      }catch(IOException | SQLException | NullPointerException e){
+        System.out.println("the pandaPayments handlepayment action catch worked.");
+      }
+    }
   }
 
   public void handleBackAction(ActionEvent actionEvent) throws IOException {

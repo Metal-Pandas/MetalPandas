@@ -62,8 +62,8 @@
         <TableView fx:id="scheduledPickUps" maxHeight="400.0" maxWidth="409.0" minHeight="0.0" minWidth="0.0" prefHeight="374.0" prefWidth="409.0" StackPane.alignment="CENTER_RIGHT">
           <columns>
             <TableColumn fx:id="dateColumn" prefWidth="114.0" text="Date" />
-            <TableColumn fx:id="timeColumn" minWidth="0.0" prefWidth="77.0" text="Time" />
-            <TableColumn fx:id="destinationColumn" prefWidth="217.0" text="Destination" />
+            <TableColumn fx:id="timeColumn" minWidth="0.0" prefWidth="101.0" text="Time" />
+            <TableColumn fx:id="destinationColumn" prefWidth="193.0" text="Destination" />
           </columns>
         </TableView>
       </StackPane>
