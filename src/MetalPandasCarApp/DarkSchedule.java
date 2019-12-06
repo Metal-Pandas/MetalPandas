@@ -10,6 +10,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
@@ -23,22 +24,40 @@ public class DarkSchedule {
   @FXML public AnchorPane scheduleBackground;
   @FXML public Text selectDateLabel;
   @FXML public ComboBox<String> scheduleMonth;
-  @FXML public ComboBox<Integer> scheduleDay;
+  @FXML public ComboBox<String> scheduleDay;
   @FXML public Text selectTimeLabel;
-  @FXML public ComboBox<Integer> hour;
+  @FXML public ComboBox<String> hour;
   @FXML public ComboBox<String> minute;
   @FXML public ComboBox<String> amPm;
   @FXML public Button schedule;
   @FXML public Button backButton;
   @FXML public Pane backDrop;
 
-  public void handleScheduleAction(ActionEvent actionEvent) throws IOException, SQLException {
-    addSchedule();
-    Parent homePageParent = FXMLLoader.load(getClass().getResource("darkPayments.fxml"));
-    Scene homePageScene = new Scene(homePageParent);
-    Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-    homeStage.setScene(homePageScene);
-    homeStage.show();
+  public void handleScheduleAction(ActionEvent actionEvent) {
+    try {
+      if (scheduleMonth.getValue().equals("")
+          || scheduleDay.getValue().equals("")
+          || hour.getValue().equals("")
+          || minute.getValue().equals("")
+          || amPm.getValue().equals("")) {
+        Alert a = new Alert(Alert.AlertType.NONE);
+        a.setAlertType(Alert.AlertType.WARNING);
+        a.setContentText("Please fill all required fields!");
+        a.show();
+      } else {
+        addSchedule();
+        Parent homePageParent = FXMLLoader.load(getClass().getResource("darkPayments.fxml"));
+        Scene homePageScene = new Scene(homePageParent);
+        Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        homeStage.setScene(homePageScene);
+        homeStage.show();
+      }
+    } catch (IOException | NullPointerException e) {
+      Alert a = new Alert(Alert.AlertType.NONE);
+      a.setAlertType(Alert.AlertType.WARNING);
+      a.setContentText("Please fill all required fields!");
+      a.show();
+    }
   }
 
   public void handleBackAction(ActionEvent actionEvent) throws IOException {
@@ -67,9 +86,12 @@ public class DarkSchedule {
               "December"));
       scheduleDay.setItems(
           FXCollections.observableArrayList(
-              1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24,
-              25, 26, 27, 28, 29, 30, 31));
-      hour.setItems(FXCollections.observableArrayList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12));
+              "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16",
+              "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30",
+              "31"));
+      hour.setItems(
+          FXCollections.observableArrayList(
+              "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"));
       minute.setItems(
           FXCollections.observableArrayList(
               "00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13",
@@ -83,23 +105,27 @@ public class DarkSchedule {
     }
   }
 
-  private void addSchedule() throws SQLException {
-    String ScheduleMonth = scheduleMonth.getValue();
-    String ScheduleDay = scheduleDay.getValue().toString();
-    String ScheduleHour = hour.getValue().toString();
-    String ScheduleMinute = minute.getValue();
-    String ScheduleApPm = amPm.getValue();
+  private void addSchedule() {
+    try {
+      String ScheduleMonth = scheduleMonth.getValue();
+      String ScheduleDay = scheduleDay.getValue();
+      String ScheduleHour = hour.getValue();
+      String ScheduleMinute = minute.getValue();
+      String ScheduleApPm = amPm.getValue();
 
-    String Time = scheduleMonth.getValue() + scheduleDay.getValue().toString();
-    String Date = hour.getValue().toString() + minute.getValue();
+      String Time = scheduleMonth.getValue() + scheduleDay.getValue();
+      String Date = hour.getValue() + minute.getValue();
 
-    String[] scheduleSignUp = {
-        ScheduleMonth, ScheduleDay, ScheduleHour, ScheduleMinute, ScheduleApPm
-    };
+      String[] scheduleSignUp = {
+          ScheduleMonth, ScheduleDay, ScheduleHour, ScheduleMinute, ScheduleApPm
+      };
 
-    DatabaseDriver.createScheduleInDb(scheduleSignUp);
+      DatabaseDriver.createScheduleInDb(scheduleSignUp);
 
-    UsersSchedule as = new UsersSchedule(Time, Date, ScheduleApPm);
-    UsersInfo.usersScheduleGlobal.add(as);
+      UsersSchedule as = new UsersSchedule(Time, Date, ScheduleApPm);
+      UsersInfo.usersScheduleGlobal.add(as);
+    } catch (SQLException | NullPointerException e) {
+      e.printStackTrace();
+    }
   }
 }
