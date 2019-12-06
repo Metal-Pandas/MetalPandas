@@ -12,9 +12,9 @@ profile, payment, and area they are providing or using the service. The user wil
 - Owen Rose
 
 ## Demonstration
-You can find a video of our Alpha Build below:
+- You can find a video of our Alpha Build below:
 https://youtu.be/nQOjyDzGnyU
-
+- Here is a video of our final deliverable: https://youtu.be/MwK8OBSgO2U
 ## Documentation
 JavaDocs in IDE.
 
@@ -26,8 +26,9 @@ Download the IDE of your choice capable of creating and running a JavaFX project
 ## Built With
 IntelliJ Idea Ultimate, 
 Scene Builder, 
-Discord group discussions
-
+Discord group discussions,
+SQL,
+H2 database
 ## Author
 Nicholis Wright, Jana Grunewald, Owen Rose, Kathryn Campo, Odalys Martinez-Villa, Kevin Mak
 
@@ -42,3 +43,6 @@ Stack Overflow, Scenebuilder, IntelliJ
 10/20/2019 The first prototype is complete with full CSS styling, complete with logic to move between pages and a working login method.
 11/09/2019 The beta of our prototype has integrated googlemaps API, a rating system for drivers, additional payment pages and increased 
           database functionality.
+12/05/2019 The database has completed almost all of its database functionality. Users can now update their profile, schedule a ride,
+create favorites, add a payment method and pay for a ride. The dark and light theme now work with all the scenes properly.
+User-friendly error messages now pop up whenever a user enters a wrong credential and when a user leaves a field blank.
