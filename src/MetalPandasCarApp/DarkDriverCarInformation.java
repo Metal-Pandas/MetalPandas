@@ -3,9 +3,9 @@ package MetalPandasCarApp;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
-import java.sql.ResultSet;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import javafx.animation.TranslateTransition;
@@ -18,68 +18,121 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.SplitPane;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
+import javafx.scene.control.ToggleButton;
 import javafx.scene.control.ToolBar;
-import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
 public class DarkDriverCarInformation implements Initializable {
-  @FXML public SplitPane favouritesBackground;
-  @FXML public ToolBar toolBar;
-  @FXML public Button menuButton;
+  @FXML public SplitPane profileBackground;
   @FXML public VBox drawer;
   @FXML public HBox hBox;
+  @FXML public ToolBar toolBar;
+  @FXML public Button menuButton;
+  @FXML public ToggleButton lightMode;
+  @FXML public ToggleButton pandaMode;
+  @FXML public Pane backDrop;
+  @FXML public Label firstNameLabel;
+  @FXML public Label lastNameLabel;
+  @FXML public Label emailLabel;
+  @FXML public Label phoneNumberLabel;
+  @FXML public Label addressLabel;
+  @FXML public Label birthdayLabel;
+  @FXML public Label genderLabel;
+  @FXML public Label modeLabel;
+  @FXML public Label ratingLabel;
+  @FXML public TextField firstName;
+  @FXML public TextField lastName;
+  @FXML public TextField emailAddress;
+  @FXML public TextField phoneNumber;
+  @FXML public TextField address;
+  @FXML public TextField birthday;
+  @FXML public TextField gender;
+  @FXML public TextField mode;
+  @FXML public TextField rating;
+  @FXML public Button profileUpdate;
   @FXML public ImageView profileImage;
-  @FXML public Button profileButton;
   @FXML public Button homeButton;
+  @FXML public Button favouritesButton;
   @FXML public Button logoutButton;
-  @FXML public TableView<UsersFavourites> favouritesTable;
-  @FXML public TableColumn<?,?> driver;
-  @FXML public TableColumn<?, ?> startDestination;
-  @FXML public TableColumn<?, ?> endDestination;
   @FXML public Button schedules;
 
-  private void setFavouritesTable(ObservableList<UsersFavourites> usersFavourites) {
-    try {
-      Connection conn = DatabaseDriver.initializeDB();
+  /**
+   * setProfilePage passes an ArrayList of Users called user. setText from database to text fields
+   * of profileController. calls the first index in db. userList should only be at ZERO!
+   *
+   * @param user an arrayList that holds Users.
+   */
+  private void setProfilePage(ObservableList<Users> user) {
+    firstName.setText(user.get(0).getFirstName());
+    lastName.setText(user.get(0).getLastName());
+    emailAddress.setText(user.get(0).getMail());
+    phoneNumber.setText(user.get(0).getPhoneNumber());
+    address.setText(
+        user.get(0).getAddress()
+            + " "
+            + user.get(0).getCity()
+            + ","
+            + " "
+            + user.get(0).getState()
+            + " "
+            + user.get(0).getZip());
+    birthday.setText(
+        user.get(0).getMonth() + " / " + user.get(0).getDay() + " / " + user.get(0).getYear());
+    gender.setText(user.get(0).getGender());
+    mode.setText(user.get(0).getDriverPass());
+    //  rating.setText(user.get(0).getRating());
+  }
 
-      String sql = "SELECT * FROM FAVOURITES";
+  /**
+   * First method and code to run when window opens. It initialize userProfileGlobal to
+   * setProfilePage.
+   *
+   * @param url Database connection
+   * @param resourceBundle Database library.
+   */
+  @Override
+  public void initialize(URL url, ResourceBundle resourceBundle) {
+    setProfilePage(UsersInfo.userProfilesGlobal);
+  }
 
-      Statement stmt = conn.createStatement();
+  public void handleUpdateAction(ActionEvent actionEvent) throws IOException, SQLException {
+    Connection conn = DatabaseDriver.initializeDB();
+    String sql = "SELECT * FROM USER";
+    PreparedStatement pstmt = conn.prepareStatement(sql);
+    pstmt.executeQuery();
 
-      ResultSet rs = stmt.executeQuery(sql);
+    Parent homePageParent = FXMLLoader.load(getClass().getResource("darkEdit.fxml"));
+    Scene homePageScene = new Scene(homePageParent);
+    Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+    homeStage.setScene(homePageScene);
+    homeStage.show();
+  }
 
-      while (rs.next()) {
-        String driverDes = rs.getString(1);
-        String startDes = rs.getString(2);
-        String endDes = rs.getString(3);
+  public void handlePandaModeAction(ActionEvent actionEvent) throws IOException {
+    Parent homePageParent = FXMLLoader.load(getClass().getResource("pandaProfile.fxml"));
+    Scene homePageScene = new Scene(homePageParent);
+    Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+    homeStage.setScene(homePageScene);
+    homeStage.show();
+  }
 
-        UsersFavourites items = new UsersFavourites(driverDes,startDes,endDes);
-        usersFavourites.add(items);
-      }
-
-      favouritesTable.setItems(usersFavourites);
-
-      driver.setCellValueFactory(new PropertyValueFactory<>("driver"));
-      startDestination.setCellValueFactory(new PropertyValueFactory<>("startDestination"));
-      endDestination.setCellValueFactory(new PropertyValueFactory<>("endDestination"));
-
-      conn.close();
-      stmt.close();
-
-    } catch (SQLException e) {
-      e.printStackTrace();
-    }
+  public void handleLightModeAction(ActionEvent actionEvent) throws IOException {
+    Parent homePageParent = FXMLLoader.load(getClass().getResource("lightProfile.fxml"));
+    Scene homePageScene = new Scene(homePageParent);
+    Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+    homeStage.setScene(homePageScene);
+    homeStage.show();
   }
 
   public void handleMenuAction(ActionEvent actionEvent) {
-
     hBox.setVisible(true);
     TranslateTransition openNav = new TranslateTransition(new Duration(350), drawer);
     openNav.setToX(0);
@@ -103,14 +156,6 @@ public class DarkDriverCarInformation implements Initializable {
     homeStage.show();
   }
 
-  public void handleProfileAction(ActionEvent actionEvent) throws IOException {
-    Parent homePageParent = FXMLLoader.load(getClass().getResource("darkProfile.fxml"));
-    Scene homePageScene = new Scene(homePageParent);
-    Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-    homeStage.setScene(homePageScene);
-    homeStage.show();
-  }
-
   public void handleHomeAction(ActionEvent actionEvent) throws IOException {
     Parent homePageParent = FXMLLoader.load(getClass().getResource("darkHome.fxml"));
     Scene homePageScene = new Scene(homePageParent);
@@ -119,17 +164,21 @@ public class DarkDriverCarInformation implements Initializable {
     homeStage.show();
   }
 
+  public void handleFavouritesAction(ActionEvent actionEvent) throws IOException {
+    Parent homePageParent = FXMLLoader.load(getClass().getResource("darkFavourites.fxml"));
+    Scene homePageScene = new Scene(homePageParent);
+    Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+    homeStage.setScene(homePageScene);
+    homeStage.show();
+//    UsersInfo.userProfilesGlobal.clear();
+  }
+
   public void handleSchedulesAction(ActionEvent actionEvent) throws IOException {
     Parent homePageParent = FXMLLoader.load(getClass().getResource("darkAppointments.fxml"));
     Scene homePageScene = new Scene(homePageParent);
     Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);
     homeStage.show();
-
-  }
-
-  @Override
-  public void initialize(URL url, ResourceBundle resourceBundle) {
-    setFavouritesTable(UsersInfo.usersFavouritesGlobal);
+//    UsersInfo.usersScheduleGlobal.clear();
   }
 }
