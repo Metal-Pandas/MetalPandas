@@ -140,7 +140,7 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                 </rowConstraints>
                 <Button fx:id="homeButton" mnemonicParsing="false" onAction="#handleHomeAction" text="Home" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
-                <Button fx:id="favouritesButton" mnemonicParsing="false" onAction="#handleFavouritesAction" text="Card Information" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                <Button fx:id="favouritesButton" mnemonicParsing="false" onAction="#handleFavouritesAction" text="Car Information" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
                 <Button fx:id="logoutButton" mnemonicParsing="false" onAction="#handleLogoutAction" text="Logout" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
               </GridPane>
             </VBox>
