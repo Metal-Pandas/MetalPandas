@@ -48,10 +48,10 @@ public class PandaHome {
   @FXML public Button scheduleButton;
   @FXML public Button schedules;
   @FXML public Button addToFavourites;
-  @FXML public ComboBox<String>endDestination;
-  @FXML public ComboBox<String>startDestination;
+  @FXML public ComboBox<String> endDestination;
+  @FXML public ComboBox<String> startDestination;
   @FXML public Pane backDrop;
-  @FXML public ComboBox<String>driver;
+  @FXML public ComboBox<String> driver;
 
   public void handleMenuAction(ActionEvent actionEvent) {
     hBox.setVisible(true);
@@ -59,17 +59,18 @@ public class PandaHome {
     openNav.setToX(0);
     TranslateTransition closeNav = new TranslateTransition(new Duration(350), drawer);
     menuButton.setOnAction(
-            (ActionEvent evt) -> {
-              if (drawer.getTranslateX() != 0) {
-                openNav.play();
-              } else {
-                closeNav.setToX(-(drawer.getWidth()));
-                closeNav.play();
-              }
-            });
+        (ActionEvent evt) -> {
+          if (drawer.getTranslateX() != 0) {
+            openNav.play();
+          } else {
+            closeNav.setToX(-(drawer.getWidth()));
+            closeNav.play();
+          }
+        });
   }
 
   public void handleLogoutAction(ActionEvent actionEvent) throws IOException {
+    UsersInfo.usersScheduleGlobal.clear();
     Parent homePageParent = FXMLLoader.load(getClass().getResource("pandaLogin.fxml"));
     Scene homePageScene = new Scene(homePageParent);
     Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
@@ -92,69 +93,75 @@ public class PandaHome {
     Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);
     homeStage.show();
-
   }
 
   public void initialize() {
     WebEngine engine = maps.getEngine();
     engine.load("https://www.google.com/maps/");
-try{
-    driver.setItems(
-            FXCollections.observableArrayList("Katy", "Kevin", "Owen", "Nick", "Odalys", "Jana"));
-    startDestination.setItems(
-            FXCollections.observableArrayList(
-                    "Target: 10000 Gulf Center Dr, Fort Myers, FL 33913",
-                    "FGCU West Lake: FGCU - West Lake Village, Fort Myers, FL 33967",
-                    "FGCU North Lake: FGCU North Lake, Fort Myers, FL 33965",
-                    "FGCU South Village: 10501 FGCU Blvd S, Fort Myers, FL 33965",
-                    "Publix: 20311 Grande Oak Blvd, Estero, FL 33928"));
-    endDestination.setItems(
-            FXCollections.observableArrayList(
-                    "Target: 10000 Gulf Center Dr, Fort Myers, FL 33913",
-                    "FGCU West Lake: FGCU - West Lake Village, Fort Myers, FL 33967",
-                    "FGCU North Lake: FGCU North Lake, Fort Myers, FL 33965",
-                    "FGCU South Village: 10501 FGCU Blvd S, Fort Myers, FL 33965",
-                    "Publix: 20311 Grande Oak Blvd, Estero, FL 33928"));
+    try {
+      driver.setItems(
+          FXCollections.observableArrayList("Katy", "Kevin", "Owen", "Nick", "Odalys", "Jana"));
+      startDestination.setItems(
+          FXCollections.observableArrayList(
+              "Target: 10000 Gulf Center Dr, Fort Myers, FL 33913",
+              "FGCU West Lake: FGCU - West Lake Village, Fort Myers, FL 33967",
+              "FGCU North Lake: FGCU North Lake, Fort Myers, FL 33965",
+              "FGCU South Village: 10501 FGCU Blvd S, Fort Myers, FL 33965",
+              "Publix: 20311 Grande Oak Blvd, Estero, FL 33928"));
+      endDestination.setItems(
+          FXCollections.observableArrayList(
+              "Target: 10000 Gulf Center Dr, Fort Myers, FL 33913",
+              "FGCU West Lake: FGCU - West Lake Village, Fort Myers, FL 33967",
+              "FGCU North Lake: FGCU North Lake, Fort Myers, FL 33965",
+              "FGCU South Village: 10501 FGCU Blvd S, Fort Myers, FL 33965",
+              "Publix: 20311 Grande Oak Blvd, Estero, FL 33928"));
     } catch (Exception e) {
-  e.printStackTrace();
-}
+      e.printStackTrace();
+    }
   }
 
-  public void handleScheduleAction(ActionEvent actionEvent) throws IOException {
-    Parent homePageParent = FXMLLoader.load(getClass().getResource("pandaSchedule.fxml"));
-    Scene homePageScene = new Scene(homePageParent);
-    Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-    homeStage.setScene(homePageScene);
-    homeStage.show();
+  public void handleScheduleAction(ActionEvent actionEvent) {
+    try {
+      Parent homePageParent = FXMLLoader.load(getClass().getResource("pandaSchedule.fxml"));
+      Scene homePageScene = new Scene(homePageParent);
+      Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+      homeStage.setScene(homePageScene);
+      homeStage.show();
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
   }
 
-  public void handleSchedulesAction(ActionEvent actionEvent) throws IOException, SQLException {
-    Connection conn = DatabaseDriver.initializeDB();
-    String sql = "SELECT * FROM SCHEDULE";
-    PreparedStatement pstmt = conn.prepareStatement(sql);
-    pstmt.executeQuery();
+  public void handleSchedulesAction(ActionEvent actionEvent) {
+    try {
+      Connection conn = DatabaseDriver.initializeDB();
+      String sql = "SELECT * FROM SCHEDULE";
+      PreparedStatement pstmt = conn.prepareStatement(sql);
+      pstmt.executeQuery();
 
-    Parent homePageParent = FXMLLoader.load(getClass().getResource("pandaAppointments.fxml"));
-    Scene homePageScene = new Scene(homePageParent);
-    Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-    homeStage.setScene(homePageScene);
-    homeStage.show();
+      Parent homePageParent = FXMLLoader.load(getClass().getResource("pandaAppointments.fxml"));
+      Scene homePageScene = new Scene(homePageParent);
+      Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+      homeStage.setScene(homePageScene);
+      homeStage.show();
 
-    UsersInfo.usersScheduleGlobal.clear();
-
-    conn.close();
-    pstmt.close();
+      conn.close();
+      pstmt.close();
+    } catch (SQLException | IOException e) {
+      e.printStackTrace();
+    }
   }
 
-  public void handleAddFavouritesAction(ActionEvent event) throws SQLException {
+  public void handleAddFavouritesAction(ActionEvent event){
     addUserFavorites();
-    Alert a = new Alert(Alert.AlertType.NONE);
+    Alert a = new Alert(AlertType.NONE);
     a.setAlertType(AlertType.INFORMATION);
     a.setContentText("Information has been added to your favourites!");
     a.show();
   }
 
-  private void addUserFavorites() throws SQLException {
+  private void addUserFavorites(){
+    try{
     String Driver = driver.getValue();
     String Start = startDestination.getValue();
     String End = endDestination.getValue();
@@ -165,5 +172,9 @@ try{
 
     UsersFavourites favourites = new UsersFavourites(Driver, Start, End);
     UsersInfo.usersFavouritesGlobal.add(favourites);
+
+    } catch (SQLException e) {
+      e.printStackTrace();
+    }
   }
 }

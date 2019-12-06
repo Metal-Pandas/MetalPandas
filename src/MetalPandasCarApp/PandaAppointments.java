@@ -3,11 +3,9 @@ package MetalPandasCarApp;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.*;
-import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import javafx.animation.TranslateTransition;
-import javafx.beans.binding.Bindings;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -28,8 +26,6 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
-import javax.naming.Binding;
-
 public class PandaAppointments implements Initializable {
   @FXML public SplitPane appointmentsBackground;
   @FXML public ToolBar toolBar;
@@ -46,7 +42,7 @@ public class PandaAppointments implements Initializable {
   @FXML public TableColumn<?, ?> timeColumn;
   @FXML public TableColumn<?, ?> destinationColumn;
 
-  private void setAppointmentPage(ObservableList<UsersSchedule> usersScheduleGlobal) {
+  private void setAppointmentPage(ObservableList<UsersSchedule> usersSchedule) {
     try {
       Connection conn = DatabaseDriver.initializeDB();
       String sql = "SELECT * FROM SCHEDULE";
@@ -62,16 +58,17 @@ public class PandaAppointments implements Initializable {
         String minute = rs.getString(4);
         String amPm = rs.getString(5);
 
-        String time = rs.getString(1) + " , " + rs.getString(2);
-        String date = rs.getString(3) + " : " + rs.getString(4);
+        String time = rs.getString(3) + " : " + rs.getString(4) + " " + rs.getString(5);
+        String date = rs.getString(1) + " , " + rs.getString(2);
 
         UsersSchedule items = new UsersSchedule(month, day, hour, minute, amPm);
-        UsersSchedule info = new UsersSchedule(time,date,amPm);
-        usersScheduleGlobal.add(items);
-        usersScheduleGlobal.add(info);
+        UsersSchedule info = new UsersSchedule(time, date, amPm);
+
+        usersSchedule.add(items);
+        usersSchedule.add(info);
       }
 
-      scheduledPickUps.setItems(usersScheduleGlobal);
+      scheduledPickUps.setItems(usersSchedule);
 
       dateColumn.setCellValueFactory(new PropertyValueFactory("time"));
       timeColumn.setCellValueFactory(new PropertyValueFactory("date"));
@@ -127,12 +124,10 @@ public class PandaAppointments implements Initializable {
     Stage homeStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
     homeStage.setScene(homePageScene);
     homeStage.show();
-//    UsersInfo.userProfilesGlobal.clear();
   }
 
   @Override
   public void initialize(URL url, ResourceBundle resourceBundle) {
     setAppointmentPage(UsersInfo.usersScheduleGlobal);
   }
-
 }
