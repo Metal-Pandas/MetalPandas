@@ -19,6 +19,7 @@ https://youtu.be/nQOjyDzGnyU
 
 ## Documentation
 JavaDocs in IDE.
+SRS Document: https://docs.google.com/document/d/1I0pUnY_4xJUNJSs54udfI6M5wUo0w10nXLBf26q5RLo/edit?usp=sharing
 
 
 ## Getting Started
