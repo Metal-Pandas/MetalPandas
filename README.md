@@ -22,15 +22,24 @@ Deliverable prototype (2 Dec 2019) - https://www.youtube.com/watch?v=MwK8OBSgO2U
 
 Final Prototype (5 Dec 2019) - https://youtu.be/ZnvLbTJzmQ0
 
-https://youtu.be/nQOjyDzGnyU
 - Here is a video of our final deliverable: https://youtu.be/MwK8OBSgO2U
+
 ![Picture Demo](demo.gif)
+
+Prototype 1:
 
 ![Prototype 1](prototype1.gif)
 
+Prototype 2:
+
 ![Prototype 2](prototype2.gif)
 
+Deliverable Prototype:
+
 ![Final Prototype](finalprototype.gif)
+
+
+Updated Prototype:
 
 ![Edited Final](editedfinal.gif)
 
