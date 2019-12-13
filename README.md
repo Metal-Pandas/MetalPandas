@@ -22,7 +22,7 @@ Deliverable prototype (2 Dec 2019) - https://www.youtube.com/watch?v=MwK8OBSgO2U
 
 Final Prototype (5 Dec 2019) - https://youtu.be/ZnvLbTJzmQ0
 
-- Here is a video of our final deliverable: https://youtu.be/MwK8OBSgO2U
+Screenshot Demo:
 
 ![Picture Demo](demo.gif)
 
