@@ -13,6 +13,7 @@ profile, payment, and area they are providing or using the service. The user wil
 
 ## Demonstration
 - You can find a video of our Alpha Build below:
+
 Prototype 1 (19 Oct 2019) - https://youtu.be/nQOjyDzGnyU
 
 Prototype 2 (9 Nov 2019) - https://www.youtube.com/watch?v=phqiKVj4hic&t=31s
